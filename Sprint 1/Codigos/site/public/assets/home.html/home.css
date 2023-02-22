@@ -176,7 +176,6 @@ main {
     width: 40%;
     display: flex;
     flex-direction: column;
-
 }
 
 .container1 .bloco1 h2 {
@@ -330,35 +329,64 @@ main {
 .box h3 {
     margin-top: 30px;
     font-size: 22px;
-
 }
 
 .box p {
     margin-top: 20px;
-    font-size: 14px;
-
+    font-size: 14px
 }
 
 
-
-
-
+/* terceiro container */
 
 .container3 {
-    background-color: #16395b06;
-    margin-top: 100px;
-    height: 500px;
+    background-color: transparent;
+    margin: 110px auto;
+    display: flex;
+    align-items: center;
+    color: whitesmoke;
+}
+
+
+.container3 .bloco3 {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    margin-top: -350px;
+}
+
+.container3 {
     width: 100vw;
     padding: 110px 0px 0px 120px;
     display: flex;
-
 }
 
+.container3 .bloco3 {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
 
+.container3 .bloco3 h1 {
+    font-size: 50px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.container3 .bloco3 h1 span {
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-image: -webkit-linear-gradient(left, #26e3c2, #45a0f5);
+    color: transparent;
+}
 
-
-
+.container3 .bloco3 p {
+    margin-top: 30px;
+    font-size: 14px;
+    color: white;
+}
 
 /* footer */
 
