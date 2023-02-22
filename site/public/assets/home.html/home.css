@@ -48,6 +48,13 @@ header {
     position: fixed;
 }
 
+header img {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    left: 3%;
+}
+
 header h1 {
     color: whitesmoke;
 }
@@ -378,6 +385,13 @@ footer .container4 {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+footer .container4 img {
+    height: 100px;
+    width: 100px;
+    margin-left: 8%;
+    
 }
 
 
