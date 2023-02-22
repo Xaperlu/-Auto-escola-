@@ -334,6 +334,7 @@ main {
     display: flex;
     align-items: center;
     color: whitesmoke;
+    justify-content: center;
 }
 
 
@@ -385,6 +386,9 @@ main {
     border: solid 1px rgba(160, 160, 160, 0.652);
     border-radius: 20px;
     padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
