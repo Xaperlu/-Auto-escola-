@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./perfil.css">
+    <link rel="stylesheet" href="./css/perfil.css">
     <title>AutoTech | Perfil</title>
 </head>
 <body>
@@ -12,14 +12,14 @@
         <div class="header-left">
           <h1>AutoTech</h1>
     
-          <img src="../imgs/user.png" class="userimg">
+          <img src="./asset/user.png" class="userimg">
           <div class="hello">
             <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
           </div>
     
           <div class="btn-nav-white">
             <img src="https://img.icons8.com/sf-regular-filled/38/45a0f5/home-page.png" class="img"/>
-            <a href="./index.html">
+            <a href="index.html">
               <h3>Perfil</h3>
               </a>
           </div>
@@ -38,7 +38,7 @@
             </a>
           </div>
           <div class="btn-logout" onclick="limparSessao()">
-            <img src="./imgs/logout.png" alt="">
+            <img src="./asset/logout.png" alt="">
               
           </div>
     
@@ -52,28 +52,27 @@
       </div> -->
 
       <div class="dados">
-        <h3>Informações sobre o usuario</h3>
-        Nome: <input type="text" placeholder="Novo nome" id="nome">
+        Nome: <input type="text" placeholder="Usuario" id="nome">
         <br>
         <br>
-        E-mail: <input type="email" placeholder="novo email" id="email">
+        E-mail: <input type="email" placeholder="usuario@gmail.com" id="email">
         <br>
         <br>
-        Senha: <input type="password" placeholder="Nova senha" id="senha">
+        Senha: <input type="password" placeholder="*********" id="senha">
     </div>
     <div class="botao">
         <button onclick="salvar()">Salvar</button>
         <button onclick="cancelar()">Cancelar</button>
     </div>
-    <h3>Informações sobre a auto escola</h3>
+    <h3>Informações sobre a Plantação</h3>
 
     <div class="plantacao">
-        <!-- Tipo da Plantação : <select name="" id="sel_tipo">
+        Tipo da Plantação : <select name="" id="sel_tipo">
             <option value=""> Escolha o tipo de café </option>
             <option value="Arabica">Arábica</option>
             <option value="Robusta">Robusta</option>
             <option value="Liberica">Libérica</option>
-        </select> -->
+        </select>
         <br>
         <br>
         UF : <select name="" id="sel_uf">
@@ -105,15 +104,15 @@
             <option value="25">SP</option>
             <option value="26">SE</option>
             <option value="27">TO</option>
-        </select>   <br><br>
-        
-            Nome: <input type="number" id="tamanho" placeholder="Novo nome">
-            <br>
-            <br>
-            Cidade: <input type="text" id="cidade" placeholder="Nova cidade">
-        
+        </select>   
     </div>
 
+    <div class="plantacao2">
+        Tamanho (m2): <input type="number" id="tamanho" placeholder="Ex: 25">
+        <br>
+        <br>
+        Cidade : <input type="text" id="cidade" placeholder="São Paulo">
+    </div>
 
     <div class="botao2">
       <button onclick="salvar_plan()">Salvar</button>
