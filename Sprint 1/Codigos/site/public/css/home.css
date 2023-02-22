@@ -576,6 +576,7 @@ footer .container4 .infofooter .boxinfo ul li ion-icon {
     header h1 {
         color: whitesmoke;
         font-size: 16px;
+        margin-left: 5%;
     }
 
     header ul {
@@ -594,6 +595,28 @@ footer .container4 .infofooter .boxinfo ul li ion-icon {
         align-items: center;
         justify-content: space-between;
         margin-left: 15%;
+    }
+
+
+
+    header div a {
+        border: solid 1px white;
+        color: whitesmoke;
+        border-radius: 50px;
+        font-size: 16px;
+        height: 80%;
+        width: 80px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+    
+    }
+
+    .cadastrar{
+        display: none;
+    
     }
 
     .container1 {
@@ -685,7 +708,7 @@ footer .container4 .infofooter .boxinfo ul li ion-icon {
     .imagenshome {
         display: block;
         position: absolute;
-        right: 37%;
+        right:207%;
         top: 240px;
         background-color: transparent;
         height: 100px;
