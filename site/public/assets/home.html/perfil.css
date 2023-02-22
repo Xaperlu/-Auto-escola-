@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;400;700&display=swap');
+
+*{
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+body{
+    background-image: -webkit-linear-gradient(left, #26e3c2, #45a0f5);
+    margin: 0 auto;
+    padding: 15px;
+    
+}
+
+.janela {
+    display: flex;
+    margin-left: 4%;
+    width: 100vw;
+}
+
+.header-left a {
+    text-decoration: none;
+    color: white;
+  }
+
+.header-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    height: 100vh;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-right: 3px solid #45a0f5;
+    background-color: #212124;
+}
+
+.header-left h1 {
+    color: white;
+}
+
+.hello {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-left: -25%;
+}
+
+.userimg{
+
+    width: 92px;
+    height: 92px;
+    left: 103px;
+    top: 135px;
+        
+}
+  
+.hello h3 {
+    color: white;
+    font-weight: 300;
+    font-size: 1.2rem;
+}
+  
+.hello h3 span {
+    font-weight: 800;
+}
+
+.btn-nav {
+  width: 40%;
+  color: white;
+  background-color: #000000;
+  border-radius: 5px;
+  text-align: center;
+  padding: 2% 5%;
+}
+
+.btn-nav-white {
+  text-align: center;
+  width: 50%;
+}
+
+.header-left .img{
+
+    margin-left: -100%;
+    margin-bottom: -25%;
+}
+
+.btn-nav-white h3 {
+  color: whit;
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 50px;
+}
+
+.btn-nav h3,
+.btn-logout h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.btn-logout {
+    margin-top: 100px;
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-align: center; 
+    margin-bottom: 50px;
+    cursor: pointer;
+}
+h2 {
+    margin-left: 35%;
+    color: white;
+}
+
+.imagem {
+    margin-left: 25%;
+}
+
+.camera {
+    margin-left: -6%;
+}
+
+.dados {
+    margin-left: 45%;
+    padding: 5%;    
+}
+
+.dados input {
+    margin-left: 10%;
+    margin-top: -10%;
+    width: 45%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+}
+
+.botao {
+    margin-left: 70%;   
+    padding: 2%;
+    width: 20%;
+    margin-top: -5%;
+}
+
+.botao button {
+    padding: 5%;
+    width: 35%;
+    font-size: medium;
+    border: 2px solid white;
+}
+
+h3 {
+    margin-left: 25%;
+    font-size:larger;
+    color: white;
+}
+
+.plantacao {
+    margin-left: 25%;
+    margin-top: 1%;
+    width: 30%;
+}
+
+.plantacao select {
+    padding: 1%;
+    border: none;
+    border-bottom: 1px solid white;
+}
+
+.plantacao2 {
+    margin-top: -4%;
+    margin-left: 60%;
+}
+
+.plantacao2 input {
+    padding: 1%;
+    border: none;
+    border-bottom: 1px solid white;
+}
+
+.botao2 {
+    margin-left: 70%;   
+    padding: 2%;
+    width: 20%;
+    margin-top: -1%;
+}
+
+.botao2 button {
+    padding: 5%;
+    width: 35%;
+    font-size: medium;
+    border: 2px solid white;
+}
