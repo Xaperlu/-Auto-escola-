@@ -236,6 +236,18 @@ main {
     filter: blur(100px);
 }
 
+.circuloborrado2 {
+    display: none;
+    height: 350px;
+    width: 350px;
+    border-radius: 50%;
+    background-color: #45a0f526;
+    filter: blur(100px);
+    position: absolute;
+    margin-top: 45%;
+    left: -110px;
+}
+
 
 .imagenshome {
     position: absolute;
