@@ -46,6 +46,7 @@ header {
     justify-content: space-between;
     padding: 0% 3% 0px 8%;
     position: fixed;
+    z-index: 2;
 }
 
 header img {
