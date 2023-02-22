@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AutoTech | Cadastro</title>
     <link rel="stylesheet" href="./css/cadastro.css">
-    <link rel="stylesheet" href="./assets/home.html/home.css">
+    <link rel="stylesheet" href="./css/home.css">
 </head>
 <style>
     
@@ -23,7 +23,7 @@
                 <a href="#">Preços</a>
             </li>
             <li>
-                <a href="./sobre.html">Sobre</a>
+                <a href="sobre.html">Sobre</a>
             </li>
         </ul>
 
@@ -36,7 +36,7 @@
     <div class="formulario">
 
         <div class="logo">
-            <img src="./assets/imgs/logo2.png">
+            <img src="./asset/logo2.png">
             <h2>AutoTech</h2>
             <p>Bem vindo a sua área de cadastro!</p>
         </div>
@@ -69,21 +69,21 @@
             <div class="verificadorSenha">
                 <div class="boxSenha">
                     <div class="verificador">
-                        <img id="imgT1" src="./assets/imgs/traco.png">
+                        <img id="imgT1" src="./asset/traco.png">
                         <span>6 Caracteres</span>
                     </div>
                     <div class="verificador">
-                        <img id="imgT2" src="./assets/imgs/traco.png">
+                        <img id="imgT2" src="./asset/traco.png">
                         <span>Conter número</span>
                     </div>
                 </div>
                 <div class="boxSenha">
                     <div class="verificador">
-                        <img id="imgT3" src="./assets/imgs/traco.png">
+                        <img id="imgT3" src="./asset/traco.png">
                         <span>Conter maiúscula</span>
                     </div>
                     <div class="verificador">
-                        <img id="imgT4" src="./assets/imgs/traco.png">
+                        <img id="imgT4" src="./asset/traco.png">
                         <span>Caracter especial</span>
                     </div>
                 </div>
@@ -157,28 +157,28 @@ function SenhaForte(){
         var especial = document.querySelector('#imgT4');
 
         if(senha.value.match(/[0-9]/)){
-            num.src = "./assets/imgs/check.png"
+            num.src = "./asset/check.png"
         
         }else{
-            num.src = "./assets/imgs/traco.png"
+            num.src = "./asset/traco.png"
         }
 
         if(senha.value.match(/[A-Z]/)){
-            uper.src = "./assets/imgs/check.png"
+            uper.src = "./asset/check.png"
         }else{
-            uper.src = "./assets/imgs/traco.png"
+            uper.src = "./asset/traco.png"
         }
 
         if(senha.value.match(/[!\@\#\$\%\&\*]/)){
-            especial.src = "./assets/imgs/check.png"
+            especial.src = "./asset/check.png"
         }else{
-            especial.src = "./assets/imgs/traco.png"
+            especial.src = "./asset/traco.png"
         }
 
         if(senha.value.length < 6){
-            tamanho.src = "./assets/imgs/traco.png"
+            tamanho.src = "./asset/traco.png"
         }else{
-            tamanho.src = "./assets/imgs/check.png"
+            tamanho.src = "./asset/check.png"
         }
 
 

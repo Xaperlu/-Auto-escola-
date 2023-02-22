@@ -125,6 +125,7 @@
     border: none;
     outline: none;
     font-size: 1.2rem;
+    font-weight: bold;
 }
 
 .logo{
@@ -140,6 +141,58 @@
 }
 
 .logo img{
-    width: 16vw;
-    height: 33vh;
+    width: 200px;
+    height: 200px;
+}
+
+@media only screen and (max-width: 600px){
+    .logo{
+        display: none;
+    }
+
+    .formulario .box{
+        width: 90vw;
+        margin: 7vh 0 0 0;
+    }
+
+    .ipt{
+        height: 70px;
+        font-size: 1.3rem;
+        width: 85vw;
+    }
+
+    .iptSecundario{
+        width: 42vw;
+    }
+
+    .divSenhas{
+        width: 85vw;
+    }
+
+    .verificadorSenha{
+        width: 85vw;
+    }
+
+    .boxSenha{
+        width: 42vw;
+    }
+
+    .verificador span{
+        font-size: 1.2rem;
+    }
+
+    .verificador img{
+        width: 35px;
+        height: 35px;
+    }
+
+    .btNext{
+        width: 85vw;
+        height: 6vh;
+        font-size: 1.4rem;
+    }
+
+    .campoDigitacao label{
+        font-size: 1.2rem;
+    }
 }
