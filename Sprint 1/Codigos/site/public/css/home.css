@@ -5,11 +5,9 @@
     margin: 0%;
     box-sizing: border-box;
     font-family: 'Kumbh Sans', sans-serif;
-
 }
 
 body {
-
     display: flex;
     flex-direction: column;
     width: 100vw;
@@ -17,15 +15,11 @@ body {
     height: 1950px;
     background-color: #0f0f0f;
     position: absolute;
-
-
 }
 
 body::-webkit-scrollbar {
     width: 8px;
     background-color: transparent;
-
-
 }
 
 
@@ -35,7 +29,6 @@ body::-webkit-scrollbar {
 body::-webkit-scrollbar-thumb {
     width: 2px;
     background-image: -webkit-linear-gradient(top, #26e3c2, #45a0f5);
-
 }
 
 header {
@@ -224,8 +217,6 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-
-
 }
 
 .divdownload a:hover {
@@ -285,8 +276,6 @@ main {
 
 
 
-
-
 /* segundo container  */
 
 .container2 {
@@ -310,7 +299,6 @@ main {
     border: solid 1px rgba(160, 160, 160, 0.652);
     border-radius: 20px;
     padding: 20px;
-
 }
 
 .box .boxicon {
@@ -388,6 +376,17 @@ main {
     font-size: 14px;
     color: white;
 }
+
+.container3 .bloco3 {
+    margin-top: -50px;
+    height: 300px;
+    width: 50%;
+    background-color: transparent;
+    border: solid 1px rgba(160, 160, 160, 0.652);
+    border-radius: 20px;
+    padding: 20px;
+}
+
 
 /* footer */
 

@@ -157,24 +157,24 @@ h3 {
     color: white;
 }
 
-.plantacao {
+.dados {
     margin-left: 25%;
     margin-top: 1%;
     width: 30%;
 }
 
-.plantacao select {
+.dados select {
     padding: 1%;
     border: none;
     border-bottom: 1px solid white;
 }
 
-.plantacao2 {
+.dados2 {
     margin-top: -4%;
     margin-left: 60%;
 }
 
-.plantacao2 input {
+.dados2 input {
     padding: 1%;
     border: none;
     border-bottom: 1px solid white;
