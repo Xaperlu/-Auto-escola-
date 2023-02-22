@@ -1,0 +1,145 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-height: 100vh;
+}
+
+.formulario {
+    height: 100vh;
+    width: 100vw;
+    background-color: transparent;  
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: whitesmoke;
+}
+
+.formulario .box {
+    height: 80vh;
+    width: 33vw;
+    background-color: transparent;
+    border: solid 1px rgba(160, 160, 160, 0.652);
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10vh -10vw 0 0;
+}
+
+.box h2{
+    text-align: center;
+}
+
+#box01{
+    display: flex;
+}
+
+#box02{
+    display: none;
+}
+
+#box03{
+    display: none;
+}
+
+.step{
+    display: flex;
+    gap: 10px;
+}
+
+.fase{
+    width: 25px;
+    height: 25px;
+    background-color: grey;
+    border-radius: 50%;  
+}
+
+.atual{
+    background-color: white;
+}
+
+.campoDigitacao{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.divSenhas{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 30vw;
+}
+
+.verificadorSenha{
+    display: flex;
+    width: 30vw;
+    justify-content: space-between;
+}
+
+.boxSenha{
+    display: flex;
+    flex-direction: column;
+    width: 14.5vw;
+}
+
+.verificador{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.verificador span{
+    display: flex;
+    align-items: center;
+}
+
+.verificador img{
+    height: 20px;
+    width: 20px;
+}
+
+.ipt{
+    height: 40px;
+    border: 1px solid grey;
+    background-color: transparent;
+    color: white;
+    outline: none;
+    padding: 10px;
+    border-radius: 5px;
+    width: 30vw;
+}
+
+.iptSecundario{
+    width: 14.5vw;
+}
+
+.btNext{
+    width: 25vw;
+    height: 7vh;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+}
+
+.logo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3vh;
+}
+
+.logo h2{
+    font-size: 2rem;
+}
+
+.logo img{
+    width: 16vw;
+    height: 33vh;
+}
