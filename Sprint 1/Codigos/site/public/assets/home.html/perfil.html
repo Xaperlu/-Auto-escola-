@@ -52,27 +52,28 @@
       </div> -->
 
       <div class="dados">
-        Nome: <input type="text" placeholder="Usuario" id="nome">
+        <h3>Informações sobre o usuario</h3>
+        Nome: <input type="text" placeholder="Novo nome" id="nome">
         <br>
         <br>
-        E-mail: <input type="email" placeholder="usuario@gmail.com" id="email">
+        E-mail: <input type="email" placeholder="novo email" id="email">
         <br>
         <br>
-        Senha: <input type="password" placeholder="*********" id="senha">
+        Senha: <input type="password" placeholder="Nova senha" id="senha">
     </div>
     <div class="botao">
         <button onclick="salvar()">Salvar</button>
         <button onclick="cancelar()">Cancelar</button>
     </div>
-    <h3>Informações sobre a Plantação</h3>
+    <h3>Informações sobre a auto escola</h3>
 
     <div class="plantacao">
-        Tipo da Plantação : <select name="" id="sel_tipo">
+        <!-- Tipo da Plantação : <select name="" id="sel_tipo">
             <option value=""> Escolha o tipo de café </option>
             <option value="Arabica">Arábica</option>
             <option value="Robusta">Robusta</option>
             <option value="Liberica">Libérica</option>
-        </select>
+        </select> -->
         <br>
         <br>
         UF : <select name="" id="sel_uf">
@@ -104,15 +105,15 @@
             <option value="25">SP</option>
             <option value="26">SE</option>
             <option value="27">TO</option>
-        </select>   
+        </select>   <br><br>
+        
+            Nome: <input type="number" id="tamanho" placeholder="Novo nome">
+            <br>
+            <br>
+            Cidade: <input type="text" id="cidade" placeholder="Nova cidade">
+        
     </div>
 
-    <div class="plantacao2">
-        Tamanho (m2): <input type="number" id="tamanho" placeholder="Ex: 25">
-        <br>
-        <br>
-        Cidade : <input type="text" id="cidade" placeholder="São Paulo">
-    </div>
 
     <div class="botao2">
       <button onclick="salvar_plan()">Salvar</button>
