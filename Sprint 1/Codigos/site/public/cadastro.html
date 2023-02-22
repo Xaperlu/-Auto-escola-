@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoTech | Cadastro</title>
+    <link rel="stylesheet" href="./css/cadastro.css">
+    <link rel="stylesheet" href="./assets/home.html/home.css">
+</head>
+<style>
+    
+</style>
+<body>
+
+    <header>
+        <h1>AutoTech</h1>
+        <ul>
+            <li>
+                <a href="#">Clientes</a>
+            </li>
+            <li>
+                <a href="#">Preços</a>
+            </li>
+            <li>
+                <a href="./sobre.html">Sobre</a>
+            </li>
+        </ul>
+
+        <div>
+            <a class="cadastrar" href="#">Cadastrar</a>
+            <a class="entrar" href="#">Entrar</a>
+        </div>
+
+    </header>
+    <div class="formulario">
+
+        <div class="logo">
+            <img src="./assets/imgs/logo2.png">
+            <h2>AutoTech</h2>
+            <p>Bem vindo a sua área de cadastro!</p>
+        </div>
+
+        <div id="box01" class="box">
+            <div class="step">
+                <div class="fase atual"></div>
+                <div class="fase"></div>
+                <div class="fase"></div>
+            </div>
+            <h2>Precisamos de algumas informações suas!</h2>
+            <div class="campoDigitacao">
+                <label for="inNome">Razão Social</label>
+                <input class="ipt" id="inNome" type="text" placeholder="Nome da empresa">
+            </div>
+            <div class="campoDigitacao">
+                <label for="inCnpj">CNPJ</label>
+                <input class="ipt" id="inCnpj" type="text" placeholder="99.999.999/0001.99" onkeyup="MascaraCnpj()">
+            </div>
+            <div class="divSenhas">
+                <div class="campoDigitacao">
+                    <label for="inSenha">Senha</label>
+                    <input class="ipt iptSecundario" id="inSenha" type="password" placeholder="********" onkeyup="SenhaForte()">
+                </div>
+                <div class="campoDigitacao">
+                    <label for="inConfirmacaoSenha">Confirmar Senha</label>
+                    <input class="ipt iptSecundario" id="inConfirmacaoSenha" type="password" placeholder="********">
+                </div>
+            </div>
+            <div class="verificadorSenha">
+                <div class="boxSenha">
+                    <div class="verificador">
+                        <img id="imgT1" src="./assets/imgs/traco.png">
+                        <span>6 Caracteres</span>
+                    </div>
+                    <div class="verificador">
+                        <img id="imgT2" src="./assets/imgs/traco.png">
+                        <span>Conter número</span>
+                    </div>
+                </div>
+                <div class="boxSenha">
+                    <div class="verificador">
+                        <img id="imgT3" src="./assets/imgs/traco.png">
+                        <span>Conter maiúscula</span>
+                    </div>
+                    <div class="verificador">
+                        <img id="imgT4" src="./assets/imgs/traco.png">
+                        <span>Caracter especial</span>
+                    </div>
+                </div>
+            </div>
+            <button onclick="AvancarPasso(2)" class="btNext">Próximo passo</button>
+        </div>
+
+
+        <div id="box02"  class="box">
+            <div class="step">
+                <div class="fase"></div>
+                <div class="fase atual"></div>
+                <div class="fase"></div>
+            </div>
+            <h2>Informe seu endereço!</h2>
+            <div class="campoDigitacao">
+                <label for="inCep">CEP</label>
+                <input class="ipt" id="inCep" type="text" placeholder="00000-000" onkeyup="CepMascara()">
+            </div>
+            <div class="campoDigitacao">
+                <label for="inLogradouro">Logradouro</label>
+                <input class="ipt" id="inLogradouro" type="text" placeholder="R. xxxxxx">
+            </div>
+            <div class="campoDigitacao">
+                <label for="inBairro">Bairro</label>
+                <input class="ipt" id="inBairro" type="text" placeholder="xxxxxxxx">
+            </div>
+            <div class="campoDigitacao">
+                <label for="inComplemento">Número e complemento</label>
+                <input class="ipt" id="inComplemento" type="text" placeholder="0000">
+            </div>
+            <button onclick="AvancarPasso(3)" class="btNext">Próximo passo</button>
+            <button onclick="AvancarPasso(1)" class="btNext">Voltar passo</button>
+        </div>
+
+
+        <div id="box03"  class="box">
+            <div class="step">
+                <div class="fase"></div>
+                <div class="fase"></div>
+                <div class="fase atual"></div>
+            </div>
+            <h2>Informe seus contatos!</h2>
+            <div class="campoDigitacao">
+                <label for="inEmail">E-mail</label>
+                <input class="ipt" id="inEmail" type="text" placeholder="empresa@outlook.com">
+            </div>
+            <div class="campoDigitacao">
+                <label for="inCelular">Telefone (celular)</label>
+                <input class="ipt" id="inCelular" type="text" placeholder="99 99999-9999" onkeyup="CelMascara()">
+            </div>
+            <div class="campoDigitacao">
+                <label for="inFixo">Telefone (fixo)</label>
+                <input class="ipt" id="inFixo" type="text" placeholder="99 9999-9999" onkeyup="FixoMascara()">
+            </div>
+            <button onclick="AvancarPasso(4)" class="btNext">Cadastrar</button>
+            <button onclick="AvancarPasso(2)" class="btNext">Voltar passo</button>
+        </div>
+    </div>
+    
+    <script src="./js/cadastro.js"></script>
+</body>
+</html>
+<script>
+
+function SenhaForte(){
+        var senha = document.querySelector('#inSenha');
+        var uper = document.querySelector('#imgT3');
+        var num = document.querySelector('#imgT2');
+        var tamanho = document.querySelector('#imgT1');
+        var especial = document.querySelector('#imgT4');
+
+        if(senha.value.match(/[0-9]/)){
+            num.src = "./assets/imgs/check.png"
+        
+        }else{
+            num.src = "./assets/imgs/traco.png"
+        }
+
+        if(senha.value.match(/[A-Z]/)){
+            uper.src = "./assets/imgs/check.png"
+        }else{
+            uper.src = "./assets/imgs/traco.png"
+        }
+
+        if(senha.value.match(/[!\@\#\$\%\&\*]/)){
+            especial.src = "./assets/imgs/check.png"
+        }else{
+            especial.src = "./assets/imgs/traco.png"
+        }
+
+        if(senha.value.length < 6){
+            tamanho.src = "./assets/imgs/traco.png"
+        }else{
+            tamanho.src = "./assets/imgs/check.png"
+        }
+
+
+    }
+
+    function AvancarPasso(id){
+        let box01 = document.querySelector('#box01');
+        let box02 = document.querySelector('#box02');
+        let box03 = document.querySelector('#box03');
+        const nome = inNome.value;
+        const cnpj = inCnpj.value;
+        const senha = inSenha.value;
+        const confirmacao = inConfirmacaoSenha.value;
+        const cep = inCep.value;
+        const logradouro = inLogradouro.value;
+        const bairro = inBairro.value;
+        const complemento = inComplemento.value;
+        const email = inEmail.value;
+        const celular = inCelular.value;
+        const fixo = inFixo.value;
+        const validarSenhaForte = senha.match(/[0-9]/) && senha.match(/[A-Z]/) && senha.match(/[!\@\#\$\%\&\*]/) && senha.length >= 6
+
+        switch(id){
+            case 1:
+                box01.style.display = "flex"
+                box02.style.display = "none"
+                box03.style.display = "none"
+                break;
+            case 2:
+                if(nome != null && cnpj.length == 18 && validarSenhaForte && confirmacao == senha){
+                    box01.style.display = "none"
+                    box02.style.display = "flex"
+                    box03.style.display = "none"
+                }else{
+                    alert("Preencha os campos corretamente")
+                }
+                break;
+            case 3:
+                if(cep.length == 9 && logradouro != null && bairro != null && complemento != null){
+                    box01.style.display = "none"
+                    box02.style.display = "none"
+                    box03.style.display = "flex"
+                }else{
+                    alert("Preencha os campos corretamente")
+                }
+                break;
+            case 4:
+                if(email.match(/[@]/) && celular.length == 13 && fixo.length == 12){
+                    alert("cadastro")
+                }else{
+                    alert("Preencha os campos corretamente")
+                }
+        }
+
+    }
+
+</script>
