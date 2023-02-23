@@ -346,9 +346,11 @@ main {
 }
 
 .container3 {
-    width: 100vw;
+    width: 130vw;
     padding: 110px 0px 0px 120px;
     display: flex;
+    margin-left: -278px;
+    margin-top: -50px;
 }
 
 .container3 .bloco3 {
