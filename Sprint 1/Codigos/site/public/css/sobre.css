@@ -43,6 +43,13 @@ header {
     position: fixed;
 }
 
+header img {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    left: 3%;
+}
+
 header h1 {
     color: whitesmoke;
 }
