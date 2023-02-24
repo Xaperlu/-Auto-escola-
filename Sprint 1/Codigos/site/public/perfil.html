@@ -1,180 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/perfil.css">
-    <title>AutoTech | Perfil</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/perfil.css">
+  <title>AutoTech | Perfil</title>
 </head>
+
 <body>
-    <div class="janela">
-        <div class="header-left">
-          <h1>AutoTech</h1>
-    
-          <img src="./asset/user.png" class="userimg">
-          <div class="hello">
-            <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
-          </div>
-    
-          <div class="btn-nav-white">
-            <img src="https://img.icons8.com/sf-regular-filled/38/45a0f5/home-page.png" class="img"/>
-            <a href="index.html">
-              <h3>Perfil</h3>
-              </a>
-          </div>
-    
-          <div class="btn-nav-white">
-            <img src="https://img.icons8.com/sf-black-filled/48/45a0f5/pie-chart.png" class="img"/>
-            <a href="">
-              <h3>Setores</h3>
-              </a>
-          </div>
-    
-          <div class="btn-nav-white">
-            <img src="https://img.icons8.com/ios-filled/48/45a0f5/combo-chart--v1.png" class="img"/>
-            <a href="">
-                <h3>Gráficos</h3>
-            </a>
-          </div>
-          <div class="btn-logout" onclick="limparSessao()">
-            <img src="./asset/logout.png" alt="">
-              
-          </div>
-    
-        </div>
+
+  <div class="navbar">
+
+    <div class="blocoperfil">
+      <h1>AutoTech</h1>
+      <img src="asset/user.png" alt="">
+      <h2>Olá,<strong>undefined</strong>!</h2>
+
+    </div>
+
+    <ul class="guias">
+      <li><a href="#"> <img src="asset/graf.png" alt=""> Dashboard</a></li>
+      <li><a href="index.html">Sair</a></li>
+
+    </ul>
+
+
+
+  </div>
+
+
+
+  <div class="janelainfo">
+
+
+    <div class="card">
+      <div class="detalheboll">
+
+        <div class="boll1"></div>
+        <div class="boll2"></div>
+
       </div>
 
-      <!-- <div class="imagem">
-        <h2>Informações do Usuario</h2>
-        <img src="./src/img/user.png" alt="" width="200px">
-        <img src=".//src/img/camera (1).png" alt="" class="camera">
-      </div> -->
 
-      <h3>Informações sobre o usuário</h3>
-      <div class="dados">
-        Nome: <input type="text" placeholder="Usuario" id="nome">
-        <br>
-        <br>
-        E-mail: <input type="email" placeholder="usuario@gmail.com" id="email">
-        <br>
-        <br>
-        Senha: <input type="password" placeholder="*********" id="senha">
-    </div>
-    <div class="botao">
-        <button onclick="salvar()">Salvar</button>
-        <button onclick="cancelar()">Cancelar</button>
-    </div>
-    <h3>Informações sobre a Auto Escola</h3>
 
-    <div class="dados">
-        UF : <select name="" id="sel_uf">
-            <option value="">-- ESTADO--</option>
-            <option value="1">AC</option>
-            <option value="2">AL</option>
-            <option value="3">AP</option>
-            <option value="4">AM</option>
-            <option value="5">BA</option>
-            <option value="6">CE</option>
-            <option value="7">DF</option>
-            <option value="8">ES</option>
-            <option value="9">GO</option>
-            <option value="10">MA</option>
-            <option value="11">MT</option>
-            <option value="12">MS</option>
-            <option value="13">MG</option>
-            <option value="14">PA</option>
-            <option value="15">PB</option>
-            <option value="16">PR</option>
-            <option value="17">PE</option>
-            <option value="18">PI</option>
-            <option value="19">RJ</option>
-            <option value="20">RN</option>
-            <option value="21">RS</option>
-            <option value="22">RO</option>
-            <option value="23">RR</option>
-            <option value="24">SC</option>
-            <option value="25">SP</option>
-            <option value="26">SE</option>
-            <option value="27">TO</option>
-        </select>   
+      <div class="cardfilho">
+
+        <div class="areadasinfos">
+
+          <div class="infos">
+
+            <h3>informaçoes de alguma coisa</h3>
+
+            <div class="listadecampos">
+
+              <div class="campo">
+                <div class="noeditsinfo">
+                  <P class="title">Nome:</P>
+                  <p>undefined</p>
+                </div>
+
+                <div class="editarinfo">
+                  <label class="title"  for="">Nome:</label>
+                  <input type="text" name="" id="">
+                </div>
+
+              </div>
+
+              <div class="campo">
+                <div class="noeditsinfo">
+                  <P class="title">Email:</P>
+                  <p>undefined</p>
+                </div>
+
+                <div class="editarinfo">
+                  <label class="title"  for="">Email:</label>
+                  <input type="text" name="" id="">
+                </div>
+              </div>
+
+              <div class="campo">
+                <div class="noeditsinfo">
+                  <P class="title">CNPJ:</P>
+                  <p>undefined</p>
+                </div>
+
+                <div class="editarinfo">
+                  <label class="title"  for="">CNPJ:</label>
+                  <input type="text" name="" id="">
+                </div>
+              </div>
+
+              <div class="campo">
+                <div class="noeditsinfo">
+                  <P class="title">CEP:</P>
+                  <p>undefined</p>
+                </div>
+
+                <div class="editarinfo">
+                  <label class="title" for="">CEP</label>
+                  <input type="text" name="" id="">
+                </div>
+              </div>
+
+            </div>
+
+
+
+
+
+          </div>
+          <img src="asset/user.png" alt="">
+
+        </div>
+
+        <div class="campobotoes">
+          <button onclick="editar()">Editar <img src="asset/create-outline.svg" alt=""> </button>
+
+          <div>
+            <img src="asset/arrow-forward-outline.svg" alt="">
+            <button>Salvar</button>
+          </div>
+          
+        </div>
+
+      </div>
+
+
+
     </div>
 
-    <div class="dados2">
-        Nome: <input type="number" id="tamanho" placeholder="Novo nome">
-        <br>
-        <br>
-        Cidade : <input type="text" id="cidade" placeholder="Nova cidade">
-    </div>
 
-    <div class="botao2">
-      <button onclick="salvar_plan()">Salvar</button>
-        <button onclick="cancelar()">Cancelar</button>
-    </div>
+  </div>
+
+
+
+
+
 </body>
+
 </html>
-<SCript>
-  b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
-    function salvar() {
-        // aguardar();
-
-        //Recupere o valor da nova input pelo nome do id
-        // Agora vá para o método fetch logo abaixo
-        var idVar = sessionStorage.getItem('ID_CLIENTE')
-        var nomeVar = nome.value;
-        var emailVar = email.value;
-        var senhaVar = senha.value;
-
-        if (nomeVar == "" && emailVar == "" && senhaVar == "") {
-            alert('Por favor, preencha algum campo para prosseguir!')
-
-            return false;
-        }
-        else {
-        }
-
-        // Enviando o valor da nova input
-        fetch("/usuarios/salvar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                // crie um atributo que recebe o valor recuperado aqui
-                // Agora vá para o arquivo routes/usuario.js
-                nomeServer: nomeVar,
-                emailServer: emailVar,
-                senhaServer: senhaVar,
-                idServer: idVar,
-            })
-        }).then(function (resposta) {
-
-            console.log("resposta: ", resposta);
-
-            if (resposta.ok) {
-                // cardErro.style.display = "block";
-
-                alert ("Informmações atualizadas com sucesso!")
-
-                setTimeout(() => {
-                    window.location = "login.html";
-                }, "2000")
-                
-                limparFormulario();
-                finalizarAguardar();
-            } else {
-                throw ("Houve um erro ao tentar realizar a atualização!");
-            }
-        }).catch(function (resposta) {
-            console.log(`#ERRO: ${resposta}`);
-            finalizarAguardar();
-        });
-
-        return false;
-    }
-
-    // function sumirMensagem() {
-    //     cardErro.style.display = "none"
-    // }
-
-</SCript>
