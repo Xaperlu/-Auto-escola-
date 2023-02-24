@@ -56,58 +56,55 @@
             <div class="listadecampos">
 
               <div class="campo">
-                <div class="noeditsinfo">
+                <div class="noeditsinfo" id="noeditsinfo1">
                   <P class="title">Nome:</P>
                   <p>undefined</p>
                 </div>
 
-                <div class="editarinfo">
+                <div class="editarinfo" id="editarinfo1">
                   <label class="title"  for="">Nome:</label>
-                  <input type="text" name="" id="">
+                  <input type="text" name="" id="Nome">
                 </div>
 
               </div>
 
               <div class="campo">
-                <div class="noeditsinfo">
+                <div class="noeditsinfo" id="noeditsinfo2">
                   <P class="title">Email:</P>
                   <p>undefined</p>
                 </div>
 
-                <div class="editarinfo">
+                <div class="editarinfo" id="editarinfo2">
                   <label class="title"  for="">Email:</label>
-                  <input type="text" name="" id="">
+                  <input type="text" name="" id="Email">
                 </div>
               </div>
 
               <div class="campo">
-                <div class="noeditsinfo">
+                <div class="noeditsinfo" id="noeditsinfo3">
                   <P class="title">CNPJ:</P>
                   <p>undefined</p>
                 </div>
 
-                <div class="editarinfo">
+                <div class="editarinfo" id="editarinfo3">
                   <label class="title"  for="">CNPJ:</label>
-                  <input type="text" name="" id="">
+                  <input type="text" name="" id="CNPJ">
                 </div>
               </div>
 
               <div class="campo">
-                <div class="noeditsinfo">
+                <div class="noeditsinfo" id="noeditsinfo4">
                   <P class="title">CEP:</P>
                   <p>undefined</p>
                 </div>
 
-                <div class="editarinfo">
+                <div class="editarinfo" id="editarinfo4">
                   <label class="title" for="">CEP</label>
-                  <input type="text" name="" id="">
+                  <input type="text" name="" id="CEP">
                 </div>
               </div>
 
             </div>
-
-
-
 
 
           </div>
@@ -116,11 +113,11 @@
         </div>
 
         <div class="campobotoes">
-          <button onclick="editar()">Editar <img src="asset/create-outline.svg" alt=""> </button>
+          <button id="btn" onclick="editar()">Editar <img src="asset/create-outline.svg" alt=""> </button>
 
           <div>
             <img src="asset/arrow-forward-outline.svg" alt="">
-            <button>Salvar</button>
+            <button onclick="salvar()">Salvar</button>
           </div>
           
         </div>
@@ -141,3 +138,19 @@
 </body>
 
 </html>
+<script>
+
+  function editar(){
+    let nodisp = document.getElementById('noeditsinfo1').style.display = "none";
+    let nodisp2 = document.getElementById('noeditsinfo2').style.display = "none";
+    let nodisp3 = document.getElementById('noeditsinfo3').style.display = "none";
+    let nodisp4 = document.getElementById('noeditsinfo4').style.display = "none";
+    
+    let disp1 = document.getElementById('editarinfo1').style.display = "block";
+    let disp2 = document.getElementById('editarinfo2').style.display = "block";
+    let disp3 = document.getElementById('editarinfo3').style.display = "block";
+    let disp4 = document.getElementById('editarinfo4').style.display = "block";
+  }
+
+
+</script>

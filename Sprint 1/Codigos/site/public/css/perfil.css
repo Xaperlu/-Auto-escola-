@@ -194,7 +194,7 @@ body {
 }
 
 .campo .noeditsinfo {
-    
+    display: block;
     display: flex;
     align-items: end;
 
