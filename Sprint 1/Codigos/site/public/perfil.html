@@ -16,12 +16,12 @@
     <div class="blocoperfil">
       <h1>AutoTech</h1>
       <img src="asset/user.png" alt="">
-      <h2>Olá,<strong>undefined</strong>!</h2>
+      <h2>Olá, <strong id="userLogado">undefined</strong>!</h2>
 
     </div>
 
     <ul class="guias">
-      <li><a href="#"> <img src="asset/graf.png" alt=""> Dashboard</a></li>
+      <li><a href="dashboard.html"> <img src="asset/graf.png" alt=""> Dashboard</a></li>
       <li><a href="index.html">Sair</a></li>
 
     </ul>
@@ -58,7 +58,7 @@
               <div class="campo">
                 <div class="noeditsinfo" id="noeditsinfo1">
                   <P class="title">Nome:</P>
-                  <p>undefined</p>
+                  <p id="nomeUsuario">undefined</p>
                 </div>
 
                 <div class="editarinfo" id="editarinfo1">
@@ -71,7 +71,7 @@
               <div class="campo">
                 <div class="noeditsinfo" id="noeditsinfo2">
                   <P class="title">Email:</P>
-                  <p>undefined</p>
+                  <p id="emailUsuario">undefined</p>
                 </div>
 
                 <div class="editarinfo" id="editarinfo2">
@@ -83,7 +83,7 @@
               <div class="campo">
                 <div class="noeditsinfo" id="noeditsinfo3">
                   <P class="title">CNPJ:</P>
-                  <p>undefined</p>
+                  <p id="cnpjUsuario">undefined</p>
                 </div>
 
                 <div class="editarinfo" id="editarinfo3">
@@ -140,6 +140,11 @@
 </html>
 <script>
 
+  userLogado.innerHTML = sessionStorage.getItem('NOME_USUARIO')
+  nomeUsuario.innerHTML = sessionStorage.getItem('NOME_USUARIO')
+  emailUsuario.innerHTML = sessionStorage.getItem('EMAIL_USUARIO')
+  cnpjUsuario.innerHTML = sessionStorage.getItem('CNPJ_USUARIO')
+
   function editar(){
     let nodisp = document.getElementById('noeditsinfo1').style.display = "none";
     let nodisp2 = document.getElementById('noeditsinfo2').style.display = "none";
@@ -151,6 +156,8 @@
     let disp3 = document.getElementById('editarinfo3').style.display = "block";
     let disp4 = document.getElementById('editarinfo4').style.display = "block";
   }
+
+
 
 
 </script>
