@@ -50,11 +50,11 @@
         <div id="box01" class="box">
             <h2>Credenciais de Login!</h2>
                 <div class="campoDigitacao">
-                    <label for="inemail">E-mail</label>
+                    <label for="in_email">E-mail</label>
                     <input class="ipt" id="in_email" type="text" placeholder="Email@email.com">
                 </div>
                 <div class="campoDigitacao2">
-                    <label for="insenha">Senha</label>
+                    <label for="in_senha">Senha</label>
                     <input class="ipt" id="in_senha" type="password" placeholder="********">
                 </div>
                 <div class="senha">
@@ -82,21 +82,13 @@
 
 
     function entrar() {
+        const email = in_email.value;
+        const senha = in_senha.value;
 
-        var emailVar = in_email.value;
-        var senhaVar = in_senha.value;
-
-        if (emailVar == "" || senhaVar == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+        if (email == "" || senha == "") {
+            alert('Preencha os campos corretamente!')
             return false;
         }
-        else {
-            setInterval(sumirMensagem, 5000)
-        }
-
-        console.log("FORM LOGIN: ", emailVar);
-        console.log("FORM SENHA: ", senhaVar);
 
         fetch("/usuarios/autenticar", {
             method: "POST",
@@ -104,27 +96,20 @@
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                emailServer: emailVar,
-                senhaServer: senhaVar
+                email,
+                senha
             })
         }).then(function (resposta) {
-            console.log("ESTOU NO THEN DO entrar()!")
-
             if (resposta.ok) {
-                console.log(resposta);
-
                 resposta.json().then(json => {
-                    console.log(json);
                     console.log(JSON.stringify(json));
 
-                    sessionStorage.EMAIL_USUARIO = json.email;
-                    sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.id;
+                    sessionStorage.EMAIL_USUARIO = json[0].email;
+                    sessionStorage.NOME_USUARIO = json[0].nome;
+                    sessionStorage.CNPJ_USUARIO = json[0].cnpj;
+                    sessionStorage.ID_USUARIO = json[0].idCliente;
 
-                    setTimeout(function () {
-                        window.location = "./dashboard/cards.html";
-                    }, 1000); // apenas para exibir o loading
-
+                    window.location = "./perfil.html";
                 });
 
             } else {
@@ -142,10 +127,4 @@
 
         return false;
     }
-
-    function sumirMensagem() {
-        cardErro.style.display = "none"
-    }
-
-
 </script>

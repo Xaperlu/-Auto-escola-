@@ -47,11 +47,11 @@
         </div>
 
         <div id="box01" class="box">
-            <div class="step">
+            <!-- <div class="step">
                 <div class="fase atual"></div>
                 <div class="fase"></div>
                 <div class="fase"></div>
-            </div>
+            </div> -->
             <h2>Precisamos de algumas informações suas!</h2>
             <div class="campoDigitacao">
                 <label for="inNome">Razão Social</label>
@@ -59,7 +59,11 @@
             </div>
             <div class="campoDigitacao">
                 <label for="inCnpj">CNPJ</label>
-                <input class="ipt" id="inCnpj" type="text" placeholder="99.999.999/0001.99" onkeyup="MascaraCnpj()">
+                <input class="ipt" maxlength="18" id="inCnpj" type="text" placeholder="99.999.999/0001.99" onkeyup="MascaraCnpj()">
+            </div>
+            <div class="campoDigitacao">
+                <label for="inEmail">E-mail</label>
+                <input class="ipt" id="inEmail" type="text" placeholder="empresa@outlook.com">
             </div>
             <div class="divSenhas">
                 <div class="campoDigitacao">
@@ -93,11 +97,11 @@
                     </div>
                 </div>
             </div>
-            <button onclick="AvancarPasso(2)" class="btNext">Próximo passo</button>
+            <button onclick="cadastrar()" class="btNext">Próximo passo</button>
         </div>
 
 
-        <div id="box02"  class="box">
+        <!-- <div id="box02"  class="box">
             <div class="step">
                 <div class="fase"></div>
                 <div class="fase atual"></div>
@@ -146,7 +150,7 @@
             </div>
             <button onclick="AvancarPasso(4)" class="btNext">Cadastrar</button>
             <button onclick="AvancarPasso(2)" class="btNext">Voltar passo</button>
-        </div>
+        </div> -->
     </div>
     
     <script src="./js/cadastro.js"></script>
@@ -236,6 +240,43 @@ function SenhaForte(){
                 }else{
                     alert("Preencha os campos corretamente")
                 }
+        }
+
+    }
+
+    function cadastrar(){
+        const nome = inNome.value;
+        const cnpj = inCnpj.value;
+        const email = inEmail.value;
+        const senha = inSenha.value;
+        const confirmacaoSenha = inConfirmacaoSenha.value;
+        const validacaoSenha = senha.match(/[0-9]/) && senha.match(/[A-Z]/) && senha.match(/[!\@\#\$\%\&\*]/) && senha.length >= 6
+
+        if(nome == '' || cnpj.length != 18 || !email.match(/[@]/) || !validacaoSenha || confirmacaoSenha != senha){
+            alert("Preencha os campos corretamente!")
+            return false
+        }else{
+            fetch("/usuarios/cadastrar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    nome,
+                    cnpj,
+                    email,
+                    senha
+                })
+            }).then(function(resposta){
+                if(resposta.ok){
+                    alert("Cadastrado com sucesso!")
+                    window.location = "./login.html"
+                }else{
+                    alert("Cadastro falhou!")
+                }
+            }).catch(function(resposta){
+                console.log(`#ERRO: ${resposta}`)
+            })
         }
 
     }

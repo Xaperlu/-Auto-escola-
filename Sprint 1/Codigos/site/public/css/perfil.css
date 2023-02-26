@@ -8,14 +8,12 @@
 }
 
 body {
-    background-image: -webkit-linear-gradient(left, #26e3c2, #45a0f5);
+    /* background-image: -webkit-linear-gradient(left, #26e3c2, #45a0f5); */
+    background-color: #1d2027;
     height: 100vh;
     width: 100vw;
     display: flex;
     align-items: center;
-
-
-
 }
 
 
