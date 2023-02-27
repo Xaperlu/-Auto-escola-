@@ -1,4 +1,11 @@
 
+userLogado.innerHTML = sessionStorage.getItem('NOME_USUARIO')
+nomeUsuario.innerHTML = sessionStorage.getItem('NOME_USUARIO')
+emailUsuario.innerHTML = sessionStorage.getItem('EMAIL_USUARIO')
+cnpjUsuario.innerHTML = sessionStorage.getItem('CNPJ_USUARIO')
+
+
+
 function editar() {
 
     let nodisp = document.getElementById('noeditsinfo1').style.display = "none";
@@ -16,7 +23,7 @@ function editar() {
     let setaproximo = document.querySelector(".campobotoes div img").style.display = "none"
     let botaosalvar = document.querySelector(".campobotoes div button").style.display = "flex"
 
-    
+
 
     //colocar os dados do usuario no input
 
