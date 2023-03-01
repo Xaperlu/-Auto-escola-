@@ -22,6 +22,7 @@
 
     <ul class="guias">
       <li><a href="dashboard.html"> <img src="asset/graf.png" alt=""> Dashboard</a></li>
+      <li><p>minhas informações</p></li>
       <li><a href="index.html">Sair</a></li>
 
     </ul>
@@ -140,5 +141,28 @@
 <script src="./js/perfil.js"></script>
 
 </html>
+
+<script>
+
+  window.addEventListener("scroll", (event) => {
+      let scrollY = this.scrollY;
+
+      console.log(scrollY);
+
+      if (scrollY > 0.7) {
+          document.querySelector("header").style.backgroundColor = "rgb(15, 15, 15, 0.120)";
+          document.querySelector("header").style.backdropfilter = "blur(10px)";
+          document.querySelector("header").style.top = "-80px";
+      } else {
+          document.querySelector("header").style.backgroundColor = "transparent";
+          document.querySelector("header").style.filter = "blur(0px)";
+          document.querySelector("header").style.top = "0px";
+      }
+
+
+  });
+
+
+</script>
 
 

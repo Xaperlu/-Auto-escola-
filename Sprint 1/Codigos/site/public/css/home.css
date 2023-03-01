@@ -13,7 +13,7 @@ body {
     width: 100vw;
     overflow-x: hidden;
     height: 1950px;
-    background-color: #0f0f0f;
+    background-color: rgb(15, 15, 15);
     position: absolute;
 }
 
@@ -39,7 +39,8 @@ header {
     justify-content: space-between;
     padding: 0% 3% 0px 8%;
     position: fixed;
-    z-index: 2;
+    z-index: 1;
+    transition: all 0.2s 0s linear;
 }
 
 header img {

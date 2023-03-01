@@ -38,7 +38,7 @@
     <main>
 
         <div class="container1">
-            
+
             <div class="bloco1">
                 <h2>AutoTech seu sistema <span>mais rápido</span> </h2>
                 <p>Atuamos fazendo o monitoramento de máquinas
@@ -68,7 +68,8 @@
                     <ion-icon name="people-outline"></ion-icon>
                 </div>
                 <h3>Collaboration</h3>
-                <p>Acreditamos que cada colaborador oferece algo único para a AutoTech e celebramos essas diferenças. Quando combinamos nossa diversidade o resultado se traduz em excelente performance.</p>
+                <p>Acreditamos que cada colaborador oferece algo único para a AutoTech e celebramos essas diferenças.
+                    Quando combinamos nossa diversidade o resultado se traduz em excelente performance.</p>
             </div>
 
             <div class="circuloborrado2"></div>
@@ -96,14 +97,14 @@
 
 
         <div class="container3">
-            
+
             <div class="bloco3">
                 <h1><span>Sobre nós</span></h1>
-                <p>Somos mais que uma empresa, somos uma família. Com sede <br> de 
+                <p>Somos mais que uma empresa, somos uma família. Com sede <br> de
                     mudar o mundo, deixando-o mais rápido e eficaz, através da <br>
                     tecnologia. Com a ambição de deixar sua máquina mais potente <br>
                     atraindo clientes e aumentando receita.
-                     </p>
+                </p>
             </div>
 
         </div>
@@ -192,4 +193,19 @@
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-<script src="./js/index.js"></script>
+<script>
+    window.addEventListener("scroll", (event) => {
+    let scrollY = this.scrollY;
+    let scrollX = this.scrollX;
+
+    console.log(scrollY);
+    
+    if(scrollY > 0.7){
+        document.querySelector("header").style.backgroundColor = "black";
+    }else{
+        document.querySelector("header").style.backgroundColor = "transparent";
+    }
+
+});
+</script>
+

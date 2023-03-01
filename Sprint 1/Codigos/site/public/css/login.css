@@ -34,6 +34,8 @@ header {
     padding: 0% 3% 0px 8%;
     position: fixed;
     z-index: 2;
+    transition: all 0.2s 0s linear;
+
 }
 
 header img {

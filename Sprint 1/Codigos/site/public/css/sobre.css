@@ -13,7 +13,7 @@ body {
     flex-direction: column;
     width: 100vw;
     overflow-x: hidden;
-    height: 1950px;
+    
     background-color: #0f0f0f;
     position: absolute;
 
@@ -41,6 +41,8 @@ header {
     justify-content: space-between;
     padding: 0% 3% 0px 8%;
     position: fixed;
+    transition: all 0.2s 0s linear;
+
 }
 
 header img {
@@ -427,3 +429,4 @@ footer .container4 .infofooter .boxinfo ul li ion-icon {
 
 
 }
+

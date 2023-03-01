@@ -6,6 +6,30 @@ cnpjUsuario.innerHTML = sessionStorage.getItem('CNPJ_USUARIO')
 
 
 
+
+
+window.addEventListener("scroll", (event) => {
+    let scrollY = this.scrollY;
+
+    console.log(scrollY);
+
+    if (scrollY > 0.7) {
+        document.querySelector("header").style.backgroundColor = "rgb(15, 15, 15, 0.120)";
+        document.querySelector("header").style.backdropfilter = "blur(10px)";
+        document.querySelector("header").style.top = "-80px";
+    } else {
+        document.querySelector("header").style.backgroundColor = "transparent";
+        document.querySelector("header").style.filter = "blur(0px)";
+        document.querySelector("header").style.top = "0px";
+    }
+
+
+});
+
+
+
+
+
 function editar() {
 
     let nodisp = document.getElementById('noeditsinfo1').style.display = "none";
