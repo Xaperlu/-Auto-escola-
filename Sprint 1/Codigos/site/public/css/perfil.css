@@ -27,6 +27,53 @@ body {
     align-items: center;
 }
 
+.botoes {
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0% 3% 0px 8%;
+    z-index: 2;
+    position: absolute;
+}
+
+.cima {
+    margin-top: -500px;
+    margin-left: 10px;
+    background-color: #26e3c2;
+    border-radius: 10%;
+    height: 15vh;
+    width: 20vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cima2 {
+    margin-top: -500px;
+    margin-left: 10px;
+    background-color: #26e3c2;
+    border-radius: 10%;
+    height: 15vh;
+    width: 20vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cima3 {
+    margin-top: -500px;
+    margin-left: 10px;
+    background-color: #26e3c2;
+    border-radius: 10%;
+    height: 15vh;
+    width: 20vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .blocoperfil {
 
     width: 100%;
@@ -92,6 +139,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 
 }
 
