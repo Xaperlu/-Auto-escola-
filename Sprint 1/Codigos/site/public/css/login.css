@@ -209,6 +209,8 @@ header div a {
     outline: none;
     font-size: 1.2rem;
     font-weight: bold;
+    background-image: -webkit-linear-gradient(75deg, #26e3c2, #45a0f5);
+    cursor: pointer;
 }
 
 
