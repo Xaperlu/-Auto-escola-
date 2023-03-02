@@ -7,25 +7,65 @@ cnpjUsuario.innerHTML = sessionStorage.getItem('CNPJ_USUARIO')
 
 
 
+document.querySelector("#addunidades").addEventListener("click", () => {
+    console.log("teque")
+    
+var teladecadastrounidade = document.querySelector("#janelacadastrounidade");
+var ioniconsbotaounidade = document.querySelector(".fecharjanelaunidade");
 
-window.addEventListener("scroll", (event) => {
-    let scrollY = this.scrollY;
-
-    console.log(scrollY);
-
-    if (scrollY > 0.7) {
-        document.querySelector("header").style.backgroundColor = "rgb(15, 15, 15, 0.120)";
-        document.querySelector("header").style.backdropfilter = "blur(10px)";
-        document.querySelector("header").style.top = "-80px";
+    if (teladecadastrounidade.style.display == "flex" ) {        //abrir janela de unidade
+        teladecadastrounidade.style.height = "0%" ; 
+        teladecadastrounidade.style.display = "none"
+        console.log("none")
     } else {
-        document.querySelector("header").style.backgroundColor = "transparent";
-        document.querySelector("header").style.filter = "blur(0px)";
-        document.querySelector("header").style.top = "0px";
+        teladecadastrounidade.style.display = "flex" ;  
+        teladecadastrounidade.style.height = "100%" ; 
+       
+        console.log("flex")
     }
 
 
 });
 
+document.querySelector("#fecharjanelaunidade").addEventListener("click", () => {
+    
+    
+var teladecadastrounidade = document.querySelector("#janelacadastrounidade").style.display = "none"   //fechar janela de unidade
+
+         
+});
+
+
+
+
+
+
+
+document.querySelector("#addhardware").addEventListener("click", () => {
+    console.log("teque")
+    
+var teladecadastrohardware = document.querySelector("#janelacadastrohardware");
+
+    if (teladecadastrohardware.style.display == "flex" ) {        //abrir janela de cadastro de hardware
+        teladecadastrohardware.style.display = "none"
+        console.log("none")
+    } else {
+        teladecadastrohardware.style.display = "flex" ;  
+        console.log("flex")
+    }
+
+
+});
+
+
+
+document.querySelector("#fecharjanelahardware").addEventListener("click", () => {
+    
+    
+    var teladecadastrounidade = document.querySelector("#janelacadastrohardware").style.display = "none"   //fechar janela de hardware
+    
+             
+    }); 
 
 
 

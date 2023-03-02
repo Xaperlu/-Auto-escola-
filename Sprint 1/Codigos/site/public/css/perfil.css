@@ -27,52 +27,6 @@ body {
     align-items: center;
 }
 
-.botoes {
-    height: 80px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0% 3% 0px 8%;
-    z-index: 2;
-    position: absolute;
-}
-
-.cima {
-    margin-top: -500px;
-    margin-left: 10px;
-    background-color: #26e3c2;
-    border-radius: 10%;
-    height: 15vh;
-    width: 20vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.cima2 {
-    margin-top: -500px;
-    margin-left: 10px;
-    background-color: #26e3c2;
-    border-radius: 10%;
-    height: 15vh;
-    width: 20vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.cima3 {
-    margin-top: -500px;
-    margin-left: 10px;
-    background-color: #26e3c2;
-    border-radius: 10%;
-    height: 15vh;
-    width: 20vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
 .blocoperfil {
 
@@ -137,11 +91,54 @@ body {
     height: 100vh;
     width: 80vw;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     position: relative;
 
 }
+
+.botoes {
+    height: 80px;
+    width: 55vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: transparent;
+    position: absolute;
+    top: 3%;
+    
+    
+    
+}
+
+.cima {
+    
+    background-color: #cecfcf;
+    border-radius: 10px;
+    height: 70%;
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding-left: 60px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.cima ion-icon {
+    
+    font-size: 40px;
+    position: absolute;
+    left: 0px;
+    background-color: #bebebe;
+    padding: 10px;
+}
+
+
+
 
 
 .card {
@@ -153,6 +150,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 
 .detalheboll {
@@ -183,6 +181,7 @@ body {
 .cardfilho {
     height: 90%;
     width: 100%;
+    position: relative;
 }
 
 
@@ -192,6 +191,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    background-color: transparent;
+    position: relative;
 }
 
 .infos {
@@ -208,12 +209,12 @@ body {
     font-size: 26px;
 }
 
-.editarinfo{
+.editarinfo {
     display: none;
     align-items: end;
 }
 
-.editarinfo input{
+.editarinfo input {
     height: 20px;
     margin-left: 10px;
     background-color: rgba(128, 128, 128, 0.133);
@@ -225,7 +226,7 @@ body {
 }
 
 
-.listadecampos{
+.listadecampos {
     background-color: transparent;
     width: 100%;
     height: 70%;
@@ -235,18 +236,18 @@ body {
     justify-content: space-around;
 }
 
-.campo{
+.campo {
     background-color: transparent;
 }
 
 .campo .noeditsinfo {
-    
+
     display: flex;
     align-items: end;
 
 }
 
-.campo div .title{
+.campo div .title {
     background-clip: text;
     -webkit-background-clip: text;
     background-image: -webkit-linear-gradient(left, #26e3c2, #45a0f5);
@@ -259,7 +260,7 @@ body {
 
 }
 
-.campo div p{
+.campo div p {
     color: rgb(111, 111, 111);
     margin-left: 10px;
 }
@@ -281,6 +282,61 @@ body {
 .areadasinfos img {
     height: 60%;
 }
+
+
+
+
+.outroscadastros{
+    height: 100%;
+    width: 100%;
+    display: none;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #cecfcf;
+    position: absolute;
+    top: 0px;
+    transition: all 2s 0s linear;
+}
+
+.botaoexit{
+    font-size: 40px;
+    transform: rotate(45deg);
+    background-color: rgb(193, 193, 193);
+    border-radius: 50%;
+    position: absolute;
+    top: 2%;
+    right: 1%;
+    cursor: pointer;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -313,7 +369,7 @@ body {
 }
 
 
-.campobotoes div  {
+.campobotoes div {
     background-color: red;
     width: 20%;
     position: relative;
@@ -344,7 +400,7 @@ body {
     width: 50px;
     cursor: pointer;
     position: absolute;
-    background-image: -webkit-linear-gradient(45deg,  #45a0f5e3, #45a0f5);
+    background-image: -webkit-linear-gradient(45deg, #45a0f5e3, #45a0f5);
     padding: 0px 10px;
     border-radius: 10px;
 
@@ -354,7 +410,16 @@ body {
     height: 20px;
     width: 20px;
     position: relative;
-   
+
 
 }
 
+
+
+
+
+@keyframes retate {
+    to{
+        transform: rotate(360deg);
+    }
+}

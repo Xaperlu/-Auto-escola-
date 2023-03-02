@@ -22,36 +22,29 @@
 
     <ul class="guias">
       <li><a href="dashboard.html"> <img src="asset/graf.png" alt=""> Dashboard</a></li>
-      <li><p>minhas informações</p></li>
+      <li>
+        <p>minhas informações</p>
+      </li>
       <li><a href="index.html">Sair</a></li>
 
     </ul>
 
   </div>
 
-  <div class="botoes">
-    
-    <div class="cima">
-      <h3>Campo 1</h3>
-      <br>
-      <button>botao</button>
-    </div>
   
-    <div class="cima2">
-      <h3>campo2</h3>
-      <br>
-    <button>botao</button>  
-    </div>
-  
-    <div class="cima3">
-      <h3>campo3</h3>
-      <br>
-    <button>botao</button>
-    </div>
-    
-  </div>
 
   <div class="janelainfo">
+
+    <div class="botoes">
+
+    
+        
+        <button id="addunidades" class="cima"><ion-icon name="add-outline"></ion-icon> Unidades</button>
+
+        <button id="addhardware" class="cima"><ion-icon name="add-outline"></ion-icon> hardware</button>
+
+  
+    </div>
 
 
     <div class="card">
@@ -81,7 +74,7 @@
                 </div>
 
                 <div class="editarinfo" id="editarinfo1">
-                  <label class="title"  for="">Nome:</label>
+                  <label class="title" for="">Nome:</label>
                   <input type="text" name="" id="Nome">
                 </div>
 
@@ -94,7 +87,7 @@
                 </div>
 
                 <div class="editarinfo" id="editarinfo2">
-                  <label class="title"  for="">Email:</label>
+                  <label class="title" for="">Email:</label>
                   <input type="text" name="" id="Email">
                 </div>
               </div>
@@ -106,7 +99,7 @@
                 </div>
 
                 <div class="editarinfo" id="editarinfo3">
-                  <label class="title"  for="">CNPJ:</label>
+                  <label class="title" for="">CNPJ:</label>
                   <input type="text" name="" id="CNPJ">
                 </div>
               </div>
@@ -131,6 +124,8 @@
 
         </div>
 
+        
+
         <div class="campobotoes">
           <button id="btn" onclick="editar()">Editar <img src="asset/create-outline.svg" alt=""> </button>
 
@@ -138,8 +133,19 @@
             <img src="asset/arrow-forward-outline.svg" alt="">
             <button onclick="salvar()">Salvar</button>
           </div>
-          
+
         </div>
+
+      </div>
+
+
+
+      <div id="janelacadastrounidade" class="outroscadastros">
+        <ion-icon id="fecharjanelaunidade" class="botaoexit" name="add-outline"></ion-icon>
+      </div>
+
+      <div id="janelacadastrohardware" class="outroscadastros">
+        <ion-icon id="fecharjanelahardware" class="botaoexit" name="add-outline"></ion-icon>
 
       </div>
 
@@ -156,31 +162,13 @@
 
 </body>
 
-<script src="./js/perfil.js"></script>
+
 
 </html>
 
-<script>
+<script src="./js/perfil.js"></script>
 
-  window.addEventListener("scroll", (event) => {
-      let scrollY = this.scrollY;
-
-      console.log(scrollY);
-
-      if (scrollY > 0.7) {
-          document.querySelector("header").style.backgroundColor = "rgb(15, 15, 15, 0.120)";
-          document.querySelector("header").style.backdropfilter = "blur(10px)";
-          document.querySelector("header").style.top = "-80px";
-      } else {
-          document.querySelector("header").style.backgroundColor = "transparent";
-          document.querySelector("header").style.filter = "blur(0px)";
-          document.querySelector("header").style.top = "0px";
-      }
-
-
-  });
-
-
-</script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 
