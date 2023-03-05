@@ -22,9 +22,8 @@
 
     <ul class="guias">
       <li><a href="dashboard.html"> <img src="asset/graf.png" alt=""> Dashboard</a></li>
-      <li>
-        <p>minhas informações</p>
-      </li>
+      
+        
       <li><a href="index.html">Sair</a></li>
 
     </ul>
@@ -81,6 +80,18 @@
               </div>
 
               <div class="campo">
+                <div class="noeditsinfo" id="noeditsinfo3">
+                  <P class="title">CNPJ:</P>
+                  <p id="cnpjUsuario">undefined</p>
+                </div>
+
+                <div class="editarinfo" id="editarinfo3">
+                  <label class="title" for="">CNPJ:</label>
+                  <input type="number" name="" id="CNPJ">
+                </div>
+              </div>
+
+              <div class="campo">
                 <div class="noeditsinfo" id="noeditsinfo2">
                   <P class="title">Email:</P>
                   <p id="emailUsuario">undefined</p>
@@ -93,26 +104,14 @@
               </div>
 
               <div class="campo">
-                <div class="noeditsinfo" id="noeditsinfo3">
-                  <P class="title">CNPJ:</P>
-                  <p id="cnpjUsuario">undefined</p>
-                </div>
-
-                <div class="editarinfo" id="editarinfo3">
-                  <label class="title" for="">CNPJ:</label>
-                  <input type="text" name="" id="CNPJ">
-                </div>
-              </div>
-
-              <div class="campo">
                 <div class="noeditsinfo" id="noeditsinfo4">
-                  <P class="title">CEP:</P>
+                  <P class="title">Senha:</P>
                   <p>undefined</p>
                 </div>
 
                 <div class="editarinfo" id="editarinfo4">
-                  <label class="title" for="">CEP</label>
-                  <input type="text" name="" id="CEP">
+                  <label class="title" for="">Senha</label>
+                  <input type="text" name="" id="Senha">
                 </div>
               </div>
 
@@ -142,10 +141,78 @@
 
       <div id="janelacadastrounidade" class="outroscadastros">
         <ion-icon id="fecharjanelaunidade" class="botaoexit" name="add-outline"></ion-icon>
+
+        <DIV class="containerdentrocadastrarunidade">
+          <h1 id="agaumm">Cadastrar unidade</h1>
+
+          <div class="dadoscadastrounidade">
+            <input id="" class="inpcadastrarunidade" type="text" placeholder="Nome da unidade">   
+            <input id="" class="inpcadastrarunidade" type="number" placeholder="Telefone">  
+            <input id="" class="inpcadastrarunidade" type="number" placeholder="Cep">  
+            <input id="" class="inpcadastrarunidade" type="text" placeholder="Logradouro">  
+            <input id="" class="inpcadastrarunidade" type="text" placeholder="Bairro">  
+            <input id="" class="inpcadastrarunidade" type="number" placeholder="Numero">  
+            <button id="btncriarunidade" onclick="cadastrarunidade()">Criar</button>
+
+
+            <ul id="listadeunidadeparaupdate">
+
+            </ul>
+
+            <button id="btnupdateunidade" onclick="">Update</button>
+          </div>
+
+
+
+          <button class="editarunidhard" onclick="abrirteladeescolhaunidade()">Editar <img src="asset/create-outline.svg" alt=""> </button>
+
+        </DIV>
+
+        
+
+
       </div>
 
       <div id="janelacadastrohardware" class="outroscadastros">
         <ion-icon id="fecharjanelahardware" class="botaoexit" name="add-outline"></ion-icon>
+
+        <DIV class="containerdentrocadastrarunidade">
+          <h1 id="agaum">Cadastrar hardware</h1>
+
+          <div class="dadoscadastrounidade">
+            <input id="nserie" class="inpcadastrarunidade" type="text" placeholder="Numero de série">   
+            <input id="" class="inpcadastrarunidade" type="text" placeholder="Processador">  
+
+            <select name="" id="">
+              <option value="">HD</option>
+              <option value="">SSD</option>
+            </select> 
+
+            <input id="" class="inpcadastrarunidade" type="number" placeholder="Quantidade de armazenamento">  
+            <input id="" class="inpcadastrarunidade" type="text" placeholder="Quantidade de memoria ram">  
+            
+            <select name="" id="">
+              <option value="">Nenhuma</option>
+            </select> 
+
+            <button id="btncriarhardware" onclick="cadastrarhardware()">Criar</button>
+
+
+
+
+            <ul id="listadehaerwareparaupdate">
+
+            </ul>
+
+            <button id="btnupdatehardware" onclick="updatehardware()">Update</button>
+          </div>
+
+
+
+          <button class="editarunidhard" onclick="abrirteladeescolhahardware()">Editar <img src="asset/create-outline.svg" alt=""> </button>
+
+
+        </DIV>
 
       </div>
 

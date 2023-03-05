@@ -9,18 +9,20 @@ cnpjUsuario.innerHTML = sessionStorage.getItem('CNPJ_USUARIO')
 
 document.querySelector("#addunidades").addEventListener("click", () => {
     console.log("teque")
-    
-var teladecadastrounidade = document.querySelector("#janelacadastrounidade");
-var ioniconsbotaounidade = document.querySelector(".fecharjanelaunidade");
 
-    if (teladecadastrounidade.style.display == "flex" ) {        //abrir janela de unidade
-        teladecadastrounidade.style.height = "0%" ; 
+    var teladecadastrounidade = document.querySelector("#janelacadastrounidade");
+    var ioniconsbotaounidade = document.querySelector(".fecharjanelaunidade");
+
+    if (teladecadastrounidade.style.display == "flex") {        //abrir janela de unidade
         teladecadastrounidade.style.display = "none"
+
         console.log("none")
     } else {
-        teladecadastrounidade.style.display = "flex" ;  
-        teladecadastrounidade.style.height = "100%" ; 
-       
+        var teladecadastrohardware = document.querySelector("#janelacadastrohardware").style.display = "none"
+        teladecadastrounidade.style.display = "flex";
+        var botaodeadicionarunidade = document.querySelector("#addunidades").style.display = "none";
+        var botaodeadicionarhardware = document.querySelector("#addhardware").style.display = "none";
+
         console.log("flex")
     }
 
@@ -28,11 +30,17 @@ var ioniconsbotaounidade = document.querySelector(".fecharjanelaunidade");
 });
 
 document.querySelector("#fecharjanelaunidade").addEventListener("click", () => {
-    
-    
-var teladecadastrounidade = document.querySelector("#janelacadastrounidade").style.display = "none"   //fechar janela de unidade
 
-         
+
+    var teladecadastrounidade = document.querySelector("#janelacadastrounidade").style.display = "none"   //fechar janela de unidade => o "X" da tela 
+    var botaodeadicionarunidade = document.querySelector("#addunidades").style.display = "flex";
+    var botaodeadicionarhardware = document.querySelector("#addhardware").style.display = "flex";
+
+    var teladeescolha = document.querySelector("#listadeunidadeparaupdate").style.display = "none";
+    var h1 = document.querySelector("#agaumm").style.opacity = "1" ;
+    var botaocriar = document.querySelector("#btncriarunidade").style.display = "block";
+
+
 });
 
 
@@ -43,14 +51,18 @@ var teladecadastrounidade = document.querySelector("#janelacadastrounidade").sty
 
 document.querySelector("#addhardware").addEventListener("click", () => {
     console.log("teque")
-    
-var teladecadastrohardware = document.querySelector("#janelacadastrohardware");
 
-    if (teladecadastrohardware.style.display == "flex" ) {        //abrir janela de cadastro de hardware
+    var teladecadastrohardware = document.querySelector("#janelacadastrohardware");
+
+    if (teladecadastrohardware.style.display == "flex") {        //abrir janela de cadastro de hardware
         teladecadastrohardware.style.display = "none"
+
         console.log("none")
     } else {
-        teladecadastrohardware.style.display = "flex" ;  
+        var teladecadastrounidade = document.querySelector("#janelacadastrounidade").style.display = "none"
+        teladecadastrohardware.style.display = "flex";
+        var botaodeadicionarunidade = document.querySelector("#addunidades").style.display = "none";
+        var botaodeadicionarhardware = document.querySelector("#addhardware").style.display = "none";
         console.log("flex")
     }
 
@@ -60,12 +72,20 @@ var teladecadastrohardware = document.querySelector("#janelacadastrohardware");
 
 
 document.querySelector("#fecharjanelahardware").addEventListener("click", () => {
-    
-    
-    var teladecadastrounidade = document.querySelector("#janelacadastrohardware").style.display = "none"   //fechar janela de hardware
-    
-             
-    }); 
+
+
+    var teladecadastrohardware = document.querySelector("#janelacadastrohardware").style.display = "none"   //fechar janela de hardware => o "X" da tela 
+    var botaodeadicionarunidade = document.querySelector("#addunidades").style.display = "flex";
+    var botaodeadicionarhardware = document.querySelector("#addhardware").style.display = "flex";
+
+    var teladeescolha = document.querySelector("#listadehaerwareparaupdate").style.display = "none";
+    var h1 = document.querySelector("#agaum").style.opacity = "1" ;
+    var botaocriar = document.querySelector("#btncriarhardware").style.display = "block";
+
+
+});
+
+
 
 
 
@@ -100,7 +120,7 @@ function salvar() {
 
 
 
-    //aqui tem que fazer update dos dados 
+    //aqui tem que fazer update dos dados da tela normal de usuario
 
 
 
@@ -122,5 +142,80 @@ function salvar() {
     let botaosalvar = document.querySelector(".campobotoes div button").style.display = "none";
 
 
+}
+
+
+
+
+
+function cadastrarunidade() {
+
+
+
+
+    //pegar os dados dos inputs da tela de cadastro de unidade e jogar no banco de dados
+
+
+
+
+
+
+    var telaunidade = document.querySelector("#janelacadastrounidade").style.display = "none";
+    var botaodeadicionarunidade = document.querySelector("#addunidades").style.display = "flex";
+    var botaodeadicionarhardware = document.querySelector("#addhardware").style.display = "flex";
+
+}
+
+function abrirteladeescolhaunidade(){
+    var teladeescolha = document.querySelector("#listadeunidadeparaupdate").style.display = "flex";
+    var h1 = document.querySelector("#agaumm").style.opacity = "0" ;
+    var botaocriar = document.querySelector("#btncriarunidade").style.display = "none";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function cadastrarhardware() {
+
+
+
+
+
+
+    //pegar os dados dos inputs da tela de cadastro de hardware e jogar no banco de dados
+
+
+    
+    var listadehardware = document.querySelector("#listadehaerwareparaupdate");
+    var texto = document.createTextNode(nserie.value);
+    var li = document.createElement("li");
+    var p = document.createElement("p");
+    p.appendChild(texto);
+    li.appendChild(p);
+    listadehardware.appendChild(li);
+
+
+
+    var telahardware = document.querySelector("#janelacadastrohardware").style.display = "none";
+    var botaodeadicionarunidade = document.querySelector("#addunidades").style.display = "flex";
+    var botaodeadicionarhardware = document.querySelector("#addhardware").style.display = "flex";
+
+}
+
+
+function abrirteladeescolhahardware(){
+    var teladeescolha = document.querySelector("#listadehaerwareparaupdate").style.display = "flex";
+    var h1 = document.querySelector("#agaum").style.opacity = "0" ;
+    var botaocriar = document.querySelector("#btncriarhardware").style.display = "none";
 }
 
