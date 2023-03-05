@@ -35,7 +35,7 @@
 
 #box01{
     display: flex;
-    width: 40%;
+    /* width: 40%; */
 }
 
 #box02{
@@ -154,7 +154,8 @@
     }
 
     .formulario .box{
-        width: 90vw;
+        width: 90vw !important;
+        height: 83vh;
         margin: 7vh 0 0 0;
     }
 

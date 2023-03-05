@@ -151,13 +151,13 @@ header div a {
     height: 80vh;
     width: 33vw;
     background-color: transparent;
-    border: solid 1px rgba(160, 160, 160, 0.652);
+    border: solid 1px  #45a0f5;
     border-radius: 20px;
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 10vh -10vw 0 0;
 }
 
@@ -183,7 +183,7 @@ header div a {
 }
 
 .campoDigitacao{
-    margin-top: 100px;
+    margin-top: 80px;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
@@ -191,7 +191,8 @@ header div a {
 }
 
 .ipt{
-    height: 40px;
+    height: 60px;
+    font-size: 22px;
     border: 1px solid grey;
     background-color: transparent;
     color: white;
@@ -211,7 +212,39 @@ header div a {
     font-weight: bold;
     background-image: -webkit-linear-gradient(75deg, #26e3c2, #45a0f5);
     cursor: pointer;
+    
 }
 
+@media only screen and (max-width: 600px){
 
+    .logo{
+        display: none;
+    }
+
+    .formulario{
+        display: flex;
+        
+    }
+
+    .box{
+        width: 90vw !important;
+        height: 83vh;
+        margin: 7vh 0 0 0 !important;
+        display: flex;
+        justify-content: space-around !important;
+    }
+
+    .ipt{
+        height: 70px;
+        font-size: 1.3rem;
+        width: 85vw;
+    }
+
+    .btNext{
+        width: 85vw;
+        height: 8vh;
+        font-size: 1.4rem;
+    }
+
+}
 

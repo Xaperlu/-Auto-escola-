@@ -33,11 +33,7 @@
         </div>
 
         <div id="box01" class="box">
-            <!-- <div class="step">
-                <div class="fase atual"></div>
-                <div class="fase"></div>
-                <div class="fase"></div>
-            </div> -->
+
             <h2>Precisamos de algumas informações suas!</h2>
             <div class="campoDigitacao">
                 <label for="inNome">Razão Social</label>
@@ -86,57 +82,6 @@
             <button onclick="cadastrar()" class="btNext">Próximo passo</button>
         </div>
 
-
-        <!-- <div id="box02"  class="box">
-            <div class="step">
-                <div class="fase"></div>
-                <div class="fase atual"></div>
-                <div class="fase"></div>
-            </div>
-            <h2>Informe seu endereço!</h2>
-            <div class="campoDigitacao">
-                <label for="inCep">CEP</label>
-                <input class="ipt" id="inCep" type="text" placeholder="00000-000" onkeyup="CepMascara()">
-            </div>
-            <div class="campoDigitacao">
-                <label for="inLogradouro">Logradouro</label>
-                <input class="ipt" id="inLogradouro" type="text" placeholder="R. xxxxxx">
-            </div>
-            <div class="campoDigitacao">
-                <label for="inBairro">Bairro</label>
-                <input class="ipt" id="inBairro" type="text" placeholder="xxxxxxxx">
-            </div>
-            <div class="campoDigitacao">
-                <label for="inComplemento">Número e complemento</label>
-                <input class="ipt" id="inComplemento" type="text" placeholder="0000">
-            </div>
-            <button onclick="AvancarPasso(3)" class="btNext">Próximo passo</button>
-            <button onclick="AvancarPasso(1)" class="btNext">Voltar passo</button>
-        </div>
-
-
-        <div id="box03"  class="box">
-            <div class="step">
-                <div class="fase"></div>
-                <div class="fase"></div>
-                <div class="fase atual"></div>
-            </div>
-            <h2>Informe seus contatos!</h2>
-            <div class="campoDigitacao">
-                <label for="inEmail">E-mail</label>
-                <input class="ipt" id="inEmail" type="text" placeholder="empresa@outlook.com">
-            </div>
-            <div class="campoDigitacao">
-                <label for="inCelular">Telefone (celular)</label>
-                <input class="ipt" id="inCelular" type="text" placeholder="99 99999-9999" onkeyup="CelMascara()">
-            </div>
-            <div class="campoDigitacao">
-                <label for="inFixo">Telefone (fixo)</label>
-                <input class="ipt" id="inFixo" type="text" placeholder="99 9999-9999" onkeyup="FixoMascara()">
-            </div>
-            <button onclick="AvancarPasso(4)" class="btNext">Cadastrar</button>
-            <button onclick="AvancarPasso(2)" class="btNext">Voltar passo</button>
-        </div> -->
     </div>
     
     <script src="./js/cadastro.js"></script>
@@ -179,56 +124,7 @@ function SenhaForte(){
 
     }
 
-    function AvancarPasso(id){
-        let box01 = document.querySelector('#box01');
-        let box02 = document.querySelector('#box02');
-        let box03 = document.querySelector('#box03');
-        const nome = inNome.value;
-        const cnpj = inCnpj.value;
-        const senha = inSenha.value;
-        const confirmacao = inConfirmacaoSenha.value;
-        const cep = inCep.value;
-        const logradouro = inLogradouro.value;
-        const bairro = inBairro.value;
-        const complemento = inComplemento.value;
-        const email = inEmail.value;
-        const celular = inCelular.value;
-        const fixo = inFixo.value;
-        const validarSenhaForte = senha.match(/[0-9]/) && senha.match(/[A-Z]/) && senha.match(/[!\@\#\$\%\&\*]/) && senha.length >= 6
-
-        switch(id){
-            case 1:
-                box01.style.display = "flex"
-                box02.style.display = "none"
-                box03.style.display = "none"
-                break;
-            case 2:
-                if(nome != null && cnpj.length == 18 && validarSenhaForte && confirmacao == senha){
-                    box01.style.display = "none"
-                    box02.style.display = "flex"
-                    box03.style.display = "none"
-                }else{
-                    alert("Preencha os campos corretamente")
-                }
-                break;
-            case 3:
-                if(cep.length == 9 && logradouro != null && bairro != null && complemento != null){
-                    box01.style.display = "none"
-                    box02.style.display = "none"
-                    box03.style.display = "flex"
-                }else{
-                    alert("Preencha os campos corretamente")
-                }
-                break;
-            case 4:
-                if(email.match(/[@]/) && celular.length == 13 && fixo.length == 12){
-                    alert("cadastro")
-                }else{
-                    alert("Preencha os campos corretamente")
-                }
-        }
-
-    }
+    
 
     function cadastrar(){
         const nome = inNome.value;
