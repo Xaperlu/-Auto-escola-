@@ -52,6 +52,7 @@ header img {
 
 header h1 {
     color: whitesmoke;
+    text-decoration: none;
 }
 
 header ul {
