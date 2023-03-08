@@ -37,7 +37,7 @@ document.querySelector("#fecharjanelaunidade").addEventListener("click", () => {
     var botaodeadicionarhardware = document.querySelector("#addhardware").style.display = "flex";
 
     var teladeescolha = document.querySelector("#listadeunidadeparaupdate").style.display = "none";
-    var h1 = document.querySelector("#agaumm").style.opacity = "1" ;
+    var h1 = document.querySelector("#agaumm").style.opacity = "1";
     var botaocriar = document.querySelector("#btncriarunidade").style.display = "block";
 
 
@@ -50,20 +50,20 @@ document.querySelector("#fecharjanelaunidade").addEventListener("click", () => {
 
 
 document.querySelector("#addhardware").addEventListener("click", () => {
-    console.log("teque")
+
 
     var teladecadastrohardware = document.querySelector("#janelacadastrohardware");
 
     if (teladecadastrohardware.style.display == "flex") {        //abrir janela de cadastro de hardware
         teladecadastrohardware.style.display = "none"
 
-        console.log("none")
+
     } else {
         var teladecadastrounidade = document.querySelector("#janelacadastrounidade").style.display = "none"
         teladecadastrohardware.style.display = "flex";
         var botaodeadicionarunidade = document.querySelector("#addunidades").style.display = "none";
         var botaodeadicionarhardware = document.querySelector("#addhardware").style.display = "none";
-        console.log("flex")
+
     }
 
 
@@ -79,7 +79,7 @@ document.querySelector("#fecharjanelahardware").addEventListener("click", () => 
     var botaodeadicionarhardware = document.querySelector("#addhardware").style.display = "flex";
 
     var teladeescolha = document.querySelector("#listadehaerwareparaupdate").style.display = "none";
-    var h1 = document.querySelector("#agaum").style.opacity = "1" ;
+    var h1 = document.querySelector("#agaum").style.opacity = "1";
     var botaocriar = document.querySelector("#btncriarhardware").style.display = "block";
 
 
@@ -158,6 +158,17 @@ function cadastrarunidade() {
 
 
 
+    var listadeunidades = document.querySelector("#listadeunidadeparaupdate");
+    var texto = document.createTextNode(nserie.value);
+    var li = document.createElement("li");
+    var p = document.createElement("p");
+    p.appendChild(texto);                                                                       //criando o elemento na lista de hardwares
+    li.appendChild(p);
+    listadehardware.appendChild(li);
+
+
+
+
 
 
     var telaunidade = document.querySelector("#janelacadastrounidade").style.display = "none";
@@ -166,9 +177,9 @@ function cadastrarunidade() {
 
 }
 
-function abrirteladeescolhaunidade(){
+function abrirteladeescolhaunidade() {
     var teladeescolha = document.querySelector("#listadeunidadeparaupdate").style.display = "flex";
-    var h1 = document.querySelector("#agaumm").style.opacity = "0" ;
+    var h1 = document.querySelector("#agaumm").style.opacity = "0";
     var botaocriar = document.querySelector("#btncriarunidade").style.display = "none";
 }
 
@@ -194,13 +205,13 @@ function cadastrarhardware() {
 
     //pegar os dados dos inputs da tela de cadastro de hardware e jogar no banco de dados
 
+console.log("criou")
 
-    
     var listadehardware = document.querySelector("#listadehaerwareparaupdate");
     var texto = document.createTextNode(nserie.value);
     var li = document.createElement("li");
     var p = document.createElement("p");
-    p.appendChild(texto);
+    p.appendChild(texto);                                                                       //criando o elemento na lista de hardwares
     li.appendChild(p);
     listadehardware.appendChild(li);
 
@@ -213,9 +224,17 @@ function cadastrarhardware() {
 }
 
 
-function abrirteladeescolhahardware(){
+function abrirteladeescolhahardware() {
     var teladeescolha = document.querySelector("#listadehaerwareparaupdate").style.display = "flex";
-    var h1 = document.querySelector("#agaum").style.opacity = "0" ;
+    var h1 = document.querySelector("#agaum").style.opacity = "0";
     var botaocriar = document.querySelector("#btncriarhardware").style.display = "none";
 }
 
+
+
+// const valoresDoSelect = [{nome: "José", idade: 18}];
+// valoresDoSelect.map(valor => {
+//     document.createElement("li")
+//     document.createTextNode(valor.nome)
+//     console.log(valor.nome)
+// })
