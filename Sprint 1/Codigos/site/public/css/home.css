@@ -427,7 +427,7 @@ footer .container4 img {
     height: 100px;
     width: 100px;
     margin-left: 8%;
-    
+
 }
 
 
@@ -547,7 +547,7 @@ footer .container4 .infofooter .boxinfo ul li ion-icon {
 
 
     body html {
-        
+
         display: flex;
         flex-direction: column;
         width: 100vw;
@@ -578,6 +578,7 @@ footer .container4 .infofooter .boxinfo ul li ion-icon {
     header h1 {
         color: whitesmoke;
         font-size: 20px;
+        margin-left: 16px;
     }
 
     header ul {
@@ -586,6 +587,19 @@ footer .container4 .infofooter .boxinfo ul li ion-icon {
         justify-content: space-between;
         align-items: center;
         margin-left: 10%;
+    }
+
+    .cadastrar {
+        background-color: rgb(255, 255, 255);
+        color: #0f0f0f;
+        transition: all 0.6s 0s ease;
+        border: none;
+        display: none;
+
+    }
+
+    .entrar {
+        margin-left: 2%;
     }
 
     header div {
@@ -648,8 +662,8 @@ footer .container4 .infofooter .boxinfo ul li ion-icon {
         display: flex;
         align-items: center;
         justify-content: center;
-    
-    
+
+
     }
 
 
@@ -680,14 +694,14 @@ footer .container4 .infofooter .boxinfo ul li ion-icon {
 
 
     .imagenshome {
-        display: none;
+        display: block;
         position: absolute;
-        right:207%;
+        right: 207%;
         top: 240px;
-        left: 270px;
+        left: 87px;
         background-color: transparent;
         height: 100px;
-        width: 100vw;
+        width: 56vw;
         overflow-x: hidden;
         flex-direction: column;
     }
@@ -698,7 +712,7 @@ footer .container4 .infofooter .boxinfo ul li ion-icon {
         height: 240px;
         transform: rotate(2deg);
         left: -100px;
-        box-shadow: 0px 0px 10px rgb(0, 0, 0); 
+        box-shadow: 0px 0px 10px rgb(0, 0, 0);
 
     }
 
@@ -785,7 +799,7 @@ footer .container4 .infofooter .boxinfo ul li ion-icon {
     footer {
         height: 300px;
         max-width: 100vw;
-        display: flex;
+        display: none;
         flex-direction: column;
         margin-top: 20px;
     }
@@ -797,12 +811,12 @@ footer .container4 .infofooter .boxinfo ul li ion-icon {
         background-color: #000000;
         margin: 0% auto;
     }
-   
+
 
     footer .container4 img {
         height: 90px;
         width: 90px;
-        
+
     }
 
     footer .container4 .infofooter .boxinfo {
@@ -826,7 +840,7 @@ footer .container4 .infofooter .boxinfo ul li ion-icon {
         color: whitesmoke;
         font-weight: 100;
         text-decoration: none;
-        font-size: 16   px;
+        font-size: 16 px;
 
     }
 
@@ -839,7 +853,7 @@ footer .container4 .infofooter .boxinfo ul li ion-icon {
         list-style: none;
     }
 
-    footer p{
+    footer p {
         font-size: 18px;
         margin-bottom: 5px;
     }
