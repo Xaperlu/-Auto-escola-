@@ -6,6 +6,7 @@
     font-family: 'Kumbh Sans', sans-serif;
 }
 
+
 .circuloborrado {
     height: 500px;
     width: 500px;
@@ -37,6 +38,8 @@
 .logo{
     width: 50px;
     cursor: pointer;
+    left: 3%;
+    position: absolute;
 }
 
 .menu-icon{
@@ -74,9 +77,12 @@ nav ul li a{
     z-index: 1;
 }
 
-h1{
-    color: #fff;
+.titulo{
     font-size: 100px;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-image: -webkit-linear-gradient(left, #26e3c2, #45a0f5);
+    color: transparent;
 }
 
 p{
@@ -139,9 +145,29 @@ h5{
 
 .card p{
     text-shadow: 0 0 15px #000;
-    font-size: 8px;
+    font-size: 20px;
     color: black;
     font: bold;
 }
+
+h1{
+    color: #fff;
+}
+
+#meuVideo {
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #meuVideo.visivel {
+    display: block;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+
 
 
