@@ -87,7 +87,7 @@ nav ul li a{
 
 p{
     color: #fff;
-    font-size: 11px;
+    font-size: 15px;
     line-height: 15px;
 }
 
@@ -156,15 +156,10 @@ h1{
 
 #meuVideo {
     display: none;
-    align-items: center;
-    justify-content: center;
   }
   
   #meuVideo.visivel {
     display: block;
-    position: absolute;
-    align-items: center;
-    justify-content: center;
   }
   
   
