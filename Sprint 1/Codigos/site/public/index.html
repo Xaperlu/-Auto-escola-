@@ -13,6 +13,16 @@
 
 <body>
 
+    <div class="backanimation">
+        <div>
+            <img src="./asset/logo2.png" alt="">
+            <p id="contanimation">100%</p>
+            <div id="lineanimation">
+                <div class="preencher"></div>
+            </div>
+        </div>
+    </div>
+
     <header>
         <img src="./asset/logo2.png" alt="">
         <h1>AutoTech</h1>
@@ -58,7 +68,7 @@
                 <img class="segundaft" src="asset/imgtela2.png" alt="">
             </div>
 
-
+            <div class="blurtrocatela"></div>
 
         </div>
 
@@ -148,7 +158,7 @@
                     <a href="#">Nossos Membros</a>
                     <a href="#">Suas Funções</a>
                 </div>
-                <div class="boxinfo">
+                <div class="boxinfo" id="blococontatos">
                     <h3>Contato</h3>
                     <ul>
                         <li>
@@ -182,7 +192,7 @@
 
         </div>
 
-        <p>Desenvolvido por alunos SPtechers - &copy; Copyright</p>
+        <p id="Copyright">Desenvolvido por alunos SPtechers - &copy; Copyright</p>
 
     </footer>
 
@@ -194,20 +204,6 @@
 
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="js/home.js"></script>
 
-<script>
-    window.addEventListener("scroll", (event) => {
-    let scrollY = this.scrollY;
-    let scrollX = this.scrollX;
-
-    console.log(scrollY);
-    
-    if(scrollY > 0.7){
-        document.querySelector("header").style.backgroundColor = "black";
-    }else{
-        document.querySelector("header").style.backgroundColor = "transparent";
-    }
-
-});
-</script>
 
