@@ -114,7 +114,20 @@ function editar() {
 
 }
 
+const cnpjMascara = document.getElementById('CNPJ');
 
+function MascaraCnpj(){
+
+    let tamanhoCnpj = cnpjMascara.value.length
+
+    if(tamanhoCnpj == 2 || tamanhoCnpj == 6 || tamanhoCnpj == 15){
+        cnpjMascara.value += "."
+    }
+
+    if(tamanhoCnpj == 10){
+        cnpjMascara.value += "/"
+    }
+}
 
 function salvar() {
 
@@ -142,6 +155,60 @@ function salvar() {
     let botaosalvar = document.querySelector(".campobotoes div button").style.display = "none";
 
 
+
+    var idVar = sessionStorage.getItem('ID_USUARIO')
+    var nomeVar = Nome.value;
+    var emailVar = Email.value;
+    var cnpjVar = CNPJ.value;
+    var senhaVar = Senha.value;
+
+    if (nomeVar == "" && emailVar == "" && senhaVar == "") {
+        alert('Por favor, preencha algum campo para prosseguir!')
+
+        return false;
+    }
+    else {
+    }
+
+    // Enviando o valor da nova input
+    fetch("/usuarios/salvar", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            // crie um atributo que recebe o valor recuperado aqui
+            // Agora vá para o arquivo routes/usuario.js
+            nomeServer: nomeVar,
+            emailServer: emailVar,
+            senhaServer: senhaVar,
+            idServer: idVar,
+            cnpjServer: cnpjVar
+        })
+    }).then(function (resposta) {
+
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+            // cardErro.style.display = "block";
+
+            alert ("Informmações atualizadas com sucesso!")
+
+            setTimeout(() => {
+                window.location = "login.html";
+            }, "2000")
+            
+            limparFormulario();
+            finalizarAguardar();
+        } else {
+            throw ("Houve um erro ao tentar realizar a atualização!");
+        }
+    }).catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+        finalizarAguardar();
+    });
+
+    return false;
 }
 
 
