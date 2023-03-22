@@ -36,12 +36,12 @@
         </div>
 
         <div id="box01" class="box">
-            <h2>Credenciais de Login!</h2>
-                <div class="campoDigitacao">
+            <h2>Login</h2>
+                <div class="campoDigitacao" id="cd1">
                     <label for="in_email">E-mail</label>
                     <input class="ipt" id="in_email" type="text" placeholder="Email@email.com">
                 </div>
-                <div class="campoDigitacao2">
+                <div class="campoDigitacao" id="cd2">
                     <label for="in_senha">Senha</label>
                     <input class="ipt" id="in_senha" type="password" placeholder="********">
                 </div>
@@ -70,10 +70,17 @@
         const email = in_email.value;
         const senha = in_senha.value;
 
+        if(email == "" || senha == 0000){
+            window.location = "./perfil.html";
+        }
+
         if (email == "" || senha == "") {
             alert('Preencha os campos corretamente!')
             return false;
+
         }
+        
+        
 
         fetch("/usuarios/autenticar", {
             method: "POST",

@@ -217,7 +217,7 @@ body {
 .editarinfo input {
     height: 20px;
     margin-left: 10px;
-    background-color: rgba(128, 128, 128, 0.133);
+    background-color: #1d2027;
     backdrop-filter: blur(10px);
     border: none;
     outline: 1px red;
@@ -343,14 +343,14 @@ body {
 }
 
 .inpcadastrarunidade {
-    border: solid 3px #45a0f5;
+    border: none;
     height: 40px;
     width: 100%;
     border-radius: 10px;
     outline: none;
     padding-left: 10px;
     padding-right: 10px;
-    background-color: rgba(187, 186, 186, 0.514);
+    background-color: #1d2027;
     color: whitesmoke;
 }
 
@@ -369,8 +369,8 @@ body {
     width: 100%;
     text-align: center;
     border-radius: 10px;
-    border: solid 3px #45a0f5;
-    background-color: rgba(187, 186, 186, 0.514);
+    border: solid 3px #032f59;
+    background-color: #1d2027;    
     color: white;
     outline: none;
     cursor: pointer;
@@ -428,7 +428,7 @@ body {
 
 
 
-#listadeunidadeparaupdate{
+#listadeunidadeparaupdate {
     display: none;
     flex-direction: column;
     align-items: center;
@@ -445,7 +445,7 @@ body {
 
 
 
-#listadehaerwareparaupdate{
+#listadehaerwareparaupdate {
     display: none;
     flex-direction: column;
     align-items: center;
@@ -461,7 +461,7 @@ body {
 }
 
 #listadehaerwareparaupdate li {
-    
+
     height: 40px;
     width: 100%;
     background-color: rgba(123, 123, 123, 0.411);
@@ -470,14 +470,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom: solid 2px rgba(129, 129, 129, 0.216) ;
+    border-bottom: solid 2px rgba(129, 129, 129, 0.216);
     margin-top: 4px;
     cursor: pointer;
-    
-    
+
+
 }
 
-#btnupdatehardware, #btnupdateunidade{
+#btnupdatehardware,
+#btnupdateunidade {
     display: none;
 }
 

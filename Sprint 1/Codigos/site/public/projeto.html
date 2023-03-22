@@ -1,5 +1,6 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +10,7 @@
     <link rel="shortcut icon" href="./asset/favicon-32x32.png" type="image/x-icon">
     <title>Funcionalidade</title>
 </head>
+
 <body>
     <div class="container">
         <div class="navbar">
@@ -24,43 +26,58 @@
             <!-- <img src="./asset/menu.png" class="menu-icon"> -->
         </div>
         <div class="circuloborrado"></div>
+
         <div class="row">
             <div class="col">
-                <h1 class="titulo">Projetos</h1>
-                <p>Esté projeto tem como foco melhorar os HardWares e analisar os dados por meio do uso do computador e também melhorar a velocidade e o sistema de auto-escolas em todo o brasil para que não aja mais demoras no atendimento e que o sistema não pare quando você precisar tirar sua carta de motorista ou até mesmo consultar seus dados.</p>
-                <button type="button">Aderir</button>
+                <h1 class="titulo">Projeto</h1>
+                <p>Esté projeto tem como foco melhorar os HardWares e analisar os dados por meio do uso do computador e
+                    também melhorar a velocidade e o sistema de auto-escolas em todo o brasil para que não aja mais
+                    demoras no atendimento e que o sistema não pare quando você precisar tirar sua carta de motorista ou
+                    até mesmo consultar seus dados.</p>
+                
+                <a class="btnaderir" href="cadastro.html">Aderir</a>
             </div>
             <div class="col">
                 <div class="card card1">
                     <h5>DashBoard</h5>
                     <button onclick="mostrarVideo()">Ver</button>
-                    <iframe id="meuVideo" width="700" height="430" src="https://www.youtube.com/embed/FKLtgamrhpk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowfullscreen></iframe>
-
-                    
-
                 </div>
                 <div class="card card2">
                     <h5>Reunião</h5>
                     <button onclick="mostrarVideo()">Ver</button>
-                    
+
 
                 </div>
                 <div class="card card3">
                     <h5>HardWare</h5>
                     <button onclick="mostrarVideo()">Ver</button>
-                    
+
 
                 </div>
                 <div class="card card4">
                     <h5>Dados</h5>
                     <button onclick="mostrarVideo()">Ver</button>
-                    
+
 
                 </div>
             </div>
+
+            <div class="mostrarvideo">
+
+                <ion-icon class="btnfechar" onclick="fecharvideo()" name="close-outline"></ion-icon>
+
+                <iframe id="meuVideo" width="700" height="430" src="https://www.youtube.com/embed/FKLtgamrhpk"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
+
+
         </div>
     </div>
 </body>
+
 </html>
 
-    
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
