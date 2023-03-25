@@ -169,12 +169,22 @@ body {
 
 }
 
-.detalheboll .boll1 {
+.detalheboll #boll1 {
     background-image: -webkit-linear-gradient(left, #26e3c2, #45a0f5);
 }
 
-.detalheboll .boll2 {
+.detalheboll #boll2 {
     background-color: white;
+}
+
+.detalheboll #boll1After {
+    background-image: -webkit-linear-gradient(left, #26e3c2, #45a0f5);
+    display: none;
+}
+
+.detalheboll #boll2After {
+    background-color: white;
+    display: none;
 }
 
 

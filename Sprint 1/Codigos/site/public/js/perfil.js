@@ -96,11 +96,15 @@ function editar() {
     let nodisp2 = document.getElementById('noeditsinfo2').style.display = "none";
     let nodisp3 = document.getElementById('noeditsinfo3').style.display = "none";
     let nodisp4 = document.getElementById('noeditsinfo4').style.display = "none";
+    let nodisp5 = document.getElementById('boll1').style.display = "none";
+    let nodisp6 = document.getElementById('boll2').style.display = "none";
 
     let disp1 = document.getElementById('editarinfo1').style.display = "block";
     let disp2 = document.getElementById('editarinfo2').style.display = "block";
     let disp3 = document.getElementById('editarinfo3').style.display = "block";
     let disp4 = document.getElementById('editarinfo4').style.display = "block";
+    let disp5 = document.getElementById('boll1After').style.display = "block";
+    let disp6 = document.getElementById('boll2After').style.display = "block";
 
     let botaoeditar = document.querySelector(".campobotoes button").style.opacity = "0";
 
@@ -143,11 +147,15 @@ function salvar() {
     let nodisp2 = document.getElementById('noeditsinfo2').style.display = "flex";
     let nodisp3 = document.getElementById('noeditsinfo3').style.display = "flex";
     let nodisp4 = document.getElementById('noeditsinfo4').style.display = "flex";
+    let nodisp5 = document.getElementById('boll1After').style.display = "none";
+    let nodisp6 = document.getElementById('boll2After').style.display = "none";
 
     let disp1 = document.getElementById('editarinfo1').style.display = "none";
     let disp2 = document.getElementById('editarinfo2').style.display = "none";
     let disp3 = document.getElementById('editarinfo3').style.display = "none";
     let disp4 = document.getElementById('editarinfo4').style.display = "none";
+    let disp5 = document.getElementById('boll1').style.display = "block";
+    let disp6 = document.getElementById('boll2').style.display = "block";
 
     let botaoeditar = document.querySelector(".campobotoes button").style.opacity = "1";
 
@@ -161,13 +169,22 @@ function salvar() {
     var emailVar = Email.value;
     var cnpjVar = CNPJ.value;
     var senhaVar = Senha.value;
+    const validacaoSenha = senhaVar.match(/[0-9]/) && senhaVar.match(/[A-Z]/) && senhaVar.match(/[!\@\#\$\%\&\*]/) && senhaVar.length >= 6
 
-    if (nomeVar == "" && emailVar == "" && senhaVar == "") {
-        alert('Por favor, preencha algum campo para prosseguir!')
+
+    if (nomeVar == "" && emailVar == "" && senhaVar == "" && cnpjVar == "") {
+        alert('Por favor, preencha algum campo para prosseguir')
 
         return false;
     }
-    else {
+    else if(cnpjVar != "" && cnpjVar != 18){
+        alert("CNPJ inválido! um CNPJ deve ter 14 caracteres numéricos.")
+    }
+    else if(emailVar != "" && !emailVar.match(/[@]/)){
+        alert("Email inválido!")
+    }
+    else if(senhaVar != "" && !validacaoSenha){
+        alert("Senha inválida!")
     }
 
     // Enviando o valor da nova input
