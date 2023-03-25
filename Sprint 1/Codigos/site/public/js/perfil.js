@@ -212,7 +212,7 @@ function salvar() {
             alert ("Informmações atualizadas com sucesso!")
 
             setTimeout(() => {
-                window.location = "login.html";
+                window.location = "perfil.html";
             }, "2000")
             
             limparFormulario();
