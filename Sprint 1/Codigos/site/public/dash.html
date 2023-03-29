@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+ 
+<body style="display:flex">
+
+    <div>
+        <canvas id="myChart" style="position: relative; height:40vh; width:40vw"></canvas>
+    </div>
+
+    <div>
+        <canvas id="myChart2" style="position: relative; height:40vh; width:40vw"></canvas>
+    </div>
+
+    <div>
+        <canvas id="myChart3" style="position: relative; height:40vh; width:40vw"></canvas>
+    </div>
+
+    <div>
+        <canvas id="myChart4" style="position: relative; height:40vh; width:40vw"></canvas>
+    </div>
+    
+</body>
+
+<script>
+   const labels = [
+    'Domingo',
+    'Segunda',
+    'Terça',
+    'Quarta',
+    'Quinta',
+    'Sexta',
+    'Sábado',
+   ];
+
+   const data = {
+    labels: labels,
+    datasets: [{
+        label: 'Velocidade de Download',
+        backgroundColor: 'rgb(255, 0, 0)',
+        borderColor: 'rgb(255, 0, 0)',
+        data: [0, 10, 5, 2, 20, 30, 67],
+    },
+    {
+        label: 'Velocidade de Upload',
+        backgroundColor: 'rgb(0, 0, 255)',
+        borderColor: 'rgb(0, 0, 255)',
+        data: [4, 34, 57, 28, 90, 10, 40],
+    }]
+   };
+
+   const config = {
+    type: 'line',
+    data: data,
+    options: {}
+   };
+   
+
+   const labels2 = [
+    'Domingo',
+    'Segunda',
+    'Terça',
+    'Quarta',
+    'Quinta',
+    'Sexta',
+    'Sábado',
+   ];
+
+   const data2 = {
+    labels: labels2,
+    datasets: [{
+        label: 'Consumo de Memória RAM',
+        backgroundColor: 'rgb(255, 0, 0)',
+        borderColor: 'rgb(255, 0, 0)',
+        data: [0, 10, 5, 2, 20, 30, 60],
+    }]
+   };
+
+   const config2 = {
+    type: 'line',
+    data: data2,
+    options: {}
+   };
+
+
+   const labels3 = [
+    'Domingo',
+    'Segunda',
+    'Terça',
+    'Quarta',
+    'Quinta',
+    'Sexta',
+    'Sábado',
+   ];
+
+   const data3 = {
+    labels: labels3,
+    datasets: [{
+        label: 'Consumo de Disco',
+        backgroundColor: 'rgb(255, 0, 0)',
+        borderColor: 'rgb(255, 0, 0)',
+        data: [50, 30, 50, 80, 90, 70, 60],
+    }]
+   };
+
+   const config3 = {
+    type: 'line',
+    data: data3,
+    options: {}
+   };
+
+
+   const labels4 = [
+    'Domingo',
+    'Segunda',
+    'Terça',
+    'Quarta',
+    'Quinta',
+    'Sexta',
+    'Sábado',
+   ];
+
+   const data4 = {
+    labels: labels4,
+    datasets: [{
+        label: 'Consumo de CPU',
+        backgroundColor: 'rgb(255, 0, 0)',
+        borderColor: 'rgb(255, 0, 0)',
+        data: [50, 30, 50, 80, 90, 70, 60],
+    }]
+   };
+
+   const config4 = {
+    type: 'line',
+    data: data4,
+    options: {}
+   };
+
+</script>
+
+<script>
+
+    const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    );
+
+    const myChart2 = new Chart(
+        document.getElementById('myChart2'),
+        config2
+    );
+
+    const myChart3 = new Chart(
+        document.getElementById('myChart3'),
+        config3
+    );
+
+    const myChart4 = new Chart(
+        document.getElementById('myChart4'),
+        config4
+    );
+
+</script>
+</html>
