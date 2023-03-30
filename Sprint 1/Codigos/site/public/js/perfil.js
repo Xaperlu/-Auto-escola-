@@ -92,43 +92,67 @@ document.querySelector("#fecharjanelahardware").addEventListener("click", () => 
 
 function editar() {
 
-    let nodisp = document.getElementById('noeditsinfo1').style.display = "none";
-    let nodisp2 = document.getElementById('noeditsinfo2').style.display = "none";
-    let nodisp3 = document.getElementById('noeditsinfo3').style.display = "none";
-    let nodisp4 = document.getElementById('noeditsinfo4').style.display = "none";
-    let nodisp5 = document.getElementById('boll1').style.display = "none";
-    let nodisp6 = document.getElementById('boll2').style.display = "none";
+    if (document.querySelector("#btnsalvarupdate").style.display != "flex") {
 
-    let disp1 = document.getElementById('editarinfo1').style.display = "block";
-    let disp2 = document.getElementById('editarinfo2').style.display = "block";
-    let disp3 = document.getElementById('editarinfo3').style.display = "block";
-    let disp4 = document.getElementById('editarinfo4').style.display = "block";
-    let disp5 = document.getElementById('boll1After').style.display = "block";
-    let disp6 = document.getElementById('boll2After').style.display = "block";
+        let nodisp = document.getElementById('noeditsinfo1').style.display = "none";
+        let nodisp2 = document.getElementById('noeditsinfo2').style.display = "none";
+        let nodisp3 = document.getElementById('noeditsinfo3').style.display = "none";
+        let nodisp4 = document.getElementById('noeditsinfo4').style.display = "none";
+        let nodisp5 = document.getElementById('boll1').style.display = "none";
+        let nodisp6 = document.getElementById('boll2').style.display = "none";
+        // revisar pq dá para melhorar
+        let disp1 = document.getElementById('editarinfo1').style.display = "block";
+        let disp2 = document.getElementById('editarinfo2').style.display = "block";
+        let disp3 = document.getElementById('editarinfo3').style.display = "block";
+        let disp4 = document.getElementById('editarinfo4').style.display = "block";
+        let disp5 = document.getElementById('boll1After').style.display = "block";
+        let disp6 = document.getElementById('boll2After').style.display = "block";
 
-    let botaoeditar = document.querySelector(".campobotoes button").style.opacity = "0";
+        let setaproximo = document.querySelector(".campobotoes div img").style.display = "none"
+        let botaosalvar = document.querySelector(".campobotoes div button").style.display = "flex"
 
-    let setaproximo = document.querySelector(".campobotoes div img").style.display = "none"
-    let botaosalvar = document.querySelector(".campobotoes div button").style.display = "flex"
+        let nonebotao = document.getElementById('btn')
 
+    } else {
 
+        let nodisp = document.getElementById('noeditsinfo1').style.display = "flex";
+        let nodisp2 = document.getElementById('noeditsinfo2').style.display = "flex";
+        let nodisp3 = document.getElementById('noeditsinfo3').style.display = "flex";
+        let nodisp4 = document.getElementById('noeditsinfo4').style.display = "flex";
+        let nodisp5 = document.getElementById('boll1').style.display = "flex";
+        let nodisp6 = document.getElementById('boll2').style.display = "flex";
+        // revisar pq dá para melhorar
+        let disp1 = document.getElementById('editarinfo1').style.display = "none";
+        let disp2 = document.getElementById('editarinfo2').style.display = "none";
+        let disp3 = document.getElementById('editarinfo3').style.display = "none";
+        let disp4 = document.getElementById('editarinfo4').style.display = "none";
+        let disp5 = document.getElementById('boll1After').style.display = "none";
+        let disp6 = document.getElementById('boll2After').style.display = "none";
 
-    //colocar os dados do usuario no input
+        let setaproximo = document.querySelector(".campobotoes div img").style.display = "flex"
+        let botaosalvar = document.querySelector(".campobotoes div button").style.display = "none"
+
+        let nonebotao = document.getElementById('btn')
+
+    }
+
 
 
 }
 
+
+
 const cnpjMascara = document.getElementById('CNPJ');
 
-function MascaraCnpj(){
+function MascaraCnpj() {
 
     let tamanhoCnpj = cnpjMascara.value.length
 
-    if(tamanhoCnpj == 2 || tamanhoCnpj == 6 || tamanhoCnpj == 15){
+    if (tamanhoCnpj == 2 || tamanhoCnpj == 6 || tamanhoCnpj == 15) {
         cnpjMascara.value += "."
     }
 
-    if(tamanhoCnpj == 10){
+    if (tamanhoCnpj == 10) {
         cnpjMascara.value += "/"
     }
 }
@@ -177,13 +201,13 @@ function salvar() {
 
         return false;
     }
-    else if(cnpjVar != "" && cnpjVar != 18){
+    else if (cnpjVar != "" && cnpjVar != 18) {
         alert("CNPJ inválido! um CNPJ deve ter 14 caracteres numéricos.")
     }
-    else if(emailVar != "" && !emailVar.match(/[@]/)){
+    else if (emailVar != "" && !emailVar.match(/[@]/)) {
         alert("Email inválido!")
     }
-    else if(senhaVar != "" && !validacaoSenha){
+    else if (senhaVar != "" && !validacaoSenha) {
         alert("Senha inválida!")
     }
 
@@ -209,12 +233,12 @@ function salvar() {
         if (resposta.ok) {
             // cardErro.style.display = "block";
 
-            alert ("Informmações atualizadas com sucesso!")
+            alert("Informmações atualizadas com sucesso!")
 
             setTimeout(() => {
                 window.location = "perfil.html";
             }, "2000")
-            
+
             limparFormulario();
             finalizarAguardar();
         } else {
@@ -289,7 +313,7 @@ function cadastrarhardware() {
 
     //pegar os dados dos inputs da tela de cadastro de hardware e jogar no banco de dados
 
-console.log("criou")
+    console.log("criou")
 
     var listadehardware = document.querySelector("#listadehaerwareparaupdate");
     var texto = document.createTextNode(nserie.value);
