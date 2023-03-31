@@ -41,7 +41,7 @@ body::-webkit-scrollbar-thumb {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 40px;
+    padding: 40px 0px 0px 0px;
     border-top: 1px solid rgba(0, 0, 0, 0.05);
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
@@ -136,6 +136,7 @@ footer {
     bottom: 0%;
     color: #212121;
     font-size: 14px;
+    
 
 
 }
