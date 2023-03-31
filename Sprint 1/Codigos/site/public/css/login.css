@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;400;700&display=swap');
+
 * {
     padding: 0%;
     margin: 0%;
     box-sizing: border-box;
-    max-height: 100vh;
+    font-family: 'Kumbh Sans', sans-serif;
 }
 
 body {
@@ -10,7 +12,7 @@ body {
     flex-direction: column;
     width: 100vw;
     overflow-x: hidden;
-    height: 1950px;
+    height: 100vh;
     background-color: #0f0f0f;
     position: absolute;
 }
@@ -229,33 +231,114 @@ header div a {
 
 @media only screen and (max-width: 600px){
 
+    body{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        background-image: url(../asset/background2.jpg);
+        background-color: rgba(0, 0, 0, 0.352);
+        background-size: cover;
+        backdrop-filter: blur(10px);
+    }
+
     .logo{
         display: none;
     }
 
     .formulario{
         display: flex;
+        width: 100vw ;
+        height: 100vh;
         
     }
 
-    .box{
-        width: 90vw !important;
-        height: 83vh;
-        margin: 7vh 0 0 0 !important;
+    
+    .formulario .box{
+        width: 100%;
+        height: 100%;
         display: flex;
-        justify-content: space-around !important;
+        justify-content: start ;
+        margin: 0%;
+        border-radius: 0%;
+        background-color: transparent;
+        
     }
 
     .ipt{
-        height: 70px;
-        font-size: 1.3rem;
-        width: 85vw;
+        height: 50px;
+        width: 60vw;
+        font-size: 16px;
+        background-color: transparent;
+        border-radius: 0px;
+        border-bottom: solid 2px grey;
+    }
+
+    .ipt:focus{
+        border-bottom: solid 1px  #45a0f5;
+    }
+
+    .ipt:placeholder{
+        font-size: 16px;
     }
 
     .btNext{
-        width: 85vw;
+        margin-top: 20%;
+        width: 50vw;
         height: 8vh;
         font-size: 1.4rem;
+
+    }
+
+
+    header {
+        background-color: transparent;
+        height: 80px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        padding: 0% 0% 0% 0%;
+        position: relative;
+     
+    }
+
+    header div {
+        display: none;
+    }
+
+    header h1 {
+        display: none;
+    }
+
+    header img {
+        position: static;
+        
+    }
+
+    .linklogo{
+        height: 100%;
+        width: 30%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .formulario .box h2{
+        margin-bottom: 0%;
+    }
+
+    #cd1{
+        margin-top: 80px;
+    }
+
+    .box{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-around ;
+        margin: 0%;
+        border-radius: 0%;
+        backdrop-filter: blur(10px);
     }
 
 }

@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AutoTech | Cadastro</title>
+    <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="./css/cadastro.css">
-    <link rel="stylesheet" href="./css/home.css">
     <link rel="shortcut icon" href="./asset/favicon-32x32.png" type="image/x-icon">
 </head>
 <style>
@@ -36,7 +36,7 @@
         <div id="box01" class="box">
 
             <h2>Precisamos de algumas informações suas!</h2>
-            <div class="campoDigitacao">
+            <div class="campoDigitacao" id="onecd">
                 <label for="inNome">Razão Social</label>
                 <input class="ipt" id="inNome" type="text" placeholder="Nome da empresa">
             </div>
@@ -59,7 +59,7 @@
                 </div>
             </div>
             <div class="verificadorSenha">
-                <div class="boxSenha">
+                <div class="boxSenha" id="oneboxx">
                     <div class="verificador">
                         <img id="imgT1" src="./asset/traco.png">
                         <span>6 Caracteres</span>
@@ -96,6 +96,8 @@ function SenhaForte(){
         var num = document.querySelector('#imgT2');
         var tamanho = document.querySelector('#imgT1');
         var especial = document.querySelector('#imgT4');
+
+        document.querySelector(".verificadorSenha").style.display = "flex";
 
         if(senha.value.match(/[0-9]/)){
             num.src = "./asset/check.png"
