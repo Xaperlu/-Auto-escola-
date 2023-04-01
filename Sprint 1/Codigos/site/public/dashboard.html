@@ -5,12 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="css/dashboard.css">
     <link rel="stylesheet" href="css/home.css">
     <script src="https://kit.fontawesome.com/d8b9cb0dbc.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="./asset/favicon-32x32.png" type="image/x-icon">
 </head>
-<body>
+<body style="display: flex;">
 
     <div class="conteudo">
         <div class="painel">
@@ -45,7 +46,6 @@
                 </div>
                 <div class="opcao">
                     <button id="voltarperfil" class="btOpcao"><i class="fa-solid fa-arrow-right-from-bracket"></i></button>
-                    <button class="btOpcao"><i class="fa-solid fa-file-arrow-down"></i></button>
                 </div>
             </div>
         </div>
@@ -98,18 +98,384 @@
             </div>
             <div class="visual">
                 <div class="box01">
-                    <div class="graf01"></div>
-                    <div class="graf02"></div>
-                    <div class="graf03"></div>
+                    <div class="graf03">
+                        <div>
+                            <canvas id="myChart3" style="position: relative; height:26vh; width:30vw"></canvas>
+                        </div>
+                    </div>
+                    <div class="graf01">
+                        <div>
+                            <canvas id="myChart" style="position: relative; height:10vh; width:12vw"></canvas>
+                        </div>
+                    </div>
+                    <div class="graf02">
+                        <div>
+                            <canvas id="myChart2" style="position: relative; height:12vh; width:12vw"></canvas>
+                        </div>
+                    </div>
                 </div>
                 <div class="box02">
-                    <div class="graf04"></div>
+                    <div class="graf04">
+                        <div>
+                            <canvas id="myChart5" style="position: relative; height:15vh; width:25vw"></canvas>
+                        </div>
+                    </div>
+                    <div class="graf05">
+                        <div>
+                            <canvas id="myChart4" style="position: relative; height:15vh; width:15vw"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="box03">
+                    <div class="graf06">
+                        <div>
+                            <canvas id="myChart7" style="position: relative; height:15vh; width:25vw"></canvas>
+                        </div>
+                    </div>
+                    <div class="graf07">
+                        <div>
+                            <canvas id="myChart6" style="position: relative; height:15vh; width:15vw"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="box04">
+                    <div class="graf08">
+                        <div>
+                            <canvas id="myChart9" style="position: relative; height:15vh; width:25vw"></canvas>
+                        </div>
+                    </div>
+                    <div class="graf09">
+                        <div>
+                            <canvas id="myChart8" style="position: relative; height:15vh; width:15vw"></canvas>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     
 </body>
-</html>
+<script>
+    
+    const data = {
+    labels: [
+        'Domingo',
+        'Segunda',
+        'Terça',
+        'Quarta',
+        'Quinta',
+        'Sexta',
+        'Sábado'
+    ],
+    
+    datasets: [{
+        label: 'Velocidade de Download',
+        data: [100, 13, 25, 47, 9, 91, 33],
+        backgroundColor: [
+        '#60A5FA',
+        'rgb(0,0,128)',
+        'rgb(0,0,255)',
+        'rgb(100,149,237)',
+        'rgb(0,191,255)',
+        'rgb(173,216,230)',
+        'rgb(176,196,222)'
+        ],
+        hoverOffset: 4
+    }]
+    };
+    
+    const config = {
+    type: 'doughnut',
+    data: data,
+    };
 
-<script src="js/dashboard.js"></script>
+    const data2 = {
+    labels: [
+        'Domingo',
+        'Segunda',
+        'Terça',
+        'Quarta',
+        'Quinta',
+        'Sexta',
+        'Sábado'
+    ],
+    
+    datasets: [{
+        label: 'Velocidade de Upload',
+        data: [200, 77, 83, 99, 64, 157, 65],
+        backgroundColor: [
+        'rgb(106,90,205)',
+        'rgb(0,0,128)',
+        'rgb(0,0,255)',
+        'rgb(100,149,237)',
+        'rgb(0,191,255)',
+        'rgb(173,216,230)',
+        'rgb(176,196,222)'
+        ],
+        hoverOffset: 4
+    }]
+    };
+    
+    const config2 = {
+    type: 'doughnut',
+    data: data2,
+    };
+
+   const labels3 = [
+    'Domingo',
+    'Segunda',
+    'Terça',
+    'Quarta',
+    'Quinta',
+    'Sexta',
+    'Sábado',
+   ];
+
+   const data3 = {
+    labels: labels3,
+    datasets: [{
+        label: 'Velocidade de Download',
+        backgroundColor: '#60A5FA',
+        borderColor: '#60A5FA',
+        data: [100, 13, 25, 47, 9, 91, 33],
+    },
+    {
+        label: 'Velocidade de Upload',
+        backgroundColor: 'rgb(0, 0, 255)',
+        borderColor: 'rgb(0, 0, 255)',
+        data: [200, 77, 83, 99, 64, 157, 65],
+    }]
+   };
+
+   const config3 = {
+    type: 'line',
+    data: data3,
+    options: {}
+   };
+   
+   const data4 = {
+    labels: [
+        'Domingo',
+        'Segunda',
+        'Terça',
+        'Quarta',
+        'Quinta',
+        'Sexta',
+        'Sábado'
+    ],
+    
+    datasets: [{
+        label: 'Consumo de Memória RAM',
+        data: [0, 95, 87, 68, 76, 32, 89],
+        backgroundColor: [
+        'rgb(106,90,205)',
+        'rgb(0,0,128)',
+        'rgb(0,0,255)',
+        'rgb(100,149,237)',
+        'rgb(0,191,255)',
+        'rgb(173,216,230)',
+        'rgb(176,196,222)'
+        ],
+        hoverOffset: 4
+    }]
+    };
+    
+    const config4 = {
+    type: 'doughnut',
+    data: data4,
+    };
+
+   const labels5 = [
+    'Domingo',
+    'Segunda',
+    'Terça',
+    'Quarta',
+    'Quinta',
+    'Sexta',
+    'Sábado',
+   ];
+
+   const data5 = {
+    labels: labels5,
+    datasets: [{
+        label: 'Consumo de Memória RAM',
+        backgroundColor: 'rgb(0, 0, 139)',
+        borderColor: 'rgb(0, 0, 139)',
+        data: [0, 95, 87, 68, 76, 32, 89],
+    }]
+   };
+
+   const config5 = {
+    type: 'line',
+    data: data5,
+    options: {}
+   };
+
+   const data6 = {
+    labels: [
+        'Domingo',
+        'Segunda',
+        'Terça',
+        'Quarta',
+        'Quinta',
+        'Sexta',
+        'Sábado'
+    ],
+    
+    datasets: [{
+        label: 'Consumo de Disco',
+        data: [80, 87, 90, 93, 99, 83, 95],
+        backgroundColor: [
+        'rgb(106,90,205)',
+        'rgb(0,0,128)',
+        'rgb(0,0,255)',
+        'rgb(100,149,237)',
+        'rgb(0,191,255)',
+        'rgb(173,216,230)',
+        'rgb(176,196,222)'
+        ],
+        hoverOffset: 4
+    }]
+    };
+    
+    const config6 = {
+    type: 'doughnut',
+    data: data6,
+    };
+
+   const labels7 = [
+    'Domingo',
+    'Segunda',
+    'Terça',
+    'Quarta',
+    'Quinta',
+    'Sexta',
+    'Sábado',
+   ];
+
+   const data7 = {
+    labels: labels7,
+    datasets: [{
+        label: 'Consumo de Disco',
+        backgroundColor: 'rgb(0, 191, 255)',
+        borderColor: 'rgb(0, 191, 255)',
+        data: [80, 87, 90, 93, 99, 83, 95],
+    }]
+   };
+
+   const config7 = {
+    type: 'line',
+    data: data7,
+    options: {}
+   };
+
+   const data8 = {
+    labels: [
+        'Domingo',
+        'Segunda',
+        'Terça',
+        'Quarta',
+        'Quinta',
+        'Sexta',
+        'Sábado'
+    ],
+    
+    datasets: [{
+        label: 'Consumo de CPU',
+        data: [60, 98, 96, 84, 90, 67, 95],
+        backgroundColor: [
+        'rgb(106,90,205)',
+        'rgb(0,0,128)',
+        'rgb(0,0,255)',
+        'rgb(100,149,237)',
+        'rgb(0,191,255)',
+        'rgb(173,216,230)',
+        'rgb(176,196,222)'
+        ],
+        hoverOffset: 4
+    }]
+    };
+    
+    const config8 = {
+    type: 'doughnut',
+    data: data8,
+    };
+
+   const labels9 = [
+    'Domingo',
+    'Segunda',
+    'Terça',
+    'Quarta',
+    'Quinta',
+    'Sexta',
+    'Sábado',
+   ];
+
+   const data9 = {
+    labels: labels9,
+    datasets: [{
+        label: 'Consumo de CPU',
+        backgroundColor: 'rgb(176, 196, 222)',
+        borderColor: 'rgb(176, 196, 222)',
+        data: [60, 98, 96, 84, 90, 67, 95],
+    }]
+   };
+
+   const config9 = {
+    type: 'line',
+    data: data9,
+    options: {}
+   };
+
+</script>
+
+
+<script>
+
+    const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    );
+
+    const myChart2 = new Chart(
+        document.getElementById('myChart2'),
+        config2
+    );
+
+    const myChart3 = new Chart(
+        document.getElementById('myChart3'),
+        config3
+    );
+
+    const myChart4 = new Chart(
+        document.getElementById('myChart4'),
+        config4
+    );
+
+    const myChart5 = new Chart(
+        document.getElementById('myChart5'),
+        config5
+    );
+    
+    const myChart6 = new Chart(
+        document.getElementById('myChart6'),
+        config6
+    );
+
+    const myChart7 = new Chart(
+        document.getElementById('myChart7'),
+        config7
+    );
+
+    const myChart8 = new Chart(
+        document.getElementById('myChart8'),
+        config8
+    );
+
+    const myChart9 = new Chart(
+        document.getElementById('myChart9'),
+        config9
+    );
+
+</script>
+</html>

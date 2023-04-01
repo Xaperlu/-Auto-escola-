@@ -22,7 +22,7 @@ body{
 
 .navbar{
     width: 90%;
-    height: 650px;
+    height: 1245px;
     background-color: #242731;
     margin-top: 2vh;
     border-radius: 10px;
@@ -208,14 +208,14 @@ body{
 }
 
 .graf01{
-    width: 200px;
+    width: 250px;
     height: 250px;
     background-color: #242731;
     border-radius: 10px;
 }
 
 .graf02{
-    width: 200px;
+    width: 250px;
     height: 250px;
     background-color: #242731;
     border-radius: 10px;
@@ -229,8 +229,49 @@ body{
 }
 
 .graf04{
-    width: 100%;
-    height: 200px;
+    width: 810px;
+    height: 250px;
     background-color: #242731;
     border-radius: 10px;
+}
+
+.graf05{
+    width: 250px;
+    height: 250px;
+    background-color: #242731;
+    border-radius: 10px;
+    margin-left: 816px;
+    margin-top: -250px;
+}
+
+.graf06{
+    width: 810px;
+    height: 250px;
+    background-color: #242731;
+    border-radius: 10px;
+}
+
+.graf07{
+    width: 250px;
+    height: 250px;
+    background-color: #242731;
+    border-radius: 10px;
+    margin-left: 816px;
+    margin-top: -250px;
+}
+
+.graf08{
+    width: 810px;
+    height: 250px;
+    background-color: #242731;
+    border-radius: 10px;
+}
+
+.graf09{
+    width: 250px;
+    height: 250px;
+    background-color: #242731;
+    border-radius: 10px;
+    margin-left: 816px;
+    margin-top: -250px;
 }
