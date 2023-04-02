@@ -44,8 +44,16 @@ function salvar(nome, email, senha, id, cnpj) {
     return database.executar(instrucao);
 }
 
+function pegarInfoBanco(idCliente){
+    let instrucao = `
+        select nomeUnidade, idUnidade from unidade where fkCliente = ${idCliente};
+    `
+    return database.executar(instrucao)
+}
+
 module.exports = {
     cadastrar,
     autenticar,
-    salvar
+    salvar,
+    pegarInfoBanco
 };

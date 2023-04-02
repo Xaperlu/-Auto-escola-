@@ -467,8 +467,6 @@ function abrirteladeescolhadeunidadefuncionario() {
 
 
 
-
-
 // const valoresDoSelect = [{nome: "José", idade: 18}];
 // valoresDoSelect.map(valor => {
 //     document.createElement("li")

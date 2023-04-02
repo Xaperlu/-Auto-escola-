@@ -213,8 +213,8 @@
             <input id="" class="inpcadastrarunidade" type="number" placeholder="Quantidade de armazenamento">  
             <input id="" class="inpcadastrarunidade" type="text" placeholder="Quantidade de memoria ram">  
             
-            <select name="" id="">
-              <option value="">Nenhuma</option>
+            <select name="" id="selHardware">
+              <option value="">--Selecione a Unidade--</option>
             </select> 
 
             <button id="btncriarhardware" onclick="cadastrarhardware()">Criar</button>
@@ -252,8 +252,8 @@
             <input id="" class="inpcadastrarunidade" type="number" placeholder="data de nascimento">  
             <input id="" class="inpcadastrarunidade" type="number" placeholder="celular">  
 
-            <select name="" id="">
-              <option value="">Unidade</option>
+            <select name="" id="selUnidade">
+              <option value="">--Selecione a Unidade--</option>
             </select> 
 
             <button id="btncriarfuncionario" onclick="cadastrarfuncionario()">Criar</button>
@@ -293,6 +293,37 @@
 
 
 </html>
+
+<script>
+
+function pegarInfoBanco(){
+    let hardware = document.querySelector('#selHardware')
+    let unidade = document.querySelector('#selUnidade')
+    let id = sessionStorage.getItem('ID_USUARIO')
+
+    fetch(`/usuarios/pegarInfoBanco/${id}`).then(function (resposta){
+        if(resposta.ok){
+            resposta.json().then(function(response){
+                var info = JSON.parse((JSON.stringify(response)))
+
+                console.log(info[0].nomeUnidade)
+
+                for(let i = 0; i < response.length; i++){
+                    hardware.innerHTML += `<option value = ${info[i].idUnidade}>${info[i].nomeUnidade}</option>`
+                    unidade.innerHTML += `<option value = ${info[i].idUnidade}>${info[i].nomeUnidade}</option>`
+                }
+
+            })
+        }
+    })
+}
+
+
+window.onload = function(){
+    pegarInfoBanco();
+}
+
+</script>
 
 <script src="./js/perfil.js"></script>
 

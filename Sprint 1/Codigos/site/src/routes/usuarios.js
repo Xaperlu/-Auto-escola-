@@ -19,4 +19,8 @@ router.post("/salvar", function (req, res) {
     usuarioController.salvar(req, res);
 });
 
+router.get("/pegarInfoBanco/:idCliente", function (req, res) {
+    usuarioController.pegarInfoBanco(req, res);
+});
+
 module.exports = router;

@@ -66,8 +66,21 @@ function salvar(req, res) {
     }
 }
 
+
+function pegarInfoBanco(req, res){
+    const idCliente = req.params.idCliente;
+
+    usuarioModel.pegarInfoBanco(idCliente)
+        .then(
+            function(resultado){
+                res.json(resultado)
+            }
+        )
+}
+
 module.exports = {
    cadastrar,
    autenticar,
-   salvar
+   salvar,
+   pegarInfoBanco
 }
