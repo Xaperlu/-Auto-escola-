@@ -157,15 +157,55 @@ function MascaraCnpj() {
     }
 }
 
-function salvar() {
+
+
+function salvar(){
+
+
+    //aqui ele tem que validar os inputs, se estiver tudo certo  => document.querySelector(".confsenha").style.display = "flex";
+
+    document.querySelector(".confsenha").style.display = "flex";
+
+
+}
+
+
+
+function onsenha() {
+    document.querySelector("#onsenha").style.display = "none";
+    document.querySelector("#offsenha").style.display = "block";
+
+    document.querySelector("#senhaconfirmacaoupdate").type = "password";
+    console.log("mostrar texto")
+
+}
+
+function offsenha() {
+    document.querySelector("#offsenha").style.display = "none";
+    document.querySelector("#onsenha").style.display = "block";
+
+    document.querySelector("#senhaconfirmacaoupdate").type = "text";
+    console.log("mostrar senha")
+
+}
+
+function update() {
+
+    //verifica se a senha esta correta, se estiver ele atualiza senão ele volta para a tela de atualizar     =>       document.querySelector(".confsenha").style.display = "none";
+    
+
+   
+
+
+
+
+
+
+
 
 
 
     //aqui tem que fazer update dos dados da tela normal de usuario
-
-
-
-
 
     let nodisp = document.getElementById('noeditsinfo1').style.display = "flex";
     let nodisp2 = document.getElementById('noeditsinfo2').style.display = "flex";
@@ -186,6 +226,8 @@ function salvar() {
     let setaproximo = document.querySelector(".campobotoes div img").style.display = "flex";
     let botaosalvar = document.querySelector(".campobotoes div button").style.display = "none";
 
+    
+
 
 
     var idVar = sessionStorage.getItem('ID_USUARIO')
@@ -201,7 +243,7 @@ function salvar() {
 
         return false;
     }
-    else if (cnpjVar != "" && cnpjVar != 18) {
+    else if (cnpjVar == "" && cnpjVar > 14) {
         alert("CNPJ inválido! um CNPJ deve ter 14 caracteres numéricos.")
     }
     else if (emailVar != "" && !emailVar.match(/[@]/)) {
@@ -210,6 +252,8 @@ function salvar() {
     else if (senhaVar != "" && !validacaoSenha) {
         alert("Senha inválida!")
     }
+
+
 
     // Enviando o valor da nova input
     fetch("/usuarios/salvar", {
@@ -233,7 +277,7 @@ function salvar() {
         if (resposta.ok) {
             // cardErro.style.display = "block";
 
-            alert("Informmações atualizadas com sucesso!")
+            alert("Informações atualizadas com sucesso!")
 
             setTimeout(() => {
                 window.location = "perfil.html";
@@ -242,6 +286,7 @@ function salvar() {
             limparFormulario();
             finalizarAguardar();
         } else {
+            document.querySelector(".confsenha").style.display = "none";
             throw ("Houve um erro ao tentar realizar a atualização!");
         }
     }).catch(function (resposta) {

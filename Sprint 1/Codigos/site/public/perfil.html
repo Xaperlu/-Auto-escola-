@@ -125,18 +125,37 @@
           </div>
           <img src="asset/user.png" alt="">
 
+          
+
         </div>
 
         
 
         <div class="campobotoes">
-          <button id="btn" onclick="editar()">Editar <img src="asset/create-outline.svg" alt=""> </button>
+          <button id="btn" onclick="editar()">Editar <ion-icon name="create-outline"></ion-icon> </button>
 
           <div>
             <img src="asset/arrow-forward-outline.svg" alt="">
             <button id="btnsalvarupdate" onclick="salvar()">Salvar</button>
           </div>
 
+        </div>
+
+        
+
+      </div>
+
+      <div class="confsenha">
+
+        <div class="divdeconfsenha">
+          <p>Confirmar senha</p>
+          <div class="divinput">
+            <input id="senhaconfirmacaoupdate" type="password"  placeholder="********">
+            <ion-icon id="onsenha" onclick="onsenha()" name="eye-outline"></ion-icon>
+            <ion-icon id="offsenha" onclick="offsenha()" name="eye-off-outline"></ion-icon>
+          </div>
+          
+          <button onclick="update()">Confirmar</button>
         </div>
 
       </div>

@@ -275,6 +275,105 @@ body {
     margin-left: 10px;
 }
 
+.confsenha{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+}
+
+.confsenha .divdeconfsenha{
+    background-image: -webkit-linear-gradient(left, #26e3c2, #45a0f5);
+    height: 30%;
+    width: 40%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.confsenha .divdeconfsenha p{
+    color: #0f0f0f;
+    align-items: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.divinput{
+    height: 40px;
+    width: 70%;
+    font-size: 16px;
+    border: none;
+    background-color: #454545e0;
+    color: white;
+    outline: none;
+    border-radius: 5px;
+    border-bottom:solid 1px black;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    position: relative;
+
+
+}
+
+.divinput ion-icon{
+    position: absolute;
+    right: 5%;
+    
+    
+
+}
+
+#onsenha{
+    display: none;
+}
+
+#offsenha{
+    display: block;
+}
+
+ .divinput input{
+    height: 40px;
+    width: 85%;
+    font-size: 16px;
+    border: none;
+    background-color: #454545e0;
+    color: white;
+    outline: none;
+    padding: 10px;
+    border-radius: 5px;
+    border-bottom:solid 1px black;
+    text-align: center;
+    
+    
+}
+
+.confsenha div input::placeholder{
+    color: rgb(196, 196, 196);
+}
+
+.confsenha div button{
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background-color: #05ff1af6;
+    color: white;
+    outline: none;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0px 0px 20px 1px rgba(45, 45, 45, 0.648);
+    cursor: pointer;
+    
+    
+}
+
 
 
 
