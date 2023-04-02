@@ -719,17 +719,7 @@ body {
 
 }
 
-.campobotoes div img {
-    display: flex;
-    height: 50px;
-    width: 50px;
-    cursor: pointer;
-    position: absolute;
-    background-image: -webkit-linear-gradient(45deg, #45a0f5e3, #45a0f5);
-    padding: 0px 10px;
-    border-radius: 10px;transform: rotate(90deg);
 
-}
 
 .campobotoes button img {
     height: 20px;

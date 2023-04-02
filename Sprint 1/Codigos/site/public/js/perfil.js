@@ -147,7 +147,6 @@ function editar() {
         let disp5 = document.getElementById('boll1After').style.display = "block";
         let disp6 = document.getElementById('boll2After').style.display = "block";
 
-        let setaproximo = document.querySelector(".campobotoes div img").style.display = "none"
         let botaosalvar = document.querySelector(".campobotoes div button").style.display = "flex"
 
         let nomebotao = document.getElementById('btn').innerHTML="voltar"
@@ -169,7 +168,6 @@ function editar() {
         let disp5 = document.getElementById('boll1After').style.display = "none";
         let disp6 = document.getElementById('boll2After').style.display = "none";
 
-        let setaproximo = document.querySelector(".campobotoes div img").style.display = "flex"
         let botaosalvar = document.querySelector(".campobotoes div button").style.display = "none"
 
         let nonebotao = document.getElementById('btn').innerHTML="Editar <ion-icon name="+"create-outline"+" ></ion-icon>"
