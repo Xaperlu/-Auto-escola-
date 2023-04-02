@@ -1,7 +1,8 @@
 document.querySelector("#voltarperfil").addEventListener("click", ()=>{
-   
+   console.log("sair")
 
-    //ir para tela de perfil
+    window.location = "./perfil.html";
+    
 
     
 })

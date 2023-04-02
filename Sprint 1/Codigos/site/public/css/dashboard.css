@@ -11,6 +11,7 @@ body{
 
 .conteudo{
     display: flex;
+    
 }
 
 .painel{
@@ -18,11 +19,12 @@ body{
     width: 23vw;
     height: 100vh;
     justify-content: flex-end;
+    position: fixed;
 }
 
 .navbar{
     width: 90%;
-    height: 1245px;
+    height: 95vh;
     background-color: #242731;
     margin-top: 2vh;
     border-radius: 10px;
@@ -107,6 +109,7 @@ body{
     align-items: center;
     flex-direction: column;
     gap: 50px;
+    margin-left: 22%;
 }
 
 .kpi{

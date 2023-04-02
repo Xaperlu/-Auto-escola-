@@ -22,10 +22,16 @@
     </div>
 
     <ul class="guias">
-      <li><a href="dashboard.html"> <img src="asset/graf.png" alt=""> Dashboard</a></li>
+      <li class="titleopcionais"><p>Acessar</p></li>
+      <li><a href="dashboard.html"> Dashboard</a></li>
+
+      <li id="adicional" class="titleopcionais"><p>Adicionar</p></li>
       
-        
-      <li><a href="index.html">Sair</a></li>
+      <li id="addunidades" class="add"  ><p>+ Unidade</p></li>
+      <li id="addhardware" class="add"  ><p>+ Hardware</p></li>
+      <li id="addfuncionario" class="add" ><p>+ Funcionario</p></li>
+
+      <li id="sair"><a href="index.html"><ion-icon name="exit-outline"></ion-icon></a> </li>
 
     </ul>
 
@@ -35,16 +41,7 @@
 
   <div class="janelainfo">
 
-    <div class="botoes">
-
     
-        
-        <button id="addunidades" class="cima"><ion-icon name="add-outline"></ion-icon> Unidades</button>
-
-        <button id="addhardware" class="cima"><ion-icon name="add-outline"></ion-icon> hardware</button>
-
-  
-    </div>
 
 
     <div class="card">
@@ -131,6 +128,8 @@
 
         
 
+        
+
         <div class="campobotoes">
           <button id="btn" onclick="editar()">Editar <ion-icon name="create-outline"></ion-icon> </button>
 
@@ -187,7 +186,7 @@
 
 
 
-          <button class="editarunidhard" onclick="abrirteladeescolhaunidade()">Editar <img src="asset/create-outline.svg" alt=""> </button>
+          <button class="editarunidhard" onclick="abrirteladeescolhaunidade()">Editar <ion-icon name="create-outline"></ion-icon> </button>
 
         </DIV>
 
@@ -232,7 +231,46 @@
 
 
 
-          <button class="editarunidhard" onclick="abrirteladeescolhahardware()">Editar <img src="asset/create-outline.svg" alt=""> </button>
+          <button class="editarunidhard" onclick="abrirteladeescolhahardware()">Editar <ion-icon name="create-outline"></ion-icon> </button>
+
+
+        </DIV>
+
+      </div>
+
+
+
+      <div id="janelacadastrofuncionario" class="outroscadastros">
+        <ion-icon id="fecharjanelafuncionario" class="botaoexit" name="add-outline"></ion-icon>
+
+        <DIV class="containerdentrocadastrarunidade">
+          <h1 id="agaummm">Cadastrar funcionario</h1>
+
+          <div class="dadoscadastrounidade">
+            <input id="" class="inpcadastrarunidade" type="text" placeholder="nome">   
+            <input id="" class="inpcadastrarunidade" type="text" placeholder="cargo">  
+            <input id="" class="inpcadastrarunidade" type="number" placeholder="data de nascimento">  
+            <input id="" class="inpcadastrarunidade" type="number" placeholder="celular">  
+
+            <select name="" id="">
+              <option value="">Unidade</option>
+            </select> 
+
+            <button id="btncriarfuncionario" onclick="cadastrarfuncionario()">Criar</button>
+
+
+
+
+            <ul id="listadeunidadedefuncionarioparaupdate">
+
+            </ul>
+
+            <button id="btnupdatefuncionario" onclick="updatefuncionario()">Update</button>
+          </div>
+
+
+
+          <button class="editarunidhard" onclick="abrirteladeescolhadeunidadefuncionario()">Editar <ion-icon name="create-outline"></ion-icon> </button>
 
 
         </DIV>

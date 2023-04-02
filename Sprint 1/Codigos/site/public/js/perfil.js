@@ -19,9 +19,12 @@ document.querySelector("#addunidades").addEventListener("click", () => {
         console.log("none")
     } else {
         var teladecadastrohardware = document.querySelector("#janelacadastrohardware").style.display = "none"
+        document.querySelector("#janelacadastrofuncionario").style.display = "none"
+        var h1 = document.querySelector("#agaumm").style.opacity = "1";
         teladecadastrounidade.style.display = "flex";
-        var botaodeadicionarunidade = document.querySelector("#addunidades").style.display = "none";
-        var botaodeadicionarhardware = document.querySelector("#addhardware").style.display = "none";
+
+        let teladeescolha = document.querySelector("#listadeunidadeparaupdate").style.display = "none";
+        let botaocriar = document.querySelector("#btncriarunidade").style.display = "block";
 
         console.log("flex")
     }
@@ -33,8 +36,6 @@ document.querySelector("#fecharjanelaunidade").addEventListener("click", () => {
 
 
     var teladecadastrounidade = document.querySelector("#janelacadastrounidade").style.display = "none"   //fechar janela de unidade => o "X" da tela 
-    var botaodeadicionarunidade = document.querySelector("#addunidades").style.display = "flex";
-    var botaodeadicionarhardware = document.querySelector("#addhardware").style.display = "flex";
 
     var teladeescolha = document.querySelector("#listadeunidadeparaupdate").style.display = "none";
     var h1 = document.querySelector("#agaumm").style.opacity = "1";
@@ -60,9 +61,12 @@ document.querySelector("#addhardware").addEventListener("click", () => {
 
     } else {
         var teladecadastrounidade = document.querySelector("#janelacadastrounidade").style.display = "none"
+        document.querySelector("#janelacadastrofuncionario").style.display = "none"
+        var h1 = document.querySelector("#agaum").style.opacity = "1"; 
         teladecadastrohardware.style.display = "flex";
-        var botaodeadicionarunidade = document.querySelector("#addunidades").style.display = "none";
-        var botaodeadicionarhardware = document.querySelector("#addhardware").style.display = "none";
+
+        let teladeescolha = document.querySelector("#listadehaerwareparaupdate").style.display = "none";
+        let botaocriar = document.querySelector("#btncriarhardware").style.display = "block";
 
     }
 
@@ -75,12 +79,47 @@ document.querySelector("#fecharjanelahardware").addEventListener("click", () => 
 
 
     var teladecadastrohardware = document.querySelector("#janelacadastrohardware").style.display = "none"   //fechar janela de hardware => o "X" da tela 
-    var botaodeadicionarunidade = document.querySelector("#addunidades").style.display = "flex";
-    var botaodeadicionarhardware = document.querySelector("#addhardware").style.display = "flex";
+    
 
     var teladeescolha = document.querySelector("#listadehaerwareparaupdate").style.display = "none";
     var h1 = document.querySelector("#agaum").style.opacity = "1";
     var botaocriar = document.querySelector("#btncriarhardware").style.display = "block";
+
+
+});
+
+
+
+document.querySelector("#addfuncionario").addEventListener("click", () => {
+    console.log("teque")
+
+    var teladecadastrodefuncionario = document.querySelector("#janelacadastrofuncionario");
+   
+
+    if (janelacadastrofuncionario.style.display == "flex") {        //abrir janela de unidade
+        janelacadastrofuncionario.style.display = "none"
+
+        console.log("none")
+    } else {
+        var teladecadastrohardware = document.querySelector("#janelacadastrohardware").style.display = "none"
+        var teladecadastrounidade = document.querySelector("#janelacadastrounidade").style.display = "none"
+
+        let teladeescolha = document.querySelector("#listadeunidadedefuncionarioparaupdate").style.display = "none";
+        var h1 = document.querySelector("#agaummm").style.opacity = "1";
+        let botaocriar = document.querySelector("#btncriarfuncionario").style.display = "block";
+        janelacadastrofuncionario.style.display = "flex";
+
+        console.log("flex")
+    }
+
+
+});
+
+document.querySelector("#fecharjanelafuncionario").addEventListener("click", () => {
+
+
+    var janelacadastrofuncionario = document.querySelector("#janelacadastrofuncionario").style.display = "none";
+    var botaocriar = document.querySelector("#btncriarfuncionario").style.display = "block";
 
 
 });
@@ -111,7 +150,8 @@ function editar() {
         let setaproximo = document.querySelector(".campobotoes div img").style.display = "none"
         let botaosalvar = document.querySelector(".campobotoes div button").style.display = "flex"
 
-        let nonebotao = document.getElementById('btn')
+        let nomebotao = document.getElementById('btn').innerHTML="voltar"
+        
 
     } else {
 
@@ -132,7 +172,7 @@ function editar() {
         let setaproximo = document.querySelector(".campobotoes div img").style.display = "flex"
         let botaosalvar = document.querySelector(".campobotoes div button").style.display = "none"
 
-        let nonebotao = document.getElementById('btn')
+        let nonebotao = document.getElementById('btn').innerHTML="Editar <ion-icon name="+"create-outline"+" ></ion-icon>"
 
     }
 
@@ -333,7 +373,7 @@ function cadastrarunidade() {
 function abrirteladeescolhaunidade() {
     var teladeescolha = document.querySelector("#listadeunidadeparaupdate").style.display = "flex";
     var h1 = document.querySelector("#agaumm").style.opacity = "0";
-    var botaocriar = document.querySelector("#btncriarunidade").style.display = "none";
+    let botaocriar = document.querySelector("#btncriarunidade").style.display = "none";
 }
 
 
@@ -380,8 +420,52 @@ function cadastrarhardware() {
 function abrirteladeescolhahardware() {
     var teladeescolha = document.querySelector("#listadehaerwareparaupdate").style.display = "flex";
     var h1 = document.querySelector("#agaum").style.opacity = "0";
-    var botaocriar = document.querySelector("#btncriarhardware").style.display = "none";
+    let botaocriar = document.querySelector("#btncriarhardware").style.display = "none";
 }
+
+
+
+
+
+
+
+
+
+function cadastrarfuncionario(){
+
+    //pegar os dados dos inputs da tela de cadastro de hardware e jogar no banco de dados
+
+
+}
+
+
+function abrirteladeescolhadeunidadefuncionario() {
+    var teladeescolha = document.querySelector("#listadeunidadedefuncionarioparaupdate").style.display = "flex";
+    var h1 = document.querySelector("#agaummm").style.opacity = "0";
+    let botaocriar = document.querySelector("#btncriarfuncionario").style.display = "none";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
