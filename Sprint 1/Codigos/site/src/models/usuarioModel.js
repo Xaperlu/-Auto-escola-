@@ -1,15 +1,15 @@
 var database = require("../database/config")
 
-function cadastrar(nome, cnpj, email, senha){
+function cadastrar(nome, cnpj, email, senha, nivel){
     let instrucao = `
-        insert into cliente values ('${nome}', '${cnpj}', '${email}', '${senha}');
+        exec InserirCliente '${email}', '${senha}', ${nivel}, '${nome}', '${cnpj}';
     `
     return database.executar(instrucao)
 }
 
 function autenticar(email, senha){
     let instrucao = `
-        select * from cliente where email = '${email}' and senha = '${senha}';
+        select * from cliente join gestaoAcesso as ga on idGestaoAcesso = fkGestaoAcesso where ga.email = '${email}' and ga.senha = '${senha}';
     `
     return database.executar(instrucao)
 }

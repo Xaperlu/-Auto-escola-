@@ -134,6 +134,7 @@ function SenhaForte(){
         const cnpj = inCnpj.value;
         const email = inEmail.value;
         const senha = inSenha.value;
+        const nivel = 3;
         const confirmacaoSenha = inConfirmacaoSenha.value;
         const validacaoSenha = senha.match(/[0-9]/) && senha.match(/[A-Z]/) && senha.match(/[!\@\#\$\%\&\*]/) && senha.length >= 6
 
@@ -150,7 +151,8 @@ function SenhaForte(){
                     nome,
                     cnpj,
                     email,
-                    senha
+                    senha,
+                    nivel
                 })
             }).then(function(resposta){
                 if(resposta.ok){

@@ -7,8 +7,9 @@ function cadastrar(req, res){
     const cnpj = req.body.cnpj;
     const email = req.body.email;
     const senha = req.body.senha;
+    const nivel = req.body.nivel;
 
-    usuarioModel.cadastrar(nome, cnpj, email, senha)
+    usuarioModel.cadastrar(nome, cnpj, email, senha, nivel)
         .then(
             function(resultado){
                 res.json(resultado)
