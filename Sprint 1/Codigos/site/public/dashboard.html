@@ -23,27 +23,64 @@
                 </div>
                 <div class="filtros">
                     <div class="filtro">
-                        <label for="selFiltro01">Filtro 01</label>
+                        <label for="selFiltro01">Cliente</label>
                         <select class="styleFiltro" id="selFiltro01">
-                            <option value="">Opção1</option>
+                            <option value="">Todos</option>
                             <option value="">Opção2</option>
                         </select>
                     </div>
                     <div class="filtro">
-                        <label for="selFiltro02">Filtro 02</label>
+                        <label for="selFiltro02">Unidade</label>
                         <select class="styleFiltro" id="selFiltro02">
-                            <option value="">Opção1</option>
+                            <option value="">Todos</option>
                             <option value="">Opção2</option>
                         </select>
                     </div>
                     <div class="filtro">
-                        <label for="selFiltro03">Filtro 03</label>
+                        <label for="selFiltro03">Componente</label>
                         <select class="styleFiltro" id="selFiltro03">
-                            <option value="">Opção1</option>
+                            <option value="">Todos</option>
+                            <option value="">Opção2</option>
+                        </select>
+                    </div>
+                    <div class="filtro">
+                        <label for="selFiltro03">Número de Série</label>
+                        <select class="styleFiltro" id="selFiltro04">
+                            <option value="">Todos</option>
+                            <option value="">Opção2</option>
+                        </select>
+                    </div>
+                    <div class="filtro">
+                        <label for="selFiltro03">Sistema Operacional</label>
+                        <select class="styleFiltro" id="selFiltro05">
+                            <option value="">Todos</option>
+                            <option value="">Opção2</option>
+                        </select>
+                    </div>
+                    <div class="filtro">
+                        <label for="selFiltro03">Data</label>
+                        <select class="styleFiltro02" id="selFiltro06">
+                            <option value="">Todos</option>
+                            <option value="">Opção2</option>
+                        </select>
+                        <select class="styleFiltro03" id="selFiltro07">
+                            <option value="">Todos</option>
+                            <option value="">Opção2</option>
+                        </select>
+                    </div>
+                    <div class="filtro">
+                        <label for="selFiltro03">Hora</label>
+                        <select class="styleFiltro02" id="selFiltro06">
+                            <option value="">Todos</option>
+                            <option value="">Opção2</option>
+                        </select>
+                        <select class="styleFiltro03" id="selFiltro07">
+                            <option value="">Todos</option>
                             <option value="">Opção2</option>
                         </select>
                     </div>
                 </div>
+                
                 <div class="opcao">
                     <button id="voltarperfil" class="btOpcao"><i class="fa-solid fa-arrow-right-from-bracket"></i></button>
                 </div>
@@ -61,8 +98,8 @@
                 </div>
                 <div class="divisor"></div>
                 <div class="bigN">
-                    <p>KPI 01</p>
-                    <span class="metrica">500</span>
+                    <p>Mediana Ping</p>
+                    <span class="metrica01">500</span>
                     <div class="barra">
                         <div class="barra01"></div>
                         <div class="barra02"></div>
@@ -70,8 +107,8 @@
                 </div>
                 <div class="divisor"></div>
                 <div class="bigN">
-                    <p>KPI 01</p>
-                    <span class="metrica">500</span>
+                    <p>Mediana Memória RAM</p>
+                    <span class="metrica02">500</span>
                     <div class="barra">
                         <div class="barra01"></div>
                         <div class="barra02"></div>
@@ -79,8 +116,8 @@
                 </div>
                 <div class="divisor"></div>
                 <div class="bigN">
-                    <p>KPI 01</p>
-                    <span class="metrica">500</span>
+                    <p>Mediana Disco</p>
+                    <span class="metrica03">500</span>
                     <div class="barra">
                         <div class="barra01"></div>
                         <div class="barra02"></div>
@@ -88,8 +125,8 @@
                 </div>
                 <div class="divisor"></div>
                 <div class="bigN">
-                    <p>KPI 01</p>
-                    <span class="metrica">500</span>
+                    <p>Mediana CPU</p>
+                    <span class="metrica04">500</span>
                     <div class="barra">
                         <div class="barra01"></div>
                         <div class="barra02"></div>
@@ -97,6 +134,15 @@
                 </div>
             </div>
             <div class="visual">
+                <div class="txt">
+                    <h3>Velocidade Mbps Download e Upload</h3>
+                </div>
+                <div class="txt04">
+                    <h3>Mediana Download</h3>
+                </div>
+                <div class="txt02">
+                    <h3>Mediana Upload</h3>
+                </div>
                 <div class="box01">
                     <div class="graf03">
                         <div>
@@ -114,6 +160,12 @@
                         </div>
                     </div>
                 </div>
+                <div class="txt">
+                    <h3>Porcentagem de uso da Memória RAM</h3>
+                </div>
+                <div class="txt02">
+                    <h3>Acima de 80% - RAM</h3>
+                </div>
                 <div class="box02">
                     <div class="graf04">
                         <div>
@@ -126,6 +178,12 @@
                         </div>
                     </div>
                 </div>
+                <div class="txt">
+                    <h3>Porcentagem de uso do Disco</h3>
+                </div>
+                <div class="txt02">
+                    <h3>Acima de 80% - Disco</h3>
+                </div>
                 <div class="box03">
                     <div class="graf06">
                         <div>
@@ -137,6 +195,12 @@
                             <canvas id="myChart6" style="position: relative; height:15vh; width:15vw"></canvas>
                         </div>
                     </div>
+                </div>
+                <div class="txt">
+                    <h3>Porcentagem de uso da CPU</h3>
+                </div>
+                <div class="txt02">
+                    <h3>Acima de 80% - CPU</h3>
                 </div>
                 <div class="box04">
                     <div class="graf08">
@@ -161,26 +225,16 @@
     
     const data = {
     labels: [
-        'Domingo',
-        'Segunda',
-        'Terça',
-        'Quarta',
-        'Quinta',
-        'Sexta',
-        'Sábado'
+        'Sim',
+        'Não'
     ],
     
     datasets: [{
         label: 'Velocidade de Download',
-        data: [100, 13, 25, 47, 9, 91, 33],
+        data: [100, 13],
         backgroundColor: [
-        '#60A5FA',
-        'rgb(0,0,128)',
-        'rgb(0,0,255)',
-        'rgb(100,149,237)',
-        'rgb(0,191,255)',
-        'rgb(173,216,230)',
-        'rgb(176,196,222)'
+        '#00008B',
+        '#5F57BD'
         ],
         hoverOffset: 4
     }]
@@ -193,26 +247,16 @@
 
     const data2 = {
     labels: [
-        'Domingo',
-        'Segunda',
-        'Terça',
-        'Quarta',
-        'Quinta',
-        'Sexta',
-        'Sábado'
+        'Sim',
+        'Não'
     ],
     
     datasets: [{
         label: 'Velocidade de Upload',
-        data: [200, 77, 83, 99, 64, 157, 65],
+        data: [200, 77],
         backgroundColor: [
-        'rgb(106,90,205)',
-        'rgb(0,0,128)',
-        'rgb(0,0,255)',
-        'rgb(100,149,237)',
-        'rgb(0,191,255)',
-        'rgb(173,216,230)',
-        'rgb(176,196,222)'
+        '#00008B',
+        '#5F57BD'
         ],
         hoverOffset: 4
     }]
@@ -237,14 +281,14 @@
     labels: labels3,
     datasets: [{
         label: 'Velocidade de Download',
-        backgroundColor: '#60A5FA',
-        borderColor: '#60A5FA',
+        backgroundColor: '#0000FF',
+        borderColor: '#0000FF',
         data: [100, 13, 25, 47, 9, 91, 33],
     },
     {
         label: 'Velocidade de Upload',
-        backgroundColor: 'rgb(0, 0, 255)',
-        borderColor: 'rgb(0, 0, 255)',
+        backgroundColor: '#5F57BD',
+        borderColor: '#5F57BD',
         data: [200, 77, 83, 99, 64, 157, 65],
     }]
    };
@@ -257,26 +301,16 @@
    
    const data4 = {
     labels: [
-        'Domingo',
-        'Segunda',
-        'Terça',
-        'Quarta',
-        'Quinta',
-        'Sexta',
-        'Sábado'
+        'Sim',
+        'Não'
     ],
     
     datasets: [{
         label: 'Consumo de Memória RAM',
-        data: [0, 95, 87, 68, 76, 32, 89],
+        data: [10, 95],
         backgroundColor: [
-        'rgb(106,90,205)',
-        'rgb(0,0,128)',
-        'rgb(0,0,255)',
-        'rgb(100,149,237)',
-        'rgb(0,191,255)',
-        'rgb(173,216,230)',
-        'rgb(176,196,222)'
+        '#B3345E',
+        '#DC143C'
         ],
         hoverOffset: 4
     }]
@@ -301,8 +335,8 @@
     labels: labels5,
     datasets: [{
         label: 'Consumo de Memória RAM',
-        backgroundColor: 'rgb(0, 0, 139)',
-        borderColor: 'rgb(0, 0, 139)',
+        backgroundColor: '#B3345E',
+        borderColor: '#B3345E',
         data: [0, 95, 87, 68, 76, 32, 89],
     }]
    };
@@ -315,26 +349,16 @@
 
    const data6 = {
     labels: [
-        'Domingo',
-        'Segunda',
-        'Terça',
-        'Quarta',
-        'Quinta',
-        'Sexta',
-        'Sábado'
+        'Sim',
+        'Não'
     ],
     
     datasets: [{
         label: 'Consumo de Disco',
-        data: [80, 87, 90, 93, 99, 83, 95],
+        data: [80, 87],
         backgroundColor: [
-        'rgb(106,90,205)',
-        'rgb(0,0,128)',
-        'rgb(0,0,255)',
-        'rgb(100,149,237)',
-        'rgb(0,191,255)',
-        'rgb(173,216,230)',
-        'rgb(176,196,222)'
+        '#964EBF',
+        '#4B0082'
         ],
         hoverOffset: 4
     }]
@@ -359,8 +383,8 @@
     labels: labels7,
     datasets: [{
         label: 'Consumo de Disco',
-        backgroundColor: 'rgb(0, 191, 255)',
-        borderColor: 'rgb(0, 191, 255)',
+        backgroundColor: '#4B0082',
+        borderColor: '#4B0082',
         data: [80, 87, 90, 93, 99, 83, 95],
     }]
    };
@@ -373,26 +397,16 @@
 
    const data8 = {
     labels: [
-        'Domingo',
-        'Segunda',
-        'Terça',
-        'Quarta',
-        'Quinta',
-        'Sexta',
-        'Sábado'
+        'Sim',
+        'Não'
     ],
     
     datasets: [{
         label: 'Consumo de CPU',
-        data: [60, 98, 96, 84, 90, 67, 95],
+        data: [60, 98],
         backgroundColor: [
-        'rgb(106,90,205)',
-        'rgb(0,0,128)',
-        'rgb(0,0,255)',
-        'rgb(100,149,237)',
-        'rgb(0,191,255)',
-        'rgb(173,216,230)',
-        'rgb(176,196,222)'
+        '#0000FF',
+        '#487CBC'
         ],
         hoverOffset: 4
     }]
@@ -417,8 +431,8 @@
     labels: labels9,
     datasets: [{
         label: 'Consumo de CPU',
-        backgroundColor: 'rgb(176, 196, 222)',
-        borderColor: 'rgb(176, 196, 222)',
+        backgroundColor: '#0000FF',
+        borderColor: '#0000FF',
         data: [60, 98, 96, 84, 90, 67, 95],
     }]
    };
