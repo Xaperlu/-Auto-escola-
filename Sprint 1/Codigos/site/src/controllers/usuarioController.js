@@ -17,6 +17,26 @@ function cadastrar(req, res){
         )
 }
 
+function cadastrarHardware(req, res){
+    const cliente = req.body.cliente
+    const unidade = req.body.unidade
+    const numeroSerie = req.body.numeroSerie
+    const so = req.body.so
+    const cpu = req.body.cpu
+    const disco = req.body.disco
+    const memoria = req.body.memoria
+    const cpuModelo = req.body.cpuModelo
+    const discoModelo = req.body.discoModelo
+    const memoriaModelo = req.body.memoriaModelo
+
+    usuarioModel.cadastrarHardware(cliente, unidade, numeroSerie, so, cpu, disco, memoria, cpuModelo, discoModelo, memoriaModelo)
+        .then(
+            function(resultado){
+                res.json(resultado)
+            }
+        )
+}
+
 function autenticar(req, res){
     const email = req.body.email;
     const senha = req.body.senha;
@@ -83,5 +103,6 @@ module.exports = {
    cadastrar,
    autenticar,
    salvar,
-   pegarInfoBanco
+   pegarInfoBanco,
+   cadastrarHardware
 }

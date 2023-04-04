@@ -451,7 +451,43 @@ function abrirteladeescolhadeunidadefuncionario() {
 
 
 
+function hardwareCadastro(){
+    const cliente = sessionStorage.getItem("ID_USUARIO")
+    const unidade = document.querySelector('#selHardware').value
+    const numeroSerie = document.querySelector('#nserie').value
+    const so = document.querySelector('#sistemaOperacional').value
+    const cpu = "CPU"
+    const disco = "Disco"
+    const memoria = "Memória RAM"
+    const cpuModelo = document.querySelector('#cpuModelo').value
+    const discoModelo = document.querySelector('#discoModelo').value
+    const memoriaModelo = document.querySelector('#memoriaModelo').value
 
+    fetch(`/usuarios/cadastrarHardware`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            cliente,
+            unidade,
+            numeroSerie,
+            so,
+            cpu,
+            disco,
+            memoria,
+            cpuModelo,
+            discoModelo,
+            memoriaModelo
+        })
+    }).then(function (resposta) {
+        if(resposta.ok){
+            alert('Cadastro com sucesso')
+        }else{
+            alert('Falha no cadastro')
+        }
+    })
+}
 
 
 

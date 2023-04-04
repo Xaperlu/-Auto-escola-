@@ -7,6 +7,13 @@ function cadastrar(nome, cnpj, email, senha, nivel){
     return database.executar(instrucao)
 }
 
+function cadastrarHardware(cliente, unidade, numeroSerie, so, cpu, disco, memoria, cpuModelo, discoModelo, memoriaModelo){
+    let instrucao = `
+        exec InserirHardware ${cliente}, ${unidade}, '${numeroSerie}', '${so}', '${cpu}', ${disco}, '${memoria}', '${cpuModelo}', '${discoModelo}', '${memoriaModelo}';
+    `
+    return database.executar(instrucao)
+}
+
 function autenticar(email, senha){
     let instrucao = `
         select * from cliente join gestaoAcesso as ga on idGestaoAcesso = fkGestaoAcesso where ga.email = '${email}' and ga.senha = '${senha}';
@@ -55,5 +62,6 @@ module.exports = {
     cadastrar,
     autenticar,
     salvar,
-    pegarInfoBanco
+    pegarInfoBanco,
+    cadastrarHardware
 };
