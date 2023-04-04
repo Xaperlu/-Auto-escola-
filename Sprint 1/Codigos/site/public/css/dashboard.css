@@ -32,6 +32,7 @@ body{
     flex-direction: column;
     justify-content: start;
     position: relative;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.166);
 }
 
 .logoNav{
@@ -151,6 +152,8 @@ body{
     background-color: #242731;
     border-radius: 10px;
     margin-top: 2vh;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.166);
+
 }
 
 .divisor{
@@ -262,6 +265,8 @@ body{
     height: 250px;
     background-color: #242731;
     border-radius: 10px;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.166);
+
 }
 
 .graf02{
@@ -269,6 +274,8 @@ body{
     height: 250px;
     background-color: #242731;
     border-radius: 10px;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.166);
+
 }
 
 .graf03{
@@ -276,6 +283,8 @@ body{
     height: 250px;
     background-color: #242731;
     border-radius: 10px;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.166);
+
 }
 
 .graf04{
@@ -283,6 +292,8 @@ body{
     height: 250px;
     background-color: #242731;
     border-radius: 10px;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.166);
+
 }
 
 .graf05{
@@ -292,6 +303,8 @@ body{
     border-radius: 10px;
     margin-left: 816px;
     margin-top: -250px;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.166);
+
 }
 
 .graf06{
@@ -299,6 +312,8 @@ body{
     height: 250px;
     background-color: #242731;
     border-radius: 10px;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.166);
+
 }
 
 .graf07{
@@ -308,6 +323,8 @@ body{
     border-radius: 10px;
     margin-left: 816px;
     margin-top: -250px;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.166);
+
 }
 
 .graf08{
@@ -315,6 +332,8 @@ body{
     height: 250px;
     background-color: #242731;
     border-radius: 10px;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.166);
+
 }
 
 .graf09{
@@ -324,6 +343,8 @@ body{
     border-radius: 10px;
     margin-left: 816px;
     margin-top: -250px;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.166);
+
 }
 
 .txt{
