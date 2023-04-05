@@ -7,6 +7,13 @@ function cadastrar(nome, cnpj, email, senha, nivel){
     return database.executar(instrucao)
 }
 
+function cadastrar(nome, telefone, cep, bairo, numero, logradouro){
+    let instrucao = `
+        exec InserirUnidade '${nome}', '${telefone}', ${cep}, '${logradouro}', '${bairo}', '${numero}';
+    `
+    return database.executar(instrucao)
+}
+
 function autenticar(email, senha){
     let instrucao = `
         select * from cliente join gestaoAcesso as ga on idGestaoAcesso = fkGestaoAcesso where ga.email = '${email}' and ga.senha = '${senha}';

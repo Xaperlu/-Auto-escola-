@@ -29,6 +29,23 @@ function autenticar(req, res){
         )
 }
 
+function cadastrarUnidade(req, res){
+    const nome = req.body.nome;
+    const telefone = req.body.telefone;
+    const logradouro = req.body.logradouro;
+    const cep = req.body.cep;
+    const bairo = req.body.bairo;
+    const numero = req.body.numero;
+
+    usuarioModel.cadastrar(nome, telefone, logradouro, cep, bairo, numero)
+        .then(
+            function(resultado){
+                res.json(resultado)
+            }
+        )
+}
+
+
 function salvar(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
     var nome = req.body.nomeServer;
@@ -83,5 +100,6 @@ module.exports = {
    cadastrar,
    autenticar,
    salvar,
-   pegarInfoBanco
+   pegarInfoBanco,
+   cadastrarUnidade
 }

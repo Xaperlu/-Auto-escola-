@@ -346,7 +346,41 @@ function cadastrarunidade() {
 
     //pegar os dados dos inputs da tela de cadastro de unidade e jogar no banco de dados
 
+    const nome = nomeUnidade.value;
+    const telefone = telefoneUnidade.value;
+    const logradouro = logradouroUnidade.value;
+    const cep = cepUnidade.value;
+    const bairro = bairroUnidade.value;
+    const numero = numeroUnidade.value;
+    const
 
+    if(nome == '' || telefone == '' || logradouro == '' || cep == '' || bairro == '' || numero == ''){
+        alert("Preencha os campos corretamente!")
+        return false
+    }else{
+        fetch("/usuarios/cadastrarUnidade", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                nome,
+                telefone,
+                logradouro,
+                cep,
+                bairro,
+                numero
+            })
+        }).then(function(resposta){
+            if(resposta.ok){
+                alert("Cadastrado com sucesso!")
+                window.location = "./login.html"
+            }else{
+                alert("Cadastro falhou!")
+            }
+        })
+    }
+    
 
 
     var listadeunidades = document.querySelector("#listadeunidadeparaupdate");
