@@ -7,9 +7,9 @@ function cadastrar(nome, cnpj, email, senha, nivel){
     return database.executar(instrucao)
 }
 
-function cadastrar(nome, telefone, cep, bairo, numero, logradouro){
+function cadastrarUnidade(fkUsuario, nome, telefone, cep, bairro, numero, logradouro){
     let instrucao = `
-        exec InserirUnidade '${nome}', '${telefone}', ${cep}, '${logradouro}', '${bairo}', '${numero}';
+        insert into Unidade (fkCliente, nomeUnidade, telefoneFixo, cep, logradouro, bairro, numero) values (${fkUsuario}, '${nome}', '${telefone}', '${cep}', '${logradouro}', '${bairro}', ${numero});
     `
     return database.executar(instrucao)
 }
@@ -62,5 +62,6 @@ module.exports = {
     cadastrar,
     autenticar,
     salvar,
+    cadastrarUnidade,
     pegarInfoBanco
 };

@@ -308,6 +308,8 @@ function pegarInfoBanco(){
 
                 console.log(info[0].nomeUnidade)
 
+                hardware.innerHTML = ''
+                hardware.innerHTML += `<option value = "">-Selecionar Unidade-</option>`
                 for(let i = 0; i < response.length; i++){
                     hardware.innerHTML += `<option value = ${info[i].idUnidade}>${info[i].nomeUnidade}</option>`
                     unidade.innerHTML += `<option value = ${info[i].idUnidade}>${info[i].nomeUnidade}</option>`

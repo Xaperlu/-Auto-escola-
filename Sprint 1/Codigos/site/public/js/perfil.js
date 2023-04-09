@@ -1,3 +1,4 @@
+const { pegarInfoBanco } = require("../../src/models/usuarioModel");
 
 userLogado.innerHTML = sessionStorage.getItem('NOME_USUARIO')
 nomeUsuario.innerHTML = sessionStorage.getItem('NOME_USUARIO')
@@ -352,7 +353,7 @@ function cadastrarunidade() {
     const cep = cepUnidade.value;
     const bairro = bairroUnidade.value;
     const numero = numeroUnidade.value;
-    const
+    const fkUsuario = sessionStorage.getItem('ID_USUARIO');
 
     if(nome == '' || telefone == '' || logradouro == '' || cep == '' || bairro == '' || numero == ''){
         alert("Preencha os campos corretamente!")
@@ -369,12 +370,13 @@ function cadastrarunidade() {
                 logradouro,
                 cep,
                 bairro,
-                numero
+                numero,
+                fkUsuario
             })
         }).then(function(resposta){
             if(resposta.ok){
                 alert("Cadastrado com sucesso!")
-                window.location = "./login.html"
+                pegarInfoBanco();
             }else{
                 alert("Cadastro falhou!")
             }

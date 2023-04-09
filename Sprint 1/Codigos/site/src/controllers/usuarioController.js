@@ -34,10 +34,11 @@ function cadastrarUnidade(req, res){
     const telefone = req.body.telefone;
     const logradouro = req.body.logradouro;
     const cep = req.body.cep;
-    const bairo = req.body.bairo;
+    const bairro = req.body.bairro;
     const numero = req.body.numero;
+    const fkUsuario = req.body.fkUsuario;
 
-    usuarioModel.cadastrar(nome, telefone, logradouro, cep, bairo, numero)
+    usuarioModel.cadastrarUnidade(fkUsuario, nome, telefone, cep, bairro, numero, logradouro)
         .then(
             function(resultado){
                 res.json(resultado)
