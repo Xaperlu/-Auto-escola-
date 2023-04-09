@@ -14,40 +14,32 @@ function cadastrarHardware(cliente, unidade, numeroSerie, so, cpu, disco, memori
     return database.executar(instrucao)
 }
 
-function autenticar(email, senha){
+function cadastrarUnidade(nome, telefone, cep, logradouro, bairro, numero, usuario){
     let instrucao = `
-        select * from cliente join gestaoAcesso as ga on idGestaoAcesso = fkGestaoAcesso where ga.email = '${email}' and ga.senha = '${senha}';
+        insert into unidade (fkCliente, nomeUnidade, telefoneFixo, cep, logradouro, bairro, numero) values
+        (${usuario}, '${nome}', '${telefone}', '${cep}', '${logradouro}', '${bairro}', ${numero});
     `
     return database.executar(instrucao)
 }
 
-function salvar(nome, email, senha, id, cnpj) {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", nome, email, senha,id, cnpj);
-    
-    // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
-    //  e na ordem de inserção dos dados.
-    var instrucao = ''
-    if(nome != ""){
-     instrucao = `
-         UPDATE cliente SET nome = '${nome}' WHERE idCliente = ${id};
-     `;
-    }
-    if(email != ""){
-        instrucao += `
-         UPDATE cliente SET email = '${email}' WHERE idCliente = ${id};
-     `;
-    }
-    if(senha != ""){
-        instrucao += `
-         UPDATE cliente SET senha = '${senha}' WHERE idCliente = ${id};
-     `;
-    }
-    if(cnpj != ""){
-        instrucao += `
-            UPDATE cliente SET cnpj = '${cnpj}' WHERE idCliente = ${id};
-        `
-    }
-    console.log("Executando a instrução SQL: \n" + instrucao);
+function cadastrarFuncionario(unidade, idCliente, nome, cargo, data, celular, sobrenome, email, senha, nivel){
+    let instrucao = `
+        exec InserirFuncionario '${nome}', '${sobrenome}', '${cargo}', '${data}', '${celular}', ${unidade}, ${idCliente}, '${email}', '${senha}', ${nivel};
+    `
+    return database.executar(instrucao)
+}
+
+function autenticar(email, senha){
+    let instrucao = `
+        exec realizarLogin '${email}', '${senha}';
+    `
+    return database.executar(instrucao)
+}
+
+function salvar(nome, email, senha, usuario, cnpj) {
+    let instrucao = `
+        exec atualizarDados ${usuario}, '${nome}', '${cnpj}', '${email}', '${senha}';
+    `
     return database.executar(instrucao);
 }
 
@@ -63,5 +55,7 @@ module.exports = {
     autenticar,
     salvar,
     pegarInfoBanco,
-    cadastrarHardware
+    cadastrarHardware,
+    cadastrarUnidade,
+    cadastrarFuncionario
 };

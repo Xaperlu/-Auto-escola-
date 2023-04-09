@@ -253,7 +253,6 @@ body {
 }
 
 .editarinfo {
-    display: none;
     align-items: end;
 }
 
@@ -277,6 +276,22 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    
+}
+
+.editarDados {
+    background-color: transparent;
+    width: 100%;
+    height: 70%;
+    padding: 20px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    display: none;
+}
+
+#funData{
+    text-align: center;
 }
 
 .campo {
@@ -284,7 +299,6 @@ body {
 }
 
 .campo .noeditsinfo {
-
     display: flex;
     align-items: end;
 
@@ -299,8 +313,6 @@ body {
     font-size: 18px;
     text-decoration: none;
     margin-left: 0px;
-
-
 }
 
 .campo div p {
@@ -673,7 +685,6 @@ body {
     padding: 0px 50px;
     position: relative;
 }
-
 
 
 

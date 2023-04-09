@@ -8,8 +8,6 @@
     
     <link rel="shortcut icon" href="./asset/favicon-32x32.png" type="image/x-icon">
 
-    <script src="./js/funcoes.js"></script>
-
     <title>AutoTech | Login</title>
     
 </head>
@@ -55,32 +53,9 @@
 
 <script>
 
-    
-    let checkbox = document.getElementById('check');
-    if(checkbox.checked) {
-        console.log("Senha salva com sucesso!");
-    } else {
-        console.log("Você precisará digitar as credenciais novamente no próximo acesso");
-    }
-
-    
-
-
     function entrar() {
-        const email = in_email.value;
-        const senha = in_senha.value;
-
-        if(email == "" || senha == 0000){
-            window.location = "./perfil.html";
-        }
-
-        if (email == "" || senha == "") {
-            alert('Preencha os campos corretamente!')
-            return false;
-
-        }
-        
-        
+        const email = in_email.value.toLowerCase();
+        const senha = in_senha.value.toLowerCase();
 
         fetch("/usuarios/autenticar", {
             method: "POST",
@@ -100,6 +75,8 @@
                     sessionStorage.NOME_USUARIO = json[0].nome;
                     sessionStorage.CNPJ_USUARIO = json[0].cnpj;
                     sessionStorage.ID_USUARIO = json[0].idCliente;
+                    sessionStorage.NIVEL_USUARIO = json[0].nivel;
+                    sessionStorage.EMPRESA_USUARIO = json[0].nomeEmpresa;
 
                     window.location = "./perfil.html";
                 });
