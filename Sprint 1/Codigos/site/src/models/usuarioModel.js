@@ -54,8 +54,5 @@ module.exports = {
     cadastrar,
     autenticar,
     salvar,
-    pegarInfoBanco,
-    cadastrarHardware,
-    cadastrarUnidade,
-    cadastrarFuncionario
+    pegarInfoBanco
 };

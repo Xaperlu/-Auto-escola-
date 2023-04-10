@@ -86,6 +86,24 @@ function autenticar(req, res){
         )
 }
 
+function cadastrarUnidade(req, res){
+    const nome = req.body.nome;
+    const telefone = req.body.telefone;
+    const logradouro = req.body.logradouro;
+    const cep = req.body.cep;
+    const bairro = req.body.bairro;
+    const numero = req.body.numero;
+    const fkUsuario = req.body.fkUsuario;
+
+    usuarioModel.cadastrarUnidade(fkUsuario, nome, telefone, cep, bairro, numero, logradouro)
+        .then(
+            function(resultado){
+                res.json(resultado)
+            }
+        )
+}
+
+
 function salvar(req, res) {
     var nome = req.body.nome;
     var email = req.body.email;

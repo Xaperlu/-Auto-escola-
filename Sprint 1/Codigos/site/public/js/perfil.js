@@ -1,3 +1,4 @@
+const { pegarInfoBanco } = require("../../src/models/usuarioModel");
 
 userLogado.innerHTML = sessionStorage.getItem('NOME_USUARIO')
 nomeUsuario.innerHTML = sessionStorage.getItem('NOME_USUARIO')
