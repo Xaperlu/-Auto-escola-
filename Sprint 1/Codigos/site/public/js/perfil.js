@@ -339,7 +339,7 @@ function update() {
 
 
 
-
+<<<<<<< jefferson
 function cadastrarunidade() {
 
 
@@ -401,7 +401,7 @@ function cadastrarunidade() {
     var telaunidade = document.querySelector("#janelacadastrounidade").style.display = "none";
     var botaodeadicionarunidade = document.querySelector("#addunidades").style.display = "flex";
     var botaodeadicionarhardware = document.querySelector("#addhardware").style.display = "flex";
-
+>>>>>>> main
 }
 
 function abrirteladeescolhaunidade() {
