@@ -37,12 +37,7 @@
 
   </div>
 
-  
-
   <div class="janelainfo">
-
-    
-
 
     <div class="card">
       <div class="detalheboll">
@@ -52,10 +47,7 @@
         <div id="boll2"></div>
         <div id="boll1After"></div>
 
-
       </div>
-
-
 
       <div class="cardfilho">
 
@@ -63,7 +55,7 @@
 
           <div class="infos">
 
-            <h3>undefined</h3>
+            <h3 id="nomeCliente">undefined</h3>
 
             <div class="listadecampos">
 
@@ -73,22 +65,12 @@
                   <p id="nomeUsuario">undefined</p>
                 </div>
 
-                <div class="editarinfo" id="editarinfo1">
-                  <label class="title" for="">Nome:</label>
-                  <input type="text" name="" id="Nome">
-                </div>
-
               </div>
 
               <div class="campo">
                 <div class="noeditsinfo" id="noeditsinfo3">
                   <P class="title">CNPJ:</P>
                   <p id="cnpjUsuario">undefined</p>
-                </div>
-
-                <div class="editarinfo" id="editarinfo3">
-                  <label class="title" for="">CNPJ:</label>
-                  <input type="title" name="" id="CNPJ" maxlength="18" onkeyup="MascaraCnpj()">
                 </div>
               </div>
 
@@ -97,69 +79,64 @@
                   <P class="title">Email:</P>
                   <p id="emailUsuario">undefined</p>
                 </div>
+              </div>
+
+            </div>
+
+            <div class="editarDados">
+
+              <div class="campo" id="campo01">
+
+                <div class="editarinfo" id="editarinfo1">
+                  <label class="title" for="inNome">Nome:</label>
+                  <input type="text" name="" id="inNome">
+                </div>
+
+              </div>
+
+              <div class="campo" id="campo01">
+
+                <div class="editarinfo" id="editarinfo3">
+                  <label class="title" for="CNPJ">CNPJ:</label>
+                  <input type="text" id="CNPJ" maxlength="18" onkeyup="MascaraCnpj()">
+                </div>
+              </div>
+
+              <div class="campo" id="campo01">
 
                 <div class="editarinfo" id="editarinfo2">
-                  <label class="title" for="">Email:</label>
-                  <input type="text" name="" id="Email">
+                  <label class="title" for="inEmail">Email:</label>
+                  <input type="text"id="inEmail">
                 </div>
               </div>
 
               <div class="campo">
-                <div class="noeditsinfo" id="noeditsinfo4">
-                  <P class="title">Senha:</P>
-                  <p>undefined</p>
-                </div>
-
+              
                 <div class="editarinfo" id="editarinfo4">
-                  <label class="title" for="">Senha</label>
-                  <input type="password" name="" id="Senha">
+                  <label class="title" for="inSenha">Senha</label>
+                  <input type="password" id="inSenha">
                 </div>
               </div>
 
             </div>
 
-
           </div>
           <img src="asset/user.png" alt="">
 
-          
-
-        </div>
-
-        
-
-        
+        </div>        
 
         <div class="campobotoes">
-          <button id="btn" onclick="editar()">Editar <ion-icon name="create-outline"></ion-icon> </button>
+          <button class="botaoEditar" id="btn" onclick="editar()">Editar <ion-icon name="create-outline"></ion-icon> </button>
+          <button class="botaoVoltar" id="btn" onclick="voltar()" style="display: none;">Voltar <ion-icon name="create-outline"></ion-icon> </button>
 
           <div>
             <img src="asset/arrow-forward-outline.svg" alt="">
-            <button id="btnsalvarupdate" onclick="salvar()">Salvar</button>
+            <button class="botaoSalvar" id="btnsalvarupdate" onclick="update()">Salvar</button>
           </div>
 
         </div>
 
-        
-
       </div>
-
-      <div class="confsenha">
-
-        <div class="divdeconfsenha">
-          <p>Confirmar senha</p>
-          <div class="divinput">
-            <input id="senhaconfirmacaoupdate" type="password"  placeholder="********">
-            <ion-icon id="onsenha" onclick="onsenha()" name="eye-outline"></ion-icon>
-            <ion-icon id="offsenha" onclick="offsenha()" name="eye-off-outline"></ion-icon>
-          </div>
-          
-          <button onclick="update()">Confirmar</button>
-        </div>
-
-      </div>
-
-
 
       <div id="janelacadastrounidade" class="outroscadastros">
         <ion-icon id="fecharjanelaunidade" class="botaoexit" name="add-outline"></ion-icon>
@@ -168,14 +145,13 @@
           <h1 id="agaumm">Cadastrar unidade</h1>
 
           <div class="dadoscadastrounidade">
-            <input id="nomeUnidade" class="inpNomeUnidade" type="text" placeholder="Nome da unidade">   
-            <input id="telefoneUnidade" class="inpTelefoneunidade" type="number" placeholder="Telefone">  
-            <input id="cepUnidade" class="inpCepUnidade" type="number" placeholder="Cep">  
-            <input id="logradouroUnidade" class="inpLogradouroUnidade" type="text" placeholder="Logradouro">  
-            <input id="bairroUnidade" class="inpBairroUnidade" type="text" placeholder="Bairro">  
-            <input id="numeroUnidade" class="inpNumeroUnidade" type="number" placeholder="Numero">  
-            <button id="btncriarunidade" onclick="cadastrarunidade()">Criar</button>
-
+            <input id="unNomeUnidade" class="inpcadastrarunidade" type="text" placeholder="Nome da unidade">   
+            <input id="unTelefone" onkeyup="FixoMascara()" class="inpcadastrarunidade" maxlength="12" type="text" placeholder="Telefone">  
+            <input id="unCep" onkeyup="CepMascara()" class="inpcadastrarunidade" maxlength="9" placeholder="Cep" type="text">  
+            <input id="unLogradouro" class="inpcadastrarunidade" type="text" placeholder="Logradouro">  
+            <input id="unBairro" class="inpcadastrarunidade" type="text" placeholder="Bairro">  
+            <input id="unNumero" class="inpcadastrarunidade" type="number" placeholder="Numero">  
+            <button id="btncriarunidade" onclick="cadastrarUnidade()">Criar</button>
 
             <ul id="listadeunidadeparaupdate">
 
@@ -203,21 +179,18 @@
 
           <div class="dadoscadastrounidade">
             <input id="nserie" class="inpcadastrarunidade" type="text" placeholder="Numero de série">   
-            <input id="" class="inpcadastrarunidade" type="text" placeholder="Processador">  
+            <input id="cpuModelo" class="inpcadastrarunidade" type="text" placeholder="Processador">  
 
-            <select name="" id="">
-              <option value="">HD</option>
-              <option value="">SSD</option>
-            </select> 
+            <input type="text" id="sistemaOperacional" class="inpcadastrarunidade" placeholder="Sistema Operacional">
 
-            <input id="" class="inpcadastrarunidade" type="number" placeholder="Quantidade de armazenamento">  
-            <input id="" class="inpcadastrarunidade" type="text" placeholder="Quantidade de memoria ram">  
+            <input id="discoModelo" class="inpcadastrarunidade" type="number" placeholder="Modelo Disco">  
+            <input id="memoriaModelo" class="inpcadastrarunidade" type="text" placeholder="Modelo Memória RAM">  
             
             <select name="" id="selHardware">
               <option value="">--Selecione a Unidade--</option>
             </select> 
 
-            <button id="btncriarhardware" onclick="cadastrarhardware()">Criar</button>
+            <button id="btncriarhardware" onclick="hardwareCadastro()">Criar</button>
 
 
 
@@ -238,8 +211,6 @@
 
       </div>
 
-
-
       <div id="janelacadastrofuncionario" class="outroscadastros">
         <ion-icon id="fecharjanelafuncionario" class="botaoexit" name="add-outline"></ion-icon>
 
@@ -247,16 +218,21 @@
           <h1 id="agaummm">Cadastrar funcionario</h1>
 
           <div class="dadoscadastrounidade">
-            <input id="" class="inpcadastrarunidade" type="text" placeholder="nome">   
-            <input id="" class="inpcadastrarunidade" type="text" placeholder="cargo">  
-            <input id="" class="inpcadastrarunidade" type="number" placeholder="data de nascimento">  
-            <input id="" class="inpcadastrarunidade" type="number" placeholder="celular">  
+            <input id="funNome" class="inpcadastrarunidade" type="text" placeholder="Nome">   
+            <input id="funSobrenome" class="inpcadastrarunidade" type="text" placeholder="Sobrenome">   
+            <select name="" id="selCargo">
+              <option value="">--Selecione o Cargo--</option>
+              <option value="1">Analista NOC</option>
+              <option value="2">Gerente</option>
+            </select>
+            <input id="funData" class="inpcadastrarunidade" type="date" placeholder="Data de Nascimento">  
+            <input id="funCelular" class="inpcadastrarunidade" onkeyup="CelularMascara()" type="text" placeholder="Celular" maxlength="13">  
 
             <select name="" id="selUnidade">
               <option value="">--Selecione a Unidade--</option>
             </select> 
 
-            <button id="btncriarfuncionario" onclick="cadastrarfuncionario()">Criar</button>
+            <button id="btncriarfuncionario" onclick="funcionarioCadastro()">Cadastrar</button>
 
 
 

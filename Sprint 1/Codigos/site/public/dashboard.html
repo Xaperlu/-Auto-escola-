@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="apex/apexcharts.min.js"></script>
     <link rel="stylesheet" href="css/dashboard.css">
     <link rel="stylesheet" href="css/home.css">
     <script src="https://kit.fontawesome.com/d8b9cb0dbc.js" crossorigin="anonymous"></script>
@@ -150,14 +151,10 @@
                         </div>
                     </div>
                     <div class="graf01">
-                        <div>
-                            <canvas id="myChart" style="position: relative; height:10vh; width:12vw"></canvas>
-                        </div>
+                        <div id="chart"></div>
                     </div>
                     <div class="graf02">
-                        <div>
-                            <canvas id="myChart2" style="position: relative; height:12vh; width:12vw"></canvas>
-                        </div>
+                        <div id="chart2"></div>
                     </div>
                 </div>
                 <div class="txt">
@@ -222,50 +219,106 @@
 
 <script src="js/dashboard.js"></script>
 <script>
-    
-    const data = {
-    labels: [
-        'Sim',
-        'Não'
-    ],
-    
-    datasets: [{
-        label: 'Velocidade de Download',
-        data: [100, 13],
-        backgroundColor: [
-        '#00008B',
-        '#5F57BD'
-        ],
-        hoverOffset: 4
-    }]
-    };
-    
-    const config = {
-    type: 'doughnut',
-    data: data,
+
+    var options = {
+          series: [80],
+          chart: {
+          height: 350,
+          type: 'radialBar',
+          color: undefined,
+          offsetY: -10
+        },
+        plotOptions: {
+          radialBar: {
+            startAngle: -135,
+            endAngle: 135,
+            dataLabels: {
+              name: {
+                fontSize: '16px',
+                color: undefined,
+                offsetY: 120
+              },
+              value: {
+                offsetY: 76,
+                fontSize: '22px',
+                color: '#FFFFFF',
+                formatter: function (val) {
+                  return val + "%";
+                }
+              }
+            }
+          }
+        },
+        fill: {
+        colors: '#0000FF',
+          type: 'gradient',
+          gradient: {
+              shade: 'dark',
+              shadeIntensity: 0.15,
+              inverseColors: false,
+              opacityFrom: 1,
+              opacityTo: 1,
+              stops: [0, 50, 65, 91],
+          },
+        },
+        semi: {
+          dashArray: 4
+        },
+        labels: [''],
     };
 
-    const data2 = {
-    labels: [
-        'Sim',
-        'Não'
-    ],
-    
-    datasets: [{
-        label: 'Velocidade de Upload',
-        data: [200, 77],
-        backgroundColor: [
-        '#00008B',
-        '#5F57BD'
-        ],
-        hoverOffset: 4
-    }]
+    var chart = new ApexCharts(document.querySelector("#chart"), options);
+    chart.render();
+
+    var options = {
+          series: [60],
+          chart: {
+          height: 350,
+          type: 'radialBar',
+          color: undefined,
+          offsetY: -10
+        },
+        plotOptions: {
+          radialBar: {
+            startAngle: -135,
+            endAngle: 135,
+            dataLabels: {
+              name: {
+                fontSize: '16px',
+                color: undefined,
+                offsetY: 120
+              },
+              value: {
+                offsetY: 76,
+                fontSize: '22px',
+                color: '#FFFFFF',
+                formatter: function (val) {
+                  return val + "%";
+                }
+              }
+            }
+          }
+        },
+        fill: {
+            colors: '#5F57BD',
+          type: 'gradient',
+          gradient: {
+              shade: 'dark',
+              shadeIntensity: 0.15,
+              inverseColors: false,
+              opacityFrom: 1,
+              opacityTo: 1,
+              stops: [0, 50, 65, 91],
+          },
+        },
+        semi: {
+          dashArray: 4
+        },
+        labels: [''],
     };
-    
-    const config2 = {
-    type: 'doughnut',
-    data: data2,
-    };
+
+    var chart = new ApexCharts(document.querySelector("#chart2"), options);
+    chart.render();
 
    const labels3 = [
     'Domingo',
@@ -445,18 +498,7 @@
 
 </script>
 
-
 <script>
-
-    const myChart = new Chart(
-        document.getElementById('myChart'),
-        config
-    );
-
-    const myChart2 = new Chart(
-        document.getElementById('myChart2'),
-        config2
-    );
 
     const myChart3 = new Chart(
         document.getElementById('myChart3'),

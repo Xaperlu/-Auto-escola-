@@ -27,4 +27,16 @@ router.get("/pegarInfoBanco/:idCliente", function (req, res) {
     usuarioController.pegarInfoBanco(req, res);
 });
 
+router.post("/cadastrarHardware", function (req, res) {
+    usuarioController.cadastrarHardware(req, res);
+});
+
+router.post("/cadastrarUnidade", function (req, res) {
+    usuarioController.cadastrarUnidade(req, res);
+});
+
+router.post("/cadastrarFuncionario", function (req, res) {
+    usuarioController.cadastrarFuncionario(req, res);
+});
+
 module.exports = router;

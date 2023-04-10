@@ -4,9 +4,7 @@ userLogado.innerHTML = sessionStorage.getItem('NOME_USUARIO')
 nomeUsuario.innerHTML = sessionStorage.getItem('NOME_USUARIO')
 emailUsuario.innerHTML = sessionStorage.getItem('EMAIL_USUARIO')
 cnpjUsuario.innerHTML = sessionStorage.getItem('CNPJ_USUARIO')
-
-
-
+nomeCliente.innerHTML = sessionStorage.getItem('EMPRESA_USUARIO')
 
 document.querySelector("#addunidades").addEventListener("click", () => {
     console.log("teque")
@@ -126,64 +124,61 @@ document.querySelector("#fecharjanelafuncionario").addEventListener("click", () 
 });
 
 
+function voltar() {
 
+    let principal = document.querySelector('.listadecampos')
+    let editar = document.querySelector('.editarDados')
+    let salvar = document.querySelector('.botaoSalvar')
+    let botaoEditar = document.querySelector('.botaoEditar')
+    let botaoVoltar = document.querySelector('.botaoVoltar')
+    let bola01 = document.querySelector('#boll1')
+    let bola02 = document.querySelector('#boll2')
+    let bola03 = document.querySelector('#boll1After')
+    let bola04 = document.querySelector('#boll2After')
 
+    principal.style.display = "flex"
+    editar.style.display = "none"
+    salvar.style.display = "none"
+    botaoEditar.style.display = "flex"
+    botaoVoltar.style.display = "none"
 
+    bola01.style.display = "flex"
+    bola02.style.display = "flex"
+    bola03.style.display = "none"
+    bola04.style.display = "none"
+
+}
 
 function editar() {
 
-    if (document.querySelector("#btnsalvarupdate").style.display != "flex") {
+    let principal = document.querySelector('.listadecampos')
+    let editar = document.querySelector('.editarDados')
+    let salvar = document.querySelector('.botaoSalvar')
+    let botaoEditar = document.querySelector('.botaoEditar')
+    let botaoVoltar = document.querySelector('.botaoVoltar')
+    let bola01 = document.querySelector('#boll1')
+    let bola02 = document.querySelector('#boll2')
+    let bola03 = document.querySelector('#boll1After')
+    let bola04 = document.querySelector('#boll2After')
 
-        let nodisp = document.getElementById('noeditsinfo1').style.display = "none";
-        let nodisp2 = document.getElementById('noeditsinfo2').style.display = "none";
-        let nodisp3 = document.getElementById('noeditsinfo3').style.display = "none";
-        let nodisp4 = document.getElementById('noeditsinfo4').style.display = "none";
-        let nodisp5 = document.getElementById('boll1').style.display = "none";
-        let nodisp6 = document.getElementById('boll2').style.display = "none";
-        // revisar pq dá para melhorar
-        let disp1 = document.getElementById('editarinfo1').style.display = "block";
-        let disp2 = document.getElementById('editarinfo2').style.display = "block";
-        let disp3 = document.getElementById('editarinfo3').style.display = "block";
-        let disp4 = document.getElementById('editarinfo4').style.display = "block";
-        let disp5 = document.getElementById('boll1After').style.display = "block";
-        let disp6 = document.getElementById('boll2After').style.display = "block";
+    principal.style.display = "none"
+    editar.style.display = "flex"
+    salvar.style.display = "flex"
+    botaoEditar.style.display = "none"
+    botaoVoltar.style.display = "block"
 
-        let botaosalvar = document.querySelector(".campobotoes div button").style.display = "flex"
-
-        let nomebotao = document.getElementById('btn').innerHTML="voltar"
-        
-
-    } else {
-
-        let nodisp = document.getElementById('noeditsinfo1').style.display = "flex";
-        let nodisp2 = document.getElementById('noeditsinfo2').style.display = "flex";
-        let nodisp3 = document.getElementById('noeditsinfo3').style.display = "flex";
-        let nodisp4 = document.getElementById('noeditsinfo4').style.display = "flex";
-        let nodisp5 = document.getElementById('boll1').style.display = "flex";
-        let nodisp6 = document.getElementById('boll2').style.display = "flex";
-        // revisar pq dá para melhorar
-        let disp1 = document.getElementById('editarinfo1').style.display = "none";
-        let disp2 = document.getElementById('editarinfo2').style.display = "none";
-        let disp3 = document.getElementById('editarinfo3').style.display = "none";
-        let disp4 = document.getElementById('editarinfo4').style.display = "none";
-        let disp5 = document.getElementById('boll1After').style.display = "none";
-        let disp6 = document.getElementById('boll2After').style.display = "none";
-
-        let botaosalvar = document.querySelector(".campobotoes div button").style.display = "none"
-
-        let nonebotao = document.getElementById('btn').innerHTML="Editar <ion-icon name="+"create-outline"+" ></ion-icon>"
-
-    }
-
-
+    bola01.style.display = "none"
+    bola02.style.display = "none"
+    bola03.style.display = "flex"
+    bola04.style.display = "flex"
 
 }
 
 
 
-const cnpjMascara = document.getElementById('CNPJ');
-
 function MascaraCnpj() {
+
+    let cnpjMascara = document.getElementById('CNPJ');
 
     let tamanhoCnpj = cnpjMascara.value.length
 
@@ -195,20 +190,6 @@ function MascaraCnpj() {
         cnpjMascara.value += "/"
     }
 }
-
-
-
-function salvar(){
-
-
-    //aqui ele tem que validar os inputs, se estiver tudo certo  => document.querySelector(".confsenha").style.display = "flex";
-
-    document.querySelector(".confsenha").style.display = "flex";
-
-
-}
-
-
 
 function onsenha() {
     document.querySelector("#onsenha").style.display = "none";
@@ -229,179 +210,108 @@ function offsenha() {
 }
 
 function update() {
+    var usuario = sessionStorage.getItem('ID_USUARIO')
+    var nome = document.querySelector('#inNome').value
+    var email = document.querySelector('#inEmail').value
+    var cnpj = document.querySelector('#CNPJ').value
+    var senha = document.querySelector('#inSenha').value
+    const nivel = sessionStorage.getItem('NIVEL_USUARIO')
+    const validacaoSenha = senha.match(/[0-9]/) && senha.match(/[A-Z]/) && senha.match(/[!\@\#\$\%\&\*]/) && senha.length >= 6
 
-    //verifica se a senha esta correta, se estiver ele atualiza senão ele volta para a tela de atualizar     =>       document.querySelector(".confsenha").style.display = "none";
-    
+    if(nivel != 3){
+        alert('Você não tem permissão para alterar esses dados!')
+        return false
+    }
 
-   
-
-
-
-
-
-
-
-
-
-
-    //aqui tem que fazer update dos dados da tela normal de usuario
-
-    let nodisp = document.getElementById('noeditsinfo1').style.display = "flex";
-    let nodisp2 = document.getElementById('noeditsinfo2').style.display = "flex";
-    let nodisp3 = document.getElementById('noeditsinfo3').style.display = "flex";
-    let nodisp4 = document.getElementById('noeditsinfo4').style.display = "flex";
-    let nodisp5 = document.getElementById('boll1After').style.display = "none";
-    let nodisp6 = document.getElementById('boll2After').style.display = "none";
-
-    let disp1 = document.getElementById('editarinfo1').style.display = "none";
-    let disp2 = document.getElementById('editarinfo2').style.display = "none";
-    let disp3 = document.getElementById('editarinfo3').style.display = "none";
-    let disp4 = document.getElementById('editarinfo4').style.display = "none";
-    let disp5 = document.getElementById('boll1').style.display = "block";
-    let disp6 = document.getElementById('boll2').style.display = "block";
-
-    let botaoeditar = document.querySelector(".campobotoes button").style.opacity = "1";
-
-    let setaproximo = document.querySelector(".campobotoes div img").style.display = "flex";
-    let botaosalvar = document.querySelector(".campobotoes div button").style.display = "none";
-
-    
-
-
-
-    var idVar = sessionStorage.getItem('ID_USUARIO')
-    var nomeVar = Nome.value;
-    var emailVar = Email.value;
-    var cnpjVar = CNPJ.value;
-    var senhaVar = Senha.value;
-    const validacaoSenha = senhaVar.match(/[0-9]/) && senhaVar.match(/[A-Z]/) && senhaVar.match(/[!\@\#\$\%\&\*]/) && senhaVar.length >= 6
-
-
-    if (nomeVar == "" && emailVar == "" && senhaVar == "" && cnpjVar == "") {
+    if (nome == "" && email == "" && senha == "" && cnpj == "") {
         alert('Por favor, preencha algum campo para prosseguir')
-
         return false;
     }
-    else if (cnpjVar == "" && cnpjVar > 14) {
+    else if (cnpj != "" && cnpj.length != 18){
         alert("CNPJ inválido! um CNPJ deve ter 14 caracteres numéricos.")
     }
-    else if (emailVar != "" && !emailVar.match(/[@]/)) {
+    else if (email != "" && !email.match(/[@]/)) {
         alert("Email inválido!")
     }
-    else if (senhaVar != "" && !validacaoSenha) {
+    else if (senha != "" && !validacaoSenha) {
         alert("Senha inválida!")
     }
 
-
-
-    // Enviando o valor da nova input
     fetch("/usuarios/salvar", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            // crie um atributo que recebe o valor recuperado aqui
-            // Agora vá para o arquivo routes/usuario.js
-            nomeServer: nomeVar,
-            emailServer: emailVar,
-            senhaServer: senhaVar,
-            idServer: idVar,
-            cnpjServer: cnpjVar
+            nome,
+            email,
+            senha,
+            usuario,
+            cnpj
         })
     }).then(function (resposta) {
-
         console.log("resposta: ", resposta);
-
         if (resposta.ok) {
-            // cardErro.style.display = "block";
-
             alert("Informações atualizadas com sucesso!")
 
-            setTimeout(() => {
-                window.location = "perfil.html";
-            }, "2000")
+            if(nome != ''){
+                sessionStorage.NOME_USUARIO = nome
+            }
 
-            limparFormulario();
-            finalizarAguardar();
-        } else {
-            document.querySelector(".confsenha").style.display = "none";
-            throw ("Houve um erro ao tentar realizar a atualização!");
+            if(email != ''){
+                sessionStorage.EMAIL_USUARIO = email
+            }
+
+            if(cnpj != ''){
+                sessionStorage.CNPJ_USUARIO = cnpj
+            }
+
+            window.location = "perfil.html";
         }
-    }).catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-        finalizarAguardar();
-    });
+    })
 
     return false;
 }
 
 
+function cadastrarUnidade() {
+    const nome = document.querySelector('#unNomeUnidade').value
+    const telefone = document.querySelector('#unTelefone').value
+    const cep = document.querySelector('#unCep').value
+    const logradouro = document.querySelector('#unLogradouro').value
+    const bairro = document.querySelector('#unBairro').value
+    const numero = document.querySelector('#unNumero').value
+    const usuario = sessionStorage.getItem('ID_USUARIO')
+    const nivel = sessionStorage.getItem('NIVEL_USUARIO')
 
-
-<<<<<<< jefferson
-function cadastrarunidade() {
-
-
-
-
-    //pegar os dados dos inputs da tela de cadastro de unidade e jogar no banco de dados
-
-    const nome = nomeUnidade.value;
-    const telefone = telefoneUnidade.value;
-    const logradouro = logradouroUnidade.value;
-    const cep = cepUnidade.value;
-    const bairro = bairroUnidade.value;
-    const numero = numeroUnidade.value;
-    const fkUsuario = sessionStorage.getItem('ID_USUARIO');
-
-    if(nome == '' || telefone == '' || logradouro == '' || cep == '' || bairro == '' || numero == ''){
-        alert("Preencha os campos corretamente!")
+    if(nivel != 3){
+        alert('Você não tem permissão para cadastrar uma unidade!')
         return false
-    }else{
-        fetch("/usuarios/cadastrarUnidade", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                nome,
-                telefone,
-                logradouro,
-                cep,
-                bairro,
-                numero,
-                fkUsuario
-            })
-        }).then(function(resposta){
-            if(resposta.ok){
-                alert("Cadastrado com sucesso!")
-                pegarInfoBanco();
-            }else{
-                alert("Cadastro falhou!")
-            }
-        })
     }
-    
 
+    fetch(`/usuarios/cadastrarUnidade`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            nome,
+            telefone,
+            cep,
+            logradouro,
+            bairro,
+            numero,
+            usuario
+        })
+    }).then(function (resposta) {
+        if(resposta.ok){
+            alert('Cadastro com sucesso')
 
-    var listadeunidades = document.querySelector("#listadeunidadeparaupdate");
-    var texto = document.createTextNode(nserie.value);
-    var li = document.createElement("li");
-    var p = document.createElement("p");
-    p.appendChild(texto);                                                                       //criando o elemento na lista de hardwares
-    li.appendChild(p);
-    listadehardware.appendChild(li);
-
-
-
-
-
-
-    var telaunidade = document.querySelector("#janelacadastrounidade").style.display = "none";
-    var botaodeadicionarunidade = document.querySelector("#addunidades").style.display = "flex";
-    var botaodeadicionarhardware = document.querySelector("#addhardware").style.display = "flex";
->>>>>>> main
+            window.location = "perfil.html"
+        }else{
+            alert('Falha no cadastro')
+        }
+    })
 }
 
 function abrirteladeescolhaunidade() {
@@ -410,25 +320,7 @@ function abrirteladeescolhaunidade() {
     let botaocriar = document.querySelector("#btncriarunidade").style.display = "none";
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 function cadastrarhardware() {
-
-
-
-
-
 
     //pegar os dados dos inputs da tela de cadastro de hardware e jogar no banco de dados
 
@@ -442,14 +334,11 @@ function cadastrarhardware() {
     li.appendChild(p);
     listadehardware.appendChild(li);
 
-
-
     var telahardware = document.querySelector("#janelacadastrohardware").style.display = "none";
     var botaodeadicionarunidade = document.querySelector("#addunidades").style.display = "flex";
     var botaodeadicionarhardware = document.querySelector("#addhardware").style.display = "flex";
 
 }
-
 
 function abrirteladeescolhahardware() {
     var teladeescolha = document.querySelector("#listadehaerwareparaupdate").style.display = "flex";
@@ -457,53 +346,174 @@ function abrirteladeescolhahardware() {
     let botaocriar = document.querySelector("#btncriarhardware").style.display = "none";
 }
 
-
-
-
-
-
-
-
-
-function cadastrarfuncionario(){
-
-    //pegar os dados dos inputs da tela de cadastro de hardware e jogar no banco de dados
-
-
-}
-
-
 function abrirteladeescolhadeunidadefuncionario() {
     var teladeescolha = document.querySelector("#listadeunidadedefuncionarioparaupdate").style.display = "flex";
     var h1 = document.querySelector("#agaummm").style.opacity = "0";
     let botaocriar = document.querySelector("#btncriarfuncionario").style.display = "none";
 }
 
+function hardwareCadastro(){
+    const cliente = sessionStorage.getItem("ID_USUARIO")
+    const unidade = document.querySelector('#selHardware').value
+    const numeroSerie = document.querySelector('#nserie').value
+    const so = document.querySelector('#sistemaOperacional').value
+    const cpu = "CPU"
+    const disco = "Disco"
+    const memoria = "Memória RAM"
+    const cpuModelo = document.querySelector('#cpuModelo').value
+    const discoModelo = document.querySelector('#discoModelo').value
+    const memoriaModelo = document.querySelector('#memoriaModelo').value
+
+    if(!(nivel == 3 || nivel == 2)){
+        alert('Você não tem permissão para cadastrar um hardware!')
+        return false
+    }
+
+    fetch(`/usuarios/cadastrarHardware`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            cliente,
+            unidade,
+            numeroSerie,
+            so,
+            cpu,
+            disco,
+            memoria,
+            cpuModelo,
+            discoModelo,
+            memoriaModelo
+        })
+    }).then(function (resposta) {
+        if(resposta.ok){
+            alert('Cadastro com sucesso')
+
+            window.location = "perfil.html"
+        }else{
+            alert('Falha no cadastro')
+        }
+    })
+}
+
+function funcionarioCadastro(){
+    const nome = document.querySelector('#funNome').value
+    const sobrenome = document.querySelector('#funSobrenome').value
+    const nivel = document.querySelector('#selCargo').value
+    const data = document.querySelector('#funData').value
+    const celular = document.querySelector('#funCelular').value
+    const unidade = document.querySelector('#selUnidade').value
+    const empresa = sessionStorage.getItem('EMPRESA_USUARIO')
+    const idCliente = sessionStorage.getItem('ID_USUARIO')
+    const email = nome.toLowerCase() + "." + sobrenome.toLowerCase() + "@" + empresa.toLowerCase() + ".com" 
+    const senha = 'Padrao1!'
+    let cargo
+    const nivelUsuario = sessionStorage.getItem('NIVEL_USUARIO')
+
+    if(!(nivelUsuario == 2 || nivelUsuario == 3)){
+        alert('Você não possui permissão para cadastrar um usuário!')
+        return false
+    }
+
+    if(nivel == 1){
+        cargo = "Analista NOC"
+    }else if(nivel == 2){
+        cargo = "Gerente"
+    }else{
+        alert('Escolha o cargo do funcionario!')
+        return false
+    }
+
+    fetch(`/usuarios/cadastrarFuncionario`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            unidade,
+            idCliente,
+            nome,
+            cargo,
+            data,
+            celular,
+            sobrenome,
+            email,
+            senha,
+            nivel
+        })
+    }).then(function (resposta) {
+        if(resposta.ok){
+            alert('Cadastro com sucesso')
+
+            window.location = "perfil.html"
+        }else{
+            alert('Falha no cadastro')
+        }
+    })
+
+}
 
 
+const numCep = document.getElementById('unCep');
+const logradouro = document.getElementById('unLogradouro');
+const bairro = document.getElementById('unBairro');
 
+function CepMascara() {
 
+    if (numCep.value.length == 5) {
+        numCep.value += "-"
+    }
 
+    if (numCep.value.length == 9) {
+        PegarEndereco(numCep.value)
+    }
 
+    if (numCep != 9) {
+        logradouro.value = "";
+        bairro.value = "";
+    }
+}
 
+function PegarEndereco(cep) {
+    let script = document.createElement('script');
 
+    script.src = `https://viacep.com.br/ws/${cep}/json/?callback=CallbackEndereco`;
 
+    document.body.appendChild(script);
+}
 
+function CallbackEndereco(endereco) {
+    logradouro.value = (endereco.logradouro);
+    bairro.value = (endereco.bairro);
+}
 
+const telefone = document.getElementById('unTelefone');
 
+function FixoMascara() {
 
+    let tamanhoTel = telefone.value.length
 
+    if (tamanhoTel == 2) {
+        telefone.value += " "
+    }
 
+    if (tamanhoTel == 7) {
+        telefone.value += "-"
+    }
+}
 
+const mascaraCelular = document.getElementById('funCelular');
 
+function CelularMascara() {
 
+    let tamanhoTel = mascaraCelular.value.length
 
+    if (tamanhoTel == 2) {
+        mascaraCelular.value += " "
+    }
 
-
-
-// const valoresDoSelect = [{nome: "José", idade: 18}];
-// valoresDoSelect.map(valor => {
-//     document.createElement("li")
-//     document.createTextNode(valor.nome)
-//     console.log(valor.nome)
-// })
+    if (tamanhoTel == 8) {
+        mascaraCelular.value += "-"
+    }
+}

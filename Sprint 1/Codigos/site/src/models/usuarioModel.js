@@ -7,47 +7,39 @@ function cadastrar(nome, cnpj, email, senha, nivel){
     return database.executar(instrucao)
 }
 
-function cadastrarUnidade(fkUsuario, nome, telefone, cep, bairro, numero, logradouro){
+function cadastrarHardware(cliente, unidade, numeroSerie, so, cpu, disco, memoria, cpuModelo, discoModelo, memoriaModelo){
     let instrucao = `
-        insert into Unidade (fkCliente, nomeUnidade, telefoneFixo, cep, logradouro, bairro, numero) values (${fkUsuario}, '${nome}', '${telefone}', '${cep}', '${logradouro}', '${bairro}', ${numero});
+        exec InserirHardware ${cliente}, ${unidade}, '${numeroSerie}', '${so}', '${cpu}', ${disco}, '${memoria}', '${cpuModelo}', '${discoModelo}', '${memoriaModelo}';
+    `
+    return database.executar(instrucao)
+}
+
+function cadastrarUnidade(nome, telefone, cep, logradouro, bairro, numero, usuario){
+    let instrucao = `
+        insert into unidade (fkCliente, nomeUnidade, telefoneFixo, cep, logradouro, bairro, numero) values
+        (${usuario}, '${nome}', '${telefone}', '${cep}', '${logradouro}', '${bairro}', ${numero});
+    `
+    return database.executar(instrucao)
+}
+
+function cadastrarFuncionario(unidade, idCliente, nome, cargo, data, celular, sobrenome, email, senha, nivel){
+    let instrucao = `
+        exec InserirFuncionario '${nome}', '${sobrenome}', '${cargo}', '${data}', '${celular}', ${unidade}, ${idCliente}, '${email}', '${senha}', ${nivel};
     `
     return database.executar(instrucao)
 }
 
 function autenticar(email, senha){
     let instrucao = `
-        select * from cliente join gestaoAcesso as ga on idGestaoAcesso = fkGestaoAcesso where ga.email = '${email}' and ga.senha = '${senha}';
+        exec realizarLogin '${email}', '${senha}';
     `
     return database.executar(instrucao)
 }
 
-function salvar(nome, email, senha, id, cnpj) {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", nome, email, senha,id, cnpj);
-    
-    // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
-    //  e na ordem de inserção dos dados.
-    var instrucao = ''
-    if(nome != ""){
-     instrucao = `
-         UPDATE cliente SET nome = '${nome}' WHERE idCliente = ${id};
-     `;
-    }
-    if(email != ""){
-        instrucao += `
-         UPDATE cliente SET email = '${email}' WHERE idCliente = ${id};
-     `;
-    }
-    if(senha != ""){
-        instrucao += `
-         UPDATE cliente SET senha = '${senha}' WHERE idCliente = ${id};
-     `;
-    }
-    if(cnpj != ""){
-        instrucao += `
-            UPDATE cliente SET cnpj = '${cnpj}' WHERE idCliente = ${id};
-        `
-    }
-    console.log("Executando a instrução SQL: \n" + instrucao);
+function salvar(nome, email, senha, usuario, cnpj) {
+    let instrucao = `
+        exec atualizarDados ${usuario}, '${nome}', '${cnpj}', '${email}', '${senha}';
+    `
     return database.executar(instrucao);
 }
 
@@ -62,6 +54,5 @@ module.exports = {
     cadastrar,
     autenticar,
     salvar,
-    cadastrarUnidade,
     pegarInfoBanco
 };

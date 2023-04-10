@@ -17,6 +17,63 @@ function cadastrar(req, res){
         )
 }
 
+function cadastrarHardware(req, res){
+    const cliente = req.body.cliente
+    const unidade = req.body.unidade
+    const numeroSerie = req.body.numeroSerie
+    const so = req.body.so
+    const cpu = req.body.cpu
+    const disco = req.body.disco
+    const memoria = req.body.memoria
+    const cpuModelo = req.body.cpuModelo
+    const discoModelo = req.body.discoModelo
+    const memoriaModelo = req.body.memoriaModelo
+
+    usuarioModel.cadastrarHardware(cliente, unidade, numeroSerie, so, cpu, disco, memoria, cpuModelo, discoModelo, memoriaModelo)
+        .then(
+            function(resultado){
+                res.json(resultado)
+            }
+        )
+}
+
+function cadastrarUnidade(req, res){
+    const nome = req.body.nome
+    const telefone = req.body.telefone
+    const cep = req.body.cep
+    const logradouro = req.body.logradouro
+    const bairro = req.body.bairro
+    const numero = req.body.numero
+    const usuario = req.body.usuario
+
+    usuarioModel.cadastrarUnidade(nome, telefone, cep, logradouro, bairro, numero, usuario)
+        .then(
+            function(resultado){
+                res.json(resultado)
+            }
+        )
+}
+
+function cadastrarFuncionario(req, res){
+    const unidade = req.body.unidade
+    const idCliente = req.body.idCliente
+    const nome = req.body.nome
+    const cargo = req.body.cargo
+    const data = req.body.data
+    const celular = req.body.celular
+    const sobrenome = req.body.sobrenome
+    const email = req.body.email
+    const senha = req.body.senha
+    const nivel = req.body.nivel
+
+    usuarioModel.cadastrarFuncionario(unidade, idCliente, nome, cargo, data, celular, sobrenome, email, senha, nivel)
+        .then(
+            function(resultado){
+                res.json(resultado)
+            }
+        )
+}
+
 function autenticar(req, res){
     const email = req.body.email;
     const senha = req.body.senha;
@@ -48,41 +105,18 @@ function cadastrarUnidade(req, res){
 
 
 function salvar(req, res) {
-    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
-    var nome = req.body.nomeServer;
-    var email = req.body.emailServer;
-    var senha = req.body.senhaServer;
-    var id = req.body.idServer;
-    var cnpj = req.body.cnpjServer;
+    var nome = req.body.nome;
+    var email = req.body.email;
+    var senha = req.body.senha;
+    var usuario = req.body.usuario;
+    var cnpj = req.body.cnpj;
 
-    // Faça as validações dos valores
-    if (nome == undefined) {
-        res.status(400).send("Seu nome está undefined!");
-    } else if (email == undefined) {
-        res.status(400).send("Seu email está undefined!");
-    } else if (senha == undefined) {
-        res.status(400).send("Sua senha está undefined!");
-    } else if (id == undefined) {
-        res.status(400).send("null");
-    } else {
-        
-        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.salvar(nome, email, senha, id, cnpj)
-            .then(
-                function (resultado) {
-                    res.json(resultado);
-                }
-            ).catch(
-                function (erro) {
-                    console.log(erro);
-                    console.log(
-                        "\nHouve um erro ao realizar o cadastro! Erro: ",
-                        erro.sqlMessage
-                    );
-                    res.status(500).json(erro.sqlMessage);
-                }
-            );
-    }
+    usuarioModel.salvar(nome, email, senha, usuario, cnpj)
+        .then(
+            function (resultado) {
+                res.json(resultado);
+            }
+        )
 }
 
 
@@ -102,5 +136,7 @@ module.exports = {
    autenticar,
    salvar,
    pegarInfoBanco,
-   cadastrarUnidade
+   cadastrarHardware,
+   cadastrarUnidade,
+   cadastrarFuncionario
 }
