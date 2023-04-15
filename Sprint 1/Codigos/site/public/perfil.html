@@ -145,12 +145,19 @@
           <h1 id="agaumm">Cadastrar unidade</h1>
 
           <div class="dadoscadastrounidade">
-            <input id="unNomeUnidade" class="inpcadastrarunidade" type="text" placeholder="Nome da unidade">   
-            <input id="unTelefone" onkeyup="FixoMascara()" class="inpcadastrarunidade" maxlength="12" type="text" placeholder="Telefone">  
-            <input id="unCep" onkeyup="CepMascara()" class="inpcadastrarunidade" maxlength="9" placeholder="Cep" type="text">  
-            <input id="unLogradouro" class="inpcadastrarunidade" type="text" placeholder="Logradouro">  
-            <input id="unBairro" class="inpcadastrarunidade" type="text" placeholder="Bairro">  
-            <input id="unNumero" class="inpcadastrarunidade" type="number" placeholder="Numero">  
+            <div class="divisor">
+              <input id="unNomeUnidade" class="inpcadastrarunidade" type="text" placeholder="Nome da unidade">   
+              <input id="unTelefone" onkeyup="FixoMascara()" class="inpcadastrarunidade" maxlength="12" type="text" placeholder="Telefone">  
+            </div>
+            <div class="divisor">
+              <input id="unCep" onkeyup="CepMascara()" class="inpcadastrarunidade" maxlength="9" placeholder="Cep" type="text">  
+              <input id="unLogradouro" class="inpcadastrarunidade" type="text" placeholder="Logradouro">  
+            </div>
+            <div class="divisor">
+              <input id="unBairro" class="inpcadastrarunidade" type="text" placeholder="Bairro">  
+              <input id="unNumero" class="inpcadastrarunidade" type="number" placeholder="Numero">  
+            </div>
+            
             <button id="btncriarunidade" onclick="cadastrarUnidade()">Criar</button>
 
             <ul id="listadeunidadeparaupdate">
@@ -160,14 +167,9 @@
             <button id="btnupdateunidade" onclick="">Update</button>
           </div>
 
-
-
           <button class="editarunidhard" onclick="abrirteladeescolhaunidade()">Editar <ion-icon name="create-outline"></ion-icon> </button>
 
         </DIV>
-
-        
-
 
       </div>
 
@@ -178,13 +180,25 @@
           <h1 id="agaum">Cadastrar hardware</h1>
 
           <div class="dadoscadastrounidade">
-            <input id="nserie" class="inpcadastrarunidade" type="text" placeholder="Numero de série">   
-            <input id="cpuModelo" class="inpcadastrarunidade" type="text" placeholder="Processador">  
+            <div class="divisor">
+              <input id="nserie" class="inpcadastrarunidade" type="text" placeholder="Numero de série">   
+              <input type="text" id="sistemaOperacional" class="inpcadastrarunidade" placeholder="Sistema Operacional">
+            </div>
 
-            <input type="text" id="sistemaOperacional" class="inpcadastrarunidade" placeholder="Sistema Operacional">
-
-            <input id="discoModelo" class="inpcadastrarunidade" type="number" placeholder="Modelo Disco">  
-            <input id="memoriaModelo" class="inpcadastrarunidade" type="text" placeholder="Modelo Memória RAM">  
+            <div class="divisor">
+              <input id="cpuModelo" class="inpcadastrarunidade" type="text" placeholder="Modelo CPU">  
+              <input id="capacidadeCpu" class="inpcadastrarunidade" type="number" placeholder="Capacidade CPU (GHz)">  
+            </div>
+            
+            <div class="divisor">
+              <input id="discoModelo" class="inpcadastrarunidade" type="text" placeholder="Modelo Disco">  
+              <input id="capacidadeDisco" class="inpcadastrarunidade" type="number" placeholder="Capacidade Disco (GB)">  
+            </div>
+            
+            <div class="divisor">
+              <input id="memoriaModelo" class="inpcadastrarunidade" type="text" placeholder="Modelo Memória RAM">  
+              <input id="capacidadeMemoria" class="inpcadastrarunidade" type="number" placeholder="Capacidade Memória RAM (GB)">  
+            </div>
             
             <select name="" id="selHardware">
               <option value="">--Selecione a Unidade--</option>
@@ -218,19 +232,28 @@
           <h1 id="agaummm">Cadastrar funcionario</h1>
 
           <div class="dadoscadastrounidade">
-            <input id="funNome" class="inpcadastrarunidade" type="text" placeholder="Nome">   
-            <input id="funSobrenome" class="inpcadastrarunidade" type="text" placeholder="Sobrenome">   
-            <select name="" id="selCargo">
-              <option value="">--Selecione o Cargo--</option>
-              <option value="1">Analista NOC</option>
-              <option value="2">Gerente</option>
-            </select>
-            <input id="funData" class="inpcadastrarunidade" type="date" placeholder="Data de Nascimento">  
-            <input id="funCelular" class="inpcadastrarunidade" onkeyup="CelularMascara()" type="text" placeholder="Celular" maxlength="13">  
 
-            <select name="" id="selUnidade">
-              <option value="">--Selecione a Unidade--</option>
-            </select> 
+            <div class="divisor">
+              <input id="funNome" class="inpcadastrarunidade" type="text" placeholder="Nome">   
+              <input id="funSobrenome" class="inpcadastrarunidade" type="text" placeholder="Sobrenome">   
+            </div>
+           
+            <div class="divisor">
+              <input id="funData" class="inpcadastrarunidade" type="date" placeholder="Data de Nascimento">  
+              <input id="funCelular" class="inpcadastrarunidade" onkeyup="CelularMascara()" type="text" placeholder="Celular" maxlength="13">  
+            </div>
+
+            <div class="divisor">
+              <select name="" id="selCargo">
+                <option value="">--Selecione o Cargo--</option>
+                <option value="1">Analista NOC</option>
+                <option value="2">Gerente</option>
+              </select>
+              <select name="" id="selUnidade">
+                <option value="">--Selecione a Unidade--</option>
+              </select> 
+            </div>
+            
 
             <button id="btncriarfuncionario" onclick="funcionarioCadastro()">Cadastrar</button>
 
@@ -253,20 +276,11 @@
 
       </div>
 
-
-
     </div>
-
 
   </div>
 
-
-
-
-
 </body>
-
-
 
 </html>
 
@@ -282,20 +296,19 @@ function pegarInfoBanco(){
             resposta.json().then(function(response){
                 var info = JSON.parse((JSON.stringify(response)))
 
-                console.log(info[0].nomeUnidade)
+                console.log(info[0].nome_unidade)
 
                 hardware.innerHTML = ''
                 hardware.innerHTML += `<option value = "">-Selecionar Unidade-</option>`
                 for(let i = 0; i < response.length; i++){
-                    hardware.innerHTML += `<option value = ${info[i].idUnidade}>${info[i].nomeUnidade}</option>`
-                    unidade.innerHTML += `<option value = ${info[i].idUnidade}>${info[i].nomeUnidade}</option>`
+                    hardware.innerHTML += `<option value = ${info[i].id_unidade}>${info[i].nome_unidade}</option>`
+                    unidade.innerHTML += `<option value = ${info[i].id_unidade}>${info[i].nome_unidade}</option>`
                 }
 
             })
         }
     })
 }
-
 
 window.onload = function(){
     pegarInfoBanco();
@@ -307,5 +320,3 @@ window.onload = function(){
 
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
-

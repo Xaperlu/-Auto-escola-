@@ -22,14 +22,14 @@ function cadastrarHardware(req, res){
     const unidade = req.body.unidade
     const numeroSerie = req.body.numeroSerie
     const so = req.body.so
-    const cpu = req.body.cpu
-    const disco = req.body.disco
-    const memoria = req.body.memoria
+    const capacidadeCpu = req.body.cpu
+    const capacidadeDisco = req.body.disco
+    const capacidadeMemoria = req.body.memoria
     const cpuModelo = req.body.cpuModelo
     const discoModelo = req.body.discoModelo
     const memoriaModelo = req.body.memoriaModelo
 
-    usuarioModel.cadastrarHardware(cliente, unidade, numeroSerie, so, cpu, disco, memoria, cpuModelo, discoModelo, memoriaModelo)
+    usuarioModel.cadastrarHardware(cliente, unidade, numeroSerie, so, capacidadeCpu, capacidadeDisco, capacidadeMemoria, cpuModelo, discoModelo, memoriaModelo)
         .then(
             function(resultado){
                 res.json(resultado)

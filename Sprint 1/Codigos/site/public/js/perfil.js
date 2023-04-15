@@ -1,4 +1,4 @@
-const { pegarInfoBanco } = require("../../src/models/usuarioModel");
+//const { pegarInfoBanco } = require("../../src/models/usuarioModel");
 
 userLogado.innerHTML = sessionStorage.getItem('NOME_USUARIO')
 nomeUsuario.innerHTML = sessionStorage.getItem('NOME_USUARIO')
@@ -7,7 +7,6 @@ cnpjUsuario.innerHTML = sessionStorage.getItem('CNPJ_USUARIO')
 nomeCliente.innerHTML = sessionStorage.getItem('EMPRESA_USUARIO')
 
 document.querySelector("#addunidades").addEventListener("click", () => {
-    console.log("teque")
 
     var teladecadastrounidade = document.querySelector("#janelacadastrounidade");
     var ioniconsbotaounidade = document.querySelector(".fecharjanelaunidade");
@@ -24,8 +23,6 @@ document.querySelector("#addunidades").addEventListener("click", () => {
 
         let teladeescolha = document.querySelector("#listadeunidadeparaupdate").style.display = "none";
         let botaocriar = document.querySelector("#btncriarunidade").style.display = "block";
-
-        console.log("flex")
     }
 
 
@@ -357,12 +354,13 @@ function hardwareCadastro(){
     const unidade = document.querySelector('#selHardware').value
     const numeroSerie = document.querySelector('#nserie').value
     const so = document.querySelector('#sistemaOperacional').value
-    const cpu = "CPU"
-    const disco = "Disco"
-    const memoria = "Memória RAM"
+    const cpu = document.querySelector('#capacidadeCpu').value
+    const disco = document.querySelector('#capacidadeDisco').value
+    const memoria = document.querySelector('#capacidadeMemoria').value
     const cpuModelo = document.querySelector('#cpuModelo').value
     const discoModelo = document.querySelector('#discoModelo').value
     const memoriaModelo = document.querySelector('#memoriaModelo').value
+    const nivel = sessionStorage.getItem()
 
     if(!(nivel == 3 || nivel == 2)){
         alert('Você não tem permissão para cadastrar um hardware!')
