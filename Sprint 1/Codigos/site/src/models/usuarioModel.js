@@ -31,7 +31,7 @@ function cadastrarFuncionario(unidade, idCliente, nome, cargo, data, celular, so
 
 function autenticar(email, senha){
     let instrucao = `
-        exec realizarLogin '${email}', '${senha}';
+        exec realizar_login '${email}', '${senha}';
     `
     return database.executar(instrucao)
 }
@@ -54,5 +54,8 @@ module.exports = {
     cadastrar,
     autenticar,
     salvar,
-    pegarInfoBanco
+    pegarInfoBanco,
+    cadastrarFuncionario,
+    cadastrarUnidade,
+    cadastrarHardware
 };
