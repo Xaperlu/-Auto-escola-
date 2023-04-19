@@ -261,103 +261,133 @@ body{
 }
 
 .graf01{
-    width: 250px;
-    height: 250px;
+    width: 15vw;
+    height: 34vh;
     background-color: #242731;
     border-radius: 10px;
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.166);
-
+    margin-left: -2vw;
+    margin-top: 0vh;
 }
 
 .graf02{
-    width: 250px;
-    height: 250px;
+    width: 15vw;
+    height: 34vh;
     background-color: #242731;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.166);  
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.166);
+    margin-left: -3vw;
+    margin-top: 0vh;
 }
 
 .graf03{
-    width: 550px;
-    height: 250px;
+    width: 35vw;
+    height: 34vh;
     background-color: #242731;
     border-radius: 10px;
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.166);
-
 }
 
 .graf04{
-    width: 810px;
-    height: 250px;
+    width: 53vw;
+    height: 34vh;
     background-color: #242731;
     border-radius: 10px;
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.166);
-
 }
 
 .graf05{
-    width: 250px;
-    height: 250px;
+    width: 15vw;
+    height: 34vh;
     background-color: #242731;
     border-radius: 10px;
-    margin-left: 816px;
-    margin-top: -250px;
+    margin-left: 54vw;
+    margin-top: -34vh;
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.166);
-
 }
 
 .graf06{
-    width: 810px;
-    height: 250px;
+    width: 53vw;
+    height: 34vh;
     background-color: #242731;
     border-radius: 10px;
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.166);
-
 }
 
 .graf07{
-    width: 250px;
-    height: 250px;
+    width: 15vw;
+    height: 34vh;
     background-color: #242731;
     border-radius: 10px;
-    margin-left: 816px;
-    margin-top: -250px;
+    margin-left: 54vw;
+    margin-top: -34vh;
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.166);
-
 }
 
 .graf08{
-    width: 810px;
-    height: 250px;
+    width: 53vw;
+    height: 34vh;
     background-color: #242731;
     border-radius: 10px;
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.166);
-
 }
 
 .graf09{
-    width: 250px;
-    height: 250px;
+    width: 15vw;
+    height: 34vh;
     background-color: #242731;
     border-radius: 10px;
-    margin-left: 816px;
-    margin-top: -250px;
+    margin-left: 54vw;
+    margin-top: -34vh;
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.166);
-
 }
 
 .txt{
     color: white;
+    margin-top: -5vh;
 }
 
 .txt02{
     color: white;
-    margin-left: 80%;
-    margin-top: -40px;
+    margin-left: 56vw;
+    margin-top: -6vh;
+}
+
+.txt03{
+    color: white;
+    margin-top: 1vh;
 }
 
 .txt04{
     color: white;
-    margin-left: 55%;
-    margin-top: -40px;
+    margin-left: 39vw;
+    margin-top: -6vh;
+}
+
+.txt05{
+    color: white;
+    margin-left: 55vw;
+    margin-top: -6vh;
+}
+
+.txt06{
+    color: white;
+    margin-top: 1vh;
+}
+
+.txt07{
+    color: white;
+    margin-left: 55vw;
+    margin-top: -6vh;
+}
+
+.txt08{
+    color: white;
+    margin-top: 1vh;
+}
+
+.txt09{
+    color: white;
+    margin-left: 55vw;
+    margin-top: -6vh;
 }

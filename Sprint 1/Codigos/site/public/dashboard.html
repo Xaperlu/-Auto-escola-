@@ -24,13 +24,6 @@
                 </div>
                 <div class="filtros">
                     <div class="filtro">
-                        <label for="selFiltro01">Cliente</label>
-                        <select class="styleFiltro" id="selFiltro01">
-                            <option value="">Todos</option>
-                            <option value="">Opção2</option>
-                        </select>
-                    </div>
-                    <div class="filtro">
                         <label for="selFiltro02">Unidade</label>
                         <select class="styleFiltro" id="selFiltro02">
                             <option value="">Todos</option>
@@ -47,24 +40,6 @@
                     <div class="filtro">
                         <label for="selFiltro03">Número de Série</label>
                         <select class="styleFiltro" id="selFiltro04">
-                            <option value="">Todos</option>
-                            <option value="">Opção2</option>
-                        </select>
-                    </div>
-                    <div class="filtro">
-                        <label for="selFiltro03">Sistema Operacional</label>
-                        <select class="styleFiltro" id="selFiltro05">
-                            <option value="">Todos</option>
-                            <option value="">Opção2</option>
-                        </select>
-                    </div>
-                    <div class="filtro">
-                        <label for="selFiltro03">Data</label>
-                        <select class="styleFiltro02" id="selFiltro06">
-                            <option value="">Todos</option>
-                            <option value="">Opção2</option>
-                        </select>
-                        <select class="styleFiltro03" id="selFiltro07">
                             <option value="">Todos</option>
                             <option value="">Opção2</option>
                         </select>
@@ -149,7 +124,7 @@
                         <div>
                             <canvas id="myChart3" style="position: relative; height:26vh; width:30vw"></canvas>
                         </div>
-                    </div>
+                    </div>  
                     <div class="graf01">
                         <div id="chart"></div>
                     </div>
@@ -157,11 +132,11 @@
                         <div id="chart2"></div>
                     </div>
                 </div>
-                <div class="txt">
+                <div class="txt03">
                     <h3>Porcentagem de uso da Memória RAM</h3>
                 </div>
-                <div class="txt02">
-                    <h3>Acima de 80% - RAM</h3>
+                <div class="txt05">
+                    <h3>Acima de 80%-RAM</h3>
                 </div>
                 <div class="box02">
                     <div class="graf04">
@@ -175,11 +150,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="txt">
+                <div class="txt06">
                     <h3>Porcentagem de uso do Disco</h3>
                 </div>
-                <div class="txt02">
-                    <h3>Acima de 80% - Disco</h3>
+                <div class="txt07">
+                    <h3>Acima de 80%-Disco</h3>
                 </div>
                 <div class="box03">
                     <div class="graf06">
@@ -193,10 +168,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="txt">
+                <div class="txt08">
                     <h3>Porcentagem de uso da CPU</h3>
                 </div>
-                <div class="txt02">
+                <div class="txt09">
                     <h3>Acima de 80% - CPU</h3>
                 </div>
                 <div class="box04">
@@ -223,7 +198,7 @@
     var options = {
           series: [80],
           chart: {
-          height: 350,
+          height: 270,
           type: 'radialBar',
           color: undefined,
           offsetY: -10
@@ -273,7 +248,7 @@
     var options = {
           series: [60],
           chart: {
-          height: 350,
+          height: 270,
           type: 'radialBar',
           color: undefined,
           offsetY: -10
