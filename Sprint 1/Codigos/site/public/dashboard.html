@@ -46,14 +46,7 @@
                     </div>
                     <div class="filtro">
                         <label for="selFiltro03">Hora</label>
-                        <select class="styleFiltro02" id="selFiltro06">
-                            <option value="">Todos</option>
-                            <option value="">Opção2</option>
-                        </select>
-                        <select class="styleFiltro03" id="selFiltro07">
-                            <option value="">Todos</option>
-                            <option value="">Opção2</option>
-                        </select>
+                            <input type="text" class="styleFiltro5" id="selFiltro04" placeholder="00:00">
                     </div>
                 </div>
                 
@@ -126,10 +119,14 @@
                         </div>
                     </div>  
                     <div class="graf01">
-                        <div id="chart"></div>
+                        <div>
+                            <canvas id="myChart1" style="position: relative; height:15vh; width:15vw"></canvas>
+                        </div>
                     </div>
                     <div class="graf02">
-                        <div id="chart2"></div>
+                        <div>
+                            <canvas id="myChart2" style="position: relative; height:15vh; width:15vw"></canvas>
+                        </div>
                     </div>
                 </div>
                 <div class="txt03">
@@ -195,105 +192,52 @@
 <script src="js/dashboard.js"></script>
 <script>
 
-    var options = {
-          series: [80],
-          chart: {
-          height: 270,
-          type: 'radialBar',
-          color: undefined,
-          offsetY: -10
-        },
-        plotOptions: {
-          radialBar: {
-            startAngle: -135,
-            endAngle: 135,
-            dataLabels: {
-              name: {
-                fontSize: '16px',
-                color: undefined,
-                offsetY: 120
-              },
-              value: {
-                offsetY: 76,
-                fontSize: '22px',
-                color: '#FFFFFF',
-                formatter: function (val) {
-                  return val + "%";
-                }
-              }
-            }
-          }
-        },
-        fill: {
-        colors: '#0000FF',
-          type: 'gradient',
-          gradient: {
-              shade: 'dark',
-              shadeIntensity: 0.15,
-              inverseColors: false,
-              opacityFrom: 1,
-              opacityTo: 1,
-              stops: [0, 50, 65, 91],
-          },
-        },
-        semi: {
-          dashArray: 4
-        },
-        labels: [''],
+    const data1 = {
+    labels: [
+        'Sim',
+        'Não'
+    ],
+    
+    datasets: [{
+        label: 'Consumo de Memória RAM',
+        data: [10, 95],
+        backgroundColor: [
+        '#6495ED',
+        '#0000FF'
+        ],
+        hoverOffset: 4
+    }]
+    };
+    
+    const config1 = {
+    type: 'doughnut',
+    data: data1,
     };
 
-    var chart = new ApexCharts(document.querySelector("#chart"), options);
-    chart.render();
 
-    var options = {
-          series: [60],
-          chart: {
-          height: 270,
-          type: 'radialBar',
-          color: undefined,
-          offsetY: -10
-        },
-        plotOptions: {
-          radialBar: {
-            startAngle: -135,
-            endAngle: 135,
-            dataLabels: {
-              name: {
-                fontSize: '16px',
-                color: undefined,
-                offsetY: 120
-              },
-              value: {
-                offsetY: 76,
-                fontSize: '22px',
-                color: '#FFFFFF',
-                formatter: function (val) {
-                  return val + "%";
-                }
-              }
-            }
-          }
-        },
-        fill: {
-            colors: '#5F57BD',
-          type: 'gradient',
-          gradient: {
-              shade: 'dark',
-              shadeIntensity: 0.15,
-              inverseColors: false,
-              opacityFrom: 1,
-              opacityTo: 1,
-              stops: [0, 50, 65, 91],
-          },
-        },
-        semi: {
-          dashArray: 4
-        },
-        labels: [''],
+    const data2 = {
+    labels: [
+        'Sim',
+        'Não'
+    ],
+    
+    datasets: [{
+        label: 'Consumo de Memória RAM',
+        data: [10, 95],
+        backgroundColor: [
+        '#9400D3',
+        '#5F57BD'
+        ],
+        hoverOffset: 4
+    }]
+    };
+    
+    const config2 = {
+    type: 'doughnut',
+    data: data2,
     };
 
-    var chart = new ApexCharts(document.querySelector("#chart2"), options);
-    chart.render();
+
 
    const labels3 = [
     'Domingo',
@@ -474,6 +418,16 @@
 </script>
 
 <script>
+
+    const myChart1 = new Chart(
+        document.getElementById('myChart1'),
+        config1
+    );
+
+    const myChart2 = new Chart(
+        document.getElementById('myChart2'),
+        config2
+    );
 
     const myChart3 = new Chart(
         document.getElementById('myChart3'),

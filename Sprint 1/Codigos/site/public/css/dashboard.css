@@ -111,6 +111,18 @@ body{
     margin-top: -45px;
 }
 
+.styleFiltro5{
+    background-color: #1d2027;
+    border: none;
+    outline: none;
+    color: #757575;
+    width: 59px;
+    height: 30px;
+    padding: 5px;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
 .opcao{
     display: flex;
     gap: 15px;
