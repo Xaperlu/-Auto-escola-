@@ -360,7 +360,7 @@ function hardwareCadastro(){
     const cpuModelo = document.querySelector('#cpuModelo').value
     const discoModelo = document.querySelector('#discoModelo').value
     const memoriaModelo = document.querySelector('#memoriaModelo').value
-    const nivel = sessionStorage.getItem()
+    const nivel = sessionStorage.getItem('NIVEL_USUARIO')
 
     if(!(nivel == 3 || nivel == 2)){
         alert('Você não tem permissão para cadastrar um hardware!')

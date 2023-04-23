@@ -43,7 +43,7 @@ body {
 
 .box h2{
     text-align: center;
-    font-size: 25px;
+    font-size: 1.3rem;
     background-clip: text;
     -webkit-background-clip: text;
     background-image: -webkit-linear-gradient(left, #26e3c2, #45a0f5);

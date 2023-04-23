@@ -20,33 +20,20 @@
                 <div class="logoNav">
                     <img src="asset/logo2.png">
                     <h1>AutoTech</h1>
-                    <p>Nome empresa</p>
+                    <p id="nomeEmpresa">Nome empresa</p>
                 </div>
                 <div class="filtros">
                     <div class="filtro">
-                        <label for="selFiltro02">Unidade</label>
-                        <select class="styleFiltro" id="selFiltro02">
+                        <label for="selUnidade">Unidade</label>
+                        <select class="styleFiltro" id="selUnidade">
                             <option value="">Todos</option>
-                            <option value="">Opção2</option>
                         </select>
                     </div>
                     <div class="filtro">
-                        <label for="selFiltro03">Componente</label>
-                        <select class="styleFiltro" id="selFiltro03">
-                            <option value="">Todos</option>
-                            <option value="">Opção2</option>
+                        <label for="selHardware">Número de Série</label>
+                        <select class="styleFiltro" id="selHardware" onchange="recarregarDashs()">
+                            
                         </select>
-                    </div>
-                    <div class="filtro">
-                        <label for="selFiltro03">Número de Série</label>
-                        <select class="styleFiltro" id="selFiltro04">
-                            <option value="">Todos</option>
-                            <option value="">Opção2</option>
-                        </select>
-                    </div>
-                    <div class="filtro">
-                        <label for="selFiltro03">Hora</label>
-                            <input type="text" class="styleFiltro5" id="selFiltro04" placeholder="00:00">
                     </div>
                 </div>
                 
@@ -56,6 +43,9 @@
             </div>
         </div>
         <div class="analytics">
+            <div class="tituloKpi">
+                <h3>Percentual de registros fora dos parâmetros nas últimas 12 horas</h3>
+            </div>
             <div class="kpi">
                 <div class="descricao">
                     <h2>KPI</h2>
@@ -67,8 +57,8 @@
                 </div>
                 <div class="divisor"></div>
                 <div class="bigN">
-                    <p>Mediana Ping</p>
-                    <span class="metrica01">500</span>
+                    <p>Latência ms > 50</p>
+                    <span class="metrica01" id="kpi01">500</span>
                     <div class="barra">
                         <div class="barra01"></div>
                         <div class="barra02"></div>
@@ -76,110 +66,110 @@
                 </div>
                 <div class="divisor"></div>
                 <div class="bigN">
-                    <p>Mediana Memória RAM</p>
-                    <span class="metrica02">500</span>
+                    <p>Uso Ram > 80%</p>
+                    <span class="metrica02" id="kpi02">500</span>
                     <div class="barra">
-                        <div class="barra01"></div>
+                        <div class="barra01" id="barraRam"></div>
                         <div class="barra02"></div>
                     </div>
                 </div>
                 <div class="divisor"></div>
                 <div class="bigN">
-                    <p>Mediana Disco</p>
-                    <span class="metrica03">500</span>
+                    <p>Uso Disco > 80%</p>
+                    <span class="metrica03" id="kpi03">500</span>
                     <div class="barra">
-                        <div class="barra01"></div>
+                        <div class="barra01" id="barraDisco"></div>
                         <div class="barra02"></div>
                     </div>
                 </div>
                 <div class="divisor"></div>
                 <div class="bigN">
-                    <p>Mediana CPU</p>
-                    <span class="metrica04">500</span>
+                    <p>Uso CPU > 80%</p>
+                    <span class="metrica04" id="kpi04">500</span>
                     <div class="barra">
-                        <div class="barra01"></div>
+                        <div class="barra01" id="barraCpu"></div>
                         <div class="barra02"></div>
                     </div>
                 </div>
             </div>
             <div class="visual">
-                <div class="txt">
-                    <h3>Velocidade Mbps Download e Upload</h3>
-                </div>
-                <div class="txt04">
-                    <h3>Mediana Download</h3>
-                </div>
-                <div class="txt02">
-                    <h3>Mediana Upload</h3>
+                <div class="box01">
+                    <div class="tituloLine">
+                        <p>Velocidade Mbps Download e Upload</p>
+                        <div class="graf03">
+                            <div>
+                                <canvas id="myChart3" style="position: relative; height:33vh; width:34vw"></canvas>
+                            </div>
+                        </div>  
+                    </div>
+                    <div class="tituloRosca">
+                        <p>Download Mbps abaixo 200</p>
+                        <div class="graf01">
+                            <div>
+                                <canvas id="myChart1" style="position: relative; height:15vh; width:15vw"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tituloRosca">
+                        <p>Upload Mbps abaixo 200</p>
+                        <div class="graf02">
+                            <div>
+                                <canvas id="myChart2" style="position: relative; height:15vh; width:15vw"></canvas>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="box01">
-                    <div class="graf03">
-                        <div>
-                            <canvas id="myChart3" style="position: relative; height:26vh; width:30vw"></canvas>
-                        </div>
-                    </div>  
-                    <div class="graf01">
-                        <div>
-                            <canvas id="myChart1" style="position: relative; height:15vh; width:15vw"></canvas>
+                    <div class="tituloLine2">
+                        <p>Percentual de uso da Memória RAM</p>
+                        <div class="graf04">
+                            <div>
+                                <canvas id="myChart5" style="position: relative; height:33vh; width:52vw"></canvas>
+                            </div>
                         </div>
                     </div>
-                    <div class="graf02">
-                        <div>
-                            <canvas id="myChart2" style="position: relative; height:15vh; width:15vw"></canvas>
-                        </div>
-                    </div>
-                </div>
-                <div class="txt03">
-                    <h3>Porcentagem de uso da Memória RAM</h3>
-                </div>
-                <div class="txt05">
-                    <h3>Acima de 80%-RAM</h3>
-                </div>
-                <div class="box02">
-                    <div class="graf04">
-                        <div>
-                            <canvas id="myChart5" style="position: relative; height:15vh; width:25vw"></canvas>
-                        </div>
-                    </div>
-                    <div class="graf05">
-                        <div>
-                            <canvas id="myChart4" style="position: relative; height:15vh; width:15vw"></canvas>
+                    <div class="tituloRosca">
+                        <p>Uso RAM acima 80%</p>
+                        <div class="graf05">
+                            <div>
+                                <canvas id="myChart4" style="position: relative; height:15vh; width:15vw"></canvas>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="txt06">
-                    <h3>Porcentagem de uso do Disco</h3>
-                </div>
-                <div class="txt07">
-                    <h3>Acima de 80%-Disco</h3>
-                </div>
-                <div class="box03">
-                    <div class="graf06">
-                        <div>
-                            <canvas id="myChart7" style="position: relative; height:15vh; width:25vw"></canvas>
+                <div class="box01">
+                    <div class="tituloLine2">
+                        <p>Percentual de uso do Disco</p>
+                        <div class="graf06">
+                            <div>
+                                <canvas id="myChart7" style="position: relative; height:33vh; width:52vw"></canvas>
+                            </div>
                         </div>
                     </div>
-                    <div class="graf07">
-                        <div>
-                            <canvas id="myChart6" style="position: relative; height:15vh; width:15vw"></canvas>
+                    <div class="tituloRosca">
+                        <p>Uso Disco acima 80%</p>
+                        <div class="graf07">
+                            <div>
+                                <canvas id="myChart6" style="position: relative; height:15vh; width:15vw"></canvas>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="txt08">
-                    <h3>Porcentagem de uso da CPU</h3>
-                </div>
-                <div class="txt09">
-                    <h3>Acima de 80% - CPU</h3>
-                </div>
-                <div class="box04">
-                    <div class="graf08">
-                        <div>
-                            <canvas id="myChart9" style="position: relative; height:15vh; width:25vw"></canvas>
+                <div class="box01">
+                    <div class="tituloLine2">
+                        <p>Percentual de uso da CPU</p>
+                        <div class="graf08">
+                            <div>
+                                <canvas id="myChart9" style="position: relative; height:33vh; width:52vw"></canvas>
+                            </div>
                         </div>
                     </div>
-                    <div class="graf09">
-                        <div>
-                            <canvas id="myChart8" style="position: relative; height:15vh; width:15vw"></canvas>
+                    <div class="tituloRosca">
+                        <p>Uso CPU acima 80%</p>
+                        <div class="graf09">
+                            <div>
+                                <canvas id="myChart8" style="position: relative; height:15vh; width:15vw"></canvas>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -194,18 +184,20 @@
 
     const data1 = {
     labels: [
-        'Sim',
-        'Não'
+        'Abaixo',
+        'Acima'
     ],
     
     datasets: [{
         label: 'Consumo de Memória RAM',
         data: [10, 95],
         backgroundColor: [
-        '#6495ED',
-        '#0000FF'
+        '#487CBC',
+        '#30537D'
+        
         ],
-        hoverOffset: 4
+        hoverOffset: 4,
+        borderColor: ['#487CBC']
     }]
     };
     
@@ -217,18 +209,19 @@
 
     const data2 = {
     labels: [
-        'Sim',
-        'Não'
+        'Abaixo',
+        'Acima'
     ],
     
     datasets: [{
         label: 'Consumo de Memória RAM',
         data: [10, 95],
         backgroundColor: [
-        '#9400D3',
-        '#5F57BD'
+        '#7DB1F0',
+        '#487CBC'
         ],
-        hoverOffset: 4
+        hoverOffset: 4,
+        borderColor: ['#7DB1F0']
     }]
     };
     
@@ -240,28 +233,32 @@
 
 
    const labels3 = [
-    'Domingo',
-    'Segunda',
-    'Terça',
-    'Quarta',
-    'Quinta',
-    'Sexta',
-    'Sábado',
+    '17:30',
+    '17:45',
+    '18:00',
+    '18:15',
+    '18:30',
+    '18:45',
+    '19:00',
    ];
 
    const data3 = {
     labels: labels3,
     datasets: [{
-        label: 'Velocidade de Download',
-        backgroundColor: '#0000FF',
-        borderColor: '#0000FF',
+        label: 'Download',
+        backgroundColor: '#30537D',
+        borderColor: '#30537D',
         data: [100, 13, 25, 47, 9, 91, 33],
+        tension: 0.2,
+        borderWidth: 2
     },
     {
-        label: 'Velocidade de Upload',
-        backgroundColor: '#5F57BD',
-        borderColor: '#5F57BD',
+        label: 'Upload',
+        backgroundColor: '#7DB1F0',
+        borderColor: '#7DB1F0',
         data: [200, 77, 83, 99, 64, 157, 65],
+        tension: 0.2,
+        borderWidth: 2
     }]
    };
 
@@ -273,18 +270,19 @@
    
    const data4 = {
     labels: [
-        'Sim',
-        'Não'
+        'Acima',
+        'Abaixo'
     ],
     
     datasets: [{
         label: 'Consumo de Memória RAM',
         data: [10, 95],
         backgroundColor: [
-        '#B3345E',
-        '#DC143C'
+        '#5F57BD',
+        '#362F7C'
         ],
-        hoverOffset: 4
+        hoverOffset: 4,
+        borderColor: ['#5F57BD']
     }]
     };
     
@@ -306,10 +304,12 @@
    const data5 = {
     labels: labels5,
     datasets: [{
-        label: 'Consumo de Memória RAM',
-        backgroundColor: '#B3345E',
-        borderColor: '#B3345E',
+        label: 'Memória RAM',
+        backgroundColor: '#5F57BD',
+        borderColor: '#5F57BD',
         data: [0, 95, 87, 68, 76, 32, 89],
+        tension: 0.2,
+        borderWidth: 2
     }]
    };
 
@@ -321,8 +321,8 @@
 
    const data6 = {
     labels: [
-        'Sim',
-        'Não'
+        'Acima',
+        'Abaixo'
     ],
     
     datasets: [{
@@ -330,9 +330,10 @@
         data: [80, 87],
         backgroundColor: [
         '#964EBF',
-        '#4B0082'
+        '#653381'
         ],
-        hoverOffset: 4
+        hoverOffset: 4,
+        borderColor: ['#964EBF']
     }]
     };
     
@@ -354,10 +355,12 @@
    const data7 = {
     labels: labels7,
     datasets: [{
-        label: 'Consumo de Disco',
-        backgroundColor: '#4B0082',
-        borderColor: '#4B0082',
+        label: 'Disco',
+        backgroundColor: '#964EBF',
+        borderColor: '#964EBF',
         data: [80, 87, 90, 93, 99, 83, 95],
+        tension: 0.2,
+        borderWidth: 2
     }]
    };
 
@@ -369,18 +372,19 @@
 
    const data8 = {
     labels: [
-        'Sim',
-        'Não'
+        'Acima',
+        'Abaixo'
     ],
     
     datasets: [{
         label: 'Consumo de CPU',
         data: [60, 98],
         backgroundColor: [
-        '#0000FF',
-        '#487CBC'
+        '#A04564',
+        '#792440'
         ],
-        hoverOffset: 4
+        hoverOffset: 4,
+        borderColor: ['#A04564']
     }]
     };
     
@@ -402,10 +406,12 @@
    const data9 = {
     labels: labels9,
     datasets: [{
-        label: 'Consumo de CPU',
-        backgroundColor: '#0000FF',
-        borderColor: '#0000FF',
+        label: 'CPU',
+        backgroundColor: '#B3345E',
+        borderColor: '#B3345E',
         data: [60, 98, 96, 84, 90, 67, 95],
+        tension: 0.2,
+        borderWidth: 2
     }]
    };
 
@@ -419,7 +425,7 @@
 
 <script>
 
-    const myChart1 = new Chart(
+    /* const myChart1 = new Chart(
         document.getElementById('myChart1'),
         config1
     );
@@ -427,42 +433,42 @@
     const myChart2 = new Chart(
         document.getElementById('myChart2'),
         config2
-    );
+    ); */
 
-    const myChart3 = new Chart(
+   /*  const myChart3 = new Chart(
         document.getElementById('myChart3'),
         config3
-    );
+    ); */
 
-    const myChart4 = new Chart(
+    /* const myChart4 = new Chart(
         document.getElementById('myChart4'),
         config4
-    );
+    ); */
 
-    const myChart5 = new Chart(
+    /* const myChart5 = new Chart(
         document.getElementById('myChart5'),
         config5
-    );
+    ); */
     
-    const myChart6 = new Chart(
+   /*  const myChart6 = new Chart(
         document.getElementById('myChart6'),
         config6
-    );
+    ); */
 
-    const myChart7 = new Chart(
+    /* const myChart7 = new Chart(
         document.getElementById('myChart7'),
         config7
-    );
+    ); */
 
-    const myChart8 = new Chart(
+   /*  const myChart8 = new Chart(
         document.getElementById('myChart8'),
         config8
-    );
+    ); */
 
-    const myChart9 = new Chart(
+    /* const myChart9 = new Chart(
         document.getElementById('myChart9'),
         config9
-    );
+    ); */
 
 </script>
 </html>

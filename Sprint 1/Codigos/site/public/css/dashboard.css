@@ -46,6 +46,7 @@ body{
 }
 
 .logoNav p{
+    font-size: 20px;
     color: #60a5fa;
 }
 
@@ -74,7 +75,7 @@ body{
     border: none;
     outline: none;
     color: #757575;
-    width: 250px;
+    width: 100%;
     height: 30px;
     padding: 5px;
     font-size: 18px;
@@ -160,12 +161,19 @@ body{
 .kpi{
     display: flex;
     width: 90%;
-    height: 150px;
+    height: 115px;
     background-color: #242731;
     border-radius: 10px;
-    margin-top: 2vh;
+    margin-top: -4vh;
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.166);
 
+}
+
+.tituloKpi{
+    color: white;
+    width: 90%;
+    height: 10px;
+    margin-top: 2vh;
 }
 
 .divisor{
@@ -188,11 +196,17 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     width: 20%;
     height: 100%;
     color: rgb(190, 190, 190);
     padding: 5px;
-    gap: 25px;
+    padding: 7px;
+}
+
+.bigN p{
+    text-align: center;
+    font-size: 14px;
 }
 
 .barra{
@@ -203,7 +217,7 @@ body{
 .barra01{
     width: 50px;
     height: 8px;
-    background-color: #34d399;
+    background-color: #1FB981;
 }
 
 .barra02{
@@ -213,30 +227,30 @@ body{
 }
 
 .metrica01{
-    font-size: 40px;
-    color: #00008B;
+    font-size: 30px;
+    color: #487CBC;
 }
 
 .metrica02{
-    font-size: 40px;
-    color: #DC143C; 
+    font-size: 30px;
+    color: #5F57BD; 
 }
 
 .metrica03{
-    font-size: 40px;
-    color: #4B0082;
+    font-size: 30px;
+    color: #964EBF;
 }
 
 .metrica04{
-    font-size: 40px;
-    color: #0000FF;
+    font-size: 30px;
+    color: #B3345E;
 }
 
 .corAlertas{
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin: 15px 0 0 -20px;
+    gap: 3px;
+    margin: 5px 0 0 -20px;
 }
 
 .b01{
@@ -247,7 +261,7 @@ body{
 }
 
 .verde{
-    color: #34d399;
+    color: #1FB981;
 }
 
 .amarelo{
@@ -265,6 +279,7 @@ body{
     /* height: 440px; */
     /* background-color: cadetblue; */
     gap: 15px;
+    margin-bottom: 2vh;
 }
 
 .box01{
@@ -278,7 +293,6 @@ body{
     background-color: #242731;
     border-radius: 10px;
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.166);
-    margin-left: -2vw;
     margin-top: 0vh;
 }
 
@@ -288,11 +302,13 @@ body{
     background-color: #242731;
     border-radius: 10px;
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.166);
-    margin-left: -3vw;
     margin-top: 0vh;
 }
 
 .graf03{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 35vw;
     height: 34vh;
     background-color: #242731;
@@ -301,6 +317,9 @@ body{
 }
 
 .graf04{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 53vw;
     height: 34vh;
     background-color: #242731;
@@ -313,12 +332,13 @@ body{
     height: 34vh;
     background-color: #242731;
     border-radius: 10px;
-    margin-left: 54vw;
-    margin-top: -34vh;
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.166);
 }
 
 .graf06{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 53vw;
     height: 34vh;
     background-color: #242731;
@@ -331,12 +351,13 @@ body{
     height: 34vh;
     background-color: #242731;
     border-radius: 10px;
-    margin-left: 54vw;
-    margin-top: -34vh;
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.166);
 }
 
 .graf08{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 53vw;
     height: 34vh;
     background-color: #242731;
@@ -349,9 +370,52 @@ body{
     height: 34vh;
     background-color: #242731;
     border-radius: 10px;
-    margin-left: 54vw;
-    margin-top: -34vh;
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.166);
+}
+
+.tituloLine{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5px;
+    width: 35vw;
+}
+
+.tituloLine2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5px;
+    width: 53vw;
+}
+
+.tituloRosca{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5px;
+    width: 15vw;
+}
+
+.tituloRosca p{
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.tituloLine p{
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.tituloLine2 p{
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 .txt{

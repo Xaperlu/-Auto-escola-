@@ -166,7 +166,7 @@ header div a {
 
 .formulario .box h2 {
     margin-top: 20px;
-    font-size: 40px;
+    font-size: 1.8rem;
     background-clip: text;
     -webkit-background-clip: text;
     background-image: -webkit-linear-gradient(left, #26e3c2, #45a0f5);
@@ -191,7 +191,7 @@ header div a {
 }
 
 .campoDigitacao{
-    margin-top: 40px;
+    margin-top: 5vh;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
@@ -203,8 +203,8 @@ header div a {
 }
 
 .ipt{
-    height: 60px;
-    font-size: 22px;
+    height: 8vh;
+    font-size: 1.1rem;
     border: none;
     background-color: #0f0f0f;
     color: white;
