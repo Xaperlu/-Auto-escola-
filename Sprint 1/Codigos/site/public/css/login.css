@@ -15,6 +15,7 @@ body {
     height: 100vh;
     background-color: #0f0f0f;
     position: absolute;
+    transition: background-color 1s 0.2s linear;
 }
 
 body::-webkit-scrollbar {
@@ -37,6 +38,7 @@ header {
     position: fixed;
     z-index: 2;
     transition: all 0.2s 0s linear;
+    background-color: transparent;
 
 }
 
@@ -225,6 +227,10 @@ header div a {
     margin-top: 90px;
 }
 
+#cd2{
+    position: relative;
+}
+
 .ipt{
     height: 8vh;
     font-size: 1.1rem;
@@ -234,7 +240,32 @@ header div a {
     outline: none;
     padding: 10px;
     border-radius: 5px;
-    width: 30vw;
+    width: 25vw;
+}
+
+label{
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-image: -webkit-linear-gradient(left, #26e3c2, #45a0f5);
+    color: transparent;
+    font-weight: bold;
+}
+
+.eye{
+    position: absolute;
+    top: 48%;
+    right: 5%;
+    font-size: 30px;
+    cursor: pointer;
+
+}
+
+#ver{
+    display: none;
+}
+
+#nver{
+    display: block;
 }
 
 .btNext{

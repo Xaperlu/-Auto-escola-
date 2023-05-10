@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/login.css">
-    
+
     <link rel="shortcut icon" href="./asset/favicon-32x32.png" type="image/x-icon">
 
     <title>AutoTech | Login</title>
-    
+
 </head>
+
 <body>
-    
+
     <header>
         <a class="linklogo" href="./index.html" style="text-decoration: none;">
             <img src="./asset/logo2.png" alt="">
@@ -35,30 +37,63 @@
 
         <div id="box01" class="box">
             <h2>Login</h2>
-                <div class="campoDigitacao" id="cd1">
-                    <label for="in_email">E-mail</label>
-                    <input class="ipt" id="in_email" type="text" placeholder="Email@email.com">
-                </div>
-                <div class="campoDigitacao" id="cd2">
-                    <label for="in_senha">Senha</label>
-                    <input class="ipt" id="in_senha" type="password" placeholder="********">
-                    <ion-icon name="eye-outline"></ion-icon>
-                </div>
+            <div class="campoDigitacao" id="cd1">
+                <label for="in_email">E-mail</label>
+                <input class="ipt" id="in_email" type="text" placeholder="Email@email.com">
+            </div>
+            <div class="campoDigitacao" id="cd2">
+                <label for="in_senha">Senha</label>
+                <input class="ipt" id="in_senha" type="password" placeholder="********">
+                <ion-icon id="ver" class="eye" name="eye-outline"></ion-icon>
+                <ion-icon id="nver" class="eye" name="eye-off-outline"></ion-icon>
+            </div>
 
-                <button onclick="entrar()" class="btNext">Entrar</button>
+            <button onclick="entrar()" class="btNext">Entrar</button>
         </div>
         <div id="divlightmode" onclick="lightmode()">
             <div id="onmode"></div>
         </div>
     </div>
-   
+
 </body>
+
 </html>
+
 <script src="js/light.js"></script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
+
+
 <script>
+
+    document.querySelector("#ver").addEventListener("click", () => {
+        
+
+        
+            document.querySelector("#ver").style.display = "none"
+            document.querySelector("#nver").style.display = "block"
+            document.querySelector("#in_senha").type = "password"
+           
+        
+
+    })
+
+    document.querySelector("#nver").addEventListener("click", () => {
+        console.log("nver none")
+
+        
+            document.querySelector("#nver").style.display = "none"
+            document.querySelector("#ver").style.display = "block"
+            document.querySelector("#in_senha").type = "text"
+        
+
+    })
+
+
+
+
+
 
     function entrar() {
         const email = in_email.value.toLowerCase();
@@ -104,4 +139,3 @@
         return false;
     }
 </script>
-

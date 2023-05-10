@@ -85,7 +85,7 @@ window.addEventListener("scroll", (event) => {
            
         } else {
 
-            if(document.querySelector("body").style.backgroundColor == "white"){
+            if(document.querySelector("body").style.backgroundColor != "#D6F1FF"){
                 document.querySelector("header").style.backgroundColor = "rgb(15, 15, 15)";
             }else{
                 document.querySelector("header").style.backgroundColor = "transparent";

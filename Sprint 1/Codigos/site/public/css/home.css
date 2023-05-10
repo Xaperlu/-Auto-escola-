@@ -235,7 +235,6 @@ main {
 .container1 .bloco1 .divdownload {
     margin-top: 8%;
     font-size: 32px;
-    color: white;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -275,6 +274,8 @@ main {
     border-radius: 50%;
     background-color: #45a0f526;
     filter: blur(100px);
+    transition: background-color 1s 0.2s linear;
+
 }
 
 .circuloborrado2 {
@@ -342,11 +343,15 @@ main {
 .container2 .box {
     height: 300px;
     width: 26%;
-    background-color: rgba(128, 128, 128, 0.179);
-    border: solid 1px  #202020;
     border-radius: 20px;
     padding: 20px;
     backdrop-filter: blur(10px);
+   
+}
+
+#boxone, #boxtwo, #boxtree {
+    background-color: rgba(128, 128, 128, 0.179);
+    
 }
 
 .box .boxicon {
@@ -358,19 +363,27 @@ main {
     align-items: center;
     justify-content: center;
     border: solid 1px  #2690fa;
-    box-shadow: 3px 4px 10px 5px rgb(18, 18, 18);
+    box-shadow: 3px 4px 10px 5px rgb(18, 18, 18);                    
 }
 
-.box .boxicon ion-icon {
+.box, #boxone, #boxtwo, #boxtree, .boxicon ion-icon {
     font-size: 35px;
 }
 
-.box h3 {
+.box, #boxone, #boxtwo, #boxtree, h3 {
     margin-top: 30px;
     font-size: 22px;
 }
 
-.box p {
+.box, #boxone p {
+    margin-top: 20px;
+    font-size: 14px
+}
+.box,  #boxtwo p {
+    margin-top: 20px;
+    font-size: 14px
+}
+.box, #boxtree p {
     margin-top: 20px;
     font-size: 14px
 }
