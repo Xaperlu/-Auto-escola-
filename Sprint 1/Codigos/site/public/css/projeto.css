@@ -65,6 +65,31 @@ nav ul li a {
     font-size: 13px;
 }
 
+#divlightmode{
+    position: fixed;
+    height: 30px;
+    width: 70px;
+    background-color: rgb(16, 96, 224);
+    bottom: 5%;
+    left:3%;
+    border: solid 2px  rgb(193, 183, 183);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 1px 1px 1px 1px;
+    cursor: pointer;
+    transition: background-color 1s 0.2s linear;
+}
+
+#onmode{
+    background-color: rgb(255, 255, 255);
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+    transform: translateX(5px);
+    transition: transform 0.3s linear;
+}
+
 .row {
     display: flex;
     height: 88%;

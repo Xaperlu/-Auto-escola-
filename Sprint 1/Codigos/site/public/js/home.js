@@ -1,4 +1,6 @@
 
+sessionStorage.setItem("mode", "dark");
+
 window.addEventListener("load", (event) => {
     let body = document.querySelector("body")
 
@@ -80,10 +82,16 @@ window.addEventListener("scroll", (event) => {
 
         if (scrollY > 0.7) {
             document.querySelector("header").style.backgroundColor = "black";
-            console.log("b")
+           
         } else {
-            document.querySelector("header").style.backgroundColor = "transparent";
-            console.log("t")
+
+            if(document.querySelector("body").style.backgroundColor == "white"){
+                document.querySelector("header").style.backgroundColor = "rgb(15, 15, 15)";
+            }else{
+                document.querySelector("header").style.backgroundColor = "transparent";
+
+            }
+            
         }
 
     }

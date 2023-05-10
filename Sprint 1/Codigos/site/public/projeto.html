@@ -18,9 +18,9 @@
             <h1>AutoTech</h1>
             <nav>
                 <ul>
+                    <li><a href="sobre.html">Sobre</a></li>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="produto.html">Produto</a></li>
-                    <li><a href="sobre.html">Sobre</a></li>
                 </ul>
             </nav>
             <!-- <img src="./asset/menu.png" class="menu-icon"> -->
@@ -53,9 +53,31 @@
             </div>
         </div>
     </div>
+
+    <div id="divlightmode" onclick="lightmode()">
+        <div id="onmode"></div>
+    </div>
 </body>
 
 </html>
-
+<script src="js/light.js"></script>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+<script>
+    window.addEventListener("scroll", (event) => {
+        let scrollY = this.scrollY;
+        let scrollX = this.scrollX;
+
+        console.log(scrollY);
+
+        if(sessionStorage.getItem("mode") != "white"){
+          if (scrollY > 0.7) {
+            document.querySelector("header").style.backgroundColor = "black";
+        } else {
+            document.querySelector("header").style.backgroundColor = "transparent";
+        }
+        }
+
+    });
+</script>
