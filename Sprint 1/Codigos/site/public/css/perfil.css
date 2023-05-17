@@ -751,7 +751,6 @@ body {
 
 }
 
-
 .divisor{
     display: flex;
     gap: 15px;
@@ -760,9 +759,12 @@ body {
     width: 100%;
 }
 
-
 @keyframes retate {
     to {
         transform: rotate(360deg);
     }
+}
+
+#janelaEditarUnidade{
+    display: none;
 }

@@ -241,6 +241,23 @@ function pegarDadosGraficosRosca(req, res){
         )
 }
 
+function editarUnidade(req, res){
+    const unidade = req.body.unidade
+    const telefone = req.body.telefone
+    const nome = req.body.nome
+    const cep = req.body.cep
+    const logradouro = req.body.logradouro
+    const bairro = req.body.bairro
+    const numero = req.body.numero
+
+    usuarioModel.editarUnidade(unidade, telefone, nome, cep, logradouro, bairro, numero)
+        .then(
+            function(resultado){
+                res.json(resultado)
+            }
+        )
+}
+
 
 module.exports = {
    cadastrar,
@@ -259,5 +276,6 @@ module.exports = {
    obterDadosDisco,
    atualizarGraficoRede,
    obterDadosRede,
-   pegarDadosGraficosRosca
+   pegarDadosGraficosRosca,
+   editarUnidade
 }

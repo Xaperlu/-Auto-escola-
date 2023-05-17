@@ -129,14 +129,22 @@ function atualizarGraficoRede(idHardware){
 function pegarDadosGraficosRosca(idHardware){
     let instrucao = `
     select top 1
-    (select count(porcentagem_uso) from metrica join componente as c on id_componente = fk_componente join modelo_componente on id_modelo_componente = c.fk_modelo_componente where dt_hora > DATEADD(HOUR, -27, GETDATE()) and porcentagem_uso > 80 and tipo = 'CPU' and c.fk_hardware = ${idHardware}) as CpuAcima, 
-    (select count(porcentagem_uso) from metrica join componente as c on id_componente = fk_componente join modelo_componente on id_modelo_componente = c.fk_modelo_componente where dt_hora > DATEADD(HOUR, -27, GETDATE()) and porcentagem_uso > 80 and tipo = 'Memória RAM' and c.fk_hardware = ${idHardware}) as RamAcima,
-    (select count(porcentagem_uso) from metrica join componente as c on id_componente = fk_componente join modelo_componente on id_modelo_componente = c.fk_modelo_componente where dt_hora > DATEADD(HOUR, -27, GETDATE()) and porcentagem_uso > 80 and tipo = 'Disco' and c.fk_hardware = ${idHardware}) as DiscoAcima,
-    (select count(porcentagem_uso) from metrica join componente as c on id_componente = fk_componente join modelo_componente on id_modelo_componente = c.fk_modelo_componente where dt_hora > DATEADD(HOUR, -27, GETDATE()) and porcentagem_uso < 80 and tipo = 'CPU' and c.fk_hardware = ${idHardware}) as CpuAbaixo,
-    (select count(porcentagem_uso) from metrica join componente as c on id_componente = fk_componente join modelo_componente on id_modelo_componente = c.fk_modelo_componente where dt_hora > DATEADD(HOUR, -27, GETDATE()) and porcentagem_uso < 80 and tipo = 'Memória RAM' and c.fk_hardware = ${idHardware}) as RamAbaixo,
-    (select count(porcentagem_uso) from metrica join componente as c on id_componente = fk_componente join modelo_componente on id_modelo_componente = c.fk_modelo_componente where dt_hora > DATEADD(HOUR, -27, GETDATE()) and porcentagem_uso < 80 and tipo = 'Disco' and c.fk_hardware = ${idHardware}) as DiscoAbaixo
+    (select count(porcentagem_uso) from metrica join componente as c on id_componente = fk_componente join modelo_componente on id_modelo_componente = c.fk_modelo_componente where dt_hora > DATEADD(HOUR, -207, GETDATE()) and porcentagem_uso > 80 and tipo = 'CPU' and c.fk_hardware = ${idHardware}) as CpuAcima, 
+    (select count(porcentagem_uso) from metrica join componente as c on id_componente = fk_componente join modelo_componente on id_modelo_componente = c.fk_modelo_componente where dt_hora > DATEADD(HOUR, -207, GETDATE()) and porcentagem_uso > 80 and tipo = 'Memória RAM' and c.fk_hardware = ${idHardware}) as RamAcima,
+    (select count(porcentagem_uso) from metrica join componente as c on id_componente = fk_componente join modelo_componente on id_modelo_componente = c.fk_modelo_componente where dt_hora > DATEADD(HOUR, -207, GETDATE()) and porcentagem_uso > 80 and tipo = 'Disco' and c.fk_hardware = ${idHardware}) as DiscoAcima,
+    (select count(porcentagem_uso) from metrica join componente as c on id_componente = fk_componente join modelo_componente on id_modelo_componente = c.fk_modelo_componente where dt_hora > DATEADD(HOUR, -207, GETDATE()) and porcentagem_uso < 80 and tipo = 'CPU' and c.fk_hardware = ${idHardware}) as CpuAbaixo,
+    (select count(porcentagem_uso) from metrica join componente as c on id_componente = fk_componente join modelo_componente on id_modelo_componente = c.fk_modelo_componente where dt_hora > DATEADD(HOUR, -207, GETDATE()) and porcentagem_uso < 80 and tipo = 'Memória RAM' and c.fk_hardware = ${idHardware}) as RamAbaixo,
+    (select count(porcentagem_uso) from metrica join componente as c on id_componente = fk_componente join modelo_componente on id_modelo_componente = c.fk_modelo_componente where dt_hora > DATEADD(HOUR, -207, GETDATE()) and porcentagem_uso < 80 and tipo = 'Disco' and c.fk_hardware = ${idHardware}) as DiscoAbaixo
     from metrica join componente as c on id_componente = fk_componente join modelo_componente on id_modelo_componente = c.fk_modelo_componente 
-    where dt_hora > DATEADD(HOUR, -27, GETDATE());
+    where dt_hora > DATEADD(HOUR, -207, GETDATE());
+    `
+    return database.executar(instrucao)
+}
+
+function editarUnidade(unidade, telefone, nome, cep, logradouro, bairro, numero){
+    let instrucao = `
+    update unidade set nome_unidade = '${nome}', telefone = '${telefone}', cep = '${cep}', logradouro = '${logradouro}', bairro = '${bairro}', numero = ${numero}
+    where id_unidade = ${unidade}; 
     `
     return database.executar(instrucao)
 }
@@ -158,5 +166,6 @@ module.exports = {
     atualizarGraficoDisco,
     obterDadosRede,
     atualizarGraficoRede,
-    pegarDadosGraficosRosca
+    pegarDadosGraficosRosca,
+    editarUnidade
 };

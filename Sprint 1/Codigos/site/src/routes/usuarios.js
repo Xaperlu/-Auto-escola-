@@ -79,4 +79,8 @@ router.get("/pegarDadosGraficosRosca/:idHardware", function (req, res) {
     usuarioController.pegarDadosGraficosRosca(req, res);
 });
 
+router.put("/editarUnidade", function (req, res) {
+    usuarioController.editarUnidade(req, res);
+});
+
 module.exports = router;

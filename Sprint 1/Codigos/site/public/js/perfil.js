@@ -113,10 +113,8 @@ document.querySelector("#addfuncionario").addEventListener("click", () => {
 
 document.querySelector("#fecharjanelafuncionario").addEventListener("click", () => {
 
-
     var janelacadastrofuncionario = document.querySelector("#janelacadastrofuncionario").style.display = "none";
     var botaocriar = document.querySelector("#btncriarfuncionario").style.display = "block";
-
 
 });
 
@@ -312,9 +310,9 @@ function cadastrarUnidade() {
 }
 
 function abrirteladeescolhaunidade() {
-    var teladeescolha = document.querySelector("#listadeunidadeparaupdate").style.display = "flex";
+    var teladeescolha = document.querySelector("#janelaEditarUnidade").style.display = "flex";
     var h1 = document.querySelector("#agaumm").style.opacity = "0";
-    let botaocriar = document.querySelector("#btncriarunidade").style.display = "none";
+    let botaocriar = document.querySelector("#janelacadastrounidade").style.display = "none";
 }
 
 function cadastrarhardware() {
@@ -514,4 +512,38 @@ function CelularMascara() {
     if (tamanhoTel == 8) {
         mascaraCelular.value += "-"
     }
+}
+
+function EditarUnidade(){
+    let unidade = document.querySelector('#selEditarUnidade')
+    let telefone = document.querySelector('edTelefone')
+    let nome = document.querySelector('edNomeUnidade')
+    let cep = document.querySelector('edCep')
+    let logradouro = document.querySelector('edLogradouro')
+    let bairro = document.querySelector('edBairro')
+    let numero = document.querySelector('edNumero')
+
+    fetch(`/usuarios/editarUnidade`,{
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            unidade,
+            telefone,
+            nome,
+            cep,
+            logradouro,
+            bairro,
+            numero
+        })
+    }).then(function (resposta){
+        if(resposta.ok){
+            alert('Cadastro com sucesso')
+
+            window.location = "perfil.html"
+        }else{
+            alert('Falha no cadastro')
+        }
+    })
 }

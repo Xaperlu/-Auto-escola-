@@ -417,6 +417,8 @@ function pegarDadosGraficosRosca(){
     fetch(`/usuarios/pegarDadosGraficosRosca/${hardware}`).then((resposta)=>{
         if(resposta.ok){
             resposta.json().then((response)=>{
+                console.log(response)
+                console.log(hardware)
                 exibirDadosGraficoRosca(response, hardware, myChart1, myChart2, myChart4, myChart6, myChart8)
             })
         }
