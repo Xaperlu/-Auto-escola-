@@ -40,7 +40,7 @@
 
         <div class="container2">
 
-            <div class="box">
+            <div class="box" id="boxu">
                 <div class="boxicon">
                     <ion-icon name="people-outline"></ion-icon>
                 </div>
@@ -50,7 +50,7 @@
                     tecnologia.
                 </p>
             </div>
-            <div class="box">
+            <div class="box" id="boxd">
                 <div class="boxicon">
                     <ion-icon name="finger-print-outline"></ion-icon>
                 </div>
@@ -59,7 +59,7 @@
                     atendimentos, mas mantendo a qualidade, sem atrasos e sem desculpas.
                 </p>
             </div>
-            <div class="box">
+            <div class="box" id="boxt">
                 <div class="boxicon">
                     <ion-icon name="analytics-outline"></ion-icon>
                 </div>
@@ -134,7 +134,7 @@
     </footer>
 
 
-    <div id="divlightmode">
+    <div id="divlightmode" onclick="lightmode()">
         <div id="onmode"></div>
     </div>
 
@@ -154,14 +154,13 @@
         let scrollY = this.scrollY;
         let scrollX = this.scrollX;
 
-        console.log(scrollY);
 
-        if(sessionStorage.getItem("mode") != "white"){
-          if (scrollY > 0.7) {
-            document.querySelector("header").style.backgroundColor = "black";
-        } else {
-            document.querySelector("header").style.backgroundColor = "transparent";
-        }
+        if (sessionStorage.getItem("mode") != "white") {
+            if (scrollY > 0.7) {
+                document.querySelector("header").style.backgroundColor = "black";
+            } else {
+                document.querySelector("header").style.backgroundColor = "transparent";
+            }
         }
 
     });

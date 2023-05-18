@@ -272,7 +272,7 @@ main {
     height: 500px;
     width: 500px;
     border-radius: 50%;
-    background-color: #45a0f526;
+    background-color: rgba(69, 160, 245, 0.149);
     filter: blur(100px);
     transition: background-color 1s 0.2s linear;
 
@@ -366,7 +366,7 @@ main {
     box-shadow: 3px 4px 10px 5px rgb(18, 18, 18);                    
 }
 
-.box, #boxone, #boxtwo, #boxtree, .boxicon ion-icon {
+#boxone, #boxtwo, #boxtree, .boxicon ion-icon {
     font-size: 35px;
 }
 
