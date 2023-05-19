@@ -7,6 +7,7 @@
 body{
     background-color: #050012 !important;
     max-height: 105vh;
+    transition: background-color 1s 0.2s linear;
 }
 
 .conteudo{
@@ -18,7 +19,21 @@ body{
     width: 23vw;
     height: 100vh;
     position: fixed;
+    transition: background-color 1s 0.2s linear;
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 .navbar{
     width: 100%;
@@ -30,11 +45,28 @@ body{
     justify-content: start;
     position: relative;
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.166);
+    transition: background-color 1s 0.2s linear;
 }
 
 #divlightmode{
     margin-bottom: 2%;
 }
+
+.sol,
+.lua {
+    position: absolute;
+    opacity: 0;
+}
+
+.lua {
+    opacity: 1;
+}
+
+.sol {
+    opacity: 0;
+    color: rgb(255, 170, 0);
+}
+
 
 .logoNav{
     display: flex;
@@ -157,6 +189,7 @@ body{
     flex-direction: column;
     gap: 50px;
     margin-left: 22%;
+    transition: background-color 1s 0.2s linear;
 }
 
 .kpi{
@@ -167,6 +200,7 @@ body{
     border-radius: 10px;
     margin-top: -4vh;
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.166);
+    transition: background-color 1s 0.2s linear;
 
 }
 
@@ -203,6 +237,7 @@ body{
     color: rgb(190, 190, 190);
     padding: 5px;
     padding: 7px;
+    transition: background-color 1s 0.2s linear;
 }
 
 .bigN p{
@@ -288,6 +323,10 @@ body{
     justify-content: space-between;
     border-radius: 10px;
     overflow: hidden;
+}
+
+.areagrafico{
+    transition: background-color 1s 0.2s linear;
 }
 
 .graf01{

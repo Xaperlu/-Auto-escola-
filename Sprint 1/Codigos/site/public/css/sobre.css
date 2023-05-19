@@ -174,7 +174,26 @@ header div a {
     border-radius: 50%;
     transform: translateX(5px);
     transition: transform 0.3s linear;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.sol,
+.lua {
+    position: absolute;
+    opacity: 0;
+}
+
+.lua {
+    opacity: 1;
+}
+
+.sol {
+    opacity: 0;
+    color: rgb(255, 170, 0);
+}
+
 
 
 /* primeiro container */
@@ -316,13 +335,9 @@ box-shadow: 0px 0px 8px  2px   rgba(245, 245, 245, 0.42);
     border-radius: 20px;
     padding: 20px;
     backdrop-filter: blur(10px);
-}
-
-#boxu, #boxd, #boxt{
-    
     background-color: rgba(160, 160, 160, 0.255);
-
 }
+
 
 .boxicon {
     height: 80px;
@@ -342,21 +357,12 @@ box-shadow: 0px 0px 8px  2px   rgba(245, 245, 245, 0.42);
     font-size: 35px;
 }
 
-#boxu h3, #boxd h3, #boxt h3 {
+.box h3 {
     margin-top: 30px;
     font-size: 22px;
-
 }
 
-.box, #boxu p {
-    margin-top: 20px;
-    font-size: 14px
-}
-.box,  #boxd p {
-    margin-top: 20px;
-    font-size: 14px
-}
-.box, #boxt p {
+.box p {
     margin-top: 20px;
     font-size: 14px
 }

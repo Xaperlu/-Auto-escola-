@@ -24,13 +24,13 @@
                 </div>
                 <div class="filtros">
                     <div class="filtro">
-                        <label id="unid" for="selUnidade">Unidade</label>
+                        <label id="unid" class="clabel" for="selUnidade">Unidade</label>
                         <select class="styleFiltro" id="selUnidade">
                             <option value="">Todos</option>
                         </select>
                     </div>
                     <div class="filtro">
-                        <label id="ns" for="selHardware">Número de Série</label>
+                        <label id="ns" class="clabel" for="selHardware">Número de Série</label>
                         <select class="styleFiltro" id="selHardware" onchange="recarregarDashs()">
 
                         </select>
@@ -38,7 +38,7 @@
                 </div>
 
                 <div id="divlightmode" onclick="lightmode()">
-                    <div id="onmode"></div>
+                    <div id="onmode"><ion-icon class="sol" name="sunny-outline"></ion-icon><ion-icon class="lua" name="moon-outline"></ion-icon></div>
                 </div>
                 
                 <div class="opcao">
@@ -60,7 +60,7 @@
                     </div>
                 </div>
                 <div class="divisor"></div>
-                <div class="bigN" id="textu">
+                <div class="bigN " >
                     <p>Latência ms <i class="fa-solid fa fa-angle-double-up vermelho"></i> 50%</p>
                     <span class="metrica01" id="kpi01">500</span>
                     <div class="barra">
@@ -69,7 +69,7 @@
                     </div>
                 </div>
                 <div class="divisor"></div>
-                <div class="bigN" id="textd">
+                <div class="bigN " >
                     <p >Uso Ram  <i class="fa-solid fa fa-angle-double-up vermelho"></i> 80%</p>
                     <span class="metrica02" id="kpi02">500</span>
                     <div class="barra">
@@ -78,7 +78,7 @@
                     </div>
                 </div>
                 <div class="divisor"></div>
-                <div class="bigN" id="textt">
+                <div class="bigN " >
                     <p >Uso Disco <i class="fa-solid fa fa-angle-double-up vermelho"></i> 80%</p>
                     <span class="metrica03" id="kpi03">500</span>
                     <div class="barra">
@@ -87,7 +87,7 @@
                     </div>
                 </div>
                 <div class="divisor"></div>
-                <div class="bigN" id="textq">
+                <div class="bigN " >
                     <p>Uso CPU <i class="fa-solid fa fa-angle-double-up vermelho"></i> 80%</p>
                     <span class="metrica04" id="kpi04">500</span>
                     <div class="barra">
@@ -99,24 +99,24 @@
             <div class="visual">
                 <div class="box01">
                     <div class="tituloLine">
-                        <p id="desctitleu">Velocidade Mbps Download e Upload</p>
-                        <div class="graf03">
+                        <p class="textpage">Velocidade Mbps Download e Upload</p>
+                        <div class="graf03 areagrafico">
                             <div>
                                 <canvas id="myChart3" style="position: relative; height:33vh; width:34vw"></canvas>
                             </div>
                         </div>  
                     </div>
                     <div class="tituloRosca">
-                        <p id="desctitled" >Download Mbps abaixo <i class="fa-solid fa-angle-double-down verde"></i> 200</p>
-                        <div class="graf01">
+                        <p class="textpage" >Download Mbps abaixo <i class="fa-solid fa-angle-double-down verde"></i> 200</p>
+                        <div class="graf01 areagrafico">
                             <div>
                                 <canvas id="myChart1" style="position: relative; height:15vh; width:15vw"></canvas>
                             </div>
                         </div>
                     </div>
                     <div class="tituloRosca">
-                        <p id="desctitlet" >Upload Mbps abaixo <i class="fa-solid fa-angle-double-down verde"></i> 200</p>
-                        <div class="graf02">
+                        <p class="textpage" >Upload Mbps abaixo <i class="fa-solid fa-angle-double-down verde"></i> 200</p>
+                        <div class="graf02 areagrafico">
                             <div>
                                 <canvas id="myChart2" style="position: relative; height:15vh; width:15vw"></canvas>
                             </div>
@@ -125,16 +125,16 @@
                 </div>
                 <div class="box01">
                     <div class="tituloLine2">
-                        <p id="desctitleq" >Percentual de uso da Memória RAM</p>
-                        <div class="graf04">
+                        <p class="textpage" >Percentual de uso da Memória RAM</p>
+                        <div class="graf04 areagrafico">
                             <div>
                                 <canvas id="myChart5" style="position: relative; height:33vh; width:52vw"></canvas>
                             </div>
                         </div>
                     </div>
                     <div class="tituloRosca">
-                        <p id="desctitlec" >Uso RAM acima <i class="fa-solid fa fa-angle-double-up vermelho"></i> 80%</p>
-                        <div class="graf05">
+                        <p class="textpage" >Uso RAM acima <i class="fa-solid fa fa-angle-double-up vermelho"></i> 80%</p>
+                        <div class="graf05 areagrafico">
                             <div>
                                 <canvas id="myChart4" style="position: relative; height:15vh; width:15vw"></canvas>
                             </div>
@@ -143,16 +143,16 @@
                 </div>
                 <div class="box01">
                     <div class="tituloLine2">
-                        <p id="desctitles" >Percentual de uso do Disco</p>
-                        <div class="graf06">
+                        <p class="textpage" >Percentual de uso do Disco</p>
+                        <div class="graf06 areagrafico">
                             <div>
                                 <canvas id="myChart7" style="position: relative; height:33vh; width:52vw"></canvas>
                             </div>
                         </div>
                     </div>
                     <div class="tituloRosca">
-                        <p id="desctitless" >Uso Disco acima <i class="fa-solid fa fa-angle-double-up vermelho"></i> 80%</p>
-                        <div class="graf07">
+                        <p class="textpage" >Uso Disco acima <i class="fa-solid fa fa-angle-double-up vermelho"></i> 80%</p>
+                        <div class="graf07 areagrafico">
                             <div>
                                 <canvas id="myChart6" style="position: relative; height:15vh; width:15vw"></canvas>
                             </div>
@@ -161,16 +161,16 @@
                 </div>
                 <div class="box01">
                     <div class="tituloLine2">
-                        <p id="desctitleo" >Percentual de uso da CPU</p>
-                        <div class="graf08">
+                        <p class="textpage" >Percentual de uso da CPU</p>
+                        <div class="graf08 areagrafico">
                             <div>
                                 <canvas id="myChart9" style="position: relative; height:33vh; width:52vw"></canvas>
                             </div>
                         </div>
                     </div>
                     <div class="tituloRosca">
-                        <p id="desctitlen" >Uso CPU acima <i class="fa-solid fa fa-angle-double-up vermelho"></i> 80%</p>
-                        <div class="graf09">
+                        <p class="textpage" >Uso CPU acima <i class="fa-solid fa fa-angle-double-up vermelho"></i> 80%</p>
+                        <div class="graf09 areagrafico">
                             <div>
                                 <canvas id="myChart8" style="position: relative; height:15vh; width:15vw"></canvas>
                             </div>

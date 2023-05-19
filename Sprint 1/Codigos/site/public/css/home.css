@@ -35,7 +35,7 @@ body::-webkit-scrollbar-thumb {
 .backanimation {
 
     display: none;
-   
+
 }
 
 header {
@@ -165,14 +165,14 @@ main {
     width: 100vw;
 }
 
-#divlightmode{
+#divlightmode {
     position: fixed;
     height: 30px;
     width: 70px;
     background-color: gray;
     bottom: 5%;
-    left:1%;
-    border: solid 2px  rgb(193, 183, 183);
+    left: 1%;
+    border: solid 2px rgb(193, 183, 183);
     border-radius: 20px;
     display: flex;
     align-items: center;
@@ -181,14 +181,34 @@ main {
     transition: background-color 1s 0.2s linear;
 }
 
-#onmode{
+#onmode {
     background-color: rgb(255, 255, 255);
     height: 22px;
     width: 22px;
     border-radius: 50%;
     transform: translateX(5px);
     transition: transform 0.3s linear;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.sol,
+.lua {
+    position: absolute;
+    opacity: 0;
+}
+
+.lua {
+    opacity: 1;
+}
+
+.sol {
+    opacity: 0;
+    color: rgb(255, 170, 0);
+}
+
+
 
 
 /* primeiro container */
@@ -346,13 +366,11 @@ main {
     border-radius: 20px;
     padding: 20px;
     backdrop-filter: blur(10px);
-   
+    background-color: rgba(128, 128, 128, 0.179);
 }
 
-#boxone, #boxtwo, #boxtree {
-    background-color: rgba(128, 128, 128, 0.179);
-    
-}
+
+
 
 .box .boxicon {
     height: 80px;
@@ -362,28 +380,21 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: solid 1px  #2690fa;
-    box-shadow: 3px 4px 10px 5px rgb(18, 18, 18);                    
+    border: solid 1px #2690fa;
+    box-shadow: 3px 4px 10px 5px rgb(18, 18, 18);
 }
 
-#boxone, #boxtwo, #boxtree, .boxicon ion-icon {
+
+.boxicon ion-icon {
     font-size: 35px;
 }
 
-.box, #boxone, #boxtwo, #boxtree, h3 {
+.box h3 {
     margin-top: 30px;
     font-size: 22px;
 }
 
-.box, #boxone p {
-    margin-top: 20px;
-    font-size: 14px
-}
-.box,  #boxtwo p {
-    margin-top: 20px;
-    font-size: 14px
-}
-.box, #boxtree p {
+.box p {
     margin-top: 20px;
     font-size: 14px
 }
@@ -916,7 +927,7 @@ footer .container4 .infofooter .boxinfo ul li ion-icon {
 
     }
 
-    #boxone{
+    #boxone {
         opacity: 1;
     }
 
@@ -961,8 +972,8 @@ footer .container4 .infofooter .boxinfo ul li ion-icon {
         padding: 10px;
         display: flex;
         position: absolute;
-        bottom:90px ;
-        
+        bottom: 90px;
+
     }
 
     .container3 .bloco3 {
@@ -973,8 +984,8 @@ footer .container4 .infofooter .boxinfo ul li ion-icon {
         padding: 10px;
         display: flex;
         position: absolute;
-        bottom:90px ;
-        
+        bottom: 90px;
+
     }
 
 
@@ -986,7 +997,7 @@ footer .container4 .infofooter .boxinfo ul li ion-icon {
         flex-direction: column;
         position: absolute;
         bottom: 0px;
-       
+
     }
 
     footer .container4 {

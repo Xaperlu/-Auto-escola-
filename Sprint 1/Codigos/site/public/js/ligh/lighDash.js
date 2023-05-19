@@ -1,82 +1,171 @@
 console.log(sessionStorage.getItem("mode"))
 
-if (sessionStorage.getItem("mode") != "dark") {
 
-    document.querySelector(".painel").style.backgroundColor = "#F0F1F3"; //fundo direito
-    document.querySelector(".analytics").style.backgroundColor = "#F0F1F3"; //fundo esquerdo
+if (sessionStorage.getItem("mode") == "white") {
+    white();
 
-    document.querySelector(".navbar").style.backgroundColor = "#041737"; //menu
-
-    document.querySelector("#unid").style.color = "#3963AD"; //letras unidade
-    document.querySelector("#selUnidade").style.backgroundColor = "#DFDFDF";
-
-    document.querySelector("#ns").style.color = "#3963AD"; //letras n serie
-    document.querySelector("#selHardware").style.backgroundColor = "#DFDFDF";
-
-
-    document.querySelector(".kpi").style.backgroundColor = "white";
-
-    document.querySelector(".descricao h2").style.color = "#3963AD";
-
-    document.querySelector("#textu").style.color = "#3963AD";
-    document.querySelector("#textd").style.color = "#3963AD";
-    document.querySelector("#textt").style.color = "#3963AD";
-    document.querySelector("#textq").style.color = "#3963AD";
-
-
-
-    //primeiros blocos
-    document.querySelector(".box01").style.backgroundColor = "white";
-
-    // desc nome graficos
-    document.querySelector("#desctitleu").style.color = "#3963AD";
-    document.querySelector("#desctitled").style.color = "#3963AD";
-    document.querySelector("#desctitlet").style.color = "#3963AD";
-
-    document.querySelector("#desctitleq").style.color = "#3963AD";
-    document.querySelector("#desctitlec").style.color = "#3963AD";
-    document.querySelector("#desctitles").style.color = "#3963AD";
-
-    document.querySelector("#desctitless").style.color = "#3963AD";
-    document.querySelector("#desctitleo").style.color = "#3963AD";
-    document.querySelector("#desctitlen").style.color = "#3963AD";
-
-    
-    //graficos
-    document.querySelector(".graf01").style.backgroundColor = "white";
-    document.querySelector(".graf01").style.boxShadow = "none";
-
-    document.querySelector(".graf02").style.backgroundColor = "white";
-    document.querySelector(".graf02").style.boxShadow = "none";
-
-    document.querySelector(".graf03").style.backgroundColor = "white";
-    document.querySelector(".graf03").style.boxShadow = "none";
-
-    document.querySelector(".graf04").style.backgroundColor = "white";
-    document.querySelector(".graf04").style.boxShadow = "none";
-
-    document.querySelector(".graf05").style.backgroundColor = "white";
-    document.querySelector(".graf05").style.boxShadow = "none";
-
-    document.querySelector(".graf06").style.backgroundColor = "white";
-    document.querySelector(".graf06").style.boxShadow = "none";
-
-    document.querySelector(".graf07").style.backgroundColor = "white";
-    document.querySelector(".graf07").style.boxShadow = "none";
-
-    document.querySelector(".graf08").style.backgroundColor = "white";
-    document.querySelector(".graf08").style.boxShadow = "none";
-
-    document.querySelector(".graf09").style.backgroundColor = "white";
-    document.querySelector(".graf09").style.boxShadow = "none";
-
-
-
-
-
-
-
-
-
+} else {
+    document.querySelector("#onmode").style.transform = "translateX(40px)"
+    document.querySelector("#divlightmode").style.backgroundColor = "#45a0f5";
+    console.log("modo dark")
 
 }
+
+
+function lightmode() {
+
+    if (document.querySelector("#onmode").style.transform == "translateX(40px)") {
+        white();
+
+    } else {
+        black()
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function white() {
+
+
+
+    document.querySelector(".sol").style.opacity = "1";
+    document.querySelector(".lua").style.opacity = "0";
+   
+    document.querySelector("#onmode").style.transform = "translateX(5px)"
+
+    cordefundo("#onmode", "white", "none") //bolinha dentro do botão do lighmode
+
+    cordefundo("#divlightmode", "#45a0f9", "none")//botao do lighmode
+
+    cordefundo(".analytics", "#F0F1F3", "none") //cor de fundo, praticamente "body"
+
+    cordefundo(".navbar", "#041737", "none") //cor do menu lateral
+
+    cordefundo(".kpi", "white", "0px 0px 10px 5px rgba(0, 0, 0, 0.166)") //cor da div das kpis 
+
+    cordotexto(".descricao h2", "#3963AD") //cor do titulo "KPI"
+
+    cordefundo(".styleFiltro", "#DFDFDF", "none") //cor dos inputs da navbar
+
+    cordotexto(".clabel", "#3963AD") //cor das labels da navbar
+
+    cordotexto(".bigN p", "#3963AD") //mudar cor do titulos de kpi
+
+    cordefundo(".areagrafico", "white", "none") //mudar cor do grafico
+
+    cordotexto(".textpage", "#3963AD") //mudar cor titulo descrição dos graficos 
+
+
+    sessionStorage.setItem("mode", "white");
+
+}
+
+
+
+function black() {
+
+    document.querySelector("#onmode").style.transform = "translateX(40px)"
+    document.querySelector("#divlightmode").style.backgroundColor = "#45a0f5";
+
+    cordefundo("#onmode", "white", "none") //bolinha dentro do botão do lighmode
+
+    cordefundo("#divlightmode", "grey", "none")//botao do lighmode
+
+    cordefundo(".analytics", "#050012", "none") //cor de fundo, praticamente "body"
+
+    cordefundo(".navbar", "#242731", "none") //cor do menu lateral
+
+    cordefundo(".kpi", "#242731", "none") //cor da div das kpis 
+
+    cordotexto(".descricao h2", "white") //cor do titulo "KPI"
+
+    cordefundo(".styleFiltro", "#DFDFDF", "none") //cor dos inputs da navbar
+
+    cordotexto(".clabel", "white") //cor das labels da navbar
+
+    cordotexto(".bigN p", "white") //mudar cor do titulos de kpi
+
+    cordefundo(".areagrafico", "#242731", "none") //mudar cor do grafico
+
+    cordotexto(".textpage", "whitesmoke") //mudar cor titulo descrição dos graficos 
+
+    sessionStorage.setItem("mode", "dark");
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function cordotexto(a, b) {
+
+    let lista = document.querySelectorAll(a);     //o primeiro parametro é a "classe" e o segundo é a "cor"     => cordotext(classe, vermelho)
+                                                //coloca a mesma classe em varias coisas e só passa o nome dela aqui 
+    console.log(lista)
+    lista.forEach((item) => {
+
+        item.style.color = b;
+
+    });
+
+}
+
+function cordefundo(a, b, c) {
+
+    let lista = document.querySelectorAll(a);      //mesma logica do de cima só que tem um parametro a mais que é opcional passar tlg
+    console.log(lista)
+
+    lista.forEach((item) => {
+
+        item.style.backgroundColor = b;
+        item.style.boxShadow = c;
+
+    });
+
+}
+
+

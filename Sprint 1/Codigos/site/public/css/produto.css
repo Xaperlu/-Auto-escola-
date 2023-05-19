@@ -147,7 +147,26 @@ header div a {
     border-radius: 50%;
     transform: translateX(5px);
     transition: transform 0.3s linear;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.sol,
+.lua {
+    position: absolute;
+    opacity: 0;
+}
+
+.lua {
+    opacity: 1;
+}
+
+.sol {
+    opacity: 0;
+    color: rgb(255, 170, 0);
+}
+
  
 .title h1{
     text-align: center;
