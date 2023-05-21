@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,13 +11,14 @@
     <link rel="shortcut icon" href="./asset/favicon-32x32.png" type="image/x-icon">
 </head>
 <style>
-    
+
 </style>
+
 <body>
 
     <header>
         <a href="./index.html" style="text-decoration: none;"><img src="./asset/logo2.png" alt="">
-        <h1>AutoTech</h1>
+            <h1>AutoTech</h1>
         </a>
         <div>
             <a class="cadastrar" href="#">Cadastrar</a>
@@ -42,7 +44,8 @@
             </div>
             <div class="campoDigitacao">
                 <label for="inCnpj">CNPJ</label>
-                <input class="ipt" maxlength="18" id="inCnpj" type="text" placeholder="99.999.999/0001.99" onkeyup="MascaraCnpj()">
+                <input class="ipt" maxlength="18" id="inCnpj" type="text" placeholder="99.999.999/0001.99"
+                    onkeyup="MascaraCnpj()">
             </div>
             <div class="campoDigitacao">
                 <label for="inEmail">E-mail</label>
@@ -51,7 +54,8 @@
             <div class="divSenhas">
                 <div class="campoDigitacao">
                     <label for="inSenha">Senha</label>
-                    <input class="ipt iptSecundario" id="inSenha" type="password" placeholder="********" onkeyup="SenhaForte()">
+                    <input class="ipt iptSecundario" id="inSenha" type="password" placeholder="********"
+                        onkeyup="SenhaForte()">
                 </div>
                 <div class="campoDigitacao">
                     <label for="inConfirmacaoSenha">Confirmar Senha</label>
@@ -62,21 +66,21 @@
                 <div class="boxSenha" id="oneboxx">
                     <div class="verificador">
                         <img id="imgT1" src="./asset/traco.png">
-                        <span>6 Caracteres</span>
+                        <span class="text">6 Caracteres</span>
                     </div>
                     <div class="verificador">
                         <img id="imgT2" src="./asset/traco.png">
-                        <span>Conter número</span>
+                        <span class="text">Conter número</span>
                     </div>
                 </div>
                 <div class="boxSenha">
                     <div class="verificador">
                         <img id="imgT3" src="./asset/traco.png">
-                        <span>Conter maiúscula</span>
+                        <span class="text">Conter maiúscula</span>
                     </div>
                     <div class="verificador">
                         <img id="imgT4" src="./asset/traco.png">
-                        <span>Caracter especial</span>
+                        <span class="text">Caracter especial</span>
                     </div>
                 </div>
             </div>
@@ -84,16 +88,23 @@
         </div>
 
         <div id="divlightmode" onclick="lightmode()">
-            <div id="onmode"><ion-icon class="sol" name="sunny-outline"></ion-icon><ion-icon class="lua" name="moon-outline"></ion-icon></div>
+            <div id="onmode"><ion-icon class="sol" name="sunny-outline"></ion-icon><ion-icon class="lua"
+                    name="moon-outline"></ion-icon></div>
         </div>
     </div>
-    <script src="js/light.js"></script>
+
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="js/ligh/cadastro.js"></script>
     <script src="./js/cadastro.js"></script>
+    
 </body>
+
 </html>
 <script>
 
-function SenhaForte(){
+    function SenhaForte() {
         var senha = document.querySelector('#inSenha');
         var uper = document.querySelector('#imgT3');
         var num = document.querySelector('#imgT2');
@@ -102,37 +113,37 @@ function SenhaForte(){
 
         document.querySelector(".verificadorSenha").style.display = "flex";
 
-        if(senha.value.match(/[0-9]/)){
+        if (senha.value.match(/[0-9]/)) {
             num.src = "./asset/check.png"
-        
-        }else{
+
+        } else {
             num.src = "./asset/traco.png"
         }
 
-        if(senha.value.match(/[A-Z]/)){
+        if (senha.value.match(/[A-Z]/)) {
             uper.src = "./asset/check.png"
-        }else{
+        } else {
             uper.src = "./asset/traco.png"
         }
 
-        if(senha.value.match(/[!\@\#\$\%\&\*]/)){
+        if (senha.value.match(/[!\@\#\$\%\&\*]/)) {
             especial.src = "./asset/check.png"
-        }else{
+        } else {
             especial.src = "./asset/traco.png"
         }
 
-        if(senha.value.length < 6){
+        if (senha.value.length < 6) {
             tamanho.src = "./asset/traco.png"
-        }else{
+        } else {
             tamanho.src = "./asset/check.png"
         }
 
 
     }
 
-    
 
-    function cadastrar(){
+
+    function cadastrar() {
         const nome = inNome.value;
         const cnpj = inCnpj.value;
         const email = inEmail.value;
@@ -141,10 +152,10 @@ function SenhaForte(){
         const confirmacaoSenha = inConfirmacaoSenha.value;
         const validacaoSenha = senha.match(/[0-9]/) && senha.match(/[A-Z]/) && senha.match(/[!\@\#\$\%\&\*]/) && senha.length >= 6
 
-        if(nome == '' || cnpj.length != 18 || !email.match(/[@]/) || !validacaoSenha || confirmacaoSenha != senha){
+        if (nome == '' || cnpj.length != 18 || !email.match(/[@]/) || !validacaoSenha || confirmacaoSenha != senha) {
             alert("Preencha os campos corretamente!")
             return false
-        }else{
+        } else {
             fetch("/usuarios/cadastrar", {
                 method: "POST",
                 headers: {
@@ -157,14 +168,14 @@ function SenhaForte(){
                     senha,
                     nivel
                 })
-            }).then(function(resposta){
-                if(resposta.ok){
+            }).then(function (resposta) {
+                if (resposta.ok) {
                     alert("Cadastrado com sucesso!")
                     window.location = "./login.html"
-                }else{
+                } else {
                     alert("Cadastro falhou!")
                 }
-            }).catch(function(resposta){
+            }).catch(function (resposta) {
                 console.log(`#ERRO: ${resposta}`)
             })
         }

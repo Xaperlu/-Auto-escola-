@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,6 +13,7 @@
     <script src="https://kit.fontawesome.com/d8b9cb0dbc.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="./asset/favicon-32x32.png" type="image/x-icon">
 </head>
+
 <body style="display: flex;">
 
     <div class="conteudo">
@@ -38,11 +40,13 @@
                 </div>
 
                 <div id="divlightmode" onclick="lightmode()">
-                    <div id="onmode"><ion-icon class="sol" name="sunny-outline"></ion-icon><ion-icon class="lua" name="moon-outline"></ion-icon></div>
+                    <div id="onmode"><ion-icon class="sol" name="sunny-outline"></ion-icon><ion-icon class="lua"
+                            name="moon-outline"></ion-icon></div>
                 </div>
-                
+
                 <div class="opcao">
-                    <button id="voltarperfil" class="btOpcao"><i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+                    <button id="voltarperfil" class="btOpcao"><i
+                            class="fa-solid fa-arrow-right-from-bracket"></i></button>
                 </div>
             </div>
         </div>
@@ -54,13 +58,19 @@
                 <div class="descricao">
                     <h2>KPI</h2>
                     <div class="corAlertas">
-                        <div class="b01"><i class="fa-solid fa fa-check verde"></i><p>Ideal</p></div>
-                        <div class="b01"><i class="fa-solid fa fa-exclamation-circle amarelo"></i><p>Preocupante</p></div>
-                        <div class="b01"><i class="fa-solid fa-triangle-exclamation vermelho"></i><p>Perigoso</p></div>
+                        <div class="b01"><i class="fa-solid fa fa-check verde"></i>
+                            <p>Ideal</p>
+                        </div>
+                        <div class="b01"><i class="fa-solid fa fa-exclamation-circle amarelo"></i>
+                            <p>Preocupante</p>
+                        </div>
+                        <div class="b01"><i class="fa-solid fa-triangle-exclamation vermelho"></i>
+                            <p>Perigoso</p>
+                        </div>
                     </div>
                 </div>
                 <div class="divisor"></div>
-                <div class="bigN " >
+                <div class="bigN ">
                     <p>Latência ms <i class="fa-solid fa fa-angle-double-up vermelho"></i> 50%</p>
                     <span class="metrica01" id="kpi01">500</span>
                     <div class="barra">
@@ -69,8 +79,8 @@
                     </div>
                 </div>
                 <div class="divisor"></div>
-                <div class="bigN " >
-                    <p >Uso Ram  <i class="fa-solid fa fa-angle-double-up vermelho"></i> 80%</p>
+                <div class="bigN ">
+                    <p>Uso Ram <i class="fa-solid fa fa-angle-double-up vermelho"></i> 80%</p>
                     <span class="metrica02" id="kpi02">500</span>
                     <div class="barra">
                         <div class="barra01" id="barraRam"></div>
@@ -78,8 +88,8 @@
                     </div>
                 </div>
                 <div class="divisor"></div>
-                <div class="bigN " >
-                    <p >Uso Disco <i class="fa-solid fa fa-angle-double-up vermelho"></i> 80%</p>
+                <div class="bigN ">
+                    <p>Uso Disco <i class="fa-solid fa fa-angle-double-up vermelho"></i> 80%</p>
                     <span class="metrica03" id="kpi03">500</span>
                     <div class="barra">
                         <div class="barra01" id="barraDisco"></div>
@@ -87,7 +97,7 @@
                     </div>
                 </div>
                 <div class="divisor"></div>
-                <div class="bigN " >
+                <div class="bigN ">
                     <p>Uso CPU <i class="fa-solid fa fa-angle-double-up vermelho"></i> 80%</p>
                     <span class="metrica04" id="kpi04">500</span>
                     <div class="barra">
@@ -104,10 +114,11 @@
                             <div>
                                 <canvas id="myChart3" style="position: relative; height:33vh; width:34vw"></canvas>
                             </div>
-                        </div>  
+                        </div>
                     </div>
                     <div class="tituloRosca">
-                        <p class="textpage" >Download Mbps abaixo <i class="fa-solid fa-angle-double-down verde"></i> 200</p>
+                        <p class="textpage">Download Mbps abaixo <i class="fa-solid fa-angle-double-down verde"></i> 200
+                        </p>
                         <div class="graf01 areagrafico">
                             <div>
                                 <canvas id="myChart1" style="position: relative; height:15vh; width:15vw"></canvas>
@@ -115,7 +126,8 @@
                         </div>
                     </div>
                     <div class="tituloRosca">
-                        <p class="textpage" >Upload Mbps abaixo <i class="fa-solid fa-angle-double-down verde"></i> 200</p>
+                        <p class="textpage">Upload Mbps abaixo <i class="fa-solid fa-angle-double-down verde"></i> 200
+                        </p>
                         <div class="graf02 areagrafico">
                             <div>
                                 <canvas id="myChart2" style="position: relative; height:15vh; width:15vw"></canvas>
@@ -125,7 +137,7 @@
                 </div>
                 <div class="box01">
                     <div class="tituloLine2">
-                        <p class="textpage" >Percentual de uso da Memória RAM</p>
+                        <p class="textpage">Percentual de uso da Memória RAM</p>
                         <div class="graf04 areagrafico">
                             <div>
                                 <canvas id="myChart5" style="position: relative; height:33vh; width:52vw"></canvas>
@@ -133,7 +145,8 @@
                         </div>
                     </div>
                     <div class="tituloRosca">
-                        <p class="textpage" >Uso RAM acima <i class="fa-solid fa fa-angle-double-up vermelho"></i> 80%</p>
+                        <p class="textpage">Uso RAM acima <i class="fa-solid fa fa-angle-double-up vermelho"></i> 80%
+                        </p>
                         <div class="graf05 areagrafico">
                             <div>
                                 <canvas id="myChart4" style="position: relative; height:15vh; width:15vw"></canvas>
@@ -143,7 +156,7 @@
                 </div>
                 <div class="box01">
                     <div class="tituloLine2">
-                        <p class="textpage" >Percentual de uso do Disco</p>
+                        <p class="textpage">Percentual de uso do Disco</p>
                         <div class="graf06 areagrafico">
                             <div>
                                 <canvas id="myChart7" style="position: relative; height:33vh; width:52vw"></canvas>
@@ -151,7 +164,8 @@
                         </div>
                     </div>
                     <div class="tituloRosca">
-                        <p class="textpage" >Uso Disco acima <i class="fa-solid fa fa-angle-double-up vermelho"></i> 80%</p>
+                        <p class="textpage">Uso Disco acima <i class="fa-solid fa fa-angle-double-up vermelho"></i> 80%
+                        </p>
                         <div class="graf07 areagrafico">
                             <div>
                                 <canvas id="myChart6" style="position: relative; height:15vh; width:15vw"></canvas>
@@ -161,7 +175,7 @@
                 </div>
                 <div class="box01">
                     <div class="tituloLine2">
-                        <p class="textpage" >Percentual de uso da CPU</p>
+                        <p class="textpage">Percentual de uso da CPU</p>
                         <div class="graf08 areagrafico">
                             <div>
                                 <canvas id="myChart9" style="position: relative; height:33vh; width:52vw"></canvas>
@@ -169,7 +183,8 @@
                         </div>
                     </div>
                     <div class="tituloRosca">
-                        <p class="textpage" >Uso CPU acima <i class="fa-solid fa fa-angle-double-up vermelho"></i> 80%</p>
+                        <p class="textpage">Uso CPU acima <i class="fa-solid fa fa-angle-double-up vermelho"></i> 80%
+                        </p>
                         <div class="graf09 areagrafico">
                             <div>
                                 <canvas id="myChart8" style="position: relative; height:15vh; width:15vw"></canvas>
@@ -180,253 +195,253 @@
             </div>
         </div>
     </div>
-    
+
 </body>
 
-
-
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <script src="js/ligh/lighDash.js"></script>
 <script src="js/dashboard.js"></script>
 <script>
 
     const data1 = {
-    labels: [
-        'Abaixo',
-        'Acima'
-    ],
-    
-    datasets: [{
-        label: 'Consumo de Memória RAM',
-        data: [10, 95],
-        backgroundColor: [
-        '#487CBC',
-        '#30537D'
-        
+        labels: [
+            'Abaixo',
+            'Acima'
         ],
-        hoverOffset: 4,
-        borderColor: ['#487CBC']
-    }]
+
+        datasets: [{
+            label: 'Consumo de Memória RAM',
+            data: [10, 95],
+            backgroundColor: [
+                '#487CBC',
+                '#30537D'
+
+            ],
+            hoverOffset: 4,
+            borderColor: ['#487CBC']
+        }]
     };
-    
+
     const config1 = {
-    type: 'doughnut',
-    data: data1,
+        type: 'doughnut',
+        data: data1,
     };
 
 
     const data2 = {
-    labels: [
-        'Abaixo',
-        'Acima'
-    ],
-    
-    datasets: [{
-        label: 'Consumo de Memória RAM',
-        data: [10, 95],
-        backgroundColor: [
-        '#7DB1F0',
-        '#487CBC'
+        labels: [
+            'Abaixo',
+            'Acima'
         ],
-        hoverOffset: 4,
-        borderColor: ['#7DB1F0']
-    }]
+
+        datasets: [{
+            label: 'Consumo de Memória RAM',
+            data: [10, 95],
+            backgroundColor: [
+                '#7DB1F0',
+                '#487CBC'
+            ],
+            hoverOffset: 4,
+            borderColor: ['#7DB1F0']
+        }]
     };
-    
+
     const config2 = {
-    type: 'doughnut',
-    data: data2,
+        type: 'doughnut',
+        data: data2,
     };
 
 
 
-   const labels3 = [
-    '17:30',
-    '17:45',
-    '18:00',
-    '18:15',
-    '18:30',
-    '18:45',
-    '19:00',
-   ];
+    const labels3 = [
+        '17:30',
+        '17:45',
+        '18:00',
+        '18:15',
+        '18:30',
+        '18:45',
+        '19:00',
+    ];
 
-   const data3 = {
-    labels: labels3,
-    datasets: [{
-        label: 'Download',
-        backgroundColor: '#30537D',
-        borderColor: '#30537D',
-        data: [100, 13, 25, 47, 9, 91, 33],
-        tension: 0.2,
-        borderWidth: 2
-    },
-    {
-        label: 'Upload',
-        backgroundColor: '#7DB1F0',
-        borderColor: '#7DB1F0',
-        data: [200, 77, 83, 99, 64, 157, 65],
-        tension: 0.2,
-        borderWidth: 2
-    }]
-   };
+    const data3 = {
+        labels: labels3,
+        datasets: [{
+            label: 'Download',
+            backgroundColor: '#30537D',
+            borderColor: '#30537D',
+            data: [100, 13, 25, 47, 9, 91, 33],
+            tension: 0.2,
+            borderWidth: 2
+        },
+        {
+            label: 'Upload',
+            backgroundColor: '#7DB1F0',
+            borderColor: '#7DB1F0',
+            data: [200, 77, 83, 99, 64, 157, 65],
+            tension: 0.2,
+            borderWidth: 2
+        }]
+    };
 
-   const config3 = {
-    type: 'line',
-    data: data3,
-    options: {}
-   };
-   
-   const data4 = {
-    labels: [
-        'Acima',
-        'Abaixo'
-    ],
-    
-    datasets: [{
-        label: 'Consumo de Memória RAM',
-        data: [10, 95],
-        backgroundColor: [
-        '#5F57BD',
-        '#362F7C'
+    const config3 = {
+        type: 'line',
+        data: data3,
+        options: {}
+    };
+
+    const data4 = {
+        labels: [
+            'Acima',
+            'Abaixo'
         ],
-        hoverOffset: 4,
-        borderColor: ['#5F57BD']
-    }]
+
+        datasets: [{
+            label: 'Consumo de Memória RAM',
+            data: [10, 95],
+            backgroundColor: [
+                '#5F57BD',
+                '#362F7C'
+            ],
+            hoverOffset: 4,
+            borderColor: ['#5F57BD']
+        }]
     };
-    
+
     const config4 = {
-    type: 'doughnut',
-    data: data4,
+        type: 'doughnut',
+        data: data4,
     };
 
-   const labels5 = [
-    'Domingo',
-    'Segunda',
-    'Terça',
-    'Quarta',
-    'Quinta',
-    'Sexta',
-    'Sábado',
-   ];
+    const labels5 = [
+        'Domingo',
+        'Segunda',
+        'Terça',
+        'Quarta',
+        'Quinta',
+        'Sexta',
+        'Sábado',
+    ];
 
-   const data5 = {
-    labels: labels5,
-    datasets: [{
-        label: 'Memória RAM',
-        backgroundColor: '#5F57BD',
-        borderColor: '#5F57BD',
-        data: [0, 95, 87, 68, 76, 32, 89],
-        tension: 0.2,
-        borderWidth: 2
-    }]
-   };
+    const data5 = {
+        labels: labels5,
+        datasets: [{
+            label: 'Memória RAM',
+            backgroundColor: '#5F57BD',
+            borderColor: '#5F57BD',
+            data: [0, 95, 87, 68, 76, 32, 89],
+            tension: 0.2,
+            borderWidth: 2
+        }]
+    };
 
-   const config5 = {
-    type: 'line',
-    data: data5,
-    options: {}
-   };
+    const config5 = {
+        type: 'line',
+        data: data5,
+        options: {}
+    };
 
-   const data6 = {
-    labels: [
-        'Acima',
-        'Abaixo'
-    ],
-    
-    datasets: [{
-        label: 'Consumo de Disco',
-        data: [80, 87],
-        backgroundColor: [
-        '#964EBF',
-        '#653381'
+    const data6 = {
+        labels: [
+            'Acima',
+            'Abaixo'
         ],
-        hoverOffset: 4,
-        borderColor: ['#964EBF']
-    }]
+
+        datasets: [{
+            label: 'Consumo de Disco',
+            data: [80, 87],
+            backgroundColor: [
+                '#964EBF',
+                '#653381'
+            ],
+            hoverOffset: 4,
+            borderColor: ['#964EBF']
+        }]
     };
-    
+
     const config6 = {
-    type: 'doughnut',
-    data: data6,
+        type: 'doughnut',
+        data: data6,
     };
 
-   const labels7 = [
-    'Domingo',
-    'Segunda',
-    'Terça',
-    'Quarta',
-    'Quinta',
-    'Sexta',
-    'Sábado',
-   ];
+    const labels7 = [
+        'Domingo',
+        'Segunda',
+        'Terça',
+        'Quarta',
+        'Quinta',
+        'Sexta',
+        'Sábado',
+    ];
 
-   const data7 = {
-    labels: labels7,
-    datasets: [{
-        label: 'Disco',
-        backgroundColor: '#964EBF',
-        borderColor: '#964EBF',
-        data: [80, 87, 90, 93, 99, 83, 95],
-        tension: 0.2,
-        borderWidth: 2
-    }]
-   };
+    const data7 = {
+        labels: labels7,
+        datasets: [{
+            label: 'Disco',
+            backgroundColor: '#964EBF',
+            borderColor: '#964EBF',
+            data: [80, 87, 90, 93, 99, 83, 95],
+            tension: 0.2,
+            borderWidth: 2
+        }]
+    };
 
-   const config7 = {
-    type: 'line',
-    data: data7,
-    options: {}
-   };
+    const config7 = {
+        type: 'line',
+        data: data7,
+        options: {}
+    };
 
-   const data8 = {
-    labels: [
-        'Acima',
-        'Abaixo'
-    ],
-    
-    datasets: [{
-        label: 'Consumo de CPU',
-        data: [60, 98],
-        backgroundColor: [
-        '#A04564',
-        '#792440'
+    const data8 = {
+        labels: [
+            'Acima',
+            'Abaixo'
         ],
-        hoverOffset: 4,
-        borderColor: ['#A04564']
-    }]
+
+        datasets: [{
+            label: 'Consumo de CPU',
+            data: [60, 98],
+            backgroundColor: [
+                '#A04564',
+                '#792440'
+            ],
+            hoverOffset: 4,
+            borderColor: ['#A04564']
+        }]
     };
-    
+
     const config8 = {
-    type: 'doughnut',
-    data: data8,
+        type: 'doughnut',
+        data: data8,
     };
 
-   const labels9 = [
-    'Domingo',
-    'Segunda',
-    'Terça',
-    'Quarta',
-    'Quinta',
-    'Sexta',
-    'Sábado',
-   ];
+    const labels9 = [
+        'Domingo',
+        'Segunda',
+        'Terça',
+        'Quarta',
+        'Quinta',
+        'Sexta',
+        'Sábado',
+    ];
 
-   const data9 = {
-    labels: labels9,
-    datasets: [{
-        label: 'CPU',
-        backgroundColor: '#B3345E',
-        borderColor: '#B3345E',
-        data: [60, 98, 96, 84, 90, 67, 95],
-        tension: 0.2,
-        borderWidth: 2
-    }]
-   };
+    const data9 = {
+        labels: labels9,
+        datasets: [{
+            label: 'CPU',
+            backgroundColor: '#B3345E',
+            borderColor: '#B3345E',
+            data: [60, 98, 96, 84, 90, 67, 95],
+            tension: 0.2,
+            borderWidth: 2
+        }]
+    };
 
-   const config9 = {
-    type: 'line',
-    data: data9,
-    options: {}
-   };
+    const config9 = {
+        type: 'line',
+        data: data9,
+        options: {}
+    };
 
 </script>
 
@@ -442,10 +457,10 @@
         config2
     ); */
 
-   /*  const myChart3 = new Chart(
-        document.getElementById('myChart3'),
-        config3
-    ); */
+    /*  const myChart3 = new Chart(
+         document.getElementById('myChart3'),
+         config3
+     ); */
 
     /* const myChart4 = new Chart(
         document.getElementById('myChart4'),
@@ -456,21 +471,21 @@
         document.getElementById('myChart5'),
         config5
     ); */
-    
-   /*  const myChart6 = new Chart(
-        document.getElementById('myChart6'),
-        config6
-    ); */
+
+    /*  const myChart6 = new Chart(
+         document.getElementById('myChart6'),
+         config6
+     ); */
 
     /* const myChart7 = new Chart(
         document.getElementById('myChart7'),
         config7
     ); */
 
-   /*  const myChart8 = new Chart(
-        document.getElementById('myChart8'),
-        config8
-    ); */
+    /*  const myChart8 = new Chart(
+         document.getElementById('myChart8'),
+         config8
+     ); */
 
     /* const myChart9 = new Chart(
         document.getElementById('myChart9'),
@@ -478,4 +493,5 @@
     ); */
 
 </script>
+
 </html>

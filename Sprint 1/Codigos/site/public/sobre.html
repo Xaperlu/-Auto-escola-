@@ -159,7 +159,12 @@
             if (scrollY > 0.7) {
                 document.querySelector("header").style.backgroundColor = "black";
             } else {
-                document.querySelector("header").style.backgroundColor = "transparent";
+                if(document.querySelector("main").style.backgroundColor == "#D6F1FF"){
+                    document.querySelector("header").style.backgroundColor = "black"; 
+                }else{
+                   document.querySelector("header").style.backgroundColor = "transparent"; 
+                }
+                
             }
         }
 

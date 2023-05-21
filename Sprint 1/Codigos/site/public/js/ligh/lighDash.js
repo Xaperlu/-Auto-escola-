@@ -60,6 +60,8 @@ function white() {
 
     cordefundo(".navbar", "#041737", "none") //cor do menu lateral
 
+    cordotexto("h3", "#3963AD") //texto em cima da kpi
+
     cordefundo(".kpi", "white", "0px 0px 10px 5px rgba(0, 0, 0, 0.166)") //cor da div das kpis 
 
     cordotexto(".descricao h2", "#3963AD") //cor do titulo "KPI"
@@ -83,6 +85,9 @@ function white() {
 
 function black() {
 
+    document.querySelector(".sol").style.opacity = "0";
+        document.querySelector(".lua").style.opacity = "1";
+
     document.querySelector("#onmode").style.transform = "translateX(40px)"
     document.querySelector("#divlightmode").style.backgroundColor = "#45a0f5";
 
@@ -93,6 +98,8 @@ function black() {
     cordefundo(".analytics", "#050012", "none") //cor de fundo, praticamente "body"
 
     cordefundo(".navbar", "#242731", "none") //cor do menu lateral
+
+    cordotexto("h3", "white") //texto em cima da kpi
 
     cordefundo(".kpi", "#242731", "none") //cor da div das kpis 
 

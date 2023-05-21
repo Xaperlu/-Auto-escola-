@@ -43,8 +43,9 @@
         <div class="icon">
           <i class="fas fa-handshake"></i>
         </div>
-        <h2>Reunião</h2>
-        <p>Iremos nos reunir com a equipe e donos da auto escola para sabermos os problemas e precupações que eles
+        <h2 class="text">Reunião</h2>
+        <p class="text">Iremos nos reunir com a equipe e donos da auto escola para sabermos os problemas e precupações
+          que eles
           possuem em questão da auto escola e também entender melhor o contexto do negócio e como ele está funcionando
           atualmente para que possamos planejar melhor como vamos fazer para melhorar e acabar com os problemas que a
           auto escola possue para melhorar a produtividade e melhorar o atendimento.</p>
@@ -54,8 +55,9 @@
         <div class="icon">
           <i class="fas fa-calendar"></i>
         </div>
-        <h2>Planejamento</h2>
-        <p>Depois de ter coletado as informações referentes a auto escola vamos agora planejar com a equipe que temos e
+        <h2 class="text">Planejamento</h2>
+        <p class="text">Depois de ter coletado as informações referentes a auto escola vamos agora planejar com a equipe
+          que temos e
           orçamento dado pela auto escola para fazer a melhor solução possivel para ajudar a melhorar o negócio, aqui e
           onde planejamos se a auto escola precisa de maquinas melhores ou melhor agilidade no atendimento ou até mesmo
           leitor de digitais mais atualizados.</p>
@@ -65,8 +67,9 @@
         <div class="icon">
           <i class="fas fa-wrench"></i>
         </div>
-        <h2>Execução</h2>
-        <p>Assim que entendermos o projeto vamos executar com a maior qualidade possivel para que o cliente saia
+        <h2 class="text">Execução</h2>
+        <p class="text">Assim que entendermos o projeto vamos executar com a maior qualidade possivel para que o cliente
+          saia
           satisfeito com o que foi proposto para melhorar a auto escola, é nesta etapa qu instalamos todos os programas
           e coletamos os dados necessarios para nossa solução e também entregamos o acesso a dashboard e outros meios de
           visualização de dados que temos para melhor entendimento do processo.</p>
@@ -135,33 +138,38 @@
   </section>
 
   <div id="divlightmode" onclick="lightmode()">
-    <div id="onmode"><ion-icon class="sol" name="sunny-outline"></ion-icon><ion-icon class="lua" name="moon-outline"></ion-icon></div>
-</div>
- 
-  <script src="js/light.js"></script>
+    <div id="onmode"><ion-icon class="sol" name="sunny-outline"></ion-icon><ion-icon class="lua"
+        name="moon-outline"></ion-icon></div>
+  </div>
+
+  <script src="js/ligh/lightservicos.js"></script>
 
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
   <script>
     window.addEventListener("scroll", (event) => {
-        let scrollY = this.scrollY;
-        let scrollX = this.scrollX;
+      let scrollY = this.scrollY;
+      let scrollX = this.scrollX;
 
-        console.log(scrollY);
+      console.log(scrollY);
 
-        if(sessionStorage.getItem("mode") != "white"){
-          if (scrollY > 0.7) {
-            document.querySelector("header").style.backgroundColor = "black";
+      if (sessionStorage.getItem("mode") != "white") {
+        if (scrollY > 0.7) {
+          document.querySelector("header").style.backgroundColor = "black";
         } else {
+          if (document.querySelector("main").style.backgroundColor == "#D6F1FF") {
+            document.querySelector("header").style.backgroundColor = "black";
+          } else {
             document.querySelector("header").style.backgroundColor = "transparent";
+          }
         }
-        }
+      }
 
-        
+
 
     });
-</script>
+  </script>
 
 </body>
 

@@ -367,6 +367,7 @@ main {
     padding: 20px;
     backdrop-filter: blur(10px);
     background-color: rgba(128, 128, 128, 0.179);
+    box-shadow: rgba(0, 0, 0, 0.165) 0px 0px 10px 5px;;
 }
 
 

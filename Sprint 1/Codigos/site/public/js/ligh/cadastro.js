@@ -10,6 +10,8 @@ if (sessionStorage.getItem("mode") == "dark") {
 
 
 
+
+
 function lightmode() {
 
     if (document.querySelector("#onmode").style.transform == "translateX(40px)") {
@@ -17,17 +19,19 @@ function lightmode() {
         
         document.querySelector(".sol").style.opacity = "1";
         document.querySelector(".lua").style.opacity = "0";
+
         document.querySelector("#onmode").style.transform = "translateX(5px)"
         cordefundo("#divlightmode", "#45a0f9"); //fundo botao
         
+
         cordotexto(".text", "black"); //grande parte dos textos
-        cordefundo(".box", "#52C5FF", "0px 0px 10px 5px rgba(0, 0, 0, 0.166)"); //blocos de informação
-        borda(".box","none");
-        cordefundo(".boxicon", "#D6F1FF",); //div pequena dentro dos blocos
+        cordefundo(".formulario", "#52C5FF");//fundo 
+        cordefundo(".box", "#E5F0F2", "none");//fundo card formulario
 
-        cordefundo("main", "#D6F1FF", "none"); //background
-        cordefundo("header", "black", "none"); //background
+        cordefundo(".ipt", "white");//input
+        cordotexto(".ipt", "black"); //cor letra input
 
+        
         sessionStorage.setItem("mode", "white");
         
         
@@ -35,16 +39,16 @@ function lightmode() {
         //black on
         document.querySelector(".lua").style.opacity = "1";
         document.querySelector(".sol").style.opacity = "0";
+
         document.querySelector("#onmode").style.transform = "translateX(40px)"
         cordefundo("#divlightmode", "#45a0f5");//fundo botao
         
+        cordotexto(".text", "white"); //grande parte dos textos
+        cordefundo(".formulario", "#0f0f0f");//fundo 
+        cordefundo(".box", "rgb(35, 35 ,35)");//fundo card formulario
 
-        cordotexto(".text", "whitesmoke"); //grande parte dos textos
-        cordefundo(".box", "rgba(128, 128, 128, 0.179)"); //blocos de informação
-        cordefundo(".boxicon", "rgba(160, 160, 160, 0.253)",); //div pequena dentro dos blocos
-
-        cordefundo("main", "rgba(128, 128, 110, 0)", "none"); //background
-        cordefundo("header", "black", "none"); //background
+        cordefundo(".ipt", "#0f0f0f");//input
+        cordotexto(".ipt", "white"); //cor letra input
 
         sessionStorage.setItem("mode", "dark");
 
@@ -54,7 +58,24 @@ function lightmode() {
 
 
 
-//pendente de alteração
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

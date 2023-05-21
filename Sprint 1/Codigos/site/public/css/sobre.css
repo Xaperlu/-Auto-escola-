@@ -15,6 +15,7 @@ body {
     overflow-x: hidden;
     background-color:  rgb(15, 15, 15);
     position: absolute;
+    transition: background-color 1s 0.2s linear;
 
 
 }
@@ -314,7 +315,7 @@ box-shadow: 0px 0px 8px  2px   rgba(245, 245, 245, 0.42);
 /* segundo container  */
 
 .container2 {
-    height: 400px;
+    height: 600px;
     width: 80vw;
     background-color: transparent;
     margin: 110px auto;
@@ -322,6 +323,7 @@ box-shadow: 0px 0px 8px  2px   rgba(245, 245, 245, 0.42);
     align-items: center;
     justify-content: space-around;
     color: whitesmoke;
+    transition: background-color 1s 0.2s linear;
 
 }
 
@@ -331,11 +333,11 @@ box-shadow: 0px 0px 8px  2px   rgba(245, 245, 245, 0.42);
     height: 300px;
     width: 26%;
     border: solid 1px  #202020;
-    background-color: transparent;
     border-radius: 20px;
     padding: 20px;
     backdrop-filter: blur(10px);
     background-color: rgba(160, 160, 160, 0.255);
+    transition: background-color 1s 0.2s linear;
 }
 
 
@@ -379,6 +381,7 @@ box-shadow: 0px 0px 8px  2px   rgba(245, 245, 245, 0.42);
     width: 100vw;
     padding: 110px 0px 0px 120px;
     display: flex;
+    transition: background-color 1s 0.2s linear;
 
 }
 

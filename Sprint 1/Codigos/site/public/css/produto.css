@@ -20,6 +20,7 @@ body{
     margin: 0px;
     padding: 0px;
     background-color: rgb(15, 15, 15);
+    transition: background-color 1s 0.2s linear;
 }
 
 body::-webkit-scrollbar {
@@ -191,6 +192,7 @@ header div a {
     align-items: center;
     margin: 75px auto;
     text-align: center;
+    transition: background-color 1s 0.2s linear;
 }
 .card{
     width: 100%;
@@ -203,6 +205,7 @@ header div a {
     background-color: rgb(30, 30, 30);
     border-radius: 10px;
     cursor: pointer;
+    transition: background-color 1s 0.2s linear;
 }
 .card:hover{
     background-color: #45a0f5;
@@ -215,14 +218,18 @@ header div a {
 }
 .card h2{
     font-size: 28px;
-    color: #c94f4f;
     margin-bottom: 20px;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-image: -webkit-linear-gradient(left, #26e3c2, #45a0f5);
+    color: transparent;
 }
 .card p{
     font-size: 17px;
      margin-bottom: 30px;
      line-height: 1.5;
      color: #e5e5e5;
+     text-align: justify;
 }
 .button{
     font-size: 15px;
