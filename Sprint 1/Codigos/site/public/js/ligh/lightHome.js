@@ -21,12 +21,15 @@ function lightmode() {
         document.querySelector("#onmode").style.transform = "translateX(5px)"
 
         cordefundo("#divlightmode", "#45a0f9"); //fundo botao
-        cordefundo("body", "#D6F1FF"); //cor do body
+        
+        document.querySelector("body").style.backgroundImage = "url(././asset/ceu3.jpg)";
+
         cordotexto(".text", "black"); //grande parte dos textos
         cordotexto(".divdownload a", "white");// cor do texto do botão de cadastrar
         cordefundo(".black", "black"); //cor do botao de cadastrar no centro da tela
         cordefundo(".botao","black")// cor do botão
-        cordefundo(".box", "#52C5FF"); //blocos de informação
+        cordefundo(".box", "whitesmoke"); //blocos de informação
+        cordotexto(".textbox", "black"); 
         cordefundo(".boxicon", "#D6F1FF",); //div pequena dentro dos blocos
 
         sessionStorage.setItem("mode", "white");
@@ -38,12 +41,16 @@ function lightmode() {
         document.querySelector("#onmode").style.transform = "translateX(40px)"
 
         cordefundo("#divlightmode", "#45a0f5");//fundo botao
-        cordefundo("body", "black"); //cor do body
+       
+        document.querySelector("body").style.backgroundImage = "url(././asset/realback.png)";
+
         cordotexto(".text", "whitesmoke"); //grande parte dos textos
         cordotexto(".divdownload a", "black");// cor do texto do botão de cadastrar
         cordefundo(".black", "black"); //cor do botao de cadastrar no centro da tela
         cordefundo(".botao","whitesmoke")// cor do botão
         cordefundo(".box", "rgba(128, 128, 128, 0.179)", "none"); //blocos de informação
+        cordotexto(".textbox", "whitesmoke"); 
+        
         cordefundo(".boxicon", "rgba(160, 160, 160, 0.253)",); //div pequena dentro dos blocos
         
         sessionStorage.setItem("mode", "dark");

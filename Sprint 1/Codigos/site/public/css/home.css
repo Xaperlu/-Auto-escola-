@@ -13,9 +13,10 @@ body {
     width: 100vw;
     overflow-x: hidden;
     height: 1950px;
-    background-color: rgb(15, 15, 15);
+    background-image: url(../asset/realback.png); 
+    background-size: cover;
     position: absolute;
-    transition: background-color 1s 0.2s linear;
+
 }
 
 body::-webkit-scrollbar {
@@ -314,7 +315,7 @@ main {
 .imagenshome {
     position: absolute;
     right: -150px;
-    background-color: rgb(255, 255, 255);
+    background-color: transparent;
     height: 290px;
     width: 600px;
     display: flex;
@@ -324,18 +325,20 @@ main {
 .primeiraft {
     position: absolute;
     height: 300px;
-    transform: rotate(2deg);
-    left: -120px;
-    box-shadow: 0px 0px 10px rgb(0, 0, 0);
+    left: -180px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.223);
+    animation: imagemove 4s 4s alternate ease-out infinite;
 
 }
 
 .segundaft {
     position: absolute;
-    height: 300px;
+    height: 180px;
     transform: rotate(-10deg);
-    bottom: -30px;
-    box-shadow: 0px 0px 10px rgb(0, 0, 0);
+    left: 10%;
+    bottom: -60px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+    animation: imagemove 4s alternate linear infinite;
 }
 
 
@@ -365,8 +368,8 @@ main {
     width: 26%;
     border-radius: 20px;
     padding: 20px;
-    backdrop-filter: blur(10px);
-    background-color: rgba(128, 128, 128, 0.179);
+    backdrop-filter: blur(5px);
+    background-color: rgba(128, 128, 128, 0.381);
     box-shadow: rgba(0, 0, 0, 0.165) 0px 0px 10px 5px;;
 }
 
@@ -410,6 +413,7 @@ main {
     align-items: center;
     color: whitesmoke;
     justify-content: center;
+    backdrop-filter: blur(10px);
 }
 
 
@@ -553,6 +557,14 @@ footer .container4 .infofooter .boxinfo ul li ion-icon {
 
 }
 
+
+@keyframes imagemove {
+    0%{
+        transform: rotate(0deg);
+    }100%{
+        transform: rotate(5deg);
+    }
+}
 
 
 

@@ -56,7 +56,7 @@ function white() {
 
     cordefundo("#divlightmode", "#45a0f9", "none")//botao do lighmode
 
-    cordefundo(".analytics", "#F0F1F3", "none") //cor de fundo, praticamente "body"
+    document.querySelector(".analytics").style.backgroundImage = "url(././asset/ceu3.jpg)"; //mudar fundo 
 
     cordefundo(".navbar", "#041737", "none") //cor do menu lateral
 
@@ -95,7 +95,7 @@ function black() {
 
     cordefundo("#divlightmode", "grey", "none")//botao do lighmode
 
-    cordefundo(".analytics", "#050012", "none") //cor de fundo, praticamente "body"
+    document.querySelector(".analytics").style.backgroundImage = "url(././asset/realback.png)";
 
     cordefundo(".navbar", "#242731", "none") //cor do menu lateral
 

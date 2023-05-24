@@ -190,7 +190,8 @@ body{
     flex-direction: column;
     gap: 50px;
     margin-left: 22%;
-    transition: background-color 1s 0.2s linear;
+    transition: backgroundImage 1s 0.2s linear;
+    background-size: cover;
 }
 
 .kpi{
