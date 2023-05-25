@@ -514,17 +514,17 @@ function CelularMascara() {
     }
 }
 
-function EditarUnidade(){
-    let unidade = document.querySelector('#selEditarUnidade')
-    let telefone = document.querySelector('edTelefone')
-    let nome = document.querySelector('edNomeUnidade')
-    let cep = document.querySelector('edCep')
-    let logradouro = document.querySelector('edLogradouro')
-    let bairro = document.querySelector('edBairro')
-    let numero = document.querySelector('edNumero')
+function editarUnidade(){
+    let unidade = document.querySelector('#selEditarUnidade').value
+    let telefone = document.querySelector('#edTelefone').value
+    let nome = document.querySelector('#edNomeUnidade').value
+    let cep = document.querySelector('#edCep').value
+    let logradouro = document.querySelector('#edLogradouro').value
+    let bairro = document.querySelector('#edBairro').value
+    let numero = document.querySelector('#edNumero').value
 
     fetch(`/usuarios/editarUnidade`,{
-        method: "PUT",
+        method: "UPDATE",
         headers: {
             "Content-Type": "application/json"
         },
@@ -539,11 +539,33 @@ function EditarUnidade(){
         })
     }).then(function (resposta){
         if(resposta.ok){
-            alert('Cadastro com sucesso')
+            alert('Editado com sucesso')
 
             window.location = "perfil.html"
         }else{
-            alert('Falha no cadastro')
+            alert('Falha ao editar')
+        }
+    })
+}
+
+function excluirUnidade(){
+    let unidade = document.querySelector('#selEditarUnidade').value
+
+    fetch(`/usuarios/excluirUnidade`,{
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            unidade
+        })
+    }).then(function (resposta){
+        if(resposta.ok){
+            alert('Excluído com sucesso')
+
+            window.location = "perfil.html"
+        }else{
+            alert('Falha ao excluir')
         }
     })
 }

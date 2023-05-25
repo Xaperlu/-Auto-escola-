@@ -258,6 +258,16 @@ function editarUnidade(req, res){
         )
 }
 
+function excluirUnidade(req, res){
+    const unidade = req.body.unidade
+
+    usuarioModel.excluirUnidade(unidade)
+        .then(
+            function(resultado){
+                res.json(resultado)
+            }
+        )
+}
 
 module.exports = {
    cadastrar,
@@ -277,5 +287,6 @@ module.exports = {
    atualizarGraficoRede,
    obterDadosRede,
    pegarDadosGraficosRosca,
-   editarUnidade
+   editarUnidade,
+   excluirUnidade
 }

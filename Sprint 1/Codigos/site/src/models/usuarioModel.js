@@ -149,6 +149,14 @@ function editarUnidade(unidade, telefone, nome, cep, logradouro, bairro, numero)
     return database.executar(instrucao)
 }
 
+function excluirUnidade(unidade){
+    let instrucao = `
+    exec excluir_unidade ${unidade}; 
+    `
+    return database.executar(instrucao)
+}
+
+
 module.exports = {
     cadastrar,
     autenticar,
@@ -167,5 +175,6 @@ module.exports = {
     obterDadosRede,
     atualizarGraficoRede,
     pegarDadosGraficosRosca,
-    editarUnidade
+    editarUnidade,
+    excluirUnidade
 };

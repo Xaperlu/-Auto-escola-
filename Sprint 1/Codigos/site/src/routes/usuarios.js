@@ -83,4 +83,8 @@ router.put("/editarUnidade", function (req, res) {
     usuarioController.editarUnidade(req, res);
 });
 
+router.delete("/excluirUnidade", function (req, res) {
+    usuarioController.excluirUnidade(req, res);
+});
+
 module.exports = router;
