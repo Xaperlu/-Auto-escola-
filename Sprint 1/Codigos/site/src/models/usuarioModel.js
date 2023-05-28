@@ -156,6 +156,13 @@ function excluirUnidade(unidade){
     return database.executar(instrucao)
 }
 
+function excluirFuncionario(funcionario){
+    let instrucao = `
+    exec excluir_funcionario ${funcionario}; 
+    `
+    return database.executar(instrucao)
+}
+
 
 module.exports = {
     cadastrar,
@@ -176,5 +183,6 @@ module.exports = {
     atualizarGraficoRede,
     pegarDadosGraficosRosca,
     editarUnidade,
-    excluirUnidade
+    excluirUnidade,
+    excluirFuncionario
 };

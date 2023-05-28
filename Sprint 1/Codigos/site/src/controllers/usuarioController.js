@@ -269,6 +269,17 @@ function excluirUnidade(req, res){
         )
 }
 
+function excluirFuncionario(req, res){
+    const funcionario = req.body.funcionario
+
+    usuarioModel.excluirFuncionario(funcionario)
+        .then(
+            function(resultado){
+                res.json(resultado)
+            }
+        )
+}
+
 module.exports = {
    cadastrar,
    autenticar,
@@ -288,5 +299,6 @@ module.exports = {
    obterDadosRede,
    pegarDadosGraficosRosca,
    editarUnidade,
-   excluirUnidade
+   excluirUnidade,
+   excluirFuncionario
 }

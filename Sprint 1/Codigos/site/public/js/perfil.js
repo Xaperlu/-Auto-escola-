@@ -569,3 +569,25 @@ function excluirUnidade(){
         }
     })
 }
+
+function excluirFuncionario(){
+    let funcionario = document.querySelector('#selEditarFunc').value
+
+    fetch(`/usuarios/excluirFuncionario`,{
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            funcionario
+        })
+    }).then(function (resposta){
+        if(resposta.ok){
+            alert('Excluído com sucesso')
+
+            window.location = "perfil.html"
+        }else{
+            alert('Falha ao excluir')
+        }
+    })
+}
