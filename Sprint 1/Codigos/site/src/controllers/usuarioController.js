@@ -276,8 +276,9 @@ function editarFuncionario(req, res){
     const dtNascimento = req.body.dtNascimento
     const celular = req.body.celular
     const sobrenome = req.body.sobrenome
+    const unidade = req.body.unidade
 
-    usuarioModel.editarFuncionario(funcionario, nome, cargo, dtNascimento, celular, sobrenome)
+    usuarioModel.editarFuncionario(funcionario, nome, cargo, dtNascimento, celular, sobrenome, unidade)
         .then(
             function(resultado){
                 res.json(resultado)
@@ -289,6 +290,17 @@ function excluirFuncionario(req, res){
     const funcionario = req.body.funcionario
 
     usuarioModel.excluirFuncionario(funcionario)
+        .then(
+            function(resultado){
+                res.json(resultado)
+            }
+        )
+}
+
+function pegarFuncionariosBanco(req, res){
+    const id = req.params.idFuncionario
+
+    usuarioModel.pegarFuncionariosBanco(id)
         .then(
             function(resultado){
                 res.json(resultado)
@@ -317,5 +329,6 @@ module.exports = {
    editarUnidade,
    excluirUnidade,
    editarFuncionario,
-   excluirFuncionario
+   excluirFuncionario,
+   pegarFuncionariosBanco
 }

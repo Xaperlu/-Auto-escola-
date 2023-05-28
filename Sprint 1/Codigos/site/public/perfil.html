@@ -195,13 +195,13 @@
               <input id="edNumero" class="inpcadastrarunidade" type="number" placeholder="Numero">  
             </div>
             
-            <button id="btncriarunidade" onclick="editarUnidade()">Editar</button><br>
-            
+              
+              <button id="btncriarunidade" onclick="editarUnidade()">Editar</button>
+              
           </div>
           
-          <button id="" onclick="excluirUnidade()">Excluir unidade</button>
-          <button class="editarunidhard" onclick="abrirteladeescolhaunidade()">Editar <ion-icon name="create-outline"></ion-icon> </button>
-
+            <button class="editarunidhard" onclick="abrirteladeescolhaunidade()">Voltar <ion-icon name="create-outline"></ion-icon> </button>
+            <button class="excluirUnid" id="" onclick="excluirUnidade()">Excluir unidade</button>
         </DIV>
 
       </div>
@@ -302,8 +302,53 @@
 
 
 
-          <button class="editarunidhard" onclick="abrirteladeescolhadeunidadefuncionario()">Editar <ion-icon name="create-outline"></ion-icon> </button>
+          <button class="editarunidhard" onclick="telaEditarFunc()">Editar <ion-icon name="create-outline"></ion-icon> </button>
 
+
+        </DIV>
+
+      </div>
+
+      <div id="janelaeditarfuncionario" class="outroscadastros">
+        <ion-icon id="fecharjanelafuncionario" class="botaoexit" name="add-outline"></ion-icon>
+
+        <DIV class="containerdentrocadastrarunidade">
+          <h1 id="agaummm">Editar funcionario</h1>
+
+          <div class="dadoscadastrounidade">
+
+            <select name="" id="selEditarFuncionario">
+              <option value="">- Selecione um Funcionario -</option>
+            </select>
+
+            <div class="divisor">
+              <input id="edNomeFuncionario" class="inpcadastrarunidade" type="text" placeholder="Nome">   
+              <input id="edSobrenome" class="inpcadastrarunidade" type="text" placeholder="Sobrenome">   
+            </div>
+           
+            <div class="divisor">
+              <input id="edDtNascimento" class="inpcadastrarunidade" type="date" placeholder="Data de Nascimento">  
+              <input id="edCelular" class="inpcadastrarunidade" onkeyup="CelularMascara()" type="text" placeholder="Celular" maxlength="13">  
+            </div>
+
+            <div class="divisor">
+              <select name="" id="edCargo">
+                <option value="">--Selecione o Cargo--</option>
+                <option value="1">Analista NOC</option>
+                <option value="2">Gerente</option>
+              </select>
+              <select name="" id="edUnidade">
+                <option value="">--Selecione a Unidade--</option>
+              </select> 
+            </div>
+            
+
+            <button id="btncriarfuncionario" onclick="editarFuncionario()">Editar</button>
+
+          </div>
+
+          <button class="editarunidhard" onclick="voltarTelaFuncionario()">Voltar <ion-icon name="create-outline"></ion-icon> </button>
+          <button class="excluirUnid" id="" onclick="excluirFuncionario()">Excluir funcionario</button>
 
         </DIV>
 
@@ -323,6 +368,7 @@ function pegarInfoBanco(){
     let hardware = document.querySelector('#selHardware')
     let unidade = document.querySelector('#selUnidade')
     let editarUnidade = document.querySelector('#selEditarUnidade')
+    let editarFuncionario = document.querySelector('#edUnidade')
     let id = sessionStorage.getItem('ID_USUARIO')
 
     fetch(`/usuarios/pegarInfoBanco/${id}`).then(function (resposta){
@@ -338,6 +384,7 @@ function pegarInfoBanco(){
                     hardware.innerHTML += `<option value = ${info[i].id_unidade}>${info[i].nome_unidade}</option>`
                     unidade.innerHTML += `<option value = ${info[i].id_unidade}>${info[i].nome_unidade}</option>`
                     editarUnidade.innerHTML += `<option value = ${info[i].id_unidade}>${info[i].nome_unidade}</option>`
+                    editarFuncionario.innerHTML += `<option value = ${info[i].id_unidade}>${info[i].nome_unidade}</option>`
                 }
 
             })
@@ -345,8 +392,26 @@ function pegarInfoBanco(){
     })
 }
 
+function pegarFuncionariosBanco(){
+  let funcionarios = document.querySelector('#selEditarFuncionario')
+  let id = sessionStorage.getItem('ID_USUARIO')
+
+  fetch(`/usuarios/pegarFuncionariosBanco/${id}`).then(function (resposta){
+    if(resposta.ok){
+      resposta.json().then(function(response){
+        let info = JSON.parse((JSON.stringify(response)))
+
+        for(let i = 0; i < response.length; i++){
+          funcionarios.innerHTML += `<option value = ${info[i].id_funcionario}>${info[i].nome_funcionario}</option>`
+        }
+      })
+    }
+  })
+}
+
 window.onload = function(){
     pegarInfoBanco();
+    pegarFuncionariosBanco();
 }
 
 </script>

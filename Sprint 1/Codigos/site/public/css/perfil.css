@@ -558,8 +558,6 @@ body {
 
 }
 
-
-
 .editarunidhard {
     background-color: transparent;
     height: 35px;
@@ -579,12 +577,7 @@ body {
 .editarunidhard img {
     height: 20px;
     width: 20px;
-
-
-
 }
-
-
 
 #listadeunidadeparaupdate {
     display: none;
@@ -642,7 +635,16 @@ body {
 }
 
 
-
+.excluirUnid{
+    background-color: rgb(236, 35, 35);
+    border-radius: 10px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    position: absolute;
+    right: 10%;
+    bottom: 6%;
+}
 
 
 
@@ -767,4 +769,16 @@ body {
 
 #janelaEditarUnidade{
     display: none;
+}
+
+#janelaeditarfuncionario{
+    display: none;
+}
+
+.botoesEditar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
 }

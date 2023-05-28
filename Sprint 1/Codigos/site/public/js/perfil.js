@@ -341,10 +341,12 @@ function abrirteladeescolhahardware() {
     let botaocriar = document.querySelector("#btncriarhardware").style.display = "none";
 }
 
-function abrirteladeescolhadeunidadefuncionario() {
-    var teladeescolha = document.querySelector("#listadeunidadedefuncionarioparaupdate").style.display = "flex";
-    var h1 = document.querySelector("#agaummm").style.opacity = "0";
-    let botaocriar = document.querySelector("#btncriarfuncionario").style.display = "none";
+function telaEditarFunc() {
+    let telaFunc = document.querySelector("#janelacadastrofuncionario")
+    let telaEditarFunc = document.querySelector('#janelaeditarfuncionario')
+    
+    telaFunc.style.display = "none"
+    telaEditarFunc.style.display = "flex"
 }
 
 function hardwareCadastro(){
@@ -571,7 +573,7 @@ function excluirUnidade(){
 }
 
 function excluirFuncionario(){
-    let funcionario = document.querySelector('#selEditarFunc').value
+    let funcionario = document.querySelector('#selEditarFuncionario').value
 
     fetch(`/usuarios/excluirFuncionario`,{
         method: "DELETE",
@@ -599,9 +601,10 @@ function editarFuncionario(){
     let dtNascimento = document.querySelector('#edDtNascimento').value
     let celular = document.querySelector('#edCelular').value
     let sobrenome = document.querySelector('#edSobrenome').value
+    let unidade = document.querySelector('#edUnidade').value
 
     fetch(`/usuarios/editarFuncionario`,{
-        method: "UPDATE",
+        method: "PUT",
         headers: {
             "Content-Type": "application/json"
         },
@@ -611,7 +614,8 @@ function editarFuncionario(){
             cargo,
             dtNascimento,
             celular,
-            sobrenome
+            sobrenome,
+            unidade
         })
     }).then(function (resposta){
         if(resposta.ok){
@@ -622,4 +626,12 @@ function editarFuncionario(){
             alert('Falha ao editar')
         }
     })
+}
+
+function voltarTelaFuncionario(){
+    let telaFunc = document.querySelector('#janelacadastrofuncionario')
+    let telaEditarFunc = document.querySelector('#janelaeditarfuncionario')
+
+    telaFunc.style.display = "flex"
+    telaEditarFunc.style.display = "none"
 }

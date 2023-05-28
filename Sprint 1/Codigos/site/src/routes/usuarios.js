@@ -95,4 +95,8 @@ router.delete("/excluirFuncionario", function (req, res) {
     usuarioController.excluirFuncionario(req, res);
 });
 
+router.get("/pegarFuncionariosBanco/:idFuncionario", function (req, res) {
+    usuarioController.pegarFuncionariosBanco(req, res);
+});
+
 module.exports = router;

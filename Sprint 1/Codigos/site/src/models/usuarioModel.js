@@ -156,9 +156,9 @@ function excluirUnidade(unidade){
     return database.executar(instrucao)
 }
 
-function editarFuncionario(funcionario, nome, cargo, dtNascimento, celular, sobrenome){
+function editarFuncionario(funcionario, nome, cargo, dtNascimento, celular, sobrenome, unidade){
     let instrucao = `
-    update funcionario set nome = '${nome}', cargo = '${cargo}', cep = '${dtNascimento}', celular = '${celular}', sobrenome = '${sobrenome}' where id_funcionario = ${funcionario}; 
+    exec atualizar_funcionario ${funcionario}, '${nome}', '${sobrenome}', '${cargo}', '${dtNascimento}', '${celular}', ${unidade};
     `
     return database.executar(instrucao)
 }
@@ -170,6 +170,12 @@ function excluirFuncionario(funcionario){
     return database.executar(instrucao)
 }
 
+function pegarFuncionariosBanco(id){
+    let instrucao = `
+    select id_funcionario, nome as nome_funcionario from funcionario where id_funcionario = ${id};
+    `
+    return database.executar(instrucao)
+}
 
 module.exports = {
     cadastrar,
@@ -192,5 +198,6 @@ module.exports = {
     editarUnidade,
     excluirUnidade,
     editarFuncionario,
-    excluirFuncionario
+    excluirFuncionario,
+    pegarFuncionariosBanco
 };
