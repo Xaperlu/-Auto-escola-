@@ -269,6 +269,22 @@ function excluirUnidade(req, res){
         )
 }
 
+function editarFuncionario(req, res){
+    const funcionario = req.body.funcionario
+    const nome = req.body.nome
+    const cargo = req.body.cargo
+    const dtNascimento = req.body.dtNascimento
+    const celular = req.body.celular
+    const sobrenome = req.body.sobrenome
+
+    usuarioModel.editarFuncionario(funcionario, nome, cargo, dtNascimento, celular, sobrenome)
+        .then(
+            function(resultado){
+                res.json(resultado)
+            }
+        )
+}
+
 function excluirFuncionario(req, res){
     const funcionario = req.body.funcionario
 
@@ -300,5 +316,6 @@ module.exports = {
    pegarDadosGraficosRosca,
    editarUnidade,
    excluirUnidade,
+   editarFuncionario,
    excluirFuncionario
 }

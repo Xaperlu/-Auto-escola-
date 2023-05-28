@@ -87,6 +87,10 @@ router.delete("/excluirUnidade", function (req, res) {
     usuarioController.excluirUnidade(req, res);
 });
 
+router.put("/editarFuncionario", function (req, res) {
+    usuarioController.editarFuncionario(req, res);
+});
+
 router.delete("/excluirFuncionario", function (req, res) {
     usuarioController.excluirFuncionario(req, res);
 });

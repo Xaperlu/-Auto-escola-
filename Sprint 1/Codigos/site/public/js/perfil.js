@@ -591,3 +591,35 @@ function excluirFuncionario(){
         }
     })
 }
+
+function editarFuncionario(){
+    let funcionario = document.querySelector('#selEditarFuncionario').value
+    let nome = document.querySelector('#edNomeFuncionario').value
+    let cargo = document.querySelector('#edCargo').value
+    let dtNascimento = document.querySelector('#edDtNascimento').value
+    let celular = document.querySelector('#edCelular').value
+    let sobrenome = document.querySelector('#edSobrenome').value
+
+    fetch(`/usuarios/editarFuncionario`,{
+        method: "UPDATE",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            funcionario,
+            nome,
+            cargo,
+            dtNascimento,
+            celular,
+            sobrenome
+        })
+    }).then(function (resposta){
+        if(resposta.ok){
+            alert('Editado com sucesso')
+
+            window.location = "perfil.html"
+        }else{
+            alert('Falha ao editar')
+        }
+    })
+}

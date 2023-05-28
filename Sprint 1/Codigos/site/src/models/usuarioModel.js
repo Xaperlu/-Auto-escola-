@@ -156,6 +156,13 @@ function excluirUnidade(unidade){
     return database.executar(instrucao)
 }
 
+function editarFuncionario(funcionario, nome, cargo, dtNascimento, celular, sobrenome){
+    let instrucao = `
+    update funcionario set nome = '${nome}', cargo = '${cargo}', cep = '${dtNascimento}', celular = '${celular}', sobrenome = '${sobrenome}' where id_funcionario = ${funcionario}; 
+    `
+    return database.executar(instrucao)
+}
+
 function excluirFuncionario(funcionario){
     let instrucao = `
     exec excluir_funcionario ${funcionario}; 
@@ -184,5 +191,6 @@ module.exports = {
     pegarDadosGraficosRosca,
     editarUnidade,
     excluirUnidade,
+    editarFuncionario,
     excluirFuncionario
 };
