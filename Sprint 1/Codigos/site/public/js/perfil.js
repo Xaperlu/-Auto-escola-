@@ -602,7 +602,9 @@ function editarFuncionario(){
     let celular = document.querySelector('#edCelular').value
     let sobrenome = document.querySelector('#edSobrenome').value
     let unidade = document.querySelector('#edUnidade').value
-
+    if(unidade == ""){
+        unidade = null;
+    }
     fetch(`/usuarios/editarFuncionario`,{
         method: "PUT",
         headers: {

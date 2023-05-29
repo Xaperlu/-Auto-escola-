@@ -172,7 +172,7 @@ function excluirFuncionario(funcionario){
 
 function pegarFuncionariosBanco(id){
     let instrucao = `
-    select id_funcionario, nome as nome_funcionario from funcionario where id_funcionario = ${id};
+    select id_funcionario, nome as nome_funcionario from funcionario where fk_cliente = ${id};
     `
     return database.executar(instrucao)
 }
