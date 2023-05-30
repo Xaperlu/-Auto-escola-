@@ -1,8 +1,17 @@
 window.onload = function(){
+    ChecarSeUsuarioEstaLogado();
     pegarInfoBanco();
     pegarInfoDash();
 }
+function ChecarSeUsuarioEstaLogado(){
+    const idUsuario = sessionStorage.getItem('ID_USUARIO')
+    const isLogado = (idUsuario != "")
 
+    if(isLogado == false){
+        alert('Realize o login para acessar essa janela!')
+        window.location = "login.html";
+    }
+}
 nomeEmpresa.innerHTML = sessionStorage.getItem('EMPRESA_USUARIO')
 
 document.querySelector("#voltarperfil").addEventListener("click", ()=>{

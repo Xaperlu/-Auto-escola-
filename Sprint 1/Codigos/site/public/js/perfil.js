@@ -5,6 +5,16 @@ nomeUsuario.innerHTML = sessionStorage.getItem('NOME_USUARIO')
 emailUsuario.innerHTML = sessionStorage.getItem('EMAIL_USUARIO')
 cnpjUsuario.innerHTML = sessionStorage.getItem('CNPJ_USUARIO')
 nomeCliente.innerHTML = sessionStorage.getItem('EMPRESA_USUARIO')
+window.onload(ChecarSeUsuarioEstaLogado())
+function ChecarSeUsuarioEstaLogado(){
+    const idUsuario = sessionStorage.getItem('ID_USUARIO')
+    const isLogado = (idUsuario != "")
+
+    if(isLogado == false){
+        alert('Realize o login para acessar essa janela!')
+        window.location = "login.html";
+    }
+}
 
 document.querySelector("#addunidades").addEventListener("click", () => {
 
@@ -187,13 +197,13 @@ function MascaraCnpj() {
 }
 
 function Deslogar(){
-    sessionStorage.CNPJ_USUARIO = null
-    sessionStorage.EMPRESA_USUARIO = null
-    sessionStorage.EMAIL_USUARIO = null
-    sessionStorage.NOME_USUARIO = null
-    sessionStorage.NOME_USUARIO = null
-    sessionStorage.ID_USUARIO = null
-    sessionStorage.NIVEL_USUARIO = null
+    sessionStorage.CNPJ_USUARIO = ""
+    sessionStorage.EMPRESA_USUARIO = ""
+    sessionStorage.EMAIL_USUARIO = ""
+    sessionStorage.NOME_USUARIO = ""
+    sessionStorage.NOME_USUARIO = ""
+    sessionStorage.ID_USUARIO = ""
+    sessionStorage.NIVEL_USUARIO = ""
 }
 
 function onsenha() {
