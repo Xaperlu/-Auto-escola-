@@ -404,16 +404,20 @@ function funcionarioCadastro(){
     const unidade = document.querySelector('#selUnidade').value
     const empresa = sessionStorage.getItem('EMPRESA_USUARIO')
     const idCliente = sessionStorage.getItem('ID_USUARIO')
-    const email = nome.toLowerCase() + "." + sobrenome.toLowerCase() + "@" + empresa.toLowerCase() + ".com" 
-    const senha = 'Padrao1!'
     let cargo
     const nivelUsuario = sessionStorage.getItem('NIVEL_USUARIO')
+    const validarSeTemCampoVazio = nome.length + sobrenome.length + nivel.length + data.length + celular.length + unidade.length
 
     if(!(nivelUsuario == 2 || nivelUsuario == 3)){
         alert('Você não possui permissão para cadastrar um usuário!')
         return false
     }
-
+    if(validarSeTemCampoVazio == 0){
+        alert("Erro!! Todos os campos são obrigatórios! Preencha os campos corretamente")
+        return false
+    }
+    const email = nome.toLowerCase() + "." + sobrenome.toLowerCase() + "@" + empresa.toLowerCase() + ".com" 
+    const senha = 'Padrao1!'
     if(nivel == 1){
         cargo = "Analista NOC"
     }else if(nivel == 2){
@@ -422,7 +426,7 @@ function funcionarioCadastro(){
         alert('Escolha o cargo do funcionario!')
         return false
     }
-
+    
     fetch(`/usuarios/cadastrarFuncionario`, {
         method: "POST",
         headers: {
@@ -502,17 +506,29 @@ function FixoMascara() {
 }
 
 const mascaraCelular = document.getElementById('funCelular');
-
 function CelularMascara() {
-
+    
     let tamanhoTel = mascaraCelular.value.length
-
+    
     if (tamanhoTel == 2) {
         mascaraCelular.value += " "
     }
-
+    
     if (tamanhoTel == 8) {
         mascaraCelular.value += "-"
+    }
+}
+const mascaraCelularFunc = document.getElementById('edCelular');
+function CelularMascaraEditarFunc() {
+    
+    let tamanhoTel = mascaraCelularFunc.value.length
+    
+    if (tamanhoTel == 2) {
+        mascaraCelularFunc.value += " "
+    }
+    
+    if (tamanhoTel == 8) {
+        mascaraCelularFunc.value += "-"
     }
 }
 
@@ -574,7 +590,9 @@ function excluirUnidade(){
 
 function excluirFuncionario(){
     let funcionario = document.querySelector('#selEditarFuncionario').value
-
+    if(funcionario == ""){
+        alert('Selecione um usuário para poder excluir!')
+    }else{
     fetch(`/usuarios/excluirFuncionario`,{
         method: "DELETE",
         headers: {
@@ -593,6 +611,7 @@ function excluirFuncionario(){
         }
     })
 }
+}
 
 function editarFuncionario(){
     let funcionario = document.querySelector('#selEditarFuncionario').value
@@ -602,32 +621,37 @@ function editarFuncionario(){
     let celular = document.querySelector('#edCelular').value
     let sobrenome = document.querySelector('#edSobrenome').value
     let unidade = document.querySelector('#edUnidade').value
-    if(unidade == ""){
-        unidade = null;
-    }
-    fetch(`/usuarios/editarFuncionario`,{
-        method: "PUT",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            funcionario,
-            nome,
-            cargo,
-            dtNascimento,
-            celular,
-            sobrenome,
-            unidade
-        })
-    }).then(function (resposta){
-        if(resposta.ok){
-            alert('Editado com sucesso')
-
-            window.location = "perfil.html"
-        }else{
-            alert('Falha ao editar')
+    if(funcionario == ""){
+        alert('Selecione um usuário para poder editar!!!')
+    }else{
+        if(unidade == ""){
+            unidade = null;
         }
-    })
+
+        fetch(`/usuarios/editarFuncionario`,{
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                funcionario,
+                nome,
+                cargo,
+                dtNascimento,
+                celular,
+                sobrenome,
+                unidade
+            })
+        }).then(function (resposta){
+            if(resposta.ok){
+                alert('Editado com sucesso')
+
+                window.location = "perfil.html"
+            }else{
+                alert('Falha ao editar')
+            }
+        })
+    }    
 }
 
 function voltarTelaFuncionario(){
