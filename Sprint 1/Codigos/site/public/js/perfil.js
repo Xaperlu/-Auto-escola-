@@ -186,6 +186,16 @@ function MascaraCnpj() {
     }
 }
 
+function Deslogar(){
+    sessionStorage.CNPJ_USUARIO = null
+    sessionStorage.EMPRESA_USUARIO = null
+    sessionStorage.EMAIL_USUARIO = null
+    sessionStorage.NOME_USUARIO = null
+    sessionStorage.NOME_USUARIO = null
+    sessionStorage.ID_USUARIO = null
+    sessionStorage.NIVEL_USUARIO = null
+}
+
 function onsenha() {
     document.querySelector("#onsenha").style.display = "none";
     document.querySelector("#offsenha").style.display = "block";
