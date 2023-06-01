@@ -562,7 +562,7 @@ function editarUnidade(){
     let numero = document.querySelector('#edNumero').value
 
     fetch(`/usuarios/editarUnidade`,{
-        method: "UPDATE",
+        method: "PUT",
         headers: {
             "Content-Type": "application/json"
         },

@@ -143,9 +143,14 @@ function pegarDadosGraficosRosca(idHardware){
 
 function editarUnidade(unidade, telefone, nome, cep, logradouro, bairro, numero){
     let instrucao = `
-    update unidade set nome_unidade = '${nome}', telefone = '${telefone}', cep = '${cep}', logradouro = '${logradouro}', bairro = '${bairro}', numero = ${numero}
-    where id_unidade = ${unidade}; 
-    `
+    EXEC atualizar_unidade
+    @p_id_unidade = ${unidade},
+    @p_nome_unidade = '${nome}',
+    @p_telefone = '${telefone}',
+    @p_cep = '${cep}',
+    @p_logradouro = '${logradouro}',
+    @p_numero = '${numero}',
+    @p_bairro = '${bairro}';`
     return database.executar(instrucao)
 }
 
