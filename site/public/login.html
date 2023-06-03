@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/login.css">
+
+    <link rel="shortcut icon" href="./asset/favicon-32x32.png" type="image/x-icon">
+
+    <title>AutoTech | Login</title>
+
+</head>
+
+<body>
+
+    <header>
+        <a class="linklogo" href="./index.html" style="text-decoration: none;">
+            <img src="./asset/logo2.png" alt="">
+            <h1>AutoTech</h1>
+        </a>
+        <div>
+            <a class="cadastrar" href="cadastro.html">Cadastrar</a>
+            <a class="entrar" href="#">Entrar</a>
+        </div>
+
+    </header>
+
+    <div class="formulario">
+
+        <div class="logo">
+            <img src="./asset/logo2.png">
+            <h2>AutoTech</h2>
+            <p>Bem vindo a sua área de login!</p>
+        </div>
+
+        <div id="box01" class="box">
+            <h2>Login</h2>
+            <div class="campoDigitacao" id="cd1">
+                <label for="in_email">E-mail</label>
+                <input class="ipt" id="in_email" type="text" placeholder="Email@email.com">
+            </div>
+            <div class="campoDigitacao" id="cd2">
+                <label for="in_senha">Senha</label>
+                <input class="ipt" id="in_senha" type="password" placeholder="********">
+                <ion-icon id="ver" class="eye" name="eye-outline"></ion-icon>
+                <ion-icon id="nver" class="eye" name="eye-off-outline"></ion-icon>
+            </div>
+
+            <button onclick="entrar()" class="btNext">Entrar</button>
+        </div>
+        <div id="divlightmode" onclick="lightmode()">
+            <div id="onmode"><ion-icon class="sol" name="sunny-outline"></ion-icon><ion-icon class="lua" name="moon-outline"></ion-icon></div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script src="js/ligh/lightlogin.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
+
+<script>
+
+    document.querySelector("#ver").addEventListener("click", () => {
+        
+
+        
+            document.querySelector("#ver").style.display = "none"
+            document.querySelector("#nver").style.display = "block"
+            document.querySelector("#in_senha").type = "password"
+           
+        
+
+    })
+
+    document.querySelector("#nver").addEventListener("click", () => {
+        console.log("nver none")
+
+        
+            document.querySelector("#nver").style.display = "none"
+            document.querySelector("#ver").style.display = "block"
+            document.querySelector("#in_senha").type = "text"
+        
+
+    })
+
+
+
+
+
+
+    function entrar() {
+        const email = in_email.value.toLowerCase();
+        const senha = in_senha.value.toLowerCase();
+
+        if(senha == 00){
+            window.location = "./perfil.html";
+        }
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                email,
+                senha
+            })
+        }).then(function (resposta) {
+            if (resposta.ok) {
+                resposta.json().then(json => {
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json[0].email;
+                    sessionStorage.NOME_USUARIO = json[0].nome;
+                    sessionStorage.CNPJ_USUARIO = json[0].cnpj;
+                    sessionStorage.ID_USUARIO = json[0].id_cliente;
+                    sessionStorage.NIVEL_USUARIO = json[0].nivel;
+                    sessionStorage.EMPRESA_USUARIO = json[0].nome_empresa;
+
+                    window.location = "./perfil.html";
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+</script>

@@ -99,4 +99,12 @@ router.get("/pegarFuncionariosBanco/:idFuncionario", function (req, res) {
     usuarioController.pegarFuncionariosBanco(req, res);
 });
 
+router.get("/pegarInfoBanco2/:idHardware", function (req, res) {
+    usuarioController.pegarInfoBanco2(req, res);
+});
+
+router.get("/pegarUnidadesBanco/:idHardware", function (req, res) {
+    usuarioController.pegarUnidadesBanco(req, res);
+});
+
 module.exports = router;

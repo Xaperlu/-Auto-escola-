@@ -27,15 +27,34 @@
                 <div class="filtros">
                     <div class="filtro">
                         <label id="unid" class="clabel" for="selUnidade">Unidade</label>
-                        <select class="styleFiltro" id="selUnidade">
-                            <option value="">Todos</option>
-                        </select>
+                        <p id="nomeUnidade" class="nomeUnidade"></p>
                     </div>
                     <div class="filtro">
                         <label id="ns" class="clabel" for="selHardware">Número de Série</label>
                         <select class="styleFiltro" id="selHardware" onchange="recarregarDashs()">
 
                         </select>
+                    </div>
+                    <div class="infosHardware">
+                        <div class="filtro">
+                            <label for="" class="clabel">Sistema</label>
+                            <p class="pInfo" id="so">Sistema Operacional: </p>
+                        </div>
+                        <div class="filtro">
+                            <label for="" class="clabel">Cpu</label>
+                            <p class="pInfo" id="capCpu">Capacidade: </p>
+                            <p class="pInfo"  id="modCpu">Modelo: </p>
+                        </div>
+                        <div class="filtro">
+                            <label for="" class="clabel">Memoria</label>
+                            <p class="pInfo"  id="capRam">Capacidade: </p>
+                            <p class="pInfo"  id="modRam">Modelo: </p>
+                        </div>
+                        <div class="filtro">
+                            <label for="" class="clabel">Disco</label>
+                            <p class="pInfo"  id="capDisco">Capacidade: </p>
+                            <p class="pInfo"  id="modDisco">Modelo: </p>
+                        </div>
                     </div>
                 </div> 
 
@@ -69,19 +88,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="divisor"></div>
-                <div class="bigN ">
-                    <p>Latência ms <i class="fa-solid fa fa-angle-double-up vermelho"></i> 50%</p>
-                    <span class="metrica01" id="kpi01">500</span>
-                    <div class="barra">
-                        <div class="barra01"></div>
-                        <div class="barra02"></div>
-                    </div>
-                </div>
+
                 <div class="divisor"></div>
                 <div class="bigN ">
                     <p>Uso Ram <i class="fa-solid fa fa-angle-double-up vermelho"></i> 80%</p>
-                    <span class="metrica02" id="kpi02">500</span>
+                    <span class="metrica02" id="kpi02">0.00%</span>
                     <div class="barra">
                         <div class="barra01" id="barraRam"></div>
                         <div class="barra02"></div>
@@ -90,7 +101,7 @@
                 <div class="divisor"></div>
                 <div class="bigN ">
                     <p>Uso Disco <i class="fa-solid fa fa-angle-double-up vermelho"></i> 80%</p>
-                    <span class="metrica03" id="kpi03">500</span>
+                    <span class="metrica03" id="kpi03">0.00%</span>
                     <div class="barra">
                         <div class="barra01" id="barraDisco"></div>
                         <div class="barra02"></div>
@@ -99,7 +110,7 @@
                 <div class="divisor"></div>
                 <div class="bigN ">
                     <p>Uso CPU <i class="fa-solid fa fa-angle-double-up vermelho"></i> 80%</p>
-                    <span class="metrica04" id="kpi04">500</span>
+                    <span class="metrica04" id="kpi04">0.00%</span>
                     <div class="barra">
                         <div class="barra01" id="barraCpu"></div>
                         <div class="barra02"></div>
@@ -111,13 +122,11 @@
                     <div class="tituloLine">
                         <p class="textpage">Velocidade Mbps Download e Upload</p>
                         <div class="graf03 areagrafico">
-                            <div>
-                                <canvas id="myChart3" style="position: relative; height:33vh; width:34vw"></canvas>
-                            </div>
+                            <canvas id="myChart3" ></canvas>
                         </div>
                     </div>
                     <div class="tituloRosca">
-                        <p class="textpage">Download Mbps abaixo <i class="fa-solid fa-angle-double-down verde"></i> 200
+                        <p class="textpage">Download Mbps acima <i class="fa-solid fa fa-angle-double-up vermelho"></i> 50
                         </p>
                         <div class="graf01 areagrafico">
                             <div>
@@ -126,7 +135,7 @@
                         </div>
                     </div>
                     <div class="tituloRosca">
-                        <p class="textpage">Upload Mbps abaixo <i class="fa-solid fa-angle-double-down verde"></i> 200
+                        <p class="textpage">Upload Mbps acima <i class="fa-solid fa fa-angle-double-up vermelho"></i> 50
                         </p>
                         <div class="graf02 areagrafico">
                             <div>
@@ -211,8 +220,8 @@
         ],
 
         datasets: [{
-            label: 'Consumo de Memória RAM',
-            data: [10, 95],
+            label: ['abaixo', 'acima'],
+            data: [0, 0],
             backgroundColor: [
                 '#487CBC',
                 '#30537D'
@@ -228,7 +237,6 @@
         data: data1,
     };
 
-
     const data2 = {
         labels: [
             'Abaixo',
@@ -236,8 +244,8 @@
         ],
 
         datasets: [{
-            label: 'Consumo de Memória RAM',
-            data: [10, 95],
+            label: ['abaixo', 'acima'],
+            data: [0, 0],
             backgroundColor: [
                 '#7DB1F0',
                 '#487CBC'
@@ -252,53 +260,15 @@
         data: data2,
     };
 
-
-
-    const labels3 = [
-        '17:30',
-        '17:45',
-        '18:00',
-        '18:15',
-        '18:30',
-        '18:45',
-        '19:00',
-    ];
-
-    const data3 = {
-        labels: labels3,
-        datasets: [{
-            label: 'Download',
-            backgroundColor: '#30537D',
-            borderColor: '#30537D',
-            data: [100, 13, 25, 47, 9, 91, 33],
-            tension: 0.2,
-            borderWidth: 2
-        },
-        {
-            label: 'Upload',
-            backgroundColor: '#7DB1F0',
-            borderColor: '#7DB1F0',
-            data: [200, 77, 83, 99, 64, 157, 65],
-            tension: 0.2,
-            borderWidth: 2
-        }]
-    };
-
-    const config3 = {
-        type: 'line',
-        data: data3,
-        options: {}
-    };
-
     const data4 = {
         labels: [
-            'Acima',
-            'Abaixo'
+            'Abaixo',
+            'Acima'
         ],
 
         datasets: [{
-            label: 'Consumo de Memória RAM',
-            data: [10, 95],
+            label: ['Abaixo', 'Acima'],
+            data: [0, 0],
             backgroundColor: [
                 '#5F57BD',
                 '#362F7C'
@@ -313,43 +283,15 @@
         data: data4,
     };
 
-    const labels5 = [
-        'Domingo',
-        'Segunda',
-        'Terça',
-        'Quarta',
-        'Quinta',
-        'Sexta',
-        'Sábado',
-    ];
-
-    const data5 = {
-        labels: labels5,
-        datasets: [{
-            label: 'Memória RAM',
-            backgroundColor: '#5F57BD',
-            borderColor: '#5F57BD',
-            data: [0, 95, 87, 68, 76, 32, 89],
-            tension: 0.2,
-            borderWidth: 2
-        }]
-    };
-
-    const config5 = {
-        type: 'line',
-        data: data5,
-        options: {}
-    };
-
     const data6 = {
         labels: [
-            'Acima',
-            'Abaixo'
+            'Abaixo',
+            'Acima'
         ],
 
         datasets: [{
-            label: 'Consumo de Disco',
-            data: [80, 87],
+            label: ['Abaixo', 'Acima'],
+            data: [0, 0],
             backgroundColor: [
                 '#964EBF',
                 '#653381'
@@ -364,43 +306,15 @@
         data: data6,
     };
 
-    const labels7 = [
-        'Domingo',
-        'Segunda',
-        'Terça',
-        'Quarta',
-        'Quinta',
-        'Sexta',
-        'Sábado',
-    ];
-
-    const data7 = {
-        labels: labels7,
-        datasets: [{
-            label: 'Disco',
-            backgroundColor: '#964EBF',
-            borderColor: '#964EBF',
-            data: [80, 87, 90, 93, 99, 83, 95],
-            tension: 0.2,
-            borderWidth: 2
-        }]
-    };
-
-    const config7 = {
-        type: 'line',
-        data: data7,
-        options: {}
-    };
-
     const data8 = {
         labels: [
-            'Acima',
-            'Abaixo'
+            'Abaixo',
+            'Acima'
         ],
 
         datasets: [{
-            label: 'Consumo de CPU',
-            data: [60, 98],
+            label: ['Abaixo', 'Acima'],
+            data: [0, 0],
             backgroundColor: [
                 '#A04564',
                 '#792440'
@@ -415,82 +329,34 @@
         data: data8,
     };
 
-    const labels9 = [
-        'Domingo',
-        'Segunda',
-        'Terça',
-        'Quarta',
-        'Quinta',
-        'Sexta',
-        'Sábado',
-    ];
-
-    const data9 = {
-        labels: labels9,
-        datasets: [{
-            label: 'CPU',
-            backgroundColor: '#B3345E',
-            borderColor: '#B3345E',
-            data: [60, 98, 96, 84, 90, 67, 95],
-            tension: 0.2,
-            borderWidth: 2
-        }]
-    };
-
-    const config9 = {
-        type: 'line',
-        data: data9,
-        options: {}
-    };
-
 </script>
 
 <script>
 
-    /* const myChart1 = new Chart(
+    const myChart1 = new Chart(
         document.getElementById('myChart1'),
         config1
     );
-
+    
     const myChart2 = new Chart(
         document.getElementById('myChart2'),
         config2
-    ); */
+    );
 
-    /*  const myChart3 = new Chart(
-         document.getElementById('myChart3'),
-         config3
-     ); */
-
-    /* const myChart4 = new Chart(
+    const myChart4 = new Chart(
         document.getElementById('myChart4'),
         config4
-    ); */
+    );
 
-    /* const myChart5 = new Chart(
-        document.getElementById('myChart5'),
-        config5
-    ); */
-
-    /*  const myChart6 = new Chart(
+    const myChart6 = new Chart(
          document.getElementById('myChart6'),
          config6
-     ); */
+     );
 
-    /* const myChart7 = new Chart(
-        document.getElementById('myChart7'),
-        config7
-    ); */
-
-    /*  const myChart8 = new Chart(
+    const myChart8 = new Chart(
          document.getElementById('myChart8'),
          config8
-     ); */
-
-    /* const myChart9 = new Chart(
-        document.getElementById('myChart9'),
-        config9
-    ); */
+     );
 
 </script>
 

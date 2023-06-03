@@ -223,7 +223,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 20%;
+    width: 25%;
     height: 100%;
     color: rgb(190, 190, 190);
     padding: 5px;
@@ -234,7 +234,7 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    width: 20%;
+    width: 25%;
     height: 100%;
     color: rgb(190, 190, 190);
     padding: 5px;
@@ -288,7 +288,7 @@ body{
     display: flex;
     flex-direction: column;
     gap: 3px;
-    margin: 5px 0 0 -20px;
+    margin: 5px 0 0 10px;
 }
 
 .b01{
@@ -358,6 +358,13 @@ body{
     background-color: #242731;
     border-radius: 10px;
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.166);
+}
+
+#myChart3{
+    width: 34vw;
+    height: 33vh;
+    padding: 5px;
+    position: relative;
 }
 
 .graf04{
@@ -510,4 +517,33 @@ body{
     color: white;
     margin-left: 55vw;
     margin-top: -6vh;
+}
+
+.nomeUnidade{
+    font-size: 18px;
+    color: white;
+}
+
+
+.infosHardware{
+    overflow-y: scroll !important;
+    height: 35vh;
+    margin-top: 5px;
+}
+
+.infosHardare::-webkit-scrollbar{
+    width: 8px !important;
+    background-color: transparent !important;
+}
+
+.infosHardare::-webkit-scrollbar-thumb{
+    background-image: -webkit-linear-gradient(top, #26e3c2, #45a0f5);
+    border-radius: 10px !important;
+    width: 2px !important;
+}
+
+.pInfo{
+    color: white;
+    font-size: 14px;
+    margin-left: 10px;
 }

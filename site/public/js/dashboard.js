@@ -1,6 +1,6 @@
 window.onload = function(){
     ChecarSeUsuarioEstaLogado();
-    pegarInfoBanco();
+
     pegarInfoDash();
 }
 function ChecarSeUsuarioEstaLogado(){
@@ -18,9 +18,7 @@ document.querySelector("#voltarperfil").addEventListener("click", ()=>{
    console.log("sair")
 
     window.location = "./perfil.html";
-    
 
-    
 })
 
 function pegarInfoDash(){
@@ -34,40 +32,74 @@ function pegarInfoDash(){
 
                 for(let i = 0; i < response.length; i++){
                     hardware.innerHTML += `<option value = ${info[i].id_hardware}>${info[i].numero_serie}</option>`
-        
                 }
                 obterDadosDash()
                 obterDadosRam()
                 obterDadosDisco()
                 obterDadosRede()
                 pegarDadosGraficosRosca()
+                pegarInfoBanco();
             })
         }
     })
 }
 
 function recarregarDashs(){
+    pegarInfoBanco();
     obterDadosDash2()
     obterDadosRam2()
     obterDadosDisco2()
+    obterDadosRede()
     pegarDadosGraficosRosca()
-    myChart4.update()
-    /* obterDadosRede() */
+}
+
+let unidades
+
+function atualizarNomeUnidade(hardware){
+    let unidade = document.querySelector('#selUnidade').value
+    let nomeUnidade = document.querySelector('#nomeUnidade')
+
+    for(let i = 0; i < unidades.length; i++){
+        if(unidades[i].id_unidade == unidade){
+            nomeUnidade.innerHTML = unidades[i].nome
+        }
+    }
 }
 
 function pegarInfoBanco(){
-    let unidade = document.querySelector('#selUnidade')
-    let id = sessionStorage.getItem('ID_USUARIO')
+    let unidade = document.querySelector('#nomeUnidade')
+    const numSerie = document.querySelector('#selHardware').value
 
-    fetch(`/usuarios/pegarInfoBanco/${id}`).then(function (resposta){
+    fetch(`/usuarios/pegarInfoBanco/${numSerie}`).then(function (resposta){
         if(resposta.ok){
             resposta.json().then(function(response){
                 var info = JSON.parse((JSON.stringify(response)))
 
-                for(let i = 0; i < response.length; i++){
-                    unidade.innerHTML += `<option value = ${info[i].id_unidade}>${info[i].nome_unidade}</option>`
-                }
+                unidade.innerHTML = info[0].nome
+            })
+        }
+    })
 
+    let capCpu = document.querySelector('#capCpu')
+    let capRam = document.querySelector('#capRam')
+    let capDisco = document.querySelector('#capDisco')
+    let modCpu = document.querySelector('#modCpu')
+    let modRam = document.querySelector('#modRam')
+    let modDisco = document.querySelector('#modDisco')
+    let so = document.querySelector('#so')
+
+    fetch(`/usuarios/pegarInfoBanco2/${numSerie}`).then(function (resposta){
+        if(resposta.ok){
+            resposta.json().then(function(response){
+                let infos = JSON.parse((JSON.stringify(response)))
+
+                so.innerHTML = "<b>Sistema Operacional:</b> " + infos[0].so
+                capCpu.innerHTML = "<b>Capacidade:</b> " + infos[0].capacidade + " GHz"
+                capRam.innerHTML = "<b>Capacidade:</b> " + infos[2].capacidade + " GB"
+                capDisco.innerHTML = "<b>Capacidade:</b> " + infos[1].capacidade + " GB"
+                modCpu.innerHTML = "<b>Modelo:</b> " + infos[0].modelo
+                modRam.innerHTML = "<b>Modelo:</b> " + infos[2].modelo
+                modDisco.innerHTML = "<b>Modelo:</b> " + infos[1].modelo
             })
         }
     })
@@ -389,20 +421,6 @@ function atualizarGraficoRede(hardware, dados, myChart3){
     })
 }
 
-let myChart1
-let myChart2
-let myChart4
-let myChart6
-let myChart8
-
-function excluirChartRosca(){
-    /* myChart1.destroy()
-    myChart2.destroy() */
-    myChart4.destroy()
-    myChart6.destroy()
-    myChart8.destroy()
-}
-
 function pegarDadosGraficosRosca2(){
     let hardware = document.querySelector('#selHardware').value
     fetch(`/usuarios/pegarDadosGraficosRosca/${hardware}`).then((resposta)=>resposta.json().then((response)=>trocarDadosRosca(response, myChart1, myChart2, myChart4, myChart6, myChart8)))
@@ -421,128 +439,71 @@ function trocarDadosRosca(dadosR, chart1, chart2, chart4, chart6, chart8){
     chart.update()
 }
 
+let contador
+
 function pegarDadosGraficosRosca(){
     let hardware = document.querySelector('#selHardware').value
     fetch(`/usuarios/pegarDadosGraficosRosca/${hardware}`).then((resposta)=>{
         if(resposta.ok){
             resposta.json().then((response)=>{
-                console.log(response)
-                console.log(hardware)
-                exibirDadosGraficoRosca(response, hardware, myChart1, myChart2, myChart4, myChart6, myChart8)
+                clearTimeout(contador)
+
+                exibirKpi(response)
+                //exibirDadosGraficoRosca(response, myChart1, myChart2, myChart4, myChart6, myChart8)
+
+                atualizarGraficosDeRosca()
             })
         }
     })
 }
 
-function exibirDadosGraficoRosca(dadosR, hardware, myChart1, myChart2, myChart4, myChart6, myChart8){
-    let labels = ['Acima', 'Abaixo']
+function atualizarGraficosDeRosca(){
 
-    let dadosRam = {
-        labels,
-        datasets: [
-        {
-            label: 'Consumo de Memória RAM',
-            data: [],
-            backgroundColor: [
-                '#5F57BD',
-                '#362F7C'
-            ],
-            borderColor: ['#5F57BD'],
-            hoverOffset: 4
-        }]
-    }
+    let hardware = document.querySelector('#selHardware').value
+    fetch(`/usuarios/pegarDadosGraficosRosca/${hardware}`).then((resposta)=>{
+        if(resposta.ok){
+            resposta.json().then((response)=>{
+                exibirKpi(response)
+                exibirDadosGraficoRosca(response, myChart1, myChart2, myChart4, myChart6, myChart8)
 
-    let dadosDisco = {
-        labels,
-        datasets: [
-        {
-            label: 'Consumo de Disco',
-            data: [],
-            backgroundColor: [
-                '#964EBF',
-                '#653381'
-            ],
-            borderColor: ['#964EBF'],
-            hoverOffset: 4
-        }]
-    }
+                contador = setTimeout(()=>atualizarGraficosDeRosca(), 20000)
+            })
+        }
+    })
 
-    let dadosCpu = {
-        labels,
-        datasets: [
-        {
-            label: 'Consumo de CPU',
-            data: [],
-            backgroundColor: [
-                '#A04564',
-                '#792440'
-            ],
-            borderColor: ['#A04564'],
-            hoverOffset: 4
-        }]
-    }
+}
 
+function exibirKpi(dadosR){
     let kpiRam = document.querySelector('#kpi02')
     let kpiCpu = document.querySelector('#kpi04')
     let kpiDisco = document.querySelector('#kpi03')
 
-    for(let i = 0; i < dadosR.length; i++){
-        let atual = dadosR[dadosR.length - (i + 1)]
-        dadosRam.datasets[0].data.push(atual.RamAcima, atual.RamAbaixo)
-        dadosDisco.datasets[0].data.push(atual.DiscoAcima, atual.DiscoAbaixo)
-        dadosCpu.datasets[0].data.push(atual.CpuAcima, atual.CpuAbaixo)
-        kpiRam.innerHTML = ((atual.RamAcima / (atual.RamAcima + atual.RamAbaixo)) * 100) + "%" 
-        kpiCpu.innerHTML = ((atual.CpuAcima / (atual.CpuAcima + atual.CpuAbaixo)) * 100) + "%" 
-        kpiDisco.innerHTML = ((atual.DiscoAcima / (atual.DiscoAcima + atual.DiscoAbaixo)) * 100) + "%" 
-    }
+    kpiRam.innerHTML = ((dadosR[0].RamAcima / (dadosR[0].RamAcima + dadosR[0].RamAbaixo)) * 100).toFixed(2) + "%"
+    kpiCpu.innerHTML = ((dadosR[0].CpuAcima / (dadosR[0].CpuAcima + dadosR[0].CpuAbaixo)) * 100).toFixed(2) + "%"
+    kpiDisco.innerHTML = ((dadosR[0].DiscoAcima / (dadosR[0].DiscoAcima + dadosR[0].DiscoAbaixo)) * 100).toFixed(2) + "%"
+}
 
-    verificarCoresKpi(dadosR[0])
-
-    const config1 = {
-        type: 'doughnut', 
-        data: dadosRam
-    }
-
-    const config2 = {
-        type: 'doughnut', 
-        data: dadosDisco
-    }
-
-    const config3 = {
-        type: 'doughnut', 
-        data: dadosCpu
-    }
-
-    /* if(myChart4 != null || myChart6 != null || myChart8 != null){
-        excluirChartRosca()
-    } */
-
-    /* myChart1 = new Chart(
-        document.getElementById('myChart1'),
-        config
-    )
-
-    myChart2 = new Chart(
-        document.getElementById('myChart2'),
-        config
-    ) */
-
-    myChart4 = new Chart(
-        document.getElementById('myChart4'),
-        config1
-    )
-
-    myChart6 = new Chart(
-        document.getElementById('myChart6'),
-        config2
-    )
-
-    myChart8 = new Chart(
-        document.getElementById('myChart8'),
-        config3
-    )
-
-    /* setTimeout(()=>atualizarGraficoRede(hardware, dados, myChart3),5000) */
+function exibirDadosGraficoRosca(dadosR, myChart1, myChart2, myChart4, myChart6, myChart8){
+    myChart1.data.datasets[0].data.pop()
+    myChart1.data.datasets[0].data.pop()
+    myChart2.data.datasets[0].data.pop()
+    myChart2.data.datasets[0].data.pop()
+    myChart4.data.datasets[0].data.pop()
+    myChart4.data.datasets[0].data.pop()
+    myChart6.data.datasets[0].data.pop()
+    myChart6.data.datasets[0].data.pop()
+    myChart8.data.datasets[0].data.pop()
+    myChart8.data.datasets[0].data.pop()
+    myChart1.data.datasets[0].data.push(dadosR[0].DownloadAbaixo, dadosR[0].DownloadAcima)
+    myChart2.data.datasets[0].data.push(dadosR[0].UploadAbaixo, dadosR[0].UploadAcima)
+    myChart4.data.datasets[0].data.push(dadosR[0].RamAbaixo, dadosR[0].RamAcima)
+    myChart6.data.datasets[0].data.push(dadosR[0].DiscoAbaixo, dadosR[0].DiscoAcima)
+    myChart8.data.datasets[0].data.push(dadosR[0].CpuAbaixo, dadosR[0].CpuAcima)
+    myChart1.update()
+    myChart2.update()
+    myChart4.update()
+    myChart6.update()
+    myChart8.update()
 }
 
 function verificarCoresKpi(dados){

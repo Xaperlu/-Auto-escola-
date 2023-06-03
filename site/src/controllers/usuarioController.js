@@ -308,6 +308,28 @@ function pegarFuncionariosBanco(req, res){
         )
 }
 
+function pegarUnidadesBanco(req, res){
+    const idHardware = req.params.idHardware
+
+    usuarioModel.pegarUnidadesBanco(idHardware)
+        .then(
+            function(resultado){
+                res.json(resultado)
+            }
+        )
+}
+
+function pegarInfoBanco2(req, res){
+    const idHardware = req.params.idHardware;
+
+    usuarioModel.pegarInfoBanco2(idHardware)
+        .then(
+            function(resultado){
+                res.json(resultado)
+            }
+        )
+}
+
 module.exports = {
    cadastrar,
    autenticar,
@@ -330,5 +352,7 @@ module.exports = {
    excluirUnidade,
    editarFuncionario,
    excluirFuncionario,
-   pegarFuncionariosBanco
+   pegarFuncionariosBanco,
+    pegarInfoBanco2,
+    pegarUnidadesBanco
 }

@@ -371,12 +371,10 @@ function pegarInfoBanco(){
     let editarFuncionario = document.querySelector('#edUnidade')
     let id = sessionStorage.getItem('ID_USUARIO')
 
-    fetch(`/usuarios/pegarInfoBanco/${id}`).then(function (resposta){
+    fetch(`/usuarios/pegarUnidadesBanco/${id}`).then(function (resposta){
         if(resposta.ok){
             resposta.json().then(function(response){
                 var info = JSON.parse((JSON.stringify(response)))
-
-                console.log(info[0].nome_unidade)
 
                 hardware.innerHTML = ''
                 hardware.innerHTML += `<option value = "">-Selecionar Unidade-</option>`

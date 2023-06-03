@@ -1,6 +1,5 @@
 console.log(sessionStorage.getItem("mode"))
 
-
 if (sessionStorage.getItem("mode") == "white") {
     white();
 
@@ -8,55 +7,25 @@ if (sessionStorage.getItem("mode") == "white") {
     document.querySelector("#onmode").style.transform = "translateX(40px)"
     document.querySelector("#divlightmode").style.backgroundColor = "#45a0f5";
     console.log("modo dark")
-
 }
-
 
 function lightmode() {
-
     if (document.querySelector("#onmode").style.transform == "translateX(40px)") {
         white();
-
     } else {
         black()
-
     }
-
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function white() {
-
-
-
     document.querySelector(".sol").style.opacity = "1";
     document.querySelector(".lua").style.opacity = "0";
-   
     document.querySelector("#onmode").style.transform = "translateX(5px)"
 
     cordefundo("#onmode", "white", "none") //bolinha dentro do botão do lighmode
-
     cordefundo("#divlightmode", "#45a0f9", "none")//botao do lighmode
-
-    document.querySelector(".analytics").style.backgroundImage = "url(././asset/ceu3.jpg)"; //mudar fundo 
+    document.querySelector(".analytics").style.backgroundImage = ""; //mudar fundo 
+    document.querySelector(".analytics").style.backgroundColor = "#d6d6db"; //mudar fundo 
 
     cordefundo(".navbar", "#041737", "none") //cor do menu lateral
 
@@ -76,12 +45,9 @@ function white() {
 
     cordotexto(".textpage", "#3963AD") //mudar cor titulo descrição dos graficos 
 
-
     sessionStorage.setItem("mode", "white");
 
 }
-
-
 
 function black() {
 
@@ -119,35 +85,6 @@ function black() {
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function cordotexto(a, b) {
 
     let lista = document.querySelectorAll(a);     //o primeiro parametro é a "classe" e o segundo é a "cor"     => cordotext(classe, vermelho)
@@ -174,5 +111,3 @@ function cordefundo(a, b, c) {
     });
 
 }
-
-

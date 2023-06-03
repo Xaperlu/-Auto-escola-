@@ -16,7 +16,6 @@ body {
     background-image: url(../asset/realback.png); 
     background-size: cover;
     position: absolute;
-
 }
 
 body::-webkit-scrollbar {
