@@ -102,7 +102,6 @@
         if(senha == 00){
             window.location = "./perfil.html";
         }
-
         fetch("/usuarios/autenticar", {
             method: "POST",
             headers: {
@@ -138,6 +137,7 @@
 
         }).catch(function (erro) {
             console.log(erro);
+            alert("Erro ao realizar login, tente novamente!");
         })
 
         return false;
