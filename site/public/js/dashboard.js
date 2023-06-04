@@ -464,6 +464,7 @@ function atualizarGraficosDeRosca(){
         if(resposta.ok){
             resposta.json().then((response)=>{
                 exibirKpi(response)
+                verificarCoresKpi(response[0])
                 exibirDadosGraficoRosca(response, myChart1, myChart2, myChart4, myChart6, myChart8)
 
                 contador = setTimeout(()=>atualizarGraficosDeRosca(), 20000)
@@ -472,7 +473,7 @@ function atualizarGraficosDeRosca(){
     })
 
 }
-
+verificarCoresKpi
 function exibirKpi(dadosR){
     let kpiRam = document.querySelector('#kpi02')
     let kpiCpu = document.querySelector('#kpi04')
